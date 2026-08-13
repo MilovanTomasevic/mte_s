@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="zh-Hans-CN" dir="ltr" data-theme="light" data-theme-mode="light" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <link rel="preload" href="/assets/mtera-style.MYAWRNDW.css" as="style" fetchpriority="high">
+    <script>
+        (() => {
+            const root = document.documentElement;
+            root.classList.replace("no-js", "js");
+            let resolved = "";
+            try {
+                const saved = localStorage.getItem("mtera-theme");
+                if (saved === "light" || saved === "dark") resolved = saved;
+            } catch (_) {}
+            if (!resolved) {
+                let prefersDark = false;
+                try { prefersDark = matchMedia("(prefers-color-scheme: dark)").matches; } catch (_) {}
+                resolved = prefersDark ? "dark" : "light";
+            }
+            root.dataset.themeMode = resolved;
+            root.dataset.theme = resolved;
+            root.style.colorScheme = resolved;
+        })();
+    </script>
+    <link rel="stylesheet" href="/assets/mtera-style.MYAWRNDW.css">
+    <title>必须不断安全变化的架构 | MTera</title>
+    <meta name="description" content="当边界、依赖关系与决策足够清晰，系统才能在不失控的前提下持续演进。MTera 将目标设计与过渡状态、运营责任和决策记录连接起来，让今天的交付为明天创造选择，而不是留下另一套僵化架构。">
+<meta data-pagefind-meta="title" data-pagefind-ignore="all" content="必须安全地不断变化的架构"><meta data-pagefind-meta="description" data-pagefind-ignore="all" content="当边界、依赖关系与决策足够清晰，系统才能在不失控的前提下持续演进。MTera 将目标设计与过渡状态、运营责任和决策记录连接起来，让今天的交付为明天创造选择，而不是留下另一套僵化架构。"><meta data-pagefind-meta="locale" data-pagefind-ignore="all" content="zh-Hans-CN"><meta data-pagefind-meta="content_type" data-pagefind-ignore="all" content="challenge"><meta data-pagefind-meta="category" data-pagefind-ignore="all" content="challenges"><meta data-pagefind-meta="date" data-pagefind-ignore="all" content="2026-08-11"><meta data-pagefind-meta="title[content]" content="必须安全地不断变化的架构"><meta data-pagefind-meta="description[content]" content="当边界、依赖关系与决策足够清晰，系统才能在不失控的前提下持续演进。MTera 将目标设计与过渡状态、运营责任和决策记录连接起来，让今天的交付为明天创造选择，而不是留下另一套僵化架构。"><meta data-pagefind-meta="locale[content]" content="zh-Hans-CN"><meta data-pagefind-meta="content_type[content]" content="challenge"><meta data-pagefind-meta="category[content]" content="challenges"><meta data-pagefind-meta="date[content]" content="2026-08-11"><meta data-pagefind-filter="content_type[content]" content="challenge"><meta data-pagefind-filter="category[content]" content="challenges">    <meta name="author" content="MTera · Milovan Tomašević">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F6F4F0" data-theme-color-light>
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0A0B0D" data-theme-color-dark>
+<link rel="canonical" href="https://mtera.eu/zh/tiaozhan/zhichi-chixu-biangeng-de-jiagou/"><link rel="alternate" hreflang="en-GB" href="https://mtera.eu/challenges/architecture-for-continuous-change/"><link rel="alternate" hreflang="en-US" href="https://mtera.eu/us/challenges/architecture-for-continuous-change/"><link rel="alternate" hreflang="de-DE" href="https://mtera.eu/de/herausforderungen/architektur-fuer-kontinuierlichen-wandel/"><link rel="alternate" hreflang="sl-SI" href="https://mtera.eu/sl/izzivi/arhitektura-za-nenehne-spremembe/"><link rel="alternate" hreflang="sr-Latn-RS" href="https://mtera.eu/sr/izazovi/arhitektura-za-stalne-promene/"><link rel="alternate" hreflang="hu-HU" href="https://mtera.eu/hu/kihivasok/architektura-a-folyamatos-valtozashoz/"><link rel="alternate" hreflang="ar-AE" href="https://mtera.eu/ar/al-tahaddiyat/mimariya-liltaghayur-almustamir/"><link rel="alternate" hreflang="zh-Hans-CN" href="https://mtera.eu/zh/tiaozhan/zhichi-chixu-biangeng-de-jiagou/"><link rel="alternate" hreflang="ja-JP" href="https://mtera.eu/ja/kadai/keizokuteki-henko-no-tame-no-akitekucha/"><link rel="alternate" hreflang="sv-SE" href="https://mtera.eu/sv/utmaningar/utforma-arkitektur-for-nasta-forandring-inte-bara-det-aktuella-programmet/"><link rel="alternate" hreflang="es-ES" href="https://mtera.eu/es/retos/arquitectura-para-el-cambio-continuo/"><link rel="alternate" hreflang="ru-RU" href="https://mtera.eu/ru/zadachi/arkhitektura-dlya-nepreryvnykh-izmeneniy/"><link rel="alternate" hreflang="hi-IN" href="https://mtera.eu/hi/chunautiyan/nirantar-badalav-ke-liye-vastukala/"><link rel="alternate" hreflang="pt-PT" href="https://mtera.eu/pt/desafios/arquitetura-para-mudanca-continua/"><link rel="alternate" hreflang="fi-FI" href="https://mtera.eu/fi/haasteet/arkkitehtuuri-jatkuvaan-muutokseen/"><link rel="alternate" hreflang="nb-NO" href="https://mtera.eu/no/utfordringer/arkitektur-for-kontinuerlig-endring/"><link rel="alternate" hreflang="nl-NL" href="https://mtera.eu/nl/uitdagingen/architectuur-voor-voortdurende-verandering/"><link rel="alternate" hreflang="da-DK" href="https://mtera.eu/da/udfordringer/arkitektur-til-kontinuerlig-forandring/"><link rel="alternate" hreflang="x-default" href="https://mtera.eu/challenges/architecture-for-continuous-change/">    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MTera">
+    <meta property="og:title" content="必须不断安全变化的架构 | MTera">
+    <meta property="og:description" content="当边界、依赖关系与决策足够清晰，系统才能在不失控的前提下持续演进。MTera 将目标设计与过渡状态、运营责任和决策记录连接起来，让今天的交付为明天创造选择，而不是留下另一套僵化架构。">
+<meta property="og:url" content="https://mtera.eu/zh/tiaozhan/zhichi-chixu-biangeng-de-jiagou/">    <meta property="og:locale" content="zh_Hans_CN">
+<meta property="og:locale:alternate" content="en_GB"><meta property="og:locale:alternate" content="en_US"><meta property="og:locale:alternate" content="de_DE"><meta property="og:locale:alternate" content="sl_SI"><meta property="og:locale:alternate" content="sr_Latn_RS"><meta property="og:locale:alternate" content="hu_HU"><meta property="og:locale:alternate" content="ar_AE"><meta property="og:locale:alternate" content="ja_JP"><meta property="og:locale:alternate" content="sv_SE"><meta property="og:locale:alternate" content="es_ES"><meta property="og:locale:alternate" content="ru_RU"><meta property="og:locale:alternate" content="hi_IN"><meta property="og:locale:alternate" content="pt_PT"><meta property="og:locale:alternate" content="fi_FI"><meta property="og:locale:alternate" content="nb_NO"><meta property="og:locale:alternate" content="nl_NL"><meta property="og:locale:alternate" content="da_DK">    <meta property="og:image" content="https://mtera.eu/static/images/og/generated/zh-hans/challenge-architecture-for-continuous-change.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="MTera · 挑战 · 为下一次变革设计架构，而不只服务当前项目">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="必须不断安全变化的架构 | MTera">
+    <meta name="twitter:description" content="当边界、依赖关系与决策足够清晰，系统才能在不失控的前提下持续演进。MTera 将目标设计与过渡状态、运营责任和决策记录连接起来，让今天的交付为明天创造选择，而不是留下另一套僵化架构。">
+    <meta name="twitter:image" content="https://mtera.eu/static/images/og/generated/zh-hans/challenge-architecture-for-continuous-change.png">
+    <meta name="twitter:image:alt" content="MTera · 挑战 · 为下一次变革设计架构，而不只服务当前项目">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16">
+    <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="/favicon-48x48.png" type="image/png" sizes="48x48">
+    <link rel="icon" href="/favicon-96x96.png" type="image/png" sizes="96x96">
+    <link rel="icon" href="/favicon-256x256.png" type="image/png" sizes="256x256">
+    <link rel="shortcut icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="mask-icon" href="/static/brand/pinned-tab.svg" color="#B9824E">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+    <link rel="manifest" href="/zh/site.webmanifest">
+    <meta name="mtera-font-profile" content="/static/fonts/chinese-simplified.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@id": "https://mtera.eu/zh/tiaozhan/zhichi-chixu-biangeng-de-jiagou/#webpage", "@type": "WebPage", "about": {"@id": "https://mtera.eu/#organization"}, "breadcrumb": {"@id": "https://mtera.eu/zh/tiaozhan/zhichi-chixu-biangeng-de-jiagou/#breadcrumb"}, "dateModified": "2026-08-11", "description": "\u5f53\u8fb9\u754c\u3001\u4f9d\u8d56\u5173\u7cfb\u4e0e\u51b3\u7b56\u8db3\u591f\u6e05\u6670\uff0c\u7cfb\u7edf\u624d\u80fd\u5728\u4e0d\u5931\u63a7\u7684\u524d\u63d0\u4e0b\u6301\u7eed\u6f14\u8fdb\u3002MTera \u5c06\u76ee\u6807\u8bbe\u8ba1\u4e0e\u8fc7\u6e21\u72b6\u6001\u3001\u8fd0\u8425\u8d23\u4efb\u548c\u51b3\u7b56\u8bb0\u5f55\u8fde\u63a5\u8d77\u6765\uff0c\u8ba9\u4eca\u5929\u7684\u4ea4\u4ed8\u4e3a\u660e\u5929\u521b\u9020\u9009\u62e9\uff0c\u800c\u4e0d\u662f\u7559\u4e0b\u53e6\u4e00\u5957\u50f5\u5316\u67b6\u6784\u3002", "inLanguage": "zh-Hans-CN", "isPartOf": {"@id": "https://mtera.eu/#website"}, "name": "\u5fc5\u987b\u4e0d\u65ad\u5b89\u5168\u53d8\u5316\u7684\u67b6\u6784 | MTera", "url": "https://mtera.eu/zh/tiaozhan/zhichi-chixu-biangeng-de-jiagou/"}, {"@id": "https://mtera.eu/#website", "@type": "WebSite", "inLanguage": ["en-GB", "en-US", "de-DE", "sl-SI", "sr-Latn-RS", "hu-HU", "ar-AE", "zh-Hans-CN", "ja-JP", "sv-SE", "es-ES", "ru-RU", "hi-IN", "pt-PT", "fi-FI", "nb-NO", "nl-NL", "da-DK"], "name": "MTera", "publisher": {"@id": "https://mtera.eu/#organization"}, "url": "https://mtera.eu/"}, {"@id": "https://mtera.eu/#organization", "@type": "Organization", "description": "MTera \u5e2e\u52a9\u7ec4\u7ec7\u7406\u89e3\u3001\u91cd\u5851\u3001\u8fde\u63a5\u5e76\u6784\u5efa\u91cd\u5927\u4e1a\u52a1\u53d8\u9769\u80cc\u540e\u7684\u7cfb\u7edf\uff0c\u8d2f\u901a\u6570\u636e\u3001\u6d41\u7a0b\u3001\u5e94\u7528\u3001\u96c6\u6210\u3001\u4eba\u5de5\u667a\u80fd\u4e0e\u8fd0\u8425\u51b3\u7b56\u3002", "email": "hello@mtera.eu", "founder": {"@id": "https://mtera.eu/about/milovan-tomasevic/#person"}, "logo": {"@type": "ImageObject", "height": 512, "url": "https://mtera.eu/static/brand/mtera-avatar-512.png", "width": 512}, "name": "MTera", "url": "https://mtera.eu/"}, {"@id": "https://mtera.eu/zh/tiaozhan/zhichi-chixu-biangeng-de-jiagou/#breadcrumb", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://mtera.eu/zh/", "name": "\u6784\u5efa\u672a\u6765\uff0c\u540c\u65f6\u5b88\u4f4f\u5fc5\u987b\u59cb\u7ec8\u6210\u7acb\u7684\u539f\u5219\u3002", "position": 1}, {"@type": "ListItem", "item": "https://mtera.eu/zh/tiaozhan/", "name": "\u6311\u6218", "position": 2}, {"@type": "ListItem", "item": "https://mtera.eu/zh/tiaozhan/zhichi-chixu-biangeng-de-jiagou/", "name": "\u5fc5\u987b\u5b89\u5168\u5730\u4e0d\u65ad\u53d8\u5316\u7684\u67b6\u6784", "position": 3}]}]}</script></head>
+<body class="page page--challenge.architecture_for_continuous_change page-kind--challenge">
+    <a class="skip-link" href="#main-content" lang="zh-Hans-CN" dir="ltr">跳到主要内容</a>
+    <div class="header-marker" data-header-marker aria-hidden="true"></div>
+<header class="site-header" data-site-header lang="zh-Hans-CN" dir="ltr">
+    <div class="site-header__inner shell">
+        <a class="brand" href="/zh/" aria-label="MTera — 首页">
+            <span class="theme-lockup" aria-hidden="true">
+                <img class="theme-lockup__light" src="/static/brand/mtera-wordmark.svg" width="1062" height="269" alt="">
+                <img class="theme-lockup__dark" src="/static/brand/mtera-wordmark-on-dark.svg" width="1062" height="269" alt="">
+            </span>
+        </a>
+
+        <nav class="desktop-nav" aria-label="主导航">
+            <ul class="desktop-nav__list">
+                    <li>
+                        <a href="/zh/fangfa/">方法</a>
+                    </li>
+                    <li>
+                        <details class="desktop-nav__group" data-nav-group>
+                            <summary>服务<span aria-hidden="true"></span></summary>
+                            <div class="desktop-nav__mega">
+                                <a class="desktop-nav__overview" href="/zh/fuwu/">
+                                    <small>服务</small>
+                                    <strong>服务</strong>
+                                    <svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg>
+                                </a>
+                                <ul class="desktop-nav__deep-list">
+                                    <li><a href="/zh/fuwu/qiyeyewu-xitong-jiagou-yu-zhuanxing/"><span>业务系统架构和转型</span></a></li>
+                                    <li><a href="/zh/fuwu/shuju-zhanlue-zhili-yu-gongcheng/"><span>数据战略、治理和工程</span></a></li>
+                                    <li><a href="/zh/fuwu/qiye-jicheng-yu-hulian-hutong/"><span>企业集成和互操作性</span></a></li>
+                                    <li><a href="/zh/fuwu/rengongzhineng-jiuxudu-jicheng-yu-fuzeren-jiaofu/"><span>人工智能就绪、集成与负责任交付</span></a></li>
+                                    <li><a href="/zh/fuwu/liucheng-zidonghua-yu-yunying-youhua/"><span>流程自动化和运营优化</span></a></li>
+                                    <li><a href="/zh/fuwu/dingzhi-ruanjian-yu-pingtai-gongcheng/"><span>定制软件和平台工程</span></a></li>
+                                </ul>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <details class="desktop-nav__group" data-nav-group data-current="true">
+                            <summary>挑战<span aria-hidden="true"></span></summary>
+                            <div class="desktop-nav__mega">
+                                <a class="desktop-nav__overview" href="/zh/tiaozhan/">
+                                    <small>挑战</small>
+                                    <strong>挑战</strong>
+                                    <svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg>
+                                </a>
+                                <ul class="desktop-nav__deep-list">
+                                    <li><a href="/zh/tiaozhan/xitong-fenge-shuju-lingluan/"><svg class="icon" viewBox="0 0 24 24" data-icon="system" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#system"></use></svg><span>系统断开且支离破碎data</span></a></li>
+                                    <li><a href="/zh/tiaozhan/chuantong-xitong-xiandaihua-buzhongduan-yewu/"><svg class="icon" viewBox="0 0 24 24" data-icon="transformation" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#transformation"></use></svg><span>在不中断业务的情况下对遗留系统进行现代化改造</span></a></li>
+                                    <li><a href="/zh/tiaozhan/zhichi-juece-yu-rengongzhineng-de-kexin-shuju/"><svg class="icon" viewBox="0 0 24 24" data-icon="data" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#data"></use></svg><span>决策和恢复的可信数据基础人工智能</span></a></li>
+                                    <li><a href="/zh/tiaozhan/fuzade-hezuohuoban-jicheng/"><svg class="icon" viewBox="0 0 24 24" data-icon="integration" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#integration"></use></svg><span>复杂的合作伙伴和企业集成</span></a></li>
+                                    <li><a href="/zh/tiaozhan/rengongzhineng-shidian-zouxiang-shengchan/"><svg class="icon" viewBox="0 0 24 24" data-icon="ai" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#ai"></use></svg><span>将人工智能从试点转向生产</span></a></li>
+                                    <li><a href="/zh/tiaozhan/shougong-liucheng-yu-yunying-moca/"><svg class="icon" viewBox="0 0 24 24" data-icon="automation" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#automation"></use></svg><span>脆弱的手动工作流程和隐藏的操作工作</span></a></li>
+                                    <li><a href="/zh/tiaozhan/zhichi-chixu-biangeng-de-jiagou/" aria-current="page"><svg class="icon" viewBox="0 0 24 24" data-icon="architecture" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#architecture"></use></svg><span>必须安全地不断变化的架构</span></a></li>
+                                    <li><a href="/zh/xitong-tiaozhan-jianbao/"><svg class="icon" viewBox="0 0 24 24" data-icon="decision" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#decision"></use></svg><span>系统挑战简介</span></a></li>
+                                </ul>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <a href="/zh/gongzuofangshi/">工作方式</a>
+                    </li>
+                    <li>
+                        <details class="desktop-nav__group" data-nav-group>
+                            <summary>洞察<span aria-hidden="true"></span></summary>
+                            <div class="desktop-nav__mega">
+                                <a class="desktop-nav__overview" href="/zh/dongjian/">
+                                    <small>洞察</small>
+                                    <strong>洞察</strong>
+                                    <svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg>
+                                </a>
+                                <ul class="desktop-nav__deep-list">
+                                    <li><a href="/zh/dongjian/shenme-shi-qiyeyewu-xitong-gongcheng/"><span>业务系统工程的实际含义</span></a></li>
+                                    <li><a href="/zh/dongjian/zai-baochi-yewu-lianxuxing-de-tongshi-xiandaihua-chuantong-xitong/"><span>如何在不失去业务连续性的情况下对遗留系统进行现代化</span></a></li>
+                                    <li><a href="/zh/dongjian/qiye-jicheng-weihe-zai-zuzhi-bianjie-shibai/"><span>为什么企业集成在组织边界处失败</span></a></li>
+                                    <li><a href="/zh/dongjian/shengchanxing-rengongzhineng-zhiqian-de-shuju-jichu/"><span>人工智能进入生产环境前必须具备的数据基础</span></a></li>
+                                    <li><a href="/zh/shuyubiao/"><span>业务系统工程术语表</span></a></li>
+                                </ul>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <details class="desktop-nav__group" data-nav-group>
+                            <summary>关于 MTera<span aria-hidden="true"></span></summary>
+                            <div class="desktop-nav__mega">
+                                <a class="desktop-nav__overview" href="/zh/guanyu-mtera/">
+                                    <small>关于 MTera</small>
+                                    <strong>关于 MTera</strong>
+                                    <svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg>
+                                </a>
+                                <ul class="desktop-nav__deep-list">
+                                    <li><a href="/zh/guanyu-mtera/milovan-tomasevic/"><span>Milovan Tomašević</span></a></li>
+                                    <li><a href="/zh/jingyan/"><span>经验与精选问题模式</span></a></li>
+                                    <li><a href="/zh/changjian-wenti/"><span>与 MTera 合作的常见问题</span></a></li>
+                                </ul>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <a href="/zh/lianxi/">联系</a>
+                    </li>
+            </ul>
+        </nav>
+
+        <div class="site-header__tools">
+            <a class="tool-button" href="/zh/sousuo/" data-search-open aria-label="打开搜索">
+                <svg class="icon" viewBox="0 0 20 20" data-icon="search" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#search-20"></use></svg><span class="tool-button__label">打开搜索</span>
+            </a>
+            <div class="header-language"><details class="language-picker" data-language-picker>
+    <summary class="tool-button" aria-label="更改语言: 简体中文"><span class="language-picker__flag" aria-hidden="true">🇨🇳</span></summary>
+    <div class="popover language-menu">
+        <label for="language-filter-header">更改语言</label>
+        <div class="language-filter"><svg class="icon" viewBox="0 0 20 20" data-icon="search" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#search-20"></use></svg><input id="language-filter-header" type="search" inputmode="search" autocomplete="off" data-language-filter placeholder="搜索语言"></div>
+        <ul data-language-list>
+            <li data-language-item data-language-search="english (uk)  en">
+                <a href="/challenges/architecture-for-continuous-change/" hreflang="en-GB" lang="en-GB" data-locale-code="en" data-locale-label="English (UK)" data-locale-flag="🇬🇧" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">en</span>
+                    <span><strong>English (UK)</strong><small>English (UK)</small><small class="translation-state">草稿</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="english (us)  en-us">
+                <a href="/us/challenges/architecture-for-continuous-change/" hreflang="en-US" lang="en-US" data-locale-code="en-US" data-locale-label="English (US)" data-locale-flag="🇺🇸" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">en-US</span>
+                    <span><strong>English (US)</strong><small>English (US)</small><small class="translation-state">待审译稿</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="deutsch  de">
+                <a href="/de/herausforderungen/architektur-fuer-kontinuierlichen-wandel/" hreflang="de-DE" lang="de-DE" data-locale-code="de" data-locale-label="Deutsch" data-locale-flag="🇩🇪" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">de</span>
+                    <span><strong>Deutsch</strong><small>Deutsch</small><small class="translation-state">待审译稿</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="slovenščina  sl">
+                <a href="/sl/izzivi/arhitektura-za-nenehne-spremembe/" hreflang="sl-SI" lang="sl-SI" data-locale-code="sl" data-locale-label="Slovenščina" data-locale-flag="🇸🇮" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">sl</span>
+                    <span><strong>Slovenščina</strong><small>Slovenščina</small><small class="translation-state">待审译稿</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="srpski  sr-latn">
+                <a href="/sr/izazovi/arhitektura-za-stalne-promene/" hreflang="sr-Latn-RS" lang="sr-Latn-RS" data-locale-code="sr-Latn" data-locale-label="Srpski" data-locale-flag="🇷🇸" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">sr-Latn</span>
+                    <span><strong>Srpski</strong><small>Srpski</small><small class="translation-state">待审译稿</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="magyar  hu">
+                <a href="/hu/kihivasok/architektura-a-folyamatos-valtozashoz/" hreflang="hu-HU" lang="hu-HU" data-locale-code="hu" data-locale-label="Magyar" data-locale-flag="🇭🇺" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">hu</span>
+                    <span><strong>Magyar</strong><small>Magyar</small><small class="translation-state">待审译稿</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="العربية  ar">
+                <a href="/ar/al-tahaddiyat/mimariya-liltaghayur-almustamir/" hreflang="ar-AE" lang="ar-AE" data-locale-code="ar" data-locale-label="العربية" data-locale-flag="🇦🇪" data-locale-direction="rtl">
+                    <span class="language-code" aria-hidden="true">ar</span>
+                    <span><strong>العربية</strong><small>العربية</small><small class="translation-state">待审译稿</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="简体中文  zh-hans">
+                <a href="/zh/tiaozhan/zhichi-chixu-biangeng-de-jiagou/" hreflang="zh-Hans-CN" lang="zh-Hans-CN" data-locale-code="zh-Hans" data-locale-label="简体中文" data-locale-flag="🇨🇳" data-locale-direction="ltr" aria-current="page">
+                    <span class="language-code" aria-hidden="true">zh-Hans</span>
+                    <span><strong>简体中文</strong><small>简体中文</small><small class="translation-state">待审译稿</small></span>
+<svg class="icon" viewBox="0 0 24 24" data-icon="check" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#check"></use></svg>                </a>
+            </li>
+            <li data-language-item data-language-search="日本語  ja">
+                <a href="/ja/kadai/keizokuteki-henko-no-tame-no-akitekucha/" hreflang="ja-JP" lang="ja-JP" data-locale-code="ja" data-locale-label="日本語" data-locale-flag="🇯🇵" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">ja</span>
+                    <span><strong>日本語</strong><small>日本語</small><small class="translation-state">待审译稿</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="svenska  sv">
+                <a href="/sv/utmaningar/utforma-arkitektur-for-nasta-forandring-inte-bara-det-aktuella-programmet/" hreflang="sv-SE" lang="sv-SE" data-locale-code="sv" data-locale-label="Svenska" data-locale-flag="🇸🇪" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">sv</span>
+                    <span><strong>Svenska</strong><small>Svenska</small><small class="translation-state">待审译稿</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="español  es">
+                <a href="/es/retos/arquitectura-para-el-cambio-continuo/" hreflang="es-ES" lang="es-ES" data-locale-code="es" data-locale-label="Español" data-locale-flag="🇪🇸" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">es</span>
+                    <span><strong>Español</strong><small>Español</small><small class="translation-state">待审译稿</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="русский  ru">
+                <a href="/ru/zadachi/arkhitektura-dlya-nepreryvnykh-izmeneniy/" hreflang="ru-RU" lang="ru-RU" data-locale-code="ru" data-locale-label="Русский" data-locale-flag="🇷🇺" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">ru</span>
+                    <span><strong>Русский</strong><small>Русский</small><small class="translation-state">待审译稿</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="हिन्दी  hi">
+                <a href="/hi/chunautiyan/nirantar-badalav-ke-liye-vastukala/" hreflang="hi-IN" lang="hi-IN" data-locale-code="hi" data-locale-label="हिन्दी" data-locale-flag="🇮🇳" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">hi</span>
+                    <span><strong>हिन्दी</strong><small>हिन्दी</small><small class="translation-state">待审译稿</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="português  pt-pt">
+                <a href="/pt/desafios/arquitetura-para-mudanca-continua/" hreflang="pt-PT" lang="pt-PT" data-locale-code="pt-PT" data-locale-label="Português" data-locale-flag="🇵🇹" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">pt-PT</span>
+                    <span><strong>Português</strong><small>Português</small><small class="translation-state">待审译稿</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="suomi  fi-fi">
+                <a href="/fi/haasteet/arkkitehtuuri-jatkuvaan-muutokseen/" hreflang="fi-FI" lang="fi-FI" data-locale-code="fi-FI" data-locale-label="Suomi" data-locale-flag="🇫🇮" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">fi-FI</span>
+                    <span><strong>Suomi</strong><small>Suomi</small><small class="translation-state">待审译稿</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="norsk  nb-no">
+                <a href="/no/utfordringer/arkitektur-for-kontinuerlig-endring/" hreflang="nb-NO" lang="nb-NO" data-locale-code="nb-NO" data-locale-label="Norsk" data-locale-flag="🇳🇴" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">nb-NO</span>
+                    <span><strong>Norsk</strong><small>Norsk</small><small class="translation-state">待审译稿</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="nederlands  nl-nl">
+                <a href="/nl/uitdagingen/architectuur-voor-voortdurende-verandering/" hreflang="nl-NL" lang="nl-NL" data-locale-code="nl-NL" data-locale-label="Nederlands" data-locale-flag="🇳🇱" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">nl-NL</span>
+                    <span><strong>Nederlands</strong><small>Nederlands</small><small class="translation-state">待审译稿</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="dansk  da-dk">
+                <a href="/da/udfordringer/arkitektur-til-kontinuerlig-forandring/" hreflang="da-DK" lang="da-DK" data-locale-code="da-DK" data-locale-label="Dansk" data-locale-flag="🇩🇰" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">da-DK</span>
+                    <span><strong>Dansk</strong><small>Dansk</small><small class="translation-state">待审译稿</small></span>
+                </a>
+            </li>
+        </ul>
+        <p class="language-empty" data-language-empty hidden>没有匹配的语言</p>
+    </div>
+</details></div>
+            <button class="tool-button theme-toggle" type="button" data-theme-toggle data-change-label="更改主题" data-light-label="浅色主题" data-dark-label="深色主题" aria-label="更改主题: 深色主题" title="更改主题: 深色主题">
+                <span class="theme-toggle__icon theme-toggle__icon--to-dark"><svg class="icon" viewBox="0 0 20 20" data-icon="dark" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#dark-20"></use></svg></span>
+                <span class="theme-toggle__icon theme-toggle__icon--to-light"><svg class="icon" viewBox="0 0 20 20" data-icon="light" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#light-20"></use></svg></span>
+                <span class="visually-hidden" data-theme-current>浅色主题</span>
+            </button>
+            <a class="button button--primary header-cta desktop-tools" href="/zh/lianxi/">讨论系统挑战</a>
+
+            <details class="mobile-navigation" data-mobile-nav>
+                <summary class="tool-button menu-trigger" data-menu-toggle aria-label="打开菜单" data-open-label="打开菜单" data-close-label="关闭菜单"><span class="menu-open"><svg class="icon" viewBox="0 0 20 20" data-icon="menu" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#menu-20"></use></svg></span><span class="menu-close"><svg class="icon" viewBox="0 0 20 20" data-icon="close" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#close-20"></use></svg></span></summary>
+                <div class="mobile-navigation__panel" data-mobile-panel>
+                    <nav aria-label="主导航">
+                        <ul class="mobile-navigation__primary">
+                            <li>
+                                <a href="/zh/fangfa/"><span>01</span>方法</a>
+                            </li>
+                            <li>
+                                <details class="mobile-navigation__group">
+                                    <summary><span>02</span><strong>服务</strong><i aria-hidden="true"></i></summary>
+                                    <ul>
+                                        <li><a href="/zh/fuwu/">服务</a></li>
+                                        <li><a href="/zh/fuwu/qiyeyewu-xitong-jiagou-yu-zhuanxing/"><span>业务系统架构和转型</span></a></li>
+                                        <li><a href="/zh/fuwu/shuju-zhanlue-zhili-yu-gongcheng/"><span>数据战略、治理和工程</span></a></li>
+                                        <li><a href="/zh/fuwu/qiye-jicheng-yu-hulian-hutong/"><span>企业集成和互操作性</span></a></li>
+                                        <li><a href="/zh/fuwu/rengongzhineng-jiuxudu-jicheng-yu-fuzeren-jiaofu/"><span>人工智能就绪、集成与负责任交付</span></a></li>
+                                        <li><a href="/zh/fuwu/liucheng-zidonghua-yu-yunying-youhua/"><span>流程自动化和运营优化</span></a></li>
+                                        <li><a href="/zh/fuwu/dingzhi-ruanjian-yu-pingtai-gongcheng/"><span>定制软件和平台工程</span></a></li>
+                                    </ul>
+                                </details>
+                            </li>
+                            <li>
+                                <details class="mobile-navigation__group" data-current="true">
+                                    <summary><span>03</span><strong>挑战</strong><i aria-hidden="true"></i></summary>
+                                    <ul>
+                                        <li><a href="/zh/tiaozhan/">挑战</a></li>
+                                        <li><a href="/zh/tiaozhan/xitong-fenge-shuju-lingluan/"><svg class="icon" viewBox="0 0 24 24" data-icon="system" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#system"></use></svg><span>系统断开且支离破碎data</span></a></li>
+                                        <li><a href="/zh/tiaozhan/chuantong-xitong-xiandaihua-buzhongduan-yewu/"><svg class="icon" viewBox="0 0 24 24" data-icon="transformation" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#transformation"></use></svg><span>在不中断业务的情况下对遗留系统进行现代化改造</span></a></li>
+                                        <li><a href="/zh/tiaozhan/zhichi-juece-yu-rengongzhineng-de-kexin-shuju/"><svg class="icon" viewBox="0 0 24 24" data-icon="data" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#data"></use></svg><span>决策和恢复的可信数据基础人工智能</span></a></li>
+                                        <li><a href="/zh/tiaozhan/fuzade-hezuohuoban-jicheng/"><svg class="icon" viewBox="0 0 24 24" data-icon="integration" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#integration"></use></svg><span>复杂的合作伙伴和企业集成</span></a></li>
+                                        <li><a href="/zh/tiaozhan/rengongzhineng-shidian-zouxiang-shengchan/"><svg class="icon" viewBox="0 0 24 24" data-icon="ai" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#ai"></use></svg><span>将人工智能从试点转向生产</span></a></li>
+                                        <li><a href="/zh/tiaozhan/shougong-liucheng-yu-yunying-moca/"><svg class="icon" viewBox="0 0 24 24" data-icon="automation" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#automation"></use></svg><span>脆弱的手动工作流程和隐藏的操作工作</span></a></li>
+                                        <li><a href="/zh/tiaozhan/zhichi-chixu-biangeng-de-jiagou/" aria-current="page"><svg class="icon" viewBox="0 0 24 24" data-icon="architecture" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#architecture"></use></svg><span>必须安全地不断变化的架构</span></a></li>
+                                        <li><a href="/zh/xitong-tiaozhan-jianbao/"><svg class="icon" viewBox="0 0 24 24" data-icon="decision" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#decision"></use></svg><span>系统挑战简介</span></a></li>
+                                    </ul>
+                                </details>
+                            </li>
+                            <li>
+                                <a href="/zh/gongzuofangshi/"><span>04</span>工作方式</a>
+                            </li>
+                            <li>
+                                <details class="mobile-navigation__group">
+                                    <summary><span>05</span><strong>洞察</strong><i aria-hidden="true"></i></summary>
+                                    <ul>
+                                        <li><a href="/zh/dongjian/">洞察</a></li>
+                                        <li><a href="/zh/dongjian/shenme-shi-qiyeyewu-xitong-gongcheng/"><span>业务系统工程的实际含义</span></a></li>
+                                        <li><a href="/zh/dongjian/zai-baochi-yewu-lianxuxing-de-tongshi-xiandaihua-chuantong-xitong/"><span>如何在不失去业务连续性的情况下对遗留系统进行现代化</span></a></li>
+                                        <li><a href="/zh/dongjian/qiye-jicheng-weihe-zai-zuzhi-bianjie-shibai/"><span>为什么企业集成在组织边界处失败</span></a></li>
+                                        <li><a href="/zh/dongjian/shengchanxing-rengongzhineng-zhiqian-de-shuju-jichu/"><span>人工智能进入生产环境前必须具备的数据基础</span></a></li>
+                                        <li><a href="/zh/shuyubiao/"><span>业务系统工程术语表</span></a></li>
+                                    </ul>
+                                </details>
+                            </li>
+                            <li>
+                                <details class="mobile-navigation__group">
+                                    <summary><span>06</span><strong>关于 MTera</strong><i aria-hidden="true"></i></summary>
+                                    <ul>
+                                        <li><a href="/zh/guanyu-mtera/">关于 MTera</a></li>
+                                        <li><a href="/zh/guanyu-mtera/milovan-tomasevic/"><span>Milovan Tomašević</span></a></li>
+                                        <li><a href="/zh/jingyan/"><span>经验与精选问题模式</span></a></li>
+                                        <li><a href="/zh/changjian-wenti/"><span>与 MTera 合作的常见问题</span></a></li>
+                                    </ul>
+                                </details>
+                            </li>
+                            <li>
+                                <a href="/zh/lianxi/"><span>07</span>联系</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <a class="button button--primary" href="/zh/lianxi/">讨论系统挑战 <svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a>
+                </div>
+            </details>
+        </div>
+    </div>
+</header><div
+    class="language-suggestion"
+    role="region"
+    aria-labelledby="language-suggestion-title"
+    aria-live="polite"
+    lang="zh-Hans-CN"
+    dir="ltr"
+    data-language-suggestion
+    data-current-locale="zh-Hans"
+    data-message-template="您的浏览器首选 {language}。在您做出选择之前，当前页面会保持打开。"
+    data-action-template="使用 {language} 查看此页面"
+    hidden
+>
+    <div class="language-suggestion__copy">
+        <p class="language-suggestion__heading visually-hidden">
+            <strong id="language-suggestion-title">语言建议</strong>
+        </p>
+        <p data-language-suggestion-message></p>
+    </div>
+    <a class="text-link language-suggestion__action" data-language-suggestion-accept></a>
+    <button class="language-suggestion__dismiss" type="button" data-language-suggestion-dismiss aria-label="忽略语言建议">
+        <svg class="icon" viewBox="0 0 20 20" data-icon="close" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#close-20"></use></svg>
+        <span class="visually-hidden">忽略语言建议</span>
+    </button>
+</div>
+    <main id="main-content" tabindex="-1" lang="zh-Hans-CN" dir="ltr" data-pagefind-body>
+<nav class="breadcrumbs shell" aria-label="面包屑导航">
+    <ol>
+        <li><a href="https://mtera.eu/zh/">构建未来，同时守住必须始终成立的原则。</a><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></li>
+        <li><a href="https://mtera.eu/zh/tiaozhan/">挑战</a><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></li>
+        <li><span aria-current="page">必须安全地不断变化的架构</span></li>
+    </ol>
+</nav>
+<header class="record-hero record-hero--challenge shell"><div><span class="eyebrow">系统挑战</span><h1 id="page-title">为下一次变革设计架构，而不只服务当前项目</h1><p class="lede">当边界、依赖关系与决策足够清晰，系统才能在不失控的前提下持续演进。MTera 将目标设计与过渡状态、运营责任和决策记录连接起来，让今天的交付为明天创造选择，而不是留下另一套僵化架构。</p><a class="button button--primary" href="/zh/lianxi/">讨论当前架构带来的不必要的困难的下一个更改。 <svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a></div><figure class="record-hero__diagram challenge-visual challenge-visual--continuous-change" data-challenge-visual="architecture_for_continuous_change" data-challenge-visual-variant="continuous-change" data-challenge-visual-signature="stable-core-modular-change-decisions" aria-hidden="true">
+    <figcaption class="challenge-visual__index">CH · 07</figcaption>
+    <span class="challenge-visual__status"><i></i><i></i><i></i></span>
+    <svg class="challenge-visual__svg" viewBox="0 0 640 420" focusable="false">
+        <g class="challenge-visual__architecture-orbit">
+            <circle class="challenge-visual__line--soft challenge-visual__dash" cx="320" cy="210" r="142"/>
+            <circle class="challenge-visual__accent" cx="320" cy="210" r="108"/>
+            <g><rect class="challenge-visual__surface" x="288" y="46" width="64" height="44" rx="5"/></g>
+            <g><rect class="challenge-visual__surface" x="472" y="178" width="70" height="52" rx="5"/></g>
+            <g><rect class="challenge-visual__surface" x="286" y="330" width="68" height="46" rx="5"/></g>
+            <g><rect class="challenge-visual__surface" x="98" y="178" width="70" height="52" rx="5"/></g>
+        </g>
+        <g class="challenge-visual__stable-core">
+            <circle class="challenge-visual__accent-soft" cx="320" cy="210" r="70"/>
+            <path class="challenge-visual__surface" d="M320 156L370 184V236L320 264L270 236V184Z"/>
+            <circle class="challenge-visual__node--accent" cx="320" cy="210" r="8"/>
+            <path class="challenge-visual__accent" d="M320 156V264M270 184L370 236M370 184L270 236"/>
+        </g>
+        <g class="challenge-visual__replaceable-module">
+            <rect class="challenge-visual__accent-soft" x="458" y="62" width="88" height="56" rx="5"/>
+            <path class="challenge-visual__accent" d="M478 90H526M514 78L526 90L514 102"/>
+        </g>
+        <path class="challenge-visual__line--soft challenge-visual__decision-history" d="M184 330C232 382 408 388 460 328"/>
+        <circle class="challenge-visual__node--accent" cx="184" cy="330" r="6"/><circle class="challenge-visual__node" cx="250" cy="370" r="6"/><circle class="challenge-visual__node" cx="390" cy="370" r="6"/><circle class="challenge-visual__node--accent" cx="460" cy="328" r="6"/>
+    </svg>
+</figure></header>
+<section class="section diagnostic-section"><div class="shell diagnostic-grid">
+<article><span>01</span><h2>您可能会看到的内容</h2><ul><li>每项变更都需要跨太多团队和系统进行协调。</li><li>组件职责不明确且共享隐藏状态。</li><li>架构图显示目标，但不显示安全转换状态。</li><li>决策是重复，因为他们的原因从未被记录。</li><li>技术债务被列出，但与业务变化脱节。</li><li>临时桥梁在没有所有权或退出标准的情况下成为永久性的。</li></ul></article><article><span>02</span><h2>为什么部分修复失败</h2><p>完善的目标图没有解释如何达到它、操作它或改变它。当数据所有权、合同和决策边界仍然不明确时，模块化标签也没有什么价值。</p></article><article><span>03</span><h2>业务后果</h2><p>变革变得更慢、风险更大，交付需要花费更多时间进行协调，并且每个程序都会增加下一个程序必须重新发现的约束。</p></article></div></section>
+<section class="section shell target-state-section"><span class="eyebrow">04 · 目标状态</span><h2>功能具有一致的边界和所有者；依赖关系和契约是可见的；过渡状态是有意运作的；决策保留上下文；债务和约束根据其对变革的影响进行优先级排序。</h2></section><section class="section shell decision-ledger"><div><span class="eyebrow">05</span><h2>方法</h2></div><ol><li><span>01</span>将架构与业务能力和变革驱动因素联系起来。</li><li><span>02</span>以有用的分辨率映射依赖性、所有权和决策。</li><li><span>03</span>定义可测试的原则、边界和契约。</li><li><span>04</span>设计具有进入、退出和恢复标准的过渡状态。</li><li><span>05</span>建立轻量级决策和架构治理。</li></ol></section><section class="section shell decision-ledger"><div><span class="eyebrow">06</span><h2>关键决策</h2></div><ol><li><span>01</span>哪些边界必须保持稳定，哪些边界应该可替换？</li><li><span>02</span>哪些地方是有意耦合的，哪些地方会阻碍变化？</li><li><span>03</span>什么证据表明过渡状态可以安全离开？</li><li><span>04</span>哪些债务最能约束下一个业务决策？</li></ol></section><section class="section shell decision-ledger"><div><span class="eyebrow">07</span><h2>可交付成果</h2></div><ol><li><span>01</span>能力和依赖架构</li><li><span>02</span>边界和契约模型</li><li><span>03</span>目标和转换状态</li><li><span>04</span>架构决策记录集</li><li><span>05</span>变革支持和债务路线图</li></ol></section><section class="section related-links"><div class="shell"><div class="section-heading"><span class="eyebrow">服务</span><h2>相关服务</h2></div><div class="link-ledger"><a href="/zh/fuwu/qiyeyewu-xitong-jiagou-yu-zhuanxing/"><span>01</span><strong>业务系统架构和转型</strong><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a><a href="/zh/fuwu/dingzhi-ruanjian-yu-pingtai-gongcheng/"><span>02</span><strong>定制软件和平台工程</strong><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a><a href="/zh/fuwu/qiye-jicheng-yu-hulian-hutong/"><span>03</span><strong>企业集成和互操作性</strong><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a></div></div></section><section class="section shell related-links"><div class="section-heading"><span class="eyebrow">洞察</span><h2>了解这一挑战的见解</h2></div><div class="link-ledger"><a href="/zh/dongjian/shenme-shi-qiyeyewu-xitong-gongcheng/"><span>02</span><strong>业务系统工程的实际含义</strong><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a></div></section><section class="section shell related-links"><div class="section-heading"><span class="eyebrow">建议的起始合作方式</span><h2>在承诺更大范围的变革前，先评估系统</h2></div><div class="link-ledger"><a href="/zh/gongzuofangshi/"><span>01</span><strong>从 系统评估 开始——一种有限的评估，通过证据、风险和建议的方向来回答一个影响重大的系统问题。</strong><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a></div></section><section class="section cta-band" data-pagefind-ignore>
+    <div class="shell cta-band__inner">
+        <div><span class="eyebrow">MTera · 联系 MTera</span><h2>讨论系统挑战</h2><p>构建未来，同时守住必须始终成立的原则。</p></div>
+        <a class="button button--primary" href="/zh/lianxi/">讨论系统挑战 <svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a>
+    </div>
+</section>    </main>
+
+<aside class="print-metadata" aria-label="打印信息" lang="zh-Hans-CN" dir="ltr">
+        <img class="print-metadata__logo" src="/static/brand/mtera-lockup-horizontal-monochrome.svg" width="248" height="64" alt="MTera">
+        <p><strong>规范 URL:</strong> <span dir="ltr">https://mtera.eu/zh/tiaozhan/zhichi-chixu-biangeng-de-jiagou/</span></p>
+        <p><strong>打印版:</strong> <time datetime="2026-08-13" data-print-date>2026-08-13</time></p>
+    </aside>
+<footer class="site-footer" lang="zh-Hans-CN" dir="ltr">
+    <div class="shell site-footer__grid">
+        <div class="site-footer__brand">
+            <span class="theme-lockup"><img class="theme-lockup__light" src="/static/brand/mtera-wordmark.svg" width="1062" height="269" alt="MTera" loading="lazy"><img class="theme-lockup__dark" src="/static/brand/mtera-wordmark-on-dark.svg" width="1062" height="269" alt="" aria-hidden="true" loading="lazy"></span>
+            <p>构建未来，同时守住必须始终成立的原则。</p>
+<p class="meta-line"><svg class="icon" viewBox="0 0 24 24" data-icon="location" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#location"></use></svg> 卢布尔雅那</p>        </div>
+        <details class="site-footer__group site-footer__nav" data-footer-disclosure open>
+            <summary class="site-footer__summary">
+                <h2>探索</h2>
+                <svg class="site-footer__chevron" viewBox="0 0 20 20" data-icon="arrow-forward" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward-20"></use></svg>
+            </summary>
+            <nav class="site-footer__links" aria-label="页脚导航">
+<a href="/zh/fangfa/">方法</a><a href="/zh/fuwu/">服务</a><a href="/zh/tiaozhan/">挑战</a><a href="/zh/gongzuofangshi/">工作方式</a><a href="/zh/dongjian/">洞察</a><a href="/zh/guanyu-mtera/">关于 MTera</a><a href="/zh/lianxi/">联系</a>            </nav>
+        </details>
+        <details class="site-footer__group site-footer__nav" data-footer-disclosure open>
+            <summary class="site-footer__summary">
+                <h2>法律信息</h2>
+                <svg class="site-footer__chevron" viewBox="0 0 20 20" data-icon="arrow-forward" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward-20"></use></svg>
+            </summary>
+            <nav class="site-footer__links" aria-label="法律信息导航">
+<a href="/zh/jingyan/">经验</a><a href="/zh/shuyubiao/">术语表</a><a href="/zh/changjian-wenti/">常见问题</a><a href="/zh/falv-shengming/">法律声明</a><a href="/zh/yinsi/">隐私</a><a href="/zh/cookie-shuoming/">Cookie</a><a href="/zh/shiyong-tiaokuan/">使用条款</a><a href="/zh/wuzhangai/">无障碍</a><a href="/zh/anquan/">安全</a><a href="/zh/wangzhan-ditu/">网站地图</a><a href="/zh/sousuo/">搜索</a>            </nav>
+        </details>
+        <details class="site-footer__group site-footer__contact" data-footer-disclosure open>
+            <summary class="site-footer__summary">
+                <h2>联系 MTera</h2>
+                <svg class="site-footer__chevron" viewBox="0 0 20 20" data-icon="arrow-forward" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward-20"></use></svg>
+            </summary>
+            <div class="site-footer__links">
+<a class="email-link" href="mailto:hello@mtera.eu"><svg class="icon" viewBox="0 0 24 24" data-icon="email" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#email"></use></svg><span dir="ltr">hello@mtera.eu</span></a>            </div>
+        </details>
+    </div>
+    <div class="shell site-footer__base">
+        <p>© 2026 MTera</p>
+        <p>专为隐私、清晰度和可访问性而设计。</p>
+    </div>
+</footer><dialog class="search-dialog" data-search-dialog data-search-copy aria-labelledby="search-dialog-title" lang="zh-Hans-CN" dir="ltr"
+    data-no-results="未找到结果"
+    data-results-label="条结果"
+    data-search-unavailable="搜索暂时不可用。"
+    data-search-minimum-one="请至少输入 1 个字符。"
+    data-search-minimum-many="请至少输入 {count} 个字符。"
+    data-search-untitled="无标题"
+    data-group-service="服务"
+    data-group-challenge="挑战"
+    data-group-method="方法"
+    data-group-article="洞察"
+    data-group-glossary="术语表"
+    data-group-about="关于 MTera"
+    data-group-page="其他页面">
+    <div class="search-dialog__surface">
+        <header>
+            <div><span class="eyebrow">MTera · 搜索</span><h2 id="search-dialog-title">搜索 MTera 知识库</h2><p>查找服务、挑战、方法、洞察和定义。</p></div>
+            <button class="tool-button" type="button" data-search-close aria-label="关闭搜索"><svg class="icon" viewBox="0 0 20 20" data-icon="close" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#close-20"></use></svg></button>
+        </header>
+        <form class="search-form" action="/zh/sousuo/" method="get" role="search" data-search-form>
+            <label for="site-search-input">搜索</label>
+            <div class="search-input"><svg class="icon" viewBox="0 0 20 20" data-icon="search" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#search-20"></use></svg><input id="site-search-input" name="q" type="search" inputmode="search" autocomplete="off" spellcheck="false" enterkeyhint="search" minlength="1" role="combobox" aria-expanded="false" aria-haspopup="listbox" aria-controls="search-results" aria-autocomplete="list" data-search-input placeholder="搜索 MTera"><button class="button button--primary" type="submit">搜索</button></div>
+        </form>
+        <div class="search-status" role="status" aria-live="polite" data-search-status></div>
+        <ol class="search-results" id="search-results" role="listbox" aria-label="搜索结果" data-search-results></ol>
+        <nav class="search-quick-actions" aria-labelledby="search-dialog-actions-title">
+            <h3 id="search-dialog-actions-title">快捷操作</h3>
+            <a href="/zh/xitong-tiaozhan-jianbao/">系统挑战简介</a>
+            <a href="/zh/fangfa/">探索 MTera 方法</a>
+            <a href="/zh/fuwu/">查看服务</a>
+            <a href="/zh/lianxi/">联系 MTera</a>
+        </nav>
+        <footer><span><kbd>⌘</kbd>/<kbd>Ctrl</kbd> + <kbd>K</kbd></span><a href="/zh/sousuo/">打开完整搜索 <svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a></footer>
+    </div>
+</dialog><button class="back-to-top" type="button" data-back-to-top hidden lang="zh-Hans-CN" dir="ltr" aria-label="返回顶部">
+    <svg class="back-to-top__progress" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21" pathLength="1"></circle></svg>
+    <svg class="icon" viewBox="0 0 24 24" data-icon="top" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#top"></use></svg>
+</button>    <script id="mtera-site-script" type="module" src="/assets/mtera.KAAJH2LX.js" data-search-index="/zh/search-index.json" data-pagefind-base="/pagefind/" data-pagefind-enabled="true" data-locale="zh-Hans" data-html-lang="zh-Hans-CN"></script>
+</body>
+</html>

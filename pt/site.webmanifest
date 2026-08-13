@@ -1,0 +1,43 @@
+{
+  "name": "MTera — Engenharia de Sistemas Empresariais",
+  "short_name": "MTera",
+  "description": "A MTera ajuda organizações a compreender, redesenhar, ligar e desenvolver os sistemas por detrás de mudanças empresariais críticas — dados, processos, aplicações, integrações, IA e decisões operacionais.",
+  "start_url": "/pt/",
+  "scope": "/pt/",
+  "display": "standalone",
+  "background_color": "#0A0B0D",
+  "theme_color": "#0A0B0D",
+  "lang": "pt-PT",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

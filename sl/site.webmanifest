@@ -1,0 +1,43 @@
+{
+  "name": "MTera — Inženiring poslovnih sistemov",
+  "short_name": "MTera",
+  "description": "MTera organizacijam pomaga razumeti, preoblikovati, povezati in inženirsko zasnovati sisteme, na katerih temeljijo ključne poslovne spremembe — na področju podatkov, procesov, aplikacij, integracij, umetne inteligence in operativnih odločitev.",
+  "start_url": "/sl/",
+  "scope": "/sl/",
+  "display": "standalone",
+  "background_color": "#0A0B0D",
+  "theme_color": "#0A0B0D",
+  "lang": "sl-SI",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

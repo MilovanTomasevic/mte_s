@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="hu-HU" dir="ltr" data-theme="light" data-theme-mode="light" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <link rel="preload" href="/assets/mtera-style.MYAWRNDW.css" as="style" fetchpriority="high">
+    <script>
+        (() => {
+            const root = document.documentElement;
+            root.classList.replace("no-js", "js");
+            let resolved = "";
+            try {
+                const saved = localStorage.getItem("mtera-theme");
+                if (saved === "light" || saved === "dark") resolved = saved;
+            } catch (_) {}
+            if (!resolved) {
+                let prefersDark = false;
+                try { prefersDark = matchMedia("(prefers-color-scheme: dark)").matches; } catch (_) {}
+                resolved = prefersDark ? "dark" : "light";
+            }
+            root.dataset.themeMode = resolved;
+            root.dataset.theme = resolved;
+            root.style.colorScheme = resolved;
+        })();
+    </script>
+    <link rel="stylesheet" href="/assets/mtera-style.MYAWRNDW.css">
+    <title>Kérdések az MTerával való együttműködésről | MTera</title>
+    <meta name="description" content="Egyértelmű válaszok az üzletirendszer-fejlesztésről, az együttműködés határairól, a megvalósításról, a titoktartásról és az ajánlatkészítés folyamatáról.">
+<meta data-pagefind-meta="title" data-pagefind-ignore="all" content="Kérdések az MTerával való együttműködésről"><meta data-pagefind-meta="description" data-pagefind-ignore="all" content="Egyértelmű válaszok az üzletirendszer-fejlesztésről, az együttműködés határairól, a megvalósításról, a titoktartásról, valamint az első kérdéstől az átgondolt ajánlatig vezető útról."><meta data-pagefind-meta="locale" data-pagefind-ignore="all" content="hu-HU"><meta data-pagefind-meta="content_type" data-pagefind-ignore="all" content="faq"><meta data-pagefind-meta="category" data-pagefind-ignore="all" content="faq"><meta data-pagefind-meta="date" data-pagefind-ignore="all" content="2026-08-11"><meta data-pagefind-meta="title[content]" content="Kérdések az MTerával való együttműködésről"><meta data-pagefind-meta="description[content]" content="Egyértelmű válaszok az üzletirendszer-fejlesztésről, az együttműködés határairól, a megvalósításról, a titoktartásról, valamint az első kérdéstől az átgondolt ajánlatig vezető útról."><meta data-pagefind-meta="locale[content]" content="hu-HU"><meta data-pagefind-meta="content_type[content]" content="faq"><meta data-pagefind-meta="category[content]" content="faq"><meta data-pagefind-meta="date[content]" content="2026-08-11"><meta data-pagefind-filter="content_type[content]" content="faq"><meta data-pagefind-filter="category[content]" content="faq">    <meta name="author" content="MTera · Milovan Tomašević">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F6F4F0" data-theme-color-light>
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0A0B0D" data-theme-color-dark>
+<link rel="canonical" href="https://mtera.eu/hu/gyakori-kerdesek/"><link rel="alternate" hreflang="en-GB" href="https://mtera.eu/faq/"><link rel="alternate" hreflang="en-US" href="https://mtera.eu/us/faq/"><link rel="alternate" hreflang="de-DE" href="https://mtera.eu/de/haeufige-fragen/"><link rel="alternate" hreflang="sl-SI" href="https://mtera.eu/sl/pogosta-vprasanja/"><link rel="alternate" hreflang="sr-Latn-RS" href="https://mtera.eu/sr/cesta-pitanja/"><link rel="alternate" hreflang="hu-HU" href="https://mtera.eu/hu/gyakori-kerdesek/"><link rel="alternate" hreflang="ar-AE" href="https://mtera.eu/ar/asilat-shaia/"><link rel="alternate" hreflang="zh-Hans-CN" href="https://mtera.eu/zh/changjian-wenti/"><link rel="alternate" hreflang="ja-JP" href="https://mtera.eu/ja/yoku-aru-shitsumon/"><link rel="alternate" hreflang="sv-SE" href="https://mtera.eu/sv/vanliga-fragor/"><link rel="alternate" hreflang="es-ES" href="https://mtera.eu/es/preguntas-frecuentes/"><link rel="alternate" hreflang="ru-RU" href="https://mtera.eu/ru/chastye-voprosy/"><link rel="alternate" hreflang="hi-IN" href="https://mtera.eu/hi/samanya-prashn/"><link rel="alternate" hreflang="pt-PT" href="https://mtera.eu/pt/perguntas-frequentes/"><link rel="alternate" hreflang="fi-FI" href="https://mtera.eu/fi/usein-kysyttya/"><link rel="alternate" hreflang="nb-NO" href="https://mtera.eu/no/ofte-stilte-sporsmal/"><link rel="alternate" hreflang="nl-NL" href="https://mtera.eu/nl/veelgestelde-vragen/"><link rel="alternate" hreflang="da-DK" href="https://mtera.eu/da/ofte-stillede-sporgsmal/"><link rel="alternate" hreflang="x-default" href="https://mtera.eu/faq/">    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MTera">
+    <meta property="og:title" content="Kérdések az MTerával való együttműködésről | MTera">
+    <meta property="og:description" content="Egyértelmű válaszok az üzletirendszer-fejlesztésről, az együttműködés határairól, a megvalósításról, a titoktartásról és az ajánlatkészítés folyamatáról.">
+<meta property="og:url" content="https://mtera.eu/hu/gyakori-kerdesek/">    <meta property="og:locale" content="hu_HU">
+<meta property="og:locale:alternate" content="en_GB"><meta property="og:locale:alternate" content="en_US"><meta property="og:locale:alternate" content="de_DE"><meta property="og:locale:alternate" content="sl_SI"><meta property="og:locale:alternate" content="sr_Latn_RS"><meta property="og:locale:alternate" content="ar_AE"><meta property="og:locale:alternate" content="zh_Hans_CN"><meta property="og:locale:alternate" content="ja_JP"><meta property="og:locale:alternate" content="sv_SE"><meta property="og:locale:alternate" content="es_ES"><meta property="og:locale:alternate" content="ru_RU"><meta property="og:locale:alternate" content="hi_IN"><meta property="og:locale:alternate" content="pt_PT"><meta property="og:locale:alternate" content="fi_FI"><meta property="og:locale:alternate" content="nb_NO"><meta property="og:locale:alternate" content="nl_NL"><meta property="og:locale:alternate" content="da_DK">    <meta property="og:image" content="https://mtera.eu/static/images/og/generated/hu/faq.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="MTera · Gyakori kérdések · Kérdések az MTerával való együttműködésről">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kérdések az MTerával való együttműködésről | MTera">
+    <meta name="twitter:description" content="Egyértelmű válaszok az üzletirendszer-fejlesztésről, az együttműködés határairól, a megvalósításról, a titoktartásról és az ajánlatkészítés folyamatáról.">
+    <meta name="twitter:image" content="https://mtera.eu/static/images/og/generated/hu/faq.png">
+    <meta name="twitter:image:alt" content="MTera · Gyakori kérdések · Kérdések az MTerával való együttműködésről">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16">
+    <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="/favicon-48x48.png" type="image/png" sizes="48x48">
+    <link rel="icon" href="/favicon-96x96.png" type="image/png" sizes="96x96">
+    <link rel="icon" href="/favicon-256x256.png" type="image/png" sizes="256x256">
+    <link rel="shortcut icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="mask-icon" href="/static/brand/pinned-tab.svg" color="#B9824E">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+    <link rel="manifest" href="/hu/site.webmanifest">
+    <meta name="mtera-font-profile" content="/static/fonts/latin.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@id": "https://mtera.eu/hu/gyakori-kerdesek/#webpage", "@type": "WebPage", "about": {"@id": "https://mtera.eu/#organization"}, "breadcrumb": {"@id": "https://mtera.eu/hu/gyakori-kerdesek/#breadcrumb"}, "dateModified": "2026-08-11", "description": "Egy\u00e9rtelm\u0171 v\u00e1laszok az \u00fczletirendszer-fejleszt\u00e9sr\u0151l, az egy\u00fcttm\u0171k\u00f6d\u00e9s hat\u00e1rair\u00f3l, a megval\u00f3s\u00edt\u00e1sr\u00f3l, a titoktart\u00e1sr\u00f3l \u00e9s az aj\u00e1nlatk\u00e9sz\u00edt\u00e9s folyamat\u00e1r\u00f3l.", "inLanguage": "hu-HU", "isPartOf": {"@id": "https://mtera.eu/#website"}, "mainEntity": {"@id": "https://mtera.eu/hu/gyakori-kerdesek/#faq"}, "name": "K\u00e9rd\u00e9sek az MTer\u00e1val val\u00f3 egy\u00fcttm\u0171k\u00f6d\u00e9sr\u0151l | MTera", "url": "https://mtera.eu/hu/gyakori-kerdesek/"}, {"@id": "https://mtera.eu/#website", "@type": "WebSite", "inLanguage": ["en-GB", "en-US", "de-DE", "sl-SI", "sr-Latn-RS", "hu-HU", "ar-AE", "zh-Hans-CN", "ja-JP", "sv-SE", "es-ES", "ru-RU", "hi-IN", "pt-PT", "fi-FI", "nb-NO", "nl-NL", "da-DK"], "name": "MTera", "publisher": {"@id": "https://mtera.eu/#organization"}, "url": "https://mtera.eu/"}, {"@id": "https://mtera.eu/#organization", "@type": "Organization", "description": "Az MTera seg\u00edt a szervezeteknek meg\u00e9rteni, \u00fajratervezni, \u00f6sszekapcsolni \u00e9s megval\u00f3s\u00edtani a meghat\u00e1roz\u00f3 \u00fczleti v\u00e1ltoz\u00e1sok m\u00f6g\u00f6tti rendszereket \u2014 az adatokt\u00f3l \u00e9s folyamatokt\u00f3l az alkalmaz\u00e1sokon, integr\u00e1ci\u00f3kon \u00e9s mesters\u00e9ges intelligenci\u00e1n \u00e1t az operat\u00edv d\u00f6nt\u00e9sekig.", "email": "hello@mtera.eu", "founder": {"@id": "https://mtera.eu/about/milovan-tomasevic/#person"}, "logo": {"@type": "ImageObject", "height": 512, "url": "https://mtera.eu/static/brand/mtera-avatar-512.png", "width": 512}, "name": "MTera", "url": "https://mtera.eu/"}, {"@id": "https://mtera.eu/hu/gyakori-kerdesek/#breadcrumb", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://mtera.eu/hu/", "name": "\u00c9p\u00edtse meg a k\u00f6vetkez\u0151t \u00fagy, hogy k\u00f6zben meg\u0151rzi mindazt, aminek igaznak kell maradnia.", "position": 1}, {"@type": "ListItem", "item": "https://mtera.eu/hu/gyakori-kerdesek/", "name": "K\u00e9rd\u00e9sek az MTer\u00e1val val\u00f3 egy\u00fcttm\u0171k\u00f6d\u00e9sr\u0151l", "position": 2}]}, {"@id": "https://mtera.eu/hu/gyakori-kerdesek/#faq", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Egy \u00fczleti eredm\u00e9ny m\u00f6g\u00f6tt \u00e1ll\u00f3, egym\u00e1ssal \u00f6sszef\u00fcgg\u0151 emberek, d\u00f6nt\u00e9sek, folyamatok, adatok, alkalmaz\u00e1sok, integr\u00e1ci\u00f3k \u00e9s kontrollok meg\u00e9rt\u00e9s\u00e9re \u00e9s megv\u00e1ltoztat\u00e1s\u00e1ra ir\u00e1nyul\u00f3 fegyelmezett munka. Egyetlen rendszerszint\u0171 n\u00e9zetben tartja \u00f6ssze az \u00fczleti indokot, az architekt\u00far\u00e1t \u00e9s a gyakorlati megval\u00f3s\u00edt\u00e1st."}, "name": "Mit jelent az \u00fczletirendszer-fejleszt\u00e9s?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "A k\u00fcl\u00f6nbs\u00e9g nem abb\u00f3l az \u00e1ll\u00edt\u00e1sb\u00f3l fakad, hogy minden m\u00e1s tan\u00e1csad\u00e1s egyforma. Az MTera az \u00fczleti rendszerb\u0151l indul ki, \u00e9s a megtervezett \u00fatvonal\u00e9rt is felel\u0151ss\u00e9get v\u00e1llal ahelyett, hogy aj\u00e1nl\u00e1sokn\u00e1l meg\u00e1llna vagy egy el\u0151re kiv\u00e1lasztott term\u00e9kb\u0151l indulna ki."}, "name": "Miben k\u00fcl\u00f6nb\u00f6zik ez a hagyom\u00e1nyos informatikai tan\u00e1csad\u00e1st\u00f3l?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Mindkett\u0151 lehets\u00e9ges. A munka lez\u00e1rulhat egy k\u00f6r\u00fclhat\u00e1rolt felm\u00e9r\u00e9ssel vagy architektur\u00e1lis \u00fctemtervvel, folytat\u00f3dhat gyakorlati m\u00e9rn\u00f6ki \u00e9s integr\u00e1ci\u00f3s munk\u00e1val, illetve meghat\u00e1rozott m\u0171szaki vezet\u0151i szerepben t\u00e1mogathat egy megl\u00e9v\u0151 megval\u00f3s\u00edt\u00f3 csapatot."}, "name": "Az MTera csak strat\u00e9gi\u00e1val foglalkozik, vagy a megval\u00f3s\u00edt\u00e1sban is r\u00e9szt vesz?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "A hangs\u00faly az adatokra, munkafolyamatokra, v\u00e1llalati alkalmaz\u00e1sokra, partnerinterf\u00e9szekre, MI-vel t\u00e1mogatott d\u00f6nt\u00e9sekre, automatiz\u00e1l\u00e1sra \u00e9s egyedi szoftverekre \u00e9p\u00fcl\u0151 \u00f6sszetett \u00fczleti rendszereken van. Az alkalmass\u00e1got a meghozand\u00f3 d\u00f6nt\u00e9s \u00e9s a rendszerkontextus hat\u00e1rozza meg, nem egy r\u00f6gz\u00edtett technol\u00f3gialista."}, "name": "Milyen rendszerekkel dolgozik az MTera?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Az MTera Ljubljan\u00e1ban m\u0171k\u00f6dik, \u00e9s eur\u00f3pai, illetve nemzetk\u00f6zi egy\u00fcttm\u0171k\u00f6d\u00e9sre k\u00e9sz\u00fclt. Minden aj\u00e1nlat k\u00fcl\u00f6n r\u00f6gz\u00edti a munkav\u00e9gz\u00e9s hely\u00e9t, nyelv\u00e9t, id\u0151z\u00f3n\u00e1j\u00e1t, jogi \u00e9s megval\u00f3s\u00edt\u00e1si korl\u00e1tait; \u00e1ltal\u00e1nos ter\u00fcleti lefedetts\u00e9get nem \u00e1ll\u00edtunk."}, "name": "Az MTera nemzetk\u00f6zi megb\u00edz\u00e1sokat is v\u00e1llal?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "A meghozand\u00f3 d\u00f6nt\u00e9sb\u0151l vagy k\u00edv\u00e1nt eredm\u00e9nyb\u0151l indulunk ki, majd tiszt\u00e1zzuk, mi v\u00e1ltozik, minek kell igaznak maradnia, \u00e9s milyen korl\u00e1tok ismertek m\u00e1r. Az els\u0151 l\u00e9p\u00e9s rendszerint egy k\u00f6r\u00fclhat\u00e1rolt k\u00e9rd\u00e9s keretez\u00e9se, valamint a sz\u00fcks\u00e9ges bizony\u00edt\u00e9kok \u00e9s r\u00e9sztvev\u0151k meghat\u00e1roz\u00e1sa."}, "name": "Hogyan kezd\u0151dik az egy\u00fcttm\u0171k\u00f6d\u00e9s?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "A k\u00e9rd\u00e9s \u00e9s a rendelkez\u00e9sre \u00e1ll\u00f3 bizony\u00edt\u00e9kok ismerete n\u00e9lk\u00fcl nem adhat\u00f3 felel\u0151sen szabv\u00e1nyos id\u0151tartam. Az aj\u00e1nlat a rendszerek, \u00e9rintettek, munkaanyagok, f\u00fcgg\u0151s\u00e9gek \u00e9s d\u00f6nt\u00e9si hat\u00e1rid\u0151k meg\u00e9rt\u00e9se ut\u00e1n hat\u00e1rozza meg az id\u0151keretet."}, "name": "Mennyi ideig tart a rendszer\u00e9rt\u00e9kel\u00e9s?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Csak az egyeztetett c\u00e9lhoz sz\u00fcks\u00e9ges inform\u00e1ci\u00f3kat k\u00e9rj\u00fck. A hozz\u00e1f\u00e9r\u00e9si, kezel\u00e9si, meg\u0151rz\u00e9si \u00e9s k\u00f6zz\u00e9t\u00e9teli jogosults\u00e1gokat az egy\u00fcttm\u0171k\u00f6d\u00e9si meg\u00e1llapod\u00e1sban kell r\u00f6gz\u00edteni. \u00dcgyf\u00e9lnevet, meg\u00e1llap\u00edt\u00e1st vagy eredm\u00e9nyt kifejezett j\u00f3v\u00e1hagy\u00e1s \u00e9s \u00e9rv\u00e9nyes \u00e1ll\u00edt\u00e1snyilv\u00e1ntart\u00e1s n\u00e9lk\u00fcl nem tesz\u00fcnk k\u00f6zz\u00e9."}, "name": "Hogyan v\u00e9dik a titoktart\u00e1st?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Nem egy term\u00e9k az alap\u00e9rtelmezett v\u00e1lasz. Az eszk\u00f6z- \u00e9s besz\u00e1ll\u00edt\u00f3v\u00e1laszt\u00e1st az \u00fczleti ig\u00e9ny, az architekt\u00fara, a korl\u00e1tok \u00e9s az \u00fczemeltet\u00e9si felel\u0151ss\u00e9g hat\u00e1rozza meg. B\u00e1rmely j\u00f6v\u0151beli kereskedelmi partners\u00e9get egy\u00e9rtelm\u0171en nyilv\u00e1noss\u00e1gra kell hozni."}, "name": "Az MTera \u00e9rt\u00e9kes\u00edt vagy k\u00e9pvisel meghat\u00e1rozott technol\u00f3giai term\u00e9ket?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Az aj\u00e1nlat a k\u00f6r\u00fclhat\u00e1rolt eredm\u00e9nyhez, a terjedelemhez, a rendelkez\u00e9sre \u00e1ll\u00f3 bizony\u00edt\u00e9kokhoz, a felel\u0151ss\u00e9gekhez, a megval\u00f3s\u00edt\u00e1si kock\u00e1zathoz \u00e9s a k\u00edv\u00e1nt eredm\u00e9nyekhez igazodik. R\u00f6gz\u00edtett nyilv\u00e1nos \u00e1r addig nem jelenik meg, am\u00edg a kereskedelmi modell nincs j\u00f3v\u00e1hagyva; a rendszerek terjedelme egy\u00e9bk\u00e9nt is l\u00e9nyegesen elt\u00e9rhet."}, "name": "Hogyan alakul egy javaslat?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Igen. Az MTera v\u00e9gezhet f\u00fcggetlen felm\u00e9r\u00e9st, k\u00f6z\u00f6s architekt\u00far\u00e1t \u00e9s szerz\u0151d\u00e9seket hat\u00e1rozhat meg, megtervezhet vagy megval\u00f3s\u00edthat kiv\u00e1lasztott komponenseket, illetve d\u00f6nt\u00e9st\u00e1mogat\u00e1st ny\u00fajthat a megl\u00e9v\u0151 csapatok mellett. A felel\u0151ss\u00e9geket, egy\u00fcttm\u0171k\u00f6d\u00e9si pontokat \u00e9s tud\u00e1s\u00e1tad\u00e1st a kezdetekt\u0151l egy\u00e9rtelm\u0171v\u00e9 kell tenni."}, "name": "Tud az MTera megl\u00e9v\u0151 csapatokkal \u00e9s besz\u00e1ll\u00edt\u00f3kkal egy\u00fctt dolgozni?"}]}]}</script></head>
+<body class="page page--faq page-kind--faq">
+    <a class="skip-link" href="#main-content" lang="hu-HU" dir="ltr">Ugrás a fő tartalomra</a>
+    <div class="header-marker" data-header-marker aria-hidden="true"></div>
+<header class="site-header" data-site-header lang="hu-HU" dir="ltr">
+    <div class="site-header__inner shell">
+        <a class="brand" href="/hu/" aria-label="MTera — Kezdőlap">
+            <span class="theme-lockup" aria-hidden="true">
+                <img class="theme-lockup__light" src="/static/brand/mtera-wordmark.svg" width="1062" height="269" alt="">
+                <img class="theme-lockup__dark" src="/static/brand/mtera-wordmark-on-dark.svg" width="1062" height="269" alt="">
+            </span>
+        </a>
+
+        <nav class="desktop-nav" aria-label="Fő navigáció">
+            <ul class="desktop-nav__list">
+                    <li>
+                        <a href="/hu/modszer/">Módszer</a>
+                    </li>
+                    <li>
+                        <details class="desktop-nav__group" data-nav-group>
+                            <summary>Szolgáltatások<span aria-hidden="true"></span></summary>
+                            <div class="desktop-nav__mega">
+                                <a class="desktop-nav__overview" href="/hu/szolgaltatasok/">
+                                    <small>Szolgáltatások</small>
+                                    <strong>Szolgáltatások</strong>
+                                    <svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg>
+                                </a>
+                                <ul class="desktop-nav__deep-list">
+                                    <li><a href="/hu/szolgaltatasok/uzleti-rendszerarchitektura-es-atalakitas/"><span>Üzleti rendszerek architektúrája és átalakítása</span></a></li>
+                                    <li><a href="/hu/szolgaltatasok/adatstrategia-adatiranyitas-es-adatmernokseg/"><span>Adatstratégia, adatirányítás és mérnöki megvalósítás</span></a></li>
+                                    <li><a href="/hu/szolgaltatasok/vallalati-integracio-es-interoperabilitas/"><span>Vállalati integráció és interoperabilitás</span></a></li>
+                                    <li><a href="/hu/szolgaltatasok/mi-felkeszultseg-integracio-es-felelos-megvalositas/"><span>MI-felkészültség, integráció és felelős megvalósítás</span></a></li>
+                                    <li><a href="/hu/szolgaltatasok/folyamatautomatizalas-es-mukodesoptimalizalas/"><span>Folyamatautomatizálás és működésoptimalizálás</span></a></li>
+                                    <li><a href="/hu/szolgaltatasok/egyedi-szoftverek-es-platformfejlesztes/"><span>Egyedi szoftver- és platformfejlesztés</span></a></li>
+                                </ul>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <details class="desktop-nav__group" data-nav-group>
+                            <summary>Kihívások<span aria-hidden="true"></span></summary>
+                            <div class="desktop-nav__mega">
+                                <a class="desktop-nav__overview" href="/hu/kihivasok/">
+                                    <small>Kihívások</small>
+                                    <strong>Kihívások</strong>
+                                    <svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg>
+                                </a>
+                                <ul class="desktop-nav__deep-list">
+                                    <li><a href="/hu/kihivasok/szetszakadt-rendszerek-es-toredezett-adatok/"><svg class="icon" viewBox="0 0 24 24" data-icon="system" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#system"></use></svg><span>Szétkapcsolt rendszerek és töredezett adatok</span></a></li>
+                                    <li><a href="/hu/kihivasok/orokolt-rendszerek-korszerusitese-fennakadas-nelkul/"><svg class="icon" viewBox="0 0 24 24" data-icon="transformation" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#transformation"></use></svg><span>Örökölt rendszerek korszerűsítése fennakadás nélkül</span></a></li>
+                                    <li><a href="/hu/kihivasok/megbizhato-adatok-dontesekhez-es-mi-hez/"><svg class="icon" viewBox="0 0 24 24" data-icon="data" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#data"></use></svg><span>Megbízható adatok döntésekhez és mesterséges intelligenciához</span></a></li>
+                                    <li><a href="/hu/kihivasok/osszetett-partnerintegraciok/"><svg class="icon" viewBox="0 0 24 24" data-icon="integration" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#integration"></use></svg><span>Összetett partner- és vállalati integráció</span></a></li>
+                                    <li><a href="/hu/kihivasok/mi-pilotbol-uzemi-kepesseg/"><svg class="icon" viewBox="0 0 24 24" data-icon="ai" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#ai"></use></svg><span>MI-pilotból üzemi képesség</span></a></li>
+                                    <li><a href="/hu/kihivasok/kezi-munkafolyamatok-es-mukodesi-surlodas/"><svg class="icon" viewBox="0 0 24 24" data-icon="automation" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#automation"></use></svg><span>Törékeny kézi munkafolyamatok és rejtett operatív munka</span></a></li>
+                                    <li><a href="/hu/kihivasok/architektura-a-folyamatos-valtozashoz/"><svg class="icon" viewBox="0 0 24 24" data-icon="architecture" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#architecture"></use></svg><span>Biztonságosan továbbfejleszthető architektúra</span></a></li>
+                                    <li><a href="/hu/rendszerkihivas-osszefoglalo/"><svg class="icon" viewBox="0 0 24 24" data-icon="decision" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#decision"></use></svg><span>Rendszerkihívás – előkészítő kérdéssor</span></a></li>
+                                </ul>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <a href="/hu/munkamod/">Munkamód</a>
+                    </li>
+                    <li>
+                        <details class="desktop-nav__group" data-nav-group>
+                            <summary>Elemzések<span aria-hidden="true"></span></summary>
+                            <div class="desktop-nav__mega">
+                                <a class="desktop-nav__overview" href="/hu/elemzesek/">
+                                    <small>Elemzések</small>
+                                    <strong>Elemzések</strong>
+                                    <svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg>
+                                </a>
+                                <ul class="desktop-nav__deep-list">
+                                    <li><a href="/hu/elemzesek/mit-is-jelent-valojaban-az-uzleti-rendszerek-tervezese/"><span>Mit jelent valójában az üzletirendszer-fejlesztés?</span></a></li>
+                                    <li><a href="/hu/elemzesek/hogyan-lehet-modernizalni-a-hagyomanyos-rendszereket-anelkul-hogy-elveszitene-az-uzleti-folytonossagot/"><span>Hogyan korszerűsíthetők az örökölt rendszerek az üzletmenet folytonosságának elvesztése nélkül?</span></a></li>
+                                    <li><a href="/hu/elemzesek/miert-nem-sikerul-a-vallalati-integracio-a-szervezetek-kozotti-hatarokon/"><span>Miért vallanak kudarcot a vállalati integrációk a szervezetek határán?</span></a></li>
+                                    <li><a href="/hu/elemzesek/adatalapok-a-mi-uzemi-bevezetese-elott/"><span>Az éles MI-használat előtt szükséges adatalapok</span></a></li>
+                                    <li><a href="/hu/fogalomtar/"><span>Üzletirendszer-fejlesztési fogalomtár</span></a></li>
+                                </ul>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <details class="desktop-nav__group" data-nav-group>
+                            <summary>Az MTera-ról<span aria-hidden="true"></span></summary>
+                            <div class="desktop-nav__mega">
+                                <a class="desktop-nav__overview" href="/hu/az-mtera-rol/">
+                                    <small>Az MTera-ról</small>
+                                    <strong>Az MTera-ról</strong>
+                                    <svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg>
+                                </a>
+                                <ul class="desktop-nav__deep-list">
+                                    <li><a href="/hu/az-mtera-rol/milovan-tomasevic/"><span>Milovan Tomašević</span></a></li>
+                                    <li><a href="/hu/tapasztalat/"><span>Tapasztalat és kiválasztott problémaminták</span></a></li>
+                                    <li><a href="/hu/gyakori-kerdesek/" aria-current="page"><span>Kérdések az MTerával való együttműködésről</span></a></li>
+                                </ul>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <a href="/hu/kapcsolat/">Kapcsolat</a>
+                    </li>
+            </ul>
+        </nav>
+
+        <div class="site-header__tools">
+            <a class="tool-button" href="/hu/kereses/" data-search-open aria-label="Keresés megnyitása">
+                <svg class="icon" viewBox="0 0 20 20" data-icon="search" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#search-20"></use></svg><span class="tool-button__label">Keresés megnyitása</span>
+            </a>
+            <div class="header-language"><details class="language-picker" data-language-picker>
+    <summary class="tool-button" aria-label="Nyelv módosítása: Magyar"><span class="language-picker__flag" aria-hidden="true">🇭🇺</span></summary>
+    <div class="popover language-menu">
+        <label for="language-filter-header">Nyelv módosítása</label>
+        <div class="language-filter"><svg class="icon" viewBox="0 0 20 20" data-icon="search" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#search-20"></use></svg><input id="language-filter-header" type="search" inputmode="search" autocomplete="off" data-language-filter placeholder="Nyelvek keresése"></div>
+        <ul data-language-list>
+            <li data-language-item data-language-search="english (uk)  en">
+                <a href="/faq/" hreflang="en-GB" lang="en-GB" data-locale-code="en" data-locale-label="English (UK)" data-locale-flag="🇬🇧" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">en</span>
+                    <span><strong>English (UK)</strong><small>English (UK)</small><small class="translation-state">Vázlat</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="english (us)  en-us">
+                <a href="/us/faq/" hreflang="en-US" lang="en-US" data-locale-code="en-US" data-locale-label="English (US)" data-locale-flag="🇺🇸" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">en-US</span>
+                    <span><strong>English (US)</strong><small>English (US)</small><small class="translation-state">Ellenőrzésre vár</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="deutsch  de">
+                <a href="/de/haeufige-fragen/" hreflang="de-DE" lang="de-DE" data-locale-code="de" data-locale-label="Deutsch" data-locale-flag="🇩🇪" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">de</span>
+                    <span><strong>Deutsch</strong><small>Deutsch</small><small class="translation-state">Ellenőrzésre vár</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="slovenščina  sl">
+                <a href="/sl/pogosta-vprasanja/" hreflang="sl-SI" lang="sl-SI" data-locale-code="sl" data-locale-label="Slovenščina" data-locale-flag="🇸🇮" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">sl</span>
+                    <span><strong>Slovenščina</strong><small>Slovenščina</small><small class="translation-state">Ellenőrzésre vár</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="srpski  sr-latn">
+                <a href="/sr/cesta-pitanja/" hreflang="sr-Latn-RS" lang="sr-Latn-RS" data-locale-code="sr-Latn" data-locale-label="Srpski" data-locale-flag="🇷🇸" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">sr-Latn</span>
+                    <span><strong>Srpski</strong><small>Srpski</small><small class="translation-state">Ellenőrzésre vár</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="magyar  hu">
+                <a href="/hu/gyakori-kerdesek/" hreflang="hu-HU" lang="hu-HU" data-locale-code="hu" data-locale-label="Magyar" data-locale-flag="🇭🇺" data-locale-direction="ltr" aria-current="page">
+                    <span class="language-code" aria-hidden="true">hu</span>
+                    <span><strong>Magyar</strong><small>Magyar</small><small class="translation-state">Ellenőrzésre vár</small></span>
+<svg class="icon" viewBox="0 0 24 24" data-icon="check" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#check"></use></svg>                </a>
+            </li>
+            <li data-language-item data-language-search="العربية  ar">
+                <a href="/ar/asilat-shaia/" hreflang="ar-AE" lang="ar-AE" data-locale-code="ar" data-locale-label="العربية" data-locale-flag="🇦🇪" data-locale-direction="rtl">
+                    <span class="language-code" aria-hidden="true">ar</span>
+                    <span><strong>العربية</strong><small>العربية</small><small class="translation-state">Ellenőrzésre vár</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="简体中文  zh-hans">
+                <a href="/zh/changjian-wenti/" hreflang="zh-Hans-CN" lang="zh-Hans-CN" data-locale-code="zh-Hans" data-locale-label="简体中文" data-locale-flag="🇨🇳" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">zh-Hans</span>
+                    <span><strong>简体中文</strong><small>简体中文</small><small class="translation-state">Ellenőrzésre vár</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="日本語  ja">
+                <a href="/ja/yoku-aru-shitsumon/" hreflang="ja-JP" lang="ja-JP" data-locale-code="ja" data-locale-label="日本語" data-locale-flag="🇯🇵" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">ja</span>
+                    <span><strong>日本語</strong><small>日本語</small><small class="translation-state">Ellenőrzésre vár</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="svenska  sv">
+                <a href="/sv/vanliga-fragor/" hreflang="sv-SE" lang="sv-SE" data-locale-code="sv" data-locale-label="Svenska" data-locale-flag="🇸🇪" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">sv</span>
+                    <span><strong>Svenska</strong><small>Svenska</small><small class="translation-state">Ellenőrzésre vár</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="español  es">
+                <a href="/es/preguntas-frecuentes/" hreflang="es-ES" lang="es-ES" data-locale-code="es" data-locale-label="Español" data-locale-flag="🇪🇸" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">es</span>
+                    <span><strong>Español</strong><small>Español</small><small class="translation-state">Ellenőrzésre vár</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="русский  ru">
+                <a href="/ru/chastye-voprosy/" hreflang="ru-RU" lang="ru-RU" data-locale-code="ru" data-locale-label="Русский" data-locale-flag="🇷🇺" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">ru</span>
+                    <span><strong>Русский</strong><small>Русский</small><small class="translation-state">Ellenőrzésre vár</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="हिन्दी  hi">
+                <a href="/hi/samanya-prashn/" hreflang="hi-IN" lang="hi-IN" data-locale-code="hi" data-locale-label="हिन्दी" data-locale-flag="🇮🇳" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">hi</span>
+                    <span><strong>हिन्दी</strong><small>हिन्दी</small><small class="translation-state">Ellenőrzésre vár</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="português  pt-pt">
+                <a href="/pt/perguntas-frequentes/" hreflang="pt-PT" lang="pt-PT" data-locale-code="pt-PT" data-locale-label="Português" data-locale-flag="🇵🇹" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">pt-PT</span>
+                    <span><strong>Português</strong><small>Português</small><small class="translation-state">Ellenőrzésre vár</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="suomi  fi-fi">
+                <a href="/fi/usein-kysyttya/" hreflang="fi-FI" lang="fi-FI" data-locale-code="fi-FI" data-locale-label="Suomi" data-locale-flag="🇫🇮" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">fi-FI</span>
+                    <span><strong>Suomi</strong><small>Suomi</small><small class="translation-state">Ellenőrzésre vár</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="norsk  nb-no">
+                <a href="/no/ofte-stilte-sporsmal/" hreflang="nb-NO" lang="nb-NO" data-locale-code="nb-NO" data-locale-label="Norsk" data-locale-flag="🇳🇴" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">nb-NO</span>
+                    <span><strong>Norsk</strong><small>Norsk</small><small class="translation-state">Ellenőrzésre vár</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="nederlands  nl-nl">
+                <a href="/nl/veelgestelde-vragen/" hreflang="nl-NL" lang="nl-NL" data-locale-code="nl-NL" data-locale-label="Nederlands" data-locale-flag="🇳🇱" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">nl-NL</span>
+                    <span><strong>Nederlands</strong><small>Nederlands</small><small class="translation-state">Ellenőrzésre vár</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="dansk  da-dk">
+                <a href="/da/ofte-stillede-sporgsmal/" hreflang="da-DK" lang="da-DK" data-locale-code="da-DK" data-locale-label="Dansk" data-locale-flag="🇩🇰" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">da-DK</span>
+                    <span><strong>Dansk</strong><small>Dansk</small><small class="translation-state">Ellenőrzésre vár</small></span>
+                </a>
+            </li>
+        </ul>
+        <p class="language-empty" data-language-empty hidden>Nincs egyező nyelv</p>
+    </div>
+</details></div>
+            <button class="tool-button theme-toggle" type="button" data-theme-toggle data-change-label="Téma módosítása" data-light-label="Világos téma" data-dark-label="Sötét téma" aria-label="Téma módosítása: Sötét téma" title="Téma módosítása: Sötét téma">
+                <span class="theme-toggle__icon theme-toggle__icon--to-dark"><svg class="icon" viewBox="0 0 20 20" data-icon="dark" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#dark-20"></use></svg></span>
+                <span class="theme-toggle__icon theme-toggle__icon--to-light"><svg class="icon" viewBox="0 0 20 20" data-icon="light" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#light-20"></use></svg></span>
+                <span class="visually-hidden" data-theme-current>Világos téma</span>
+            </button>
+            <a class="button button--primary header-cta desktop-tools" href="/hu/kapcsolat/">Rendszerkihívás megbeszélése</a>
+
+            <details class="mobile-navigation" data-mobile-nav>
+                <summary class="tool-button menu-trigger" data-menu-toggle aria-label="Menü megnyitása" data-open-label="Menü megnyitása" data-close-label="Menü bezárása"><span class="menu-open"><svg class="icon" viewBox="0 0 20 20" data-icon="menu" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#menu-20"></use></svg></span><span class="menu-close"><svg class="icon" viewBox="0 0 20 20" data-icon="close" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#close-20"></use></svg></span></summary>
+                <div class="mobile-navigation__panel" data-mobile-panel>
+                    <nav aria-label="Fő navigáció">
+                        <ul class="mobile-navigation__primary">
+                            <li>
+                                <a href="/hu/modszer/"><span>01</span>Módszer</a>
+                            </li>
+                            <li>
+                                <details class="mobile-navigation__group">
+                                    <summary><span>02</span><strong>Szolgáltatások</strong><i aria-hidden="true"></i></summary>
+                                    <ul>
+                                        <li><a href="/hu/szolgaltatasok/">Szolgáltatások</a></li>
+                                        <li><a href="/hu/szolgaltatasok/uzleti-rendszerarchitektura-es-atalakitas/"><span>Üzleti rendszerek architektúrája és átalakítása</span></a></li>
+                                        <li><a href="/hu/szolgaltatasok/adatstrategia-adatiranyitas-es-adatmernokseg/"><span>Adatstratégia, adatirányítás és mérnöki megvalósítás</span></a></li>
+                                        <li><a href="/hu/szolgaltatasok/vallalati-integracio-es-interoperabilitas/"><span>Vállalati integráció és interoperabilitás</span></a></li>
+                                        <li><a href="/hu/szolgaltatasok/mi-felkeszultseg-integracio-es-felelos-megvalositas/"><span>MI-felkészültség, integráció és felelős megvalósítás</span></a></li>
+                                        <li><a href="/hu/szolgaltatasok/folyamatautomatizalas-es-mukodesoptimalizalas/"><span>Folyamatautomatizálás és működésoptimalizálás</span></a></li>
+                                        <li><a href="/hu/szolgaltatasok/egyedi-szoftverek-es-platformfejlesztes/"><span>Egyedi szoftver- és platformfejlesztés</span></a></li>
+                                    </ul>
+                                </details>
+                            </li>
+                            <li>
+                                <details class="mobile-navigation__group">
+                                    <summary><span>03</span><strong>Kihívások</strong><i aria-hidden="true"></i></summary>
+                                    <ul>
+                                        <li><a href="/hu/kihivasok/">Kihívások</a></li>
+                                        <li><a href="/hu/kihivasok/szetszakadt-rendszerek-es-toredezett-adatok/"><svg class="icon" viewBox="0 0 24 24" data-icon="system" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#system"></use></svg><span>Szétkapcsolt rendszerek és töredezett adatok</span></a></li>
+                                        <li><a href="/hu/kihivasok/orokolt-rendszerek-korszerusitese-fennakadas-nelkul/"><svg class="icon" viewBox="0 0 24 24" data-icon="transformation" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#transformation"></use></svg><span>Örökölt rendszerek korszerűsítése fennakadás nélkül</span></a></li>
+                                        <li><a href="/hu/kihivasok/megbizhato-adatok-dontesekhez-es-mi-hez/"><svg class="icon" viewBox="0 0 24 24" data-icon="data" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#data"></use></svg><span>Megbízható adatok döntésekhez és mesterséges intelligenciához</span></a></li>
+                                        <li><a href="/hu/kihivasok/osszetett-partnerintegraciok/"><svg class="icon" viewBox="0 0 24 24" data-icon="integration" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#integration"></use></svg><span>Összetett partner- és vállalati integráció</span></a></li>
+                                        <li><a href="/hu/kihivasok/mi-pilotbol-uzemi-kepesseg/"><svg class="icon" viewBox="0 0 24 24" data-icon="ai" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#ai"></use></svg><span>MI-pilotból üzemi képesség</span></a></li>
+                                        <li><a href="/hu/kihivasok/kezi-munkafolyamatok-es-mukodesi-surlodas/"><svg class="icon" viewBox="0 0 24 24" data-icon="automation" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#automation"></use></svg><span>Törékeny kézi munkafolyamatok és rejtett operatív munka</span></a></li>
+                                        <li><a href="/hu/kihivasok/architektura-a-folyamatos-valtozashoz/"><svg class="icon" viewBox="0 0 24 24" data-icon="architecture" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#architecture"></use></svg><span>Biztonságosan továbbfejleszthető architektúra</span></a></li>
+                                        <li><a href="/hu/rendszerkihivas-osszefoglalo/"><svg class="icon" viewBox="0 0 24 24" data-icon="decision" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#decision"></use></svg><span>Rendszerkihívás – előkészítő kérdéssor</span></a></li>
+                                    </ul>
+                                </details>
+                            </li>
+                            <li>
+                                <a href="/hu/munkamod/"><span>04</span>Munkamód</a>
+                            </li>
+                            <li>
+                                <details class="mobile-navigation__group">
+                                    <summary><span>05</span><strong>Elemzések</strong><i aria-hidden="true"></i></summary>
+                                    <ul>
+                                        <li><a href="/hu/elemzesek/">Elemzések</a></li>
+                                        <li><a href="/hu/elemzesek/mit-is-jelent-valojaban-az-uzleti-rendszerek-tervezese/"><span>Mit jelent valójában az üzletirendszer-fejlesztés?</span></a></li>
+                                        <li><a href="/hu/elemzesek/hogyan-lehet-modernizalni-a-hagyomanyos-rendszereket-anelkul-hogy-elveszitene-az-uzleti-folytonossagot/"><span>Hogyan korszerűsíthetők az örökölt rendszerek az üzletmenet folytonosságának elvesztése nélkül?</span></a></li>
+                                        <li><a href="/hu/elemzesek/miert-nem-sikerul-a-vallalati-integracio-a-szervezetek-kozotti-hatarokon/"><span>Miért vallanak kudarcot a vállalati integrációk a szervezetek határán?</span></a></li>
+                                        <li><a href="/hu/elemzesek/adatalapok-a-mi-uzemi-bevezetese-elott/"><span>Az éles MI-használat előtt szükséges adatalapok</span></a></li>
+                                        <li><a href="/hu/fogalomtar/"><span>Üzletirendszer-fejlesztési fogalomtár</span></a></li>
+                                    </ul>
+                                </details>
+                            </li>
+                            <li>
+                                <details class="mobile-navigation__group">
+                                    <summary><span>06</span><strong>Az MTera-ról</strong><i aria-hidden="true"></i></summary>
+                                    <ul>
+                                        <li><a href="/hu/az-mtera-rol/">Az MTera-ról</a></li>
+                                        <li><a href="/hu/az-mtera-rol/milovan-tomasevic/"><span>Milovan Tomašević</span></a></li>
+                                        <li><a href="/hu/tapasztalat/"><span>Tapasztalat és kiválasztott problémaminták</span></a></li>
+                                        <li><a href="/hu/gyakori-kerdesek/" aria-current="page"><span>Kérdések az MTerával való együttműködésről</span></a></li>
+                                    </ul>
+                                </details>
+                            </li>
+                            <li>
+                                <a href="/hu/kapcsolat/"><span>07</span>Kapcsolat</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <a class="button button--primary" href="/hu/kapcsolat/">Rendszerkihívás megbeszélése <svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a>
+                </div>
+            </details>
+        </div>
+    </div>
+</header><div
+    class="language-suggestion"
+    role="region"
+    aria-labelledby="language-suggestion-title"
+    aria-live="polite"
+    lang="hu-HU"
+    dir="ltr"
+    data-language-suggestion
+    data-current-locale="hu"
+    data-message-template="A böngésző előnyben részesített nyelve: {language}. A jelenlegi oldal mindaddig nyitva marad, amíg nem választ."
+    data-action-template="Oldal megtekintése ezen a nyelven: {language}"
+    hidden
+>
+    <div class="language-suggestion__copy">
+        <p class="language-suggestion__heading visually-hidden">
+            <strong id="language-suggestion-title">Nyelvi javaslat</strong>
+        </p>
+        <p data-language-suggestion-message></p>
+    </div>
+    <a class="text-link language-suggestion__action" data-language-suggestion-accept></a>
+    <button class="language-suggestion__dismiss" type="button" data-language-suggestion-dismiss aria-label="A nyelvi javaslat elutasítása">
+        <svg class="icon" viewBox="0 0 20 20" data-icon="close" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#close-20"></use></svg>
+        <span class="visually-hidden">A nyelvi javaslat elutasítása</span>
+    </button>
+</div>
+    <main id="main-content" tabindex="-1" lang="hu-HU" dir="ltr" data-pagefind-body>
+<nav class="breadcrumbs shell" aria-label="Útvonalnavigáció">
+    <ol>
+        <li><a href="https://mtera.eu/hu/">Építse meg a következőt úgy, hogy közben megőrzi mindazt, aminek igaznak kell maradnia.</a><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></li>
+        <li><span aria-current="page">Kérdések az MTerával való együttműködésről</span></li>
+    </ol>
+</nav>
+<header class="page-hero shell">
+    <div class="page-hero__copy">
+        <span class="eyebrow">Üzletirendszer-fejlesztés</span>
+        <h1 id="page-title">Kérdések az MTerával való együttműködésről</h1>
+<p class="lede" data-pagefind-weight="3">Egyértelmű válaszok az üzletirendszer-fejlesztésről, az együttműködés határairól, a megvalósításról, a titoktartásról, valamint az első kérdéstől az átgondolt ajánlatig vezető útról.</p>    </div>
+    <div class="page-hero__axis" aria-hidden="true"><span></span><i></i><span></span></div>
+</header><section class="section shell faq-list"><details id="what_is_bse"><summary><span>01</span><h2>Mit jelent az üzletirendszer-fejlesztés?</h2><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></summary><div><p>Egy üzleti eredmény mögött álló, egymással összefüggő emberek, döntések, folyamatok, adatok, alkalmazások, integrációk és kontrollok megértésére és megváltoztatására irányuló fegyelmezett munka. Egyetlen rendszerszintű nézetben tartja össze az üzleti indokot, az architektúrát és a gyakorlati megvalósítást.</p></div></details><details id="difference_consulting"><summary><span>02</span><h2>Miben különbözik ez a hagyományos informatikai tanácsadástól?</h2><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></summary><div><p>A különbség nem abból az állításból fakad, hogy minden más tanácsadás egyforma. Az MTera az üzleti rendszerből indul ki, és a megtervezett útvonalért is felelősséget vállal ahelyett, hogy ajánlásoknál megállna vagy egy előre kiválasztott termékből indulna ki.</p></div></details><details id="strategy_delivery"><summary><span>03</span><h2>Az MTera csak stratégiával foglalkozik, vagy a megvalósításban is részt vesz?</h2><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></summary><div><p>Mindkettő lehetséges. A munka lezárulhat egy körülhatárolt felméréssel vagy architekturális ütemtervvel, folytatódhat gyakorlati mérnöki és integrációs munkával, illetve meghatározott műszaki vezetői szerepben támogathat egy meglévő megvalósító csapatot.</p></div></details><details id="system_types"><summary><span>04</span><h2>Milyen rendszerekkel dolgozik az MTera?</h2><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></summary><div><p>A hangsúly az adatokra, munkafolyamatokra, vállalati alkalmazásokra, partnerinterfészekre, MI-vel támogatott döntésekre, automatizálásra és egyedi szoftverekre épülő összetett üzleti rendszereken van. Az alkalmasságot a meghozandó döntés és a rendszerkontextus határozza meg, nem egy rögzített technológialista.</p></div></details><details id="international"><summary><span>05</span><h2>Az MTera nemzetközi megbízásokat is vállal?</h2><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></summary><div><p>Az MTera Ljubljanában működik, és európai, illetve nemzetközi együttműködésre készült. Minden ajánlat külön rögzíti a munkavégzés helyét, nyelvét, időzónáját, jogi és megvalósítási korlátait; általános területi lefedettséget nem állítunk.</p></div></details><details id="engagement_start"><summary><span>06</span><h2>Hogyan kezdődik az együttműködés?</h2><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></summary><div><p>A meghozandó döntésből vagy kívánt eredményből indulunk ki, majd tisztázzuk, mi változik, minek kell igaznak maradnia, és milyen korlátok ismertek már. Az első lépés rendszerint egy körülhatárolt kérdés keretezése, valamint a szükséges bizonyítékok és résztvevők meghatározása.</p></div></details><details id="assessment_duration"><summary><span>07</span><h2>Mennyi ideig tart a rendszerértékelés?</h2><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></summary><div><p>A kérdés és a rendelkezésre álló bizonyítékok ismerete nélkül nem adható felelősen szabványos időtartam. Az ajánlat a rendszerek, érintettek, munkaanyagok, függőségek és döntési határidők megértése után határozza meg az időkeretet.</p></div></details><details id="confidentiality"><summary><span>08</span><h2>Hogyan védik a titoktartást?</h2><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></summary><div><p>Csak az egyeztetett célhoz szükséges információkat kérjük. A hozzáférési, kezelési, megőrzési és közzétételi jogosultságokat az együttműködési megállapodásban kell rögzíteni. Ügyfélnevet, megállapítást vagy eredményt kifejezett jóváhagyás és érvényes állításnyilvántartás nélkül nem teszünk közzé.</p></div></details><details id="specific_product"><summary><span>09</span><h2>Az MTera értékesít vagy képvisel meghatározott technológiai terméket?</h2><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></summary><div><p>Nem egy termék az alapértelmezett válasz. Az eszköz- és beszállítóválasztást az üzleti igény, az architektúra, a korlátok és az üzemeltetési felelősség határozza meg. Bármely jövőbeli kereskedelmi partnerséget egyértelműen nyilvánosságra kell hozni.</p></div></details><details id="proposal"><summary><span>10</span><h2>Hogyan alakul egy javaslat?</h2><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></summary><div><p>Az ajánlat a körülhatárolt eredményhez, a terjedelemhez, a rendelkezésre álló bizonyítékokhoz, a felelősségekhez, a megvalósítási kockázathoz és a kívánt eredményekhez igazodik. Rögzített nyilvános ár addig nem jelenik meg, amíg a kereskedelmi modell nincs jóváhagyva; a rendszerek terjedelme egyébként is lényegesen eltérhet.</p></div></details><details id="teams_vendors"><summary><span>11</span><h2>Tud az MTera meglévő csapatokkal és beszállítókkal együtt dolgozni?</h2><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></summary><div><p>Igen. Az MTera végezhet független felmérést, közös architektúrát és szerződéseket határozhat meg, megtervezhet vagy megvalósíthat kiválasztott komponenseket, illetve döntéstámogatást nyújthat a meglévő csapatok mellett. A felelősségeket, együttműködési pontokat és tudásátadást a kezdetektől egyértelművé kell tenni.</p></div></details></section>
+<section class="section cta-band" data-pagefind-ignore>
+    <div class="shell cta-band__inner">
+        <div><span class="eyebrow">MTera · Kapcsolat az MTera-val</span><h2>Rendszerkihívás megbeszélése</h2><p>Építse meg a következőt úgy, hogy közben megőrzi mindazt, aminek igaznak kell maradnia.</p></div>
+        <a class="button button--primary" href="/hu/kapcsolat/">Rendszerkihívás megbeszélése <svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a>
+    </div>
+</section>    </main>
+
+<aside class="print-metadata" aria-label="Tájékoztatás nyomtatása" lang="hu-HU" dir="ltr">
+        <img class="print-metadata__logo" src="/static/brand/mtera-lockup-horizontal-monochrome.svg" width="248" height="64" alt="MTera">
+        <p><strong>Kanonikus URL:</strong> <span dir="ltr">https://mtera.eu/hu/gyakori-kerdesek/</span></p>
+        <p><strong>Kinyomtatva:</strong> <time datetime="2026-08-13" data-print-date>2026-08-13</time></p>
+    </aside>
+<footer class="site-footer" lang="hu-HU" dir="ltr">
+    <div class="shell site-footer__grid">
+        <div class="site-footer__brand">
+            <span class="theme-lockup"><img class="theme-lockup__light" src="/static/brand/mtera-wordmark.svg" width="1062" height="269" alt="MTera" loading="lazy"><img class="theme-lockup__dark" src="/static/brand/mtera-wordmark-on-dark.svg" width="1062" height="269" alt="" aria-hidden="true" loading="lazy"></span>
+            <p>Építse meg a következőt úgy, hogy közben megőrzi mindazt, aminek igaznak kell maradnia.</p>
+<p class="meta-line"><svg class="icon" viewBox="0 0 24 24" data-icon="location" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#location"></use></svg> Ljubljana</p>        </div>
+        <details class="site-footer__group site-footer__nav" data-footer-disclosure open>
+            <summary class="site-footer__summary">
+                <h2>Felfedezés</h2>
+                <svg class="site-footer__chevron" viewBox="0 0 20 20" data-icon="arrow-forward" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward-20"></use></svg>
+            </summary>
+            <nav class="site-footer__links" aria-label="Lábléc-navigáció">
+<a href="/hu/modszer/">Módszer</a><a href="/hu/szolgaltatasok/">Szolgáltatások</a><a href="/hu/kihivasok/">Kihívások</a><a href="/hu/munkamod/">Munkamód</a><a href="/hu/elemzesek/">Elemzések</a><a href="/hu/az-mtera-rol/">Az MTera-ról</a><a href="/hu/kapcsolat/">Kapcsolat</a>            </nav>
+        </details>
+        <details class="site-footer__group site-footer__nav" data-footer-disclosure open>
+            <summary class="site-footer__summary">
+                <h2>Jogi információk</h2>
+                <svg class="site-footer__chevron" viewBox="0 0 20 20" data-icon="arrow-forward" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward-20"></use></svg>
+            </summary>
+            <nav class="site-footer__links" aria-label="Jogi navigáció">
+<a href="/hu/tapasztalat/">Tapasztalat</a><a href="/hu/fogalomtar/">Fogalomtár</a><a href="/hu/gyakori-kerdesek/">Gyakori kérdések</a><a href="/hu/jogi-kozlemeny/">Jogi közlemény</a><a href="/hu/adatvedelem/">Adatvédelem</a><a href="/hu/sutik/">Sütik</a><a href="/hu/felhasznalasi-feltetelek/">Felhasználási feltételek</a><a href="/hu/akadalymentesseg/">Akadálymentesség</a><a href="/hu/biztonsag/">Biztonság</a><a href="/hu/oldalterkep/">Oldaltérkép</a><a href="/hu/kereses/">Keresés</a>            </nav>
+        </details>
+        <details class="site-footer__group site-footer__contact" data-footer-disclosure open>
+            <summary class="site-footer__summary">
+                <h2>Kapcsolat az MTera-val</h2>
+                <svg class="site-footer__chevron" viewBox="0 0 20 20" data-icon="arrow-forward" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward-20"></use></svg>
+            </summary>
+            <div class="site-footer__links">
+<a class="email-link" href="mailto:hello@mtera.eu"><svg class="icon" viewBox="0 0 24 24" data-icon="email" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#email"></use></svg><span dir="ltr">hello@mtera.eu</span></a>            </div>
+        </details>
+    </div>
+    <div class="shell site-footer__base">
+        <p>© 2026 MTera</p>
+        <p>Az adatvédelem, az egyértelműség és a hozzáférhetőség szempontjai szerint tervezve.</p>
+    </div>
+</footer><dialog class="search-dialog" data-search-dialog data-search-copy aria-labelledby="search-dialog-title" lang="hu-HU" dir="ltr"
+    data-no-results="Nincs találat"
+    data-results-label="találatok"
+    data-search-unavailable="A keresés átmenetileg nem érhető el."
+    data-search-minimum-one="Írjon be legalább 1 karaktert."
+    data-search-minimum-many="Írjon be legalább {count} karaktert."
+    data-search-untitled="Cím nélküli"
+    data-group-service="Szolgáltatások"
+    data-group-challenge="Kihívások"
+    data-group-method="Módszer"
+    data-group-article="Elemzések"
+    data-group-glossary="Fogalomtár"
+    data-group-about="Az MTera-ról"
+    data-group-page="További oldalak">
+    <div class="search-dialog__surface">
+        <header>
+            <div><span class="eyebrow">MTera · Keresés</span><h2 id="search-dialog-title">Keresés az MTera tudásbázisában</h2><p>Keressen szolgáltatásokat, kihívásokat, módszereket, elemzéseket és fogalmakat.</p></div>
+            <button class="tool-button" type="button" data-search-close aria-label="Keresés bezárása"><svg class="icon" viewBox="0 0 20 20" data-icon="close" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#close-20"></use></svg></button>
+        </header>
+        <form class="search-form" action="/hu/kereses/" method="get" role="search" data-search-form>
+            <label for="site-search-input">Keresés</label>
+            <div class="search-input"><svg class="icon" viewBox="0 0 20 20" data-icon="search" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#search-20"></use></svg><input id="site-search-input" name="q" type="search" inputmode="search" autocomplete="off" spellcheck="false" enterkeyhint="search" minlength="1" role="combobox" aria-expanded="false" aria-haspopup="listbox" aria-controls="search-results" aria-autocomplete="list" data-search-input placeholder="Keresés az MTera oldalán"><button class="button button--primary" type="submit">Keresés</button></div>
+        </form>
+        <div class="search-status" role="status" aria-live="polite" data-search-status></div>
+        <ol class="search-results" id="search-results" role="listbox" aria-label="Keresési eredmények" data-search-results></ol>
+        <nav class="search-quick-actions" aria-labelledby="search-dialog-actions-title">
+            <h3 id="search-dialog-actions-title">Gyors műveletek</h3>
+            <a href="/hu/rendszerkihivas-osszefoglalo/">Rendszerkihívás – előkészítő kérdéssor</a>
+            <a href="/hu/modszer/">Az MTera módszer felfedezése</a>
+            <a href="/hu/szolgaltatasok/">Szolgáltatás megtekintése</a>
+            <a href="/hu/kapcsolat/">Kapcsolat az MTera-val</a>
+        </nav>
+        <footer><span><kbd>⌘</kbd>/<kbd>Ctrl</kbd> + <kbd>K</kbd></span><a href="/hu/kereses/">Részletes keresés megnyitása <svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a></footer>
+    </div>
+</dialog><button class="back-to-top" type="button" data-back-to-top hidden lang="hu-HU" dir="ltr" aria-label="Vissza a tetejére">
+    <svg class="back-to-top__progress" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21" pathLength="1"></circle></svg>
+    <svg class="icon" viewBox="0 0 24 24" data-icon="top" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#top"></use></svg>
+</button>    <script id="mtera-site-script" type="module" src="/assets/mtera.KAAJH2LX.js" data-search-index="/hu/search-index.json" data-pagefind-base="/pagefind/" data-pagefind-enabled="true" data-locale="hu" data-html-lang="hu-HU"></script>
+</body>
+</html>

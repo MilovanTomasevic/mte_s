@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="hi-IN" dir="ltr" data-theme="light" data-theme-mode="light" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <link rel="preload" href="/assets/mtera-style.MYAWRNDW.css" as="style" fetchpriority="high">
+    <script>
+        (() => {
+            const root = document.documentElement;
+            root.classList.replace("no-js", "js");
+            let resolved = "";
+            try {
+                const saved = localStorage.getItem("mtera-theme");
+                if (saved === "light" || saved === "dark") resolved = saved;
+            } catch (_) {}
+            if (!resolved) {
+                let prefersDark = false;
+                try { prefersDark = matchMedia("(prefers-color-scheme: dark)").matches; } catch (_) {}
+                resolved = prefersDark ? "dark" : "light";
+            }
+            root.dataset.themeMode = resolved;
+            root.dataset.theme = resolved;
+            root.style.colorScheme = resolved;
+        })();
+    </script>
+    <link rel="stylesheet" href="/assets/mtera-style.MYAWRNDW.css">
+    <title>डेटा फ़ाउंडेशन जो उत्पादन AI से पहले मौजूद होना चाहिए | MTera अंतर्दृष्टि</title>
+    <meta name="description" content="उत्पादन AI को निर्णय-विशिष्ट डेटा अर्थ, उद्गम, गुणवत्ता नियंत्रण, पहुँच प्राधिकरण, मूल्यांकन साक्ष्य और परिचालन प्रतिक्रिया की आवश्यकता होती है।">
+<meta data-pagefind-meta="title" data-pagefind-ignore="all" content="डेटा फ़ाउंडेशन जो उत्पादन AI से पहले मौजूद होना चाहिए"><meta data-pagefind-meta="description" data-pagefind-ignore="all" content="उत्पादन AI को निर्णय-विशिष्ट डेटा अर्थ, उद्गम, गुणवत्ता नियंत्रण, पहुँच प्राधिकरण, मूल्यांकन साक्ष्य और परिचालन प्रतिक्रिया की आवश्यकता होती है।"><meta data-pagefind-meta="locale" data-pagefind-ignore="all" content="hi-IN"><meta data-pagefind-meta="content_type" data-pagefind-ignore="all" content="article"><meta data-pagefind-meta="category" data-pagefind-ignore="all" content="AI"><meta data-pagefind-meta="date" data-pagefind-ignore="all" content="2026-08-11"><meta data-pagefind-meta="title[content]" content="डेटा फ़ाउंडेशन जो उत्पादन AI से पहले मौजूद होना चाहिए"><meta data-pagefind-meta="description[content]" content="उत्पादन AI को निर्णय-विशिष्ट डेटा अर्थ, उद्गम, गुणवत्ता नियंत्रण, पहुँच प्राधिकरण, मूल्यांकन साक्ष्य और परिचालन प्रतिक्रिया की आवश्यकता होती है।"><meta data-pagefind-meta="locale[content]" content="hi-IN"><meta data-pagefind-meta="content_type[content]" content="article"><meta data-pagefind-meta="category[content]" content="AI"><meta data-pagefind-meta="date[content]" content="2026-08-11"><meta data-pagefind-filter="content_type[content]" content="article"><meta data-pagefind-filter="category[content]" content="AI">    <meta name="author" content="MTera · Milovan Tomašević">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F6F4F0" data-theme-color-light>
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0A0B0D" data-theme-color-dark>
+<link rel="canonical" href="https://mtera.eu/hi/antardrishti/utpadan-ai-se-pahle-data-aadhar/"><link rel="alternate" hreflang="en-GB" href="https://mtera.eu/insights/data-foundations-before-production-ai/"><link rel="alternate" hreflang="en-US" href="https://mtera.eu/us/insights/data-foundations-before-production-ai/"><link rel="alternate" hreflang="de-DE" href="https://mtera.eu/de/einblicke/datengrundlagen-fuer-ki-im-produktivbetrieb/"><link rel="alternate" hreflang="sl-SI" href="https://mtera.eu/sl/vpogledi/podatkovni-temelji-pred-produkcijsko-uporabo-umetne-inteligence/"><link rel="alternate" hreflang="sr-Latn-RS" href="https://mtera.eu/sr/uvidi/temelji-podataka-za-produkcioni-ai/"><link rel="alternate" hreflang="hu-HU" href="https://mtera.eu/hu/elemzesek/adatalapok-a-mi-uzemi-bevezetese-elott/"><link rel="alternate" hreflang="ar-AE" href="https://mtera.eu/ar/al-rua/asasat-albayanat-qabl-thaka-alistina-i-fil-intaj/"><link rel="alternate" hreflang="zh-Hans-CN" href="https://mtera.eu/zh/dongjian/shengchanxing-rengongzhineng-zhiqian-de-shuju-jichu/"><link rel="alternate" hreflang="ja-JP" href="https://mtera.eu/ja/insaito/honban-ai-mae-no-deta-kiban/"><link rel="alternate" hreflang="sv-SE" href="https://mtera.eu/sv/insikter/datagrunder-som-kravs-innan-ai-tas-i-produktion/"><link rel="alternate" hreflang="es-ES" href="https://mtera.eu/es/perspectivas/fundamentos-de-datos-para-la-ia-en-produccion/"><link rel="alternate" hreflang="ru-RU" href="https://mtera.eu/ru/materialy/osnovy-dannykh-dlya-promyshlennogo-ii/"><link rel="alternate" hreflang="hi-IN" href="https://mtera.eu/hi/antardrishti/utpadan-ai-se-pahle-data-aadhar/"><link rel="alternate" hreflang="pt-PT" href="https://mtera.eu/pt/perspetivas/fundamentos-de-dados-antes-da-ia-em-producao/"><link rel="alternate" hreflang="fi-FI" href="https://mtera.eu/fi/nakemykset/datan-edellytykset-ennen-tekoalyn-tuotantokayttoa/"><link rel="alternate" hreflang="nb-NO" href="https://mtera.eu/no/innsikt/datagrunnlag-for-ki-i-produksjon/"><link rel="alternate" hreflang="nl-NL" href="https://mtera.eu/nl/inzichten/datafundamenten-voor-ai-in-productie/"><link rel="alternate" hreflang="da-DK" href="https://mtera.eu/da/indsigter/datagrundlag-for-ai-i-produktion/"><link rel="alternate" hreflang="x-default" href="https://mtera.eu/insights/data-foundations-before-production-ai/">    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MTera">
+    <meta property="og:title" content="डेटा फ़ाउंडेशन जो उत्पादन AI से पहले मौजूद होना चाहिए | MTera अंतर्दृष्टि">
+    <meta property="og:description" content="उत्पादन AI को निर्णय-विशिष्ट डेटा अर्थ, उद्गम, गुणवत्ता नियंत्रण, पहुँच प्राधिकरण, मूल्यांकन साक्ष्य और परिचालन प्रतिक्रिया की आवश्यकता होती है।">
+<meta property="og:url" content="https://mtera.eu/hi/antardrishti/utpadan-ai-se-pahle-data-aadhar/">    <meta property="og:locale" content="hi_IN">
+<meta property="og:locale:alternate" content="en_GB"><meta property="og:locale:alternate" content="en_US"><meta property="og:locale:alternate" content="de_DE"><meta property="og:locale:alternate" content="sl_SI"><meta property="og:locale:alternate" content="sr_Latn_RS"><meta property="og:locale:alternate" content="hu_HU"><meta property="og:locale:alternate" content="ar_AE"><meta property="og:locale:alternate" content="zh_Hans_CN"><meta property="og:locale:alternate" content="ja_JP"><meta property="og:locale:alternate" content="sv_SE"><meta property="og:locale:alternate" content="es_ES"><meta property="og:locale:alternate" content="ru_RU"><meta property="og:locale:alternate" content="pt_PT"><meta property="og:locale:alternate" content="fi_FI"><meta property="og:locale:alternate" content="nb_NO"><meta property="og:locale:alternate" content="nl_NL"><meta property="og:locale:alternate" content="da_DK">    <meta property="og:image" content="https://mtera.eu/static/images/og/generated/hi/insight-data-foundations-production-ai.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="MTera · अंतर्दृष्टि · प्रोडक्शन AI से पहले आवश्यक डेटा आधार">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="डेटा फ़ाउंडेशन जो उत्पादन AI से पहले मौजूद होना चाहिए | MTera अंतर्दृष्टि">
+    <meta name="twitter:description" content="उत्पादन AI को निर्णय-विशिष्ट डेटा अर्थ, उद्गम, गुणवत्ता नियंत्रण, पहुँच प्राधिकरण, मूल्यांकन साक्ष्य और परिचालन प्रतिक्रिया की आवश्यकता होती है।">
+    <meta name="twitter:image" content="https://mtera.eu/static/images/og/generated/hi/insight-data-foundations-production-ai.png">
+    <meta name="twitter:image:alt" content="MTera · अंतर्दृष्टि · प्रोडक्शन AI से पहले आवश्यक डेटा आधार">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16">
+    <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="/favicon-48x48.png" type="image/png" sizes="48x48">
+    <link rel="icon" href="/favicon-96x96.png" type="image/png" sizes="96x96">
+    <link rel="icon" href="/favicon-256x256.png" type="image/png" sizes="256x256">
+    <link rel="shortcut icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="mask-icon" href="/static/brand/pinned-tab.svg" color="#B9824E">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+    <link rel="manifest" href="/hi/site.webmanifest">
+    <meta name="mtera-font-profile" content="/static/fonts/devanagari.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@id": "https://mtera.eu/hi/antardrishti/utpadan-ai-se-pahle-data-aadhar/#webpage", "@type": "WebPage", "about": {"@id": "https://mtera.eu/#organization"}, "breadcrumb": {"@id": "https://mtera.eu/hi/antardrishti/utpadan-ai-se-pahle-data-aadhar/#breadcrumb"}, "dateModified": "2026-08-11", "description": "\u0909\u0924\u094d\u092a\u093e\u0926\u0928 AI \u0915\u094b \u0928\u093f\u0930\u094d\u0923\u092f-\u0935\u093f\u0936\u093f\u0937\u094d\u091f \u0921\u0947\u091f\u093e \u0905\u0930\u094d\u0925, \u0909\u0926\u094d\u0917\u092e, \u0917\u0941\u0923\u0935\u0924\u094d\u0924\u093e \u0928\u093f\u092f\u0902\u0924\u094d\u0930\u0923, \u092a\u0939\u0941\u0901\u091a \u092a\u094d\u0930\u093e\u0927\u093f\u0915\u0930\u0923, \u092e\u0942\u0932\u094d\u092f\u093e\u0902\u0915\u0928 \u0938\u093e\u0915\u094d\u0937\u094d\u092f \u0914\u0930 \u092a\u0930\u093f\u091a\u093e\u0932\u0928 \u092a\u094d\u0930\u0924\u093f\u0915\u094d\u0930\u093f\u092f\u093e \u0915\u0940 \u0906\u0935\u0936\u094d\u092f\u0915\u0924\u093e \u0939\u094b\u0924\u0940 \u0939\u0948\u0964", "inLanguage": "hi-IN", "isPartOf": {"@id": "https://mtera.eu/#website"}, "name": "\u0921\u0947\u091f\u093e \u092b\u093c\u093e\u0909\u0902\u0921\u0947\u0936\u0928 \u091c\u094b \u0909\u0924\u094d\u092a\u093e\u0926\u0928 AI \u0938\u0947 \u092a\u0939\u0932\u0947 \u092e\u094c\u091c\u0942\u0926 \u0939\u094b\u0928\u093e \u091a\u093e\u0939\u093f\u090f | MTera \u0905\u0902\u0924\u0930\u094d\u0926\u0943\u0937\u094d\u091f\u093f", "url": "https://mtera.eu/hi/antardrishti/utpadan-ai-se-pahle-data-aadhar/"}, {"@id": "https://mtera.eu/#website", "@type": "WebSite", "inLanguage": ["en-GB", "en-US", "de-DE", "sl-SI", "sr-Latn-RS", "hu-HU", "ar-AE", "zh-Hans-CN", "ja-JP", "sv-SE", "es-ES", "ru-RU", "hi-IN", "pt-PT", "fi-FI", "nb-NO", "nl-NL", "da-DK"], "name": "MTera", "publisher": {"@id": "https://mtera.eu/#organization"}, "url": "https://mtera.eu/"}, {"@id": "https://mtera.eu/#organization", "@type": "Organization", "description": "MTera \u0938\u0902\u0917\u0920\u0928\u094b\u0902 \u0915\u094b \u092e\u0939\u0924\u094d\u0935\u092a\u0942\u0930\u094d\u0923 \u0935\u094d\u092f\u093e\u0935\u0938\u093e\u092f\u093f\u0915 \u092c\u0926\u0932\u093e\u0935\u094b\u0902 \u0915\u0947 \u092a\u0940\u091b\u0947 \u0915\u0947 \u0938\u093f\u0938\u094d\u091f\u092e \u0938\u092e\u091d\u0928\u0947, \u0928\u092f\u093e \u0930\u0942\u092a \u0926\u0947\u0928\u0947, \u091c\u094b\u0921\u093c\u0928\u0947 \u0914\u0930 \u0907\u0902\u091c\u0940\u0928\u093f\u092f\u0930 \u0915\u0930\u0928\u0947 \u092e\u0947\u0902 \u092e\u0926\u0926 \u0915\u0930\u0924\u093e \u0939\u0948\u2014\u0921\u0947\u091f\u093e, \u092a\u094d\u0930\u0915\u094d\u0930\u093f\u092f\u093e\u0913\u0902, \u0905\u0928\u0941\u092a\u094d\u0930\u092f\u094b\u0917\u094b\u0902, \u090f\u0915\u0940\u0915\u0930\u0923, AI \u0914\u0930 \u092a\u0930\u093f\u091a\u093e\u0932\u0928 \u0928\u093f\u0930\u094d\u0923\u092f\u094b\u0902 \u0924\u0915\u0964", "email": "hello@mtera.eu", "founder": {"@id": "https://mtera.eu/about/milovan-tomasevic/#person"}, "logo": {"@type": "ImageObject", "height": 512, "url": "https://mtera.eu/static/brand/mtera-avatar-512.png", "width": 512}, "name": "MTera", "url": "https://mtera.eu/"}, {"@id": "https://mtera.eu/hi/antardrishti/utpadan-ai-se-pahle-data-aadhar/#breadcrumb", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://mtera.eu/hi/", "name": "\u091c\u094b \u0905\u092a\u0930\u093f\u0935\u0930\u094d\u0924\u093f\u0924 \u0930\u0939\u0928\u093e \u091a\u093e\u0939\u093f\u090f, \u0909\u0938\u0947 \u0916\u094b\u090f \u092c\u093f\u0928\u093e \u092d\u0935\u093f\u0937\u094d\u092f \u0915\u093e \u0928\u093f\u0930\u094d\u092e\u093e\u0923 \u0915\u0930\u0947\u0902\u0964", "position": 1}, {"@type": "ListItem", "item": "https://mtera.eu/hi/antardrishti/", "name": "\u0905\u0902\u0924\u0930\u094d\u0926\u0943\u0937\u094d\u091f\u093f", "position": 2}, {"@type": "ListItem", "item": "https://mtera.eu/hi/antardrishti/utpadan-ai-se-pahle-data-aadhar/", "name": "\u092a\u094d\u0930\u094b\u0921\u0915\u094d\u0936\u0928 AI \u0938\u0947 \u092a\u0939\u0932\u0947 \u0906\u0935\u0936\u094d\u092f\u0915 \u0921\u0947\u091f\u093e \u0906\u0927\u093e\u0930", "position": 3}]}]}</script></head>
+<body class="page page--insight.data_foundations_production_ai page-kind--article">
+    <a class="skip-link" href="#main-content" lang="hi-IN" dir="ltr">मुख्य सामग्री पर जाएँ</a>
+    <div class="header-marker" data-header-marker aria-hidden="true"></div>
+<header class="site-header" data-site-header lang="hi-IN" dir="ltr">
+    <div class="site-header__inner shell">
+        <a class="brand" href="/hi/" aria-label="MTera — मुखपृष्ठ">
+            <span class="theme-lockup" aria-hidden="true">
+                <img class="theme-lockup__light" src="/static/brand/mtera-wordmark.svg" width="1062" height="269" alt="">
+                <img class="theme-lockup__dark" src="/static/brand/mtera-wordmark-on-dark.svg" width="1062" height="269" alt="">
+            </span>
+        </a>
+
+        <nav class="desktop-nav" aria-label="मुख्य नेविगेशन">
+            <ul class="desktop-nav__list">
+                    <li>
+                        <a href="/hi/paddhati/">पद्धति</a>
+                    </li>
+                    <li>
+                        <details class="desktop-nav__group" data-nav-group>
+                            <summary>सेवाएँ<span aria-hidden="true"></span></summary>
+                            <div class="desktop-nav__mega">
+                                <a class="desktop-nav__overview" href="/hi/sevayen/">
+                                    <small>सेवाएँ</small>
+                                    <strong>सेवाएँ</strong>
+                                    <svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg>
+                                </a>
+                                <ul class="desktop-nav__deep-list">
+                                    <li><a href="/hi/sevayen/vyavsayik-pranali-vastukala-aur-parivartan/"><span>बिज़नेस सिस्टम आर्किटेक्चर और परिवर्तन</span></a></li>
+                                    <li><a href="/hi/sevayen/data-ranniti-shasan-aur-abhiyantriki/"><span>डेटा रणनीति, शासन और इंजीनियरिंग</span></a></li>
+                                    <li><a href="/hi/sevayen/udyam-ekikaran-aur-antar-sanchalaniyata/"><span>एंटरप्राइज इंटीग्रेशन और इंटरऑपरेबिलिटी</span></a></li>
+                                    <li><a href="/hi/sevayen/ai-taiyari-ekikaran-aur-zimmedar-vitran/"><span>AI तैयारी, एकीकरण और जिम्मेदार डिलीवरी</span></a></li>
+                                    <li><a href="/hi/sevayen/prakriya-swachalan-aur-sanchalan-anukulan/"><span>प्रक्रिया स्वचालन और परिचालन अनुकूलन</span></a></li>
+                                    <li><a href="/hi/sevayen/anukulit-software-aur-platform-abhiyantriki/"><span>कस्टम सॉफ्टवेयर और प्लेटफ़ॉर्म इंजीनियरिंग</span></a></li>
+                                </ul>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <details class="desktop-nav__group" data-nav-group>
+                            <summary>चुनौतियाँ<span aria-hidden="true"></span></summary>
+                            <div class="desktop-nav__mega">
+                                <a class="desktop-nav__overview" href="/hi/chunautiyan/">
+                                    <small>चुनौतियाँ</small>
+                                    <strong>चुनौतियाँ</strong>
+                                    <svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg>
+                                </a>
+                                <ul class="desktop-nav__deep-list">
+                                    <li><a href="/hi/chunautiyan/alag-pranaliyan-bikhra-data/"><svg class="icon" viewBox="0 0 24 24" data-icon="system" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#system"></use></svg><span>डिस्कनेक्टेड सिस्टम और खंडित डेटा</span></a></li>
+                                    <li><a href="/hi/chunautiyan/vyavsay-rokkar-bina-virasat-adhunikikaran/"><svg class="icon" viewBox="0 0 24 24" data-icon="transformation" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#transformation"></use></svg><span>बिना व्यवसाय में व्यवधान के विरासत का आधुनिकीकरण</span></a></li>
+                                    <li><a href="/hi/chunautiyan/nirnay-aur-ai-ke-liye-vishvasniya-data/"><svg class="icon" viewBox="0 0 24 24" data-icon="data" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#data"></use></svg><span>निर्णयों और AI के लिए विश्वसनीय डेटा फ़ाउंडेशन</span></a></li>
+                                    <li><a href="/hi/chunautiyan/jatil-bhagidar-ekikaran/"><svg class="icon" viewBox="0 0 24 24" data-icon="integration" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#integration"></use></svg><span>जटिल भागीदार और उद्यम एकीकरण</span></a></li>
+                                    <li><a href="/hi/chunautiyan/ai-pilot-se-utpadan/"><svg class="icon" viewBox="0 0 24 24" data-icon="ai" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#ai"></use></svg><span>AI को पायलट से उत्पादन की ओर ले जाना</span></a></li>
+                                    <li><a href="/hi/chunautiyan/manual-karya-pravah-aur-sanchalan-gharsan/"><svg class="icon" viewBox="0 0 24 24" data-icon="automation" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#automation"></use></svg><span>नाज़ुक मैन्युअल वर्कफ़्लो और छिपा हुआ परिचालन कार्य</span></a></li>
+                                    <li><a href="/hi/chunautiyan/nirantar-badalav-ke-liye-vastukala/"><svg class="icon" viewBox="0 0 24 24" data-icon="architecture" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#architecture"></use></svg><span>आर्किटेक्चर जो सुरक्षित रूप से बदलते रहना चाहिए</span></a></li>
+                                    <li><a href="/hi/pranali-chunauti-sankshep/"><svg class="icon" viewBox="0 0 24 24" data-icon="decision" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#decision"></use></svg><span>सिस्टम चुनौती संक्षिप्त</span></a></li>
+                                </ul>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <a href="/hi/karya-pranali/">कार्यप्रणाली</a>
+                    </li>
+                    <li>
+                        <details class="desktop-nav__group" data-nav-group data-current="true">
+                            <summary>अंतर्दृष्टि<span aria-hidden="true"></span></summary>
+                            <div class="desktop-nav__mega">
+                                <a class="desktop-nav__overview" href="/hi/antardrishti/">
+                                    <small>अंतर्दृष्टि</small>
+                                    <strong>अंतर्दृष्टि</strong>
+                                    <svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg>
+                                </a>
+                                <ul class="desktop-nav__deep-list">
+                                    <li><a href="/hi/antardrishti/vyavsayik-pranali-abhiyantriki-ka-arth/"><span>बिज़नेस सिस्टम इंजीनियरिंग का वास्तव में क्या मतलब है</span></a></li>
+                                    <li><a href="/hi/antardrishti/vyavsayik-nirantarta-ke-sath-virasat-adhunikikaran/"><span>व्यापार की निरंतरता खोए बिना पुरानी प्रणालियों का आधुनिकीकरण कैसे करें</span></a></li>
+                                    <li><a href="/hi/antardrishti/sangathanik-simaon-par-udyam-ekikaran-kyon-vifal/"><span>संगठनों के बीच की सीमाओं पर उद्यम एकीकरण क्यों विफल हो जाते हैं</span></a></li>
+                                    <li><a href="/hi/antardrishti/utpadan-ai-se-pahle-data-aadhar/" aria-current="page"><span>प्रोडक्शन AI से पहले आवश्यक डेटा आधार</span></a></li>
+                                    <li><a href="/hi/shabdavali/"><span>बिज़नेस सिस्टम इंजीनियरिंग शब्दावली</span></a></li>
+                                </ul>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <details class="desktop-nav__group" data-nav-group>
+                            <summary>MTera के बारे में<span aria-hidden="true"></span></summary>
+                            <div class="desktop-nav__mega">
+                                <a class="desktop-nav__overview" href="/hi/mtera-ke-bare-mein/">
+                                    <small>MTera के बारे में</small>
+                                    <strong>MTera के बारे में</strong>
+                                    <svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg>
+                                </a>
+                                <ul class="desktop-nav__deep-list">
+                                    <li><a href="/hi/mtera-ke-bare-mein/milovan-tomasevic/"><span>मिलोवन टोमासेविक</span></a></li>
+                                    <li><a href="/hi/anubhav/"><span>अनुभव और चयनित समस्या पैटर्न</span></a></li>
+                                    <li><a href="/hi/samanya-prashn/"><span>MTera के साथ काम करने के बारे में प्रश्न</span></a></li>
+                                </ul>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <a href="/hi/sampark/">संपर्क</a>
+                    </li>
+            </ul>
+        </nav>
+
+        <div class="site-header__tools">
+            <a class="tool-button" href="/hi/khoj/" data-search-open aria-label="खोज खोलें">
+                <svg class="icon" viewBox="0 0 20 20" data-icon="search" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#search-20"></use></svg><span class="tool-button__label">खोज खोलें</span>
+            </a>
+            <div class="header-language"><details class="language-picker" data-language-picker>
+    <summary class="tool-button" aria-label="भाषा बदलें: हिन्दी"><span class="language-picker__flag" aria-hidden="true">🇮🇳</span></summary>
+    <div class="popover language-menu">
+        <label for="language-filter-header">भाषा बदलें</label>
+        <div class="language-filter"><svg class="icon" viewBox="0 0 20 20" data-icon="search" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#search-20"></use></svg><input id="language-filter-header" type="search" inputmode="search" autocomplete="off" data-language-filter placeholder="भाषाएँ खोजें"></div>
+        <ul data-language-list>
+            <li data-language-item data-language-search="english (uk)  en">
+                <a href="/insights/data-foundations-before-production-ai/" hreflang="en-GB" lang="en-GB" data-locale-code="en" data-locale-label="English (UK)" data-locale-flag="🇬🇧" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">en</span>
+                    <span><strong>English (UK)</strong><small>English (UK)</small><small class="translation-state">मसौदा</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="english (us)  en-us">
+                <a href="/us/insights/data-foundations-before-production-ai/" hreflang="en-US" lang="en-US" data-locale-code="en-US" data-locale-label="English (US)" data-locale-flag="🇺🇸" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">en-US</span>
+                    <span><strong>English (US)</strong><small>English (US)</small><small class="translation-state">समीक्षा प्रत्याशी</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="deutsch  de">
+                <a href="/de/einblicke/datengrundlagen-fuer-ki-im-produktivbetrieb/" hreflang="de-DE" lang="de-DE" data-locale-code="de" data-locale-label="Deutsch" data-locale-flag="🇩🇪" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">de</span>
+                    <span><strong>Deutsch</strong><small>Deutsch</small><small class="translation-state">समीक्षा प्रत्याशी</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="slovenščina  sl">
+                <a href="/sl/vpogledi/podatkovni-temelji-pred-produkcijsko-uporabo-umetne-inteligence/" hreflang="sl-SI" lang="sl-SI" data-locale-code="sl" data-locale-label="Slovenščina" data-locale-flag="🇸🇮" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">sl</span>
+                    <span><strong>Slovenščina</strong><small>Slovenščina</small><small class="translation-state">समीक्षा प्रत्याशी</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="srpski  sr-latn">
+                <a href="/sr/uvidi/temelji-podataka-za-produkcioni-ai/" hreflang="sr-Latn-RS" lang="sr-Latn-RS" data-locale-code="sr-Latn" data-locale-label="Srpski" data-locale-flag="🇷🇸" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">sr-Latn</span>
+                    <span><strong>Srpski</strong><small>Srpski</small><small class="translation-state">समीक्षा प्रत्याशी</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="magyar  hu">
+                <a href="/hu/elemzesek/adatalapok-a-mi-uzemi-bevezetese-elott/" hreflang="hu-HU" lang="hu-HU" data-locale-code="hu" data-locale-label="Magyar" data-locale-flag="🇭🇺" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">hu</span>
+                    <span><strong>Magyar</strong><small>Magyar</small><small class="translation-state">समीक्षा प्रत्याशी</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="العربية  ar">
+                <a href="/ar/al-rua/asasat-albayanat-qabl-thaka-alistina-i-fil-intaj/" hreflang="ar-AE" lang="ar-AE" data-locale-code="ar" data-locale-label="العربية" data-locale-flag="🇦🇪" data-locale-direction="rtl">
+                    <span class="language-code" aria-hidden="true">ar</span>
+                    <span><strong>العربية</strong><small>العربية</small><small class="translation-state">समीक्षा प्रत्याशी</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="简体中文  zh-hans">
+                <a href="/zh/dongjian/shengchanxing-rengongzhineng-zhiqian-de-shuju-jichu/" hreflang="zh-Hans-CN" lang="zh-Hans-CN" data-locale-code="zh-Hans" data-locale-label="简体中文" data-locale-flag="🇨🇳" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">zh-Hans</span>
+                    <span><strong>简体中文</strong><small>简体中文</small><small class="translation-state">समीक्षा प्रत्याशी</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="日本語  ja">
+                <a href="/ja/insaito/honban-ai-mae-no-deta-kiban/" hreflang="ja-JP" lang="ja-JP" data-locale-code="ja" data-locale-label="日本語" data-locale-flag="🇯🇵" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">ja</span>
+                    <span><strong>日本語</strong><small>日本語</small><small class="translation-state">समीक्षा प्रत्याशी</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="svenska  sv">
+                <a href="/sv/insikter/datagrunder-som-kravs-innan-ai-tas-i-produktion/" hreflang="sv-SE" lang="sv-SE" data-locale-code="sv" data-locale-label="Svenska" data-locale-flag="🇸🇪" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">sv</span>
+                    <span><strong>Svenska</strong><small>Svenska</small><small class="translation-state">समीक्षा प्रत्याशी</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="español  es">
+                <a href="/es/perspectivas/fundamentos-de-datos-para-la-ia-en-produccion/" hreflang="es-ES" lang="es-ES" data-locale-code="es" data-locale-label="Español" data-locale-flag="🇪🇸" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">es</span>
+                    <span><strong>Español</strong><small>Español</small><small class="translation-state">समीक्षा प्रत्याशी</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="русский  ru">
+                <a href="/ru/materialy/osnovy-dannykh-dlya-promyshlennogo-ii/" hreflang="ru-RU" lang="ru-RU" data-locale-code="ru" data-locale-label="Русский" data-locale-flag="🇷🇺" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">ru</span>
+                    <span><strong>Русский</strong><small>Русский</small><small class="translation-state">समीक्षा प्रत्याशी</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="हिन्दी  hi">
+                <a href="/hi/antardrishti/utpadan-ai-se-pahle-data-aadhar/" hreflang="hi-IN" lang="hi-IN" data-locale-code="hi" data-locale-label="हिन्दी" data-locale-flag="🇮🇳" data-locale-direction="ltr" aria-current="page">
+                    <span class="language-code" aria-hidden="true">hi</span>
+                    <span><strong>हिन्दी</strong><small>हिन्दी</small><small class="translation-state">समीक्षा प्रत्याशी</small></span>
+<svg class="icon" viewBox="0 0 24 24" data-icon="check" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#check"></use></svg>                </a>
+            </li>
+            <li data-language-item data-language-search="português  pt-pt">
+                <a href="/pt/perspetivas/fundamentos-de-dados-antes-da-ia-em-producao/" hreflang="pt-PT" lang="pt-PT" data-locale-code="pt-PT" data-locale-label="Português" data-locale-flag="🇵🇹" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">pt-PT</span>
+                    <span><strong>Português</strong><small>Português</small><small class="translation-state">समीक्षा प्रत्याशी</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="suomi  fi-fi">
+                <a href="/fi/nakemykset/datan-edellytykset-ennen-tekoalyn-tuotantokayttoa/" hreflang="fi-FI" lang="fi-FI" data-locale-code="fi-FI" data-locale-label="Suomi" data-locale-flag="🇫🇮" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">fi-FI</span>
+                    <span><strong>Suomi</strong><small>Suomi</small><small class="translation-state">समीक्षा प्रत्याशी</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="norsk  nb-no">
+                <a href="/no/innsikt/datagrunnlag-for-ki-i-produksjon/" hreflang="nb-NO" lang="nb-NO" data-locale-code="nb-NO" data-locale-label="Norsk" data-locale-flag="🇳🇴" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">nb-NO</span>
+                    <span><strong>Norsk</strong><small>Norsk</small><small class="translation-state">समीक्षा प्रत्याशी</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="nederlands  nl-nl">
+                <a href="/nl/inzichten/datafundamenten-voor-ai-in-productie/" hreflang="nl-NL" lang="nl-NL" data-locale-code="nl-NL" data-locale-label="Nederlands" data-locale-flag="🇳🇱" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">nl-NL</span>
+                    <span><strong>Nederlands</strong><small>Nederlands</small><small class="translation-state">समीक्षा प्रत्याशी</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="dansk  da-dk">
+                <a href="/da/indsigter/datagrundlag-for-ai-i-produktion/" hreflang="da-DK" lang="da-DK" data-locale-code="da-DK" data-locale-label="Dansk" data-locale-flag="🇩🇰" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">da-DK</span>
+                    <span><strong>Dansk</strong><small>Dansk</small><small class="translation-state">समीक्षा प्रत्याशी</small></span>
+                </a>
+            </li>
+        </ul>
+        <p class="language-empty" data-language-empty hidden>कोई मेल खाने वाली भाषा नहीं है</p>
+    </div>
+</details></div>
+            <button class="tool-button theme-toggle" type="button" data-theme-toggle data-change-label="थीम बदलें" data-light-label="हल्की थीम" data-dark-label="गहरी थीम" aria-label="थीम बदलें: गहरी थीम" title="थीम बदलें: गहरी थीम">
+                <span class="theme-toggle__icon theme-toggle__icon--to-dark"><svg class="icon" viewBox="0 0 20 20" data-icon="dark" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#dark-20"></use></svg></span>
+                <span class="theme-toggle__icon theme-toggle__icon--to-light"><svg class="icon" viewBox="0 0 20 20" data-icon="light" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#light-20"></use></svg></span>
+                <span class="visually-hidden" data-theme-current>हल्की थीम</span>
+            </button>
+            <a class="button button--primary header-cta desktop-tools" href="/hi/sampark/">सिस्टम चुनौती पर चर्चा करें</a>
+
+            <details class="mobile-navigation" data-mobile-nav>
+                <summary class="tool-button menu-trigger" data-menu-toggle aria-label="मेन्यू खोलें" data-open-label="मेन्यू खोलें" data-close-label="मेन्यू बंद करें"><span class="menu-open"><svg class="icon" viewBox="0 0 20 20" data-icon="menu" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#menu-20"></use></svg></span><span class="menu-close"><svg class="icon" viewBox="0 0 20 20" data-icon="close" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#close-20"></use></svg></span></summary>
+                <div class="mobile-navigation__panel" data-mobile-panel>
+                    <nav aria-label="मुख्य नेविगेशन">
+                        <ul class="mobile-navigation__primary">
+                            <li>
+                                <a href="/hi/paddhati/"><span>01</span>पद्धति</a>
+                            </li>
+                            <li>
+                                <details class="mobile-navigation__group">
+                                    <summary><span>02</span><strong>सेवाएँ</strong><i aria-hidden="true"></i></summary>
+                                    <ul>
+                                        <li><a href="/hi/sevayen/">सेवाएँ</a></li>
+                                        <li><a href="/hi/sevayen/vyavsayik-pranali-vastukala-aur-parivartan/"><span>बिज़नेस सिस्टम आर्किटेक्चर और परिवर्तन</span></a></li>
+                                        <li><a href="/hi/sevayen/data-ranniti-shasan-aur-abhiyantriki/"><span>डेटा रणनीति, शासन और इंजीनियरिंग</span></a></li>
+                                        <li><a href="/hi/sevayen/udyam-ekikaran-aur-antar-sanchalaniyata/"><span>एंटरप्राइज इंटीग्रेशन और इंटरऑपरेबिलिटी</span></a></li>
+                                        <li><a href="/hi/sevayen/ai-taiyari-ekikaran-aur-zimmedar-vitran/"><span>AI तैयारी, एकीकरण और जिम्मेदार डिलीवरी</span></a></li>
+                                        <li><a href="/hi/sevayen/prakriya-swachalan-aur-sanchalan-anukulan/"><span>प्रक्रिया स्वचालन और परिचालन अनुकूलन</span></a></li>
+                                        <li><a href="/hi/sevayen/anukulit-software-aur-platform-abhiyantriki/"><span>कस्टम सॉफ्टवेयर और प्लेटफ़ॉर्म इंजीनियरिंग</span></a></li>
+                                    </ul>
+                                </details>
+                            </li>
+                            <li>
+                                <details class="mobile-navigation__group">
+                                    <summary><span>03</span><strong>चुनौतियाँ</strong><i aria-hidden="true"></i></summary>
+                                    <ul>
+                                        <li><a href="/hi/chunautiyan/">चुनौतियाँ</a></li>
+                                        <li><a href="/hi/chunautiyan/alag-pranaliyan-bikhra-data/"><svg class="icon" viewBox="0 0 24 24" data-icon="system" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#system"></use></svg><span>डिस्कनेक्टेड सिस्टम और खंडित डेटा</span></a></li>
+                                        <li><a href="/hi/chunautiyan/vyavsay-rokkar-bina-virasat-adhunikikaran/"><svg class="icon" viewBox="0 0 24 24" data-icon="transformation" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#transformation"></use></svg><span>बिना व्यवसाय में व्यवधान के विरासत का आधुनिकीकरण</span></a></li>
+                                        <li><a href="/hi/chunautiyan/nirnay-aur-ai-ke-liye-vishvasniya-data/"><svg class="icon" viewBox="0 0 24 24" data-icon="data" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#data"></use></svg><span>निर्णयों और AI के लिए विश्वसनीय डेटा फ़ाउंडेशन</span></a></li>
+                                        <li><a href="/hi/chunautiyan/jatil-bhagidar-ekikaran/"><svg class="icon" viewBox="0 0 24 24" data-icon="integration" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#integration"></use></svg><span>जटिल भागीदार और उद्यम एकीकरण</span></a></li>
+                                        <li><a href="/hi/chunautiyan/ai-pilot-se-utpadan/"><svg class="icon" viewBox="0 0 24 24" data-icon="ai" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#ai"></use></svg><span>AI को पायलट से उत्पादन की ओर ले जाना</span></a></li>
+                                        <li><a href="/hi/chunautiyan/manual-karya-pravah-aur-sanchalan-gharsan/"><svg class="icon" viewBox="0 0 24 24" data-icon="automation" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#automation"></use></svg><span>नाज़ुक मैन्युअल वर्कफ़्लो और छिपा हुआ परिचालन कार्य</span></a></li>
+                                        <li><a href="/hi/chunautiyan/nirantar-badalav-ke-liye-vastukala/"><svg class="icon" viewBox="0 0 24 24" data-icon="architecture" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#architecture"></use></svg><span>आर्किटेक्चर जो सुरक्षित रूप से बदलते रहना चाहिए</span></a></li>
+                                        <li><a href="/hi/pranali-chunauti-sankshep/"><svg class="icon" viewBox="0 0 24 24" data-icon="decision" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#decision"></use></svg><span>सिस्टम चुनौती संक्षिप्त</span></a></li>
+                                    </ul>
+                                </details>
+                            </li>
+                            <li>
+                                <a href="/hi/karya-pranali/"><span>04</span>कार्यप्रणाली</a>
+                            </li>
+                            <li>
+                                <details class="mobile-navigation__group" data-current="true">
+                                    <summary><span>05</span><strong>अंतर्दृष्टि</strong><i aria-hidden="true"></i></summary>
+                                    <ul>
+                                        <li><a href="/hi/antardrishti/">अंतर्दृष्टि</a></li>
+                                        <li><a href="/hi/antardrishti/vyavsayik-pranali-abhiyantriki-ka-arth/"><span>बिज़नेस सिस्टम इंजीनियरिंग का वास्तव में क्या मतलब है</span></a></li>
+                                        <li><a href="/hi/antardrishti/vyavsayik-nirantarta-ke-sath-virasat-adhunikikaran/"><span>व्यापार की निरंतरता खोए बिना पुरानी प्रणालियों का आधुनिकीकरण कैसे करें</span></a></li>
+                                        <li><a href="/hi/antardrishti/sangathanik-simaon-par-udyam-ekikaran-kyon-vifal/"><span>संगठनों के बीच की सीमाओं पर उद्यम एकीकरण क्यों विफल हो जाते हैं</span></a></li>
+                                        <li><a href="/hi/antardrishti/utpadan-ai-se-pahle-data-aadhar/" aria-current="page"><span>प्रोडक्शन AI से पहले आवश्यक डेटा आधार</span></a></li>
+                                        <li><a href="/hi/shabdavali/"><span>बिज़नेस सिस्टम इंजीनियरिंग शब्दावली</span></a></li>
+                                    </ul>
+                                </details>
+                            </li>
+                            <li>
+                                <details class="mobile-navigation__group">
+                                    <summary><span>06</span><strong>MTera के बारे में</strong><i aria-hidden="true"></i></summary>
+                                    <ul>
+                                        <li><a href="/hi/mtera-ke-bare-mein/">MTera के बारे में</a></li>
+                                        <li><a href="/hi/mtera-ke-bare-mein/milovan-tomasevic/"><span>मिलोवन टोमासेविक</span></a></li>
+                                        <li><a href="/hi/anubhav/"><span>अनुभव और चयनित समस्या पैटर्न</span></a></li>
+                                        <li><a href="/hi/samanya-prashn/"><span>MTera के साथ काम करने के बारे में प्रश्न</span></a></li>
+                                    </ul>
+                                </details>
+                            </li>
+                            <li>
+                                <a href="/hi/sampark/"><span>07</span>संपर्क</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <a class="button button--primary" href="/hi/sampark/">सिस्टम चुनौती पर चर्चा करें <svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a>
+                </div>
+            </details>
+        </div>
+    </div>
+</header><div
+    class="language-suggestion"
+    role="region"
+    aria-labelledby="language-suggestion-title"
+    aria-live="polite"
+    lang="hi-IN"
+    dir="ltr"
+    data-language-suggestion
+    data-current-locale="hi"
+    data-message-template="आपका ब्राउज़र {language} को प्राथमिकता देता है। आपके चुनने तक वर्तमान पृष्ठ खुला रहेगा।"
+    data-action-template="इस पृष्ठ को {language} में देखें"
+    hidden
+>
+    <div class="language-suggestion__copy">
+        <p class="language-suggestion__heading visually-hidden">
+            <strong id="language-suggestion-title">भाषा सुझाव</strong>
+        </p>
+        <p data-language-suggestion-message></p>
+    </div>
+    <a class="text-link language-suggestion__action" data-language-suggestion-accept></a>
+    <button class="language-suggestion__dismiss" type="button" data-language-suggestion-dismiss aria-label="भाषा सुझाव बंद करें">
+        <svg class="icon" viewBox="0 0 20 20" data-icon="close" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#close-20"></use></svg>
+        <span class="visually-hidden">भाषा सुझाव बंद करें</span>
+    </button>
+</div>
+    <main id="main-content" tabindex="-1" lang="hi-IN" dir="ltr" data-pagefind-body>
+<nav class="breadcrumbs shell" aria-label="ब्रेडक्रंब">
+    <ol>
+        <li><a href="https://mtera.eu/hi/">जो अपरिवर्तित रहना चाहिए, उसे खोए बिना भविष्य का निर्माण करें।</a><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></li>
+        <li><a href="https://mtera.eu/hi/antardrishti/">अंतर्दृष्टि</a><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></li>
+        <li><span aria-current="page">प्रोडक्शन AI से पहले आवश्यक डेटा आधार</span></li>
+    </ol>
+</nav>
+<article class="article" data-pagefind-meta="category:AI">
+    <header class="article-hero shell"><span class="eyebrow">AI</span><h1 id="page-title">डेटा फ़ाउंडेशन जो उत्पादन AI से पहले मौजूद होना चाहिए</h1><p class="lede">डेटा उत्पादन AI के लिए तैयार है जब यह एक परिभाषित निर्णय और परिचालन संदर्भ के लिए उपयुक्त है: इसका अर्थ साझा किया जाता है, उत्पत्ति का पता लगाया जा सकता है, गुणवत्ता नियंत्रण परिणाम दर्शाते हैं, पहुँच और उपयोग अधिकृत हैं, मूल्यांकन वास्तविक स्थितियों का प्रतिनिधित्व करता है, और प्रतिक्रिया तब प्रकट हो सकती है जब डेटा या निर्णय संदर्भ बदल गया है।</p><div class="article-meta"><span data-publication-state="preview">संपादकीय पूर्वावलोकन</span><span><svg class="icon" viewBox="0 0 24 24" data-icon="calendar" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#calendar"></use></svg><time datetime="2026-08-11" data-local-date>2026-08-11</time></span><span><svg class="icon" viewBox="0 0 24 24" data-icon="reading-time" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#reading-time"></use></svg><span data-local-number="10" data-use-grouping="false">10</span> मिनट में पढ़ें</span></div></header>
+<section class="section shell"><div class="publication-note"><svg class="icon" viewBox="0 0 24 24" data-icon="warning" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#warning"></use></svg><div><strong>संपादकीय पूर्वावलोकन - विशेषज्ञ समीक्षा लंबित</strong><p>नामित विशेषज्ञ की समीक्षा और स्वीकृति तक यह पूर्ण पूर्वावलोकन प्रोडक्शन में प्रकाशित नहीं होगा।</p></div></div></section><div class="article-layout shell"><aside class="article-toc"><strong>इस पृष्ठ पर</strong><ol><li><a href="#decision_first">उपलब्ध डेटासेट नहीं, निर्णय से शुरुआत करें</a></li><li><a href="#meaning">साझा अर्थ प्रोडक्शन संचालन की पूर्वशर्त है</a></li><li><a href="#lineage">डेटा उद्गम को परिचालन निर्णय तक जोड़ना चाहिए</a></li><li><a href="#quality">गुणवत्ता नियंत्रण को परिणामों से जोड़ें</a></li><li><a href="#authority">पहुँच और उपयोग का अधिकार एक बात नहीं हैं</a></li><li><a href="#evaluation">मूल्यांकन डेटा वास्तविक परिचालन परिस्थितियों को दर्शाए</a></li><li><a href="#feedback">प्रोडक्शन में प्रतिक्रिया और बदलाव-प्रबंधन आवश्यक हैं</a></li></ol></aside><div class="article-body"><section id="decision_first"><h2>उपलब्ध डेटासेट नहीं, निर्णय से शुरुआत करें</h2><p>डेटासेट साफ़ होने के बावजूद किसी विशेष उपयोग के लिए अनुपयुक्त हो सकता है। तत्परता इस बात पर निर्भर करती है कि मॉडल क्या प्रभावित करेगा, कौन प्रभावित होगा, त्रुटि का क्या मतलब है, स्थितियाँ कितनी जल्दी बदलती हैं और आत्मविश्वास कम होने पर मनुष्य क्या कर सकता है। ये प्रश्न स्थापित करते हैं कि कौन से तथ्य महत्वपूर्ण हैं और कितने साक्ष्य की आवश्यकता है।</p><p>साधारण परिचालन शर्तों में इच्छित अनुशंसा या कार्रवाई को परिभाषित करें। स्वामी, उपयोगकर्ता, विषय, निर्णय का समय, विकल्प और परिणाम की पहचान करें। फिर इसका समर्थन करने के लिए आवश्यक डेटा का पता लगाएं। यह एक आकर्षक डेटासेट को उपयोग का मामला बनाने से रोकता है जिसे संगठन जिम्मेदारी से संचालित नहीं कर सकता है।</p></section><section id="meaning"><h2>साझा अर्थ प्रोडक्शन संचालन की पूर्वशर्त है</h2><p>प्रशिक्षण और परिचालन प्रणालियाँ विभिन्न अवधारणाओं के लिए एक ही लेबल का उपयोग कर सकती हैं। ग्राहक का मतलब खाता, कानूनी व्यक्ति, घरेलू या सक्रिय अनुबंध हो सकता है। एक बंद मामले का मतलब हल हो जाना, प्रशासनिक रूप से समाप्त हो जाना या छोड़ दिया जाना हो सकता है। यदि अर्थ अवधि, स्रोत या टीम के अनुसार भिन्न है, तो मॉडल व्यवहार उन कारणों से बदल सकता है जिनका मूल्यांकन कभी परीक्षण नहीं किया गया।</p><p>महत्वपूर्ण विशेषताओं और परिणामों के लिए व्यावसायिक परिभाषाओं, समावेशन और बहिष्करण नियमों, समय संदर्भ और जवाबदेह मालिकों की आवश्यकता होती है। ऐतिहासिक बदलाव दिखना चाहिए. उद्देश्य हर क्षेत्र का दस्तावेजीकरण करना नहीं है, बल्कि उन अर्थों को बनाना है जो निर्णय को चुनौती देने और निगरानी करने के लिए पर्याप्त रूप से स्थिर हैं।</p></section><section id="lineage"><h2>डेटा उद्गम को परिचालन निर्णय तक जोड़ना चाहिए</h2><p>वंश तब उपयोगी होता है जब यह बताता है कि कोई मूल्य कहां से आया, किन परिवर्तनों ने इसे बदल दिया और किस नियम या संस्करण के तहत इसने प्रशिक्षण, मूल्यांकन और उत्पादन में प्रवेश किया। एक तकनीकी पाइपलाइन ग्राफ डेटा को आकार देने वाले व्यवसाय चयन और सुधार निर्णयों को छोड़ते समय आंदोलन दिखा सकता है।</p><p>जोखिम के अनुपातिक स्तर पर उद्गम को रिकॉर्ड करें। टीम को किसी परिणाम की जांच करने, स्रोत परिवर्तन के प्रभाव का आकलन करने और प्रासंगिक मूल्यांकन को पुन: पेश करने में सक्षम होना चाहिए। यदि डेटा लोगों या आपूर्तिकर्ताओं द्वारा समृद्ध या लेबल किया गया है, तो वह संदर्भ और उसके गुणवत्ता नियंत्रण वंश दृश्य में हैं।</p></section><section id="quality"><h2>गुणवत्ता नियंत्रण को परिणामों से जोड़ें</h2><p>वैश्विक पूर्णता और सटीकता स्कोर कमजोर तत्परता परीक्षण हैं। एक दुर्लभ गुम मूल्य महत्वपूर्ण हो सकता है यदि यह सुरक्षा या पात्रता शर्त को हटा देता है, जबकि बार-बार होने वाला दोष इच्छित निर्णय के लिए अप्रासंगिक हो सकता है। उपयोग के विरुद्ध गुणवत्ता को परिभाषित करें: वैध सीमाएँ, समयबद्धता, प्रतिनिधित्वशीलता, स्थिरता, दोहराव और लेबल विश्वसनीयता जहां वे परिणाम को प्रभावित करते हैं।</p><p>हर गंभीर दोष के लिए तय करें कि उसे रोकना, पहचानना, सुधारना, अस्वीकार करना, आगे भेजना या उसकी अनिश्चितता मनुष्य के सामने स्पष्ट करना है। जिम्मेदार स्वामी और कार्रवाई की सीमा तय करें। इन नियंत्रणों को तैनाती के बाद और तैयारी के दौरान भी काम करना चाहिए, क्योंकि उत्पादन स्रोत और व्यवहार बदल जाएंगे।</p></section><section id="authority"><h2>पहुँच और उपयोग का अधिकार एक बात नहीं हैं</h2><p>एक टीम AI उपयोग के लिए उचित उद्देश्य, अनुमति या उचित प्रतिधारण मॉडल के बिना तकनीकी रूप से डेटा पुनर्प्राप्त करने में सक्षम हो सकती है। इसके विपरीत, सख्त पहुँच नियंत्रण अभी भी विफल हो सकते हैं यदि व्युत्पन्न आउटपुट जानकारी प्रकट करते हैं या यदि मानव समीक्षकों को वह संदर्भ प्राप्त होता है जो उन्हें नहीं देखना चाहिए।</p><p>डेटा विषयों, मालिकों, अनुमत उद्देश्यों, पहुँच पथ, प्रतिधारण, व्युत्पन्न कार्य-उत्पादों और विलोपन या सुधार प्रभावों को मैप करें। कानूनी, गोपनीयता, सुरक्षा और क्षेत्र के विशेषज्ञों को वास्तविक दायित्वों को मान्य करना चाहिए। इंजीनियरिंग का योगदान उन निर्णयों को लागू करने के लिए उपयोग और सूचना प्रवाह को पर्याप्त रूप से ठोस बनाना है।</p></section><section id="evaluation"><h2>मूल्यांकन डेटा वास्तविक परिचालन परिस्थितियों को दर्शाए</h2><p>एक मूल्यांकन सेट को उन मामलों, समय अवधि, अपवादों और आबादी को प्रतिबिंबित करना चाहिए जिनका क्षमता सामना करेगी, जिसमें वे स्थितियां भी शामिल हैं जिनमें मॉडल को स्थगित करना चाहिए। प्रशिक्षण से अलगाव मायने रखता है, लेकिन संबंधित संस्थाओं, परिणाम के बाद की जानकारी और मैन्युअल सुधारों के माध्यम से रिसाव भी होता है जो निर्णय के समय मौजूद नहीं होगा।</p><p>व्यावसायिक कार्रवाई के आसपास स्वीकृति को परिभाषित करें, न कि एक समग्र मॉडल स्कोर को। महत्वपूर्ण त्रुटि वर्ग, मानव समीक्षा क्षमता, विलंबता, विफलता व्यवहार और संयम की लागत शामिल करें। डेटासेट और नियम संस्करणों को रिकॉर्ड करें ताकि बाद में होने वाले बदलाव की तुलना सार्थक ढंग से की जा सके।</p></section><section id="feedback"><h2>प्रोडक्शन में प्रतिक्रिया और बदलाव-प्रबंधन आवश्यक हैं</h2><p>लॉन्च के समय डेटा तैयारी पूरी नहीं हुई है। स्रोत प्रणालियाँ बदल जाती हैं, परिभाषाएँ बदल जाती हैं, परिचालन व्यवहार बदल जाता है और लक्षित समूह बदल सकता है। निगरानी में इनपुट स्थितियों, डेटा नियंत्रण, मॉडल व्यवहार, मानव ओवरराइड, परिणाम साक्ष्य और अनसुलझे अपवादों को उस ताल पर शामिल किया जाना चाहिए जो निर्णय जोखिम को उचित ठहराता है।</p><p>संगठन को जवाब देने के लिए भी प्राधिकरण की आवश्यकता है: कौन जांच करता है, कौन स्वचालन को निलंबित कर सकता है, फ़ॉलबैक कैसे काम करता है, कब पुनर्प्रशिक्षण या पुन: डिज़ाइन पर विचार किया जाता है और कौन से सबूत सेवा में वापसी की अनुमति देते हैं। इस ऑपरेटिंग मॉडल के बिना, एक मॉडल तकनीकी रूप से उपलब्ध रह सकता है जबकि इसका निर्णय संदर्भ पहले ही बदल चुका है।</p></section></div></div><section class="section takeaways"><div class="shell"><span class="eyebrow">मुख्य बातें</span><h2>अगले निर्णय तक क्या आगे ले जाना है</h2><ol><li><span>01</span>सामान्य रूप से डेटा के बजाय एक निर्णय, मालिक और परिणाम के लिए तत्परता को परिभाषित करें।</li><li><span>02</span>महत्वपूर्ण अर्थ, समय संदर्भ और उत्पत्ति का पता लगाने योग्य बनाएं।</li><li><span>03</span>गुणवत्ता नियंत्रण और सीमा को भौतिक त्रुटि वर्गों से जोड़ें।</li><li><span>04</span>तकनीकी पहुँच को अधिकृत और उचित उपयोग से अलग करें।</li><li><span>05</span>वास्तविक परिचालन स्थितियों के तहत मूल्यांकन करें और प्रतिक्रिया, फ़ॉलबैक और हस्तक्षेप करने के अधिकार को डिज़ाइन करें।</li></ol></div></section><section class="section shell article-note"><h2>अनुप्रयोग</h2><p>एक वाक्य में इच्छित AI-समर्थित निर्णय लिखें। निर्णय के समय आवश्यक तथ्यों, उनके स्रोत और मालिक, प्रत्येक महत्वपूर्ण दोष के परिणाम और उपयोग को रोकने या ओवरराइड करने के लिए अधिकृत व्यक्ति की सूची बनाएं। कोई भी रिक्तता एक तत्परता अंतर है।</p></section><section class="section shell article-note"><h2>सीमाएँ और जोखिम</h2><p>यह लेख एक इंजीनियरिंग ढांचा है, न कि कानूनी, गोपनीयता, सुरक्षा, नियामक या क्षेत्र संबंधी सलाह। उत्पादन AI निर्णयों के लिए वास्तविक उपयोग और अधिकार क्षेत्र के लिए योग्य विशेषज्ञों और जवाबदेह ग्राहक प्रशासन की आवश्यकता होती है।</p></section><section class="section shell related-links"><div class="section-heading"><span class="eyebrow">संबंधित सिस्टम सामग्री</span><h2>इस अंतर्दृष्टि से संबंधित क्षमता और चुनौती तक जाएँ</h2></div><div class="link-ledger"><a href="/hi/sevayen/data-ranniti-shasan-aur-abhiyantriki/"><span>01</span><strong>डेटा रणनीति, शासन और इंजीनियरिंग के माध्यम से इस अंतर्दृष्टि को लागू करें</strong><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a><a href="/hi/chunautiyan/nirnay-aur-ai-ke-liye-vishvasniya-data/"><span>02</span><strong>सिस्टम चुनौती देखें: निर्णयों और AI के लिए विश्वसनीय डेटा फ़ाउंडेशन</strong><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a></div></section><section class="section shell related-links"><div class="section-heading"><span class="eyebrow">शब्दावली</span><h2>इस विषय के बारे में तर्क करने के लिए उपयोग की जाने वाली परिभाषाएँ</h2></div><div class="link-ledger"><a href="/hi/shabdavali/#data_lineage"><span>01</span><strong>MTera शब्दावली में “डेटा उद्गम” समझें</strong><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a><a href="/hi/shabdavali/#ai_readiness"><span>02</span><strong>MTera शब्दावली में “AI तैयारी” समझें</strong><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a><a href="/hi/shabdavali/#human_oversight"><span>03</span><strong>MTera शब्दावली में “मानवीय पर्यवेक्षण” समझें</strong><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a><a href="/hi/shabdavali/#data_governance"><span>04</span><strong>MTera शब्दावली में “डेटा गवर्नेंस” समझें</strong><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a></div></section><section class="section shell related-links"><div class="section-heading"><span class="eyebrow">संबंधित अंतर्दृष्टि</span><h2>कनेक्टेड सिस्टम निर्णयों पर तर्क जारी रखें</h2></div><div class="link-ledger"></div></section></article>
+<section class="section cta-band" data-pagefind-ignore>
+    <div class="shell cta-band__inner">
+        <div><span class="eyebrow">MTera · MTera से संपर्क करें</span><h2>अपने परिवर्तन के पीछे सिस्टम प्रश्न पर चर्चा करें।</h2><p>जो अपरिवर्तित रहना चाहिए, उसे खोए बिना भविष्य का निर्माण करें।</p></div>
+        <a class="button button--primary" href="/hi/sampark/">सिस्टम चुनौती पर चर्चा करें <svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a>
+    </div>
+</section>    </main>
+
+<aside class="print-metadata" aria-label="प्रिंट जानकारी" lang="hi-IN" dir="ltr">
+        <img class="print-metadata__logo" src="/static/brand/mtera-lockup-horizontal-monochrome.svg" width="248" height="64" alt="MTera">
+        <p><strong>कैनोनिकल URL:</strong> <span dir="ltr">https://mtera.eu/hi/antardrishti/utpadan-ai-se-pahle-data-aadhar/</span></p>
+        <p><strong>प्रिंट संस्करण:</strong> <time datetime="2026-08-13" data-print-date>2026-08-13</time></p>
+    </aside>
+<footer class="site-footer" lang="hi-IN" dir="ltr">
+    <div class="shell site-footer__grid">
+        <div class="site-footer__brand">
+            <span class="theme-lockup"><img class="theme-lockup__light" src="/static/brand/mtera-wordmark.svg" width="1062" height="269" alt="MTera" loading="lazy"><img class="theme-lockup__dark" src="/static/brand/mtera-wordmark-on-dark.svg" width="1062" height="269" alt="" aria-hidden="true" loading="lazy"></span>
+            <p>जो अपरिवर्तित रहना चाहिए, उसे खोए बिना भविष्य का निर्माण करें।</p>
+<p class="meta-line"><svg class="icon" viewBox="0 0 24 24" data-icon="location" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#location"></use></svg> लजुब्लजाना</p>        </div>
+        <details class="site-footer__group site-footer__nav" data-footer-disclosure open>
+            <summary class="site-footer__summary">
+                <h2>अन्वेषण करें</h2>
+                <svg class="site-footer__chevron" viewBox="0 0 20 20" data-icon="arrow-forward" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward-20"></use></svg>
+            </summary>
+            <nav class="site-footer__links" aria-label="फुटर नेविगेशन">
+<a href="/hi/paddhati/">पद्धति</a><a href="/hi/sevayen/">सेवाएँ</a><a href="/hi/chunautiyan/">चुनौतियाँ</a><a href="/hi/karya-pranali/">कार्यप्रणाली</a><a href="/hi/antardrishti/">अंतर्दृष्टि</a><a href="/hi/mtera-ke-bare-mein/">MTera के बारे में</a><a href="/hi/sampark/">संपर्क</a>            </nav>
+        </details>
+        <details class="site-footer__group site-footer__nav" data-footer-disclosure open>
+            <summary class="site-footer__summary">
+                <h2>कानूनी जानकारी</h2>
+                <svg class="site-footer__chevron" viewBox="0 0 20 20" data-icon="arrow-forward" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward-20"></use></svg>
+            </summary>
+            <nav class="site-footer__links" aria-label="कानूनी जानकारी का नेविगेशन">
+<a href="/hi/anubhav/">अनुभव</a><a href="/hi/shabdavali/">शब्दावली</a><a href="/hi/samanya-prashn/">सामान्य प्रश्न</a><a href="/hi/kanuni-suchana/">कानूनी सूचना</a><a href="/hi/gopniyata/">गोपनीयता</a><a href="/hi/kuki-niti/">कुकीज़</a><a href="/hi/upyog-ki-sharten/">उपयोग की शर्तें</a><a href="/hi/sulabhata/">सुलभता</a><a href="/hi/suraksha/">सुरक्षा</a><a href="/hi/site-manachitra/">साइट मानचित्र</a><a href="/hi/khoj/">खोज</a>            </nav>
+        </details>
+        <details class="site-footer__group site-footer__contact" data-footer-disclosure open>
+            <summary class="site-footer__summary">
+                <h2>MTera से संपर्क करें</h2>
+                <svg class="site-footer__chevron" viewBox="0 0 20 20" data-icon="arrow-forward" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward-20"></use></svg>
+            </summary>
+            <div class="site-footer__links">
+<a class="email-link" href="mailto:hello@mtera.eu"><svg class="icon" viewBox="0 0 24 24" data-icon="email" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#email"></use></svg><span dir="ltr">hello@mtera.eu</span></a>            </div>
+        </details>
+    </div>
+    <div class="shell site-footer__base">
+        <p>© 2026 MTera</p>
+        <p>गोपनीयता, स्पष्टता और पहुँच के लिए डिज़ाइन किया गया।</p>
+    </div>
+</footer><dialog class="search-dialog" data-search-dialog data-search-copy aria-labelledby="search-dialog-title" lang="hi-IN" dir="ltr"
+    data-no-results="कोई परिणाम नहीं"
+    data-results-label="परिणाम"
+    data-search-unavailable="खोज अस्थायी रूप से उपलब्ध नहीं है।"
+    data-search-minimum-one="कम से कम 1 अक्षर लिखें।"
+    data-search-minimum-many="कम से कम {count} अक्षर लिखें।"
+    data-search-untitled="शीर्षक रहित"
+    data-group-service="सेवाएँ"
+    data-group-challenge="चुनौतियाँ"
+    data-group-method="पद्धति"
+    data-group-article="अंतर्दृष्टि"
+    data-group-glossary="शब्दावली"
+    data-group-about="MTera के बारे में"
+    data-group-page="अन्य पृष्ठ">
+    <div class="search-dialog__surface">
+        <header>
+            <div><span class="eyebrow">MTera · खोज</span><h2 id="search-dialog-title">MTera ज्ञान आधार में खोजें</h2><p>सेवाएँ, चुनौतियाँ, पद्धतियाँ, अंतर्दृष्टियाँ और परिभाषाएँ खोजें।</p></div>
+            <button class="tool-button" type="button" data-search-close aria-label="खोज बंद करें"><svg class="icon" viewBox="0 0 20 20" data-icon="close" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#close-20"></use></svg></button>
+        </header>
+        <form class="search-form" action="/hi/khoj/" method="get" role="search" data-search-form>
+            <label for="site-search-input">खोज</label>
+            <div class="search-input"><svg class="icon" viewBox="0 0 20 20" data-icon="search" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#search-20"></use></svg><input id="site-search-input" name="q" type="search" inputmode="search" autocomplete="off" spellcheck="false" enterkeyhint="search" minlength="1" role="combobox" aria-expanded="false" aria-haspopup="listbox" aria-controls="search-results" aria-autocomplete="list" data-search-input placeholder="MTera में खोजें"><button class="button button--primary" type="submit">खोज</button></div>
+        </form>
+        <div class="search-status" role="status" aria-live="polite" data-search-status></div>
+        <ol class="search-results" id="search-results" role="listbox" aria-label="खोज परिणाम" data-search-results></ol>
+        <nav class="search-quick-actions" aria-labelledby="search-dialog-actions-title">
+            <h3 id="search-dialog-actions-title">त्वरित कार्रवाइयाँ</h3>
+            <a href="/hi/pranali-chunauti-sankshep/">सिस्टम चुनौती संक्षिप्त</a>
+            <a href="/hi/paddhati/">MTera पद्धति जानें</a>
+            <a href="/hi/sevayen/">सेवा देखें</a>
+            <a href="/hi/sampark/">MTera से संपर्क करें</a>
+        </nav>
+        <footer><span><kbd>⌘</kbd>/<kbd>Ctrl</kbd> + <kbd>K</kbd></span><a href="/hi/khoj/">पूरी खोज खोलें <svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a></footer>
+    </div>
+</dialog><button class="back-to-top" type="button" data-back-to-top hidden lang="hi-IN" dir="ltr" aria-label="ऊपर जाएँ">
+    <svg class="back-to-top__progress" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21" pathLength="1"></circle></svg>
+    <svg class="icon" viewBox="0 0 24 24" data-icon="top" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#top"></use></svg>
+</button>    <script id="mtera-site-script" type="module" src="/assets/mtera.KAAJH2LX.js" data-search-index="/hi/search-index.json" data-pagefind-base="/pagefind/" data-pagefind-enabled="true" data-locale="hi" data-html-lang="hi-IN"></script>
+</body>
+</html>

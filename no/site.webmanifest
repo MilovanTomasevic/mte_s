@@ -1,0 +1,43 @@
+{
+  "name": "MTera — Utvikling av forretningssystemer",
+  "short_name": "MTera",
+  "description": "MTera hjelper organisasjoner med å forstå, omforme, koble sammen og utvikle systemene bak kritiske forretningsendringer — på tvers av data, prosesser, applikasjoner, integrasjoner, KI og beslutninger om drift.",
+  "start_url": "/no/",
+  "scope": "/no/",
+  "display": "standalone",
+  "background_color": "#0A0B0D",
+  "theme_color": "#0A0B0D",
+  "lang": "nb-NO",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

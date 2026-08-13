@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "identity_status": "working-identity-clearance-pending",
+  "authorship": {
+    "origin": "User-supplied MTera Exact Brand Kit v1.0, copied without construction changes from the previously selected MTera source reference",
+    "third_party_reference_imagery": false,
+    "clearance_claimed": false
+  },
+  "exact_brand_kit": {
+    "package": "MTera Exact Brand Kit v1.0",
+    "source_record": "logo/MTera_Exact_Brand_Kit_v1.0/asset-provenance.json",
+    "generative_operations": false,
+    "construction_change": false,
+    "web_ready_source": "logo/MTera_Exact_Brand_Kit_v1.0/01_web_ready",
+    "dark_hero_source": {
+      "path": "logo/MTera_Exact_Brand_Kit_v1.0/02_logo_master/metallic_exact_on_dark/mtera-lockup-horizontal-metallic-transparent.png",
+      "public_copy": "app/static/brand/mtera-lockup-horizontal-metallic-transparent.png",
+      "sha256": "08b17201d256a3746c177dd30f33dc661edce0c8e122d1a0363a3ce9ada457bf",
+      "byte_identical": true
+    },
+    "animated_wordmark": {
+      "source_motion": "logo/MTera_Exact_Brand_Kit_v1.0/02_logo_master/motion/mtera-logo-animated-on-dark.svg",
+      "derived_master": "logo/MTera_Exact_Brand_Kit_v1.0/02_logo_master/motion/mtera-wordmark-animated-on-dark.svg",
+      "public_copy": "app/static/brand/mtera-wordmark-animated-on-dark.svg",
+      "operation": "Removed only the separate translated-y descriptor path; preserved the exact first three MTera wordmark paths, colours and motion timing",
+      "sha256": "20ba421c85af3dc776c874689b92ce1365afd072f90715b6997e82d99c614ee6",
+      "bytes": 30215,
+      "construction_change": false,
+      "descriptor_removed": true,
+      "byte_identical_public_copy": true
+    }
+  },
+  "favicon_package": {
+    "geometry_source": {
+      "path": "app/static/brand/mtera-mark-micro.svg",
+      "sha256": "2067818871da8a72ba0a4402768341eae7804b5d735e9fa4fb9acd5a8933e6e0"
+    },
+    "favicon_source": {
+      "path": "app/static/brand/favicon.svg",
+      "public_path": "/favicon.svg",
+      "sha256": "52206945df5150d55d87c4a4e5811cea69127884d625d5b9c5bd4ba4a68f9048"
+    },
+    "png_exports": [
+      {
+        "path": "app/static/brand/favicon-16x16.png",
+        "public_path": "/favicon-16x16.png",
+        "width": 16,
+        "height": 16,
+        "sha256": "cc2bf7c48e3dd0df692e29620ae9f20520e69e39f9eab79c0ed86e2557f30141"
+      },
+      {
+        "path": "app/static/brand/favicon-32x32.png",
+        "public_path": "/favicon-32x32.png",
+        "width": 32,
+        "height": 32,
+        "sha256": "dd0500131ca4c076ae48ff2be5c38a401c332a2fc4e41bab2307cde553d2a6e7"
+      },
+      {
+        "path": "app/static/brand/favicon-48x48.png",
+        "public_path": "/favicon-48x48.png",
+        "width": 48,
+        "height": 48,
+        "sha256": "99f55d263af1f13ffa8b4c7398ee2c5695de86bd8dddf7873ae3c6bd8d5fe90c"
+      },
+      {
+        "path": "app/static/brand/favicon-96x96.png",
+        "public_path": "/favicon-96x96.png",
+        "width": 96,
+        "height": 96,
+        "sha256": "74976ec7d4904e9eeafd53b792ef954d2a9cbd6033e1a08b0292a784bd1cd924"
+      },
+      {
+        "path": "app/static/brand/favicon-256x256.png",
+        "public_path": "/favicon-256x256.png",
+        "width": 256,
+        "height": 256,
+        "sha256": "e8d45c0bc97398275e4a0a20484692a45a9d2c20bdb964fb22afecde592d2127"
+      },
+      {
+        "path": "app/static/brand/apple-touch-icon.png",
+        "public_path": "/apple-touch-icon.png",
+        "width": 180,
+        "height": 180,
+        "sha256": "61a7b9d46724b2052b23f0964ec433e2e51cca0132c87c27c4dc1dafb33963dc"
+      },
+      {
+        "path": "app/static/brand/icon-192.png",
+        "public_path": "/icon-192.png",
+        "width": 192,
+        "height": 192,
+        "sha256": "52d40a0550d29af870a94ed4d442059e177135efce521f736433d29808c4593c"
+      },
+      {
+        "path": "app/static/brand/icon-512.png",
+        "public_path": "/icon-512.png",
+        "width": 512,
+        "height": 512,
+        "sha256": "a782a7da8de782285c5702363b321fa52dd6eb4d551a762dcece0065e22ebfcf"
+      },
+      {
+        "path": "app/static/brand/icon-maskable-192.png",
+        "public_path": "/icon-maskable-192.png",
+        "width": 192,
+        "height": 192,
+        "sha256": "8de230b6f9e241faa55bb8e25114836911cad82a91f62090639064b2707c3e6c"
+      },
+      {
+        "path": "app/static/brand/icon-maskable-512.png",
+        "public_path": "/icon-maskable-512.png",
+        "width": 512,
+        "height": 512,
+        "sha256": "e78bf2ae3b9f4677c630f93b0279a71e766086feedccb72eca7a4df9b210070a"
+      }
+    ],
+    "ico_export": {
+      "path": "app/static/brand/favicon.ico",
+      "public_path": "/favicon.ico",
+      "embedded_sizes": [
+        "16x16",
+        "32x32",
+        "48x48"
+      ],
+      "bits_per_pixel": 32,
+      "sha256": "63033e0026b784de91f337d0cb71d935c8b9fe42a85db7b86d81e36ed0484e0e"
+    },
+    "export_note": "Checked-in web-ready exports are byte-for-byte copies from MTera Exact Brand Kit v1.0 and are hash-bound here."
+  },
+  "guidance_artifacts": [
+    {
+      "path": "app/static/brand/mtera-principles-moodboard.svg",
+      "public_path": "/static/brand/mtera-principles-moodboard.svg",
+      "kind": "exact-kit-principles-guidance",
+      "width": 1600,
+      "height": 420,
+      "sha256": "94a0a7225078053ae711ddfb71c92af8f9bc95e787bfbc31c6faa4cbbd3202f8"
+    },
+    {
+      "path": "app/static/brand/mtera-logo-misuse.svg",
+      "public_path": "/static/brand/mtera-logo-misuse.svg",
+      "kind": "exact-kit-logo-misuse-guidance",
+      "width": 1400,
+      "height": 760,
+      "sha256": "17970b69ecbab675cac4902fc1970a2b587ef497779e4d850dd7a3d8bada7076"
+    }
+  ]
+}

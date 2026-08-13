@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="zh-Hans-CN" dir="ltr" data-theme="light" data-theme-mode="light" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <link rel="preload" href="/assets/mtera-style.MYAWRNDW.css" as="style" fetchpriority="high">
+    <script>
+        (() => {
+            const root = document.documentElement;
+            root.classList.replace("no-js", "js");
+            let resolved = "";
+            try {
+                const saved = localStorage.getItem("mtera-theme");
+                if (saved === "light" || saved === "dark") resolved = saved;
+            } catch (_) {}
+            if (!resolved) {
+                let prefersDark = false;
+                try { prefersDark = matchMedia("(prefers-color-scheme: dark)").matches; } catch (_) {}
+                resolved = prefersDark ? "dark" : "light";
+            }
+            root.dataset.themeMode = resolved;
+            root.dataset.theme = resolved;
+            root.style.colorScheme = resolved;
+        })();
+    </script>
+    <link rel="stylesheet" href="/assets/mtera-style.MYAWRNDW.css">
+    <title>在生产 AI 之前必须存在的数据基础 | MTera 见解</title>
+    <meta name="description" content="生产人工智能需要决策特定的数据含义、出处、质量控制、访问权限、评估证据和操作反馈。">
+<meta data-pagefind-meta="title" data-pagefind-ignore="all" content="在生产人工智能之前必须存在的数据基础"><meta data-pagefind-meta="description" data-pagefind-ignore="all" content="生产人工智能需要决策特定的数据含义、出处、质量控制、访问权限、评估证据和操作反馈。"><meta data-pagefind-meta="locale" data-pagefind-ignore="all" content="zh-Hans-CN"><meta data-pagefind-meta="content_type" data-pagefind-ignore="all" content="article"><meta data-pagefind-meta="category" data-pagefind-ignore="all" content="人工智能"><meta data-pagefind-meta="date" data-pagefind-ignore="all" content="2026-08-11"><meta data-pagefind-meta="title[content]" content="在生产人工智能之前必须存在的数据基础"><meta data-pagefind-meta="description[content]" content="生产人工智能需要决策特定的数据含义、出处、质量控制、访问权限、评估证据和操作反馈。"><meta data-pagefind-meta="locale[content]" content="zh-Hans-CN"><meta data-pagefind-meta="content_type[content]" content="article"><meta data-pagefind-meta="category[content]" content="人工智能"><meta data-pagefind-meta="date[content]" content="2026-08-11"><meta data-pagefind-filter="content_type[content]" content="article"><meta data-pagefind-filter="category[content]" content="人工智能">    <meta name="author" content="MTera · Milovan Tomašević">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F6F4F0" data-theme-color-light>
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0A0B0D" data-theme-color-dark>
+<link rel="canonical" href="https://mtera.eu/zh/dongjian/shengchanxing-rengongzhineng-zhiqian-de-shuju-jichu/"><link rel="alternate" hreflang="en-GB" href="https://mtera.eu/insights/data-foundations-before-production-ai/"><link rel="alternate" hreflang="en-US" href="https://mtera.eu/us/insights/data-foundations-before-production-ai/"><link rel="alternate" hreflang="de-DE" href="https://mtera.eu/de/einblicke/datengrundlagen-fuer-ki-im-produktivbetrieb/"><link rel="alternate" hreflang="sl-SI" href="https://mtera.eu/sl/vpogledi/podatkovni-temelji-pred-produkcijsko-uporabo-umetne-inteligence/"><link rel="alternate" hreflang="sr-Latn-RS" href="https://mtera.eu/sr/uvidi/temelji-podataka-za-produkcioni-ai/"><link rel="alternate" hreflang="hu-HU" href="https://mtera.eu/hu/elemzesek/adatalapok-a-mi-uzemi-bevezetese-elott/"><link rel="alternate" hreflang="ar-AE" href="https://mtera.eu/ar/al-rua/asasat-albayanat-qabl-thaka-alistina-i-fil-intaj/"><link rel="alternate" hreflang="zh-Hans-CN" href="https://mtera.eu/zh/dongjian/shengchanxing-rengongzhineng-zhiqian-de-shuju-jichu/"><link rel="alternate" hreflang="ja-JP" href="https://mtera.eu/ja/insaito/honban-ai-mae-no-deta-kiban/"><link rel="alternate" hreflang="sv-SE" href="https://mtera.eu/sv/insikter/datagrunder-som-kravs-innan-ai-tas-i-produktion/"><link rel="alternate" hreflang="es-ES" href="https://mtera.eu/es/perspectivas/fundamentos-de-datos-para-la-ia-en-produccion/"><link rel="alternate" hreflang="ru-RU" href="https://mtera.eu/ru/materialy/osnovy-dannykh-dlya-promyshlennogo-ii/"><link rel="alternate" hreflang="hi-IN" href="https://mtera.eu/hi/antardrishti/utpadan-ai-se-pahle-data-aadhar/"><link rel="alternate" hreflang="pt-PT" href="https://mtera.eu/pt/perspetivas/fundamentos-de-dados-antes-da-ia-em-producao/"><link rel="alternate" hreflang="fi-FI" href="https://mtera.eu/fi/nakemykset/datan-edellytykset-ennen-tekoalyn-tuotantokayttoa/"><link rel="alternate" hreflang="nb-NO" href="https://mtera.eu/no/innsikt/datagrunnlag-for-ki-i-produksjon/"><link rel="alternate" hreflang="nl-NL" href="https://mtera.eu/nl/inzichten/datafundamenten-voor-ai-in-productie/"><link rel="alternate" hreflang="da-DK" href="https://mtera.eu/da/indsigter/datagrundlag-for-ai-i-produktion/"><link rel="alternate" hreflang="x-default" href="https://mtera.eu/insights/data-foundations-before-production-ai/">    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MTera">
+    <meta property="og:title" content="在生产 AI 之前必须存在的数据基础 | MTera 见解">
+    <meta property="og:description" content="生产人工智能需要决策特定的数据含义、出处、质量控制、访问权限、评估证据和操作反馈。">
+<meta property="og:url" content="https://mtera.eu/zh/dongjian/shengchanxing-rengongzhineng-zhiqian-de-shuju-jichu/">    <meta property="og:locale" content="zh_Hans_CN">
+<meta property="og:locale:alternate" content="en_GB"><meta property="og:locale:alternate" content="en_US"><meta property="og:locale:alternate" content="de_DE"><meta property="og:locale:alternate" content="sl_SI"><meta property="og:locale:alternate" content="sr_Latn_RS"><meta property="og:locale:alternate" content="hu_HU"><meta property="og:locale:alternate" content="ar_AE"><meta property="og:locale:alternate" content="ja_JP"><meta property="og:locale:alternate" content="sv_SE"><meta property="og:locale:alternate" content="es_ES"><meta property="og:locale:alternate" content="ru_RU"><meta property="og:locale:alternate" content="hi_IN"><meta property="og:locale:alternate" content="pt_PT"><meta property="og:locale:alternate" content="fi_FI"><meta property="og:locale:alternate" content="nb_NO"><meta property="og:locale:alternate" content="nl_NL"><meta property="og:locale:alternate" content="da_DK">    <meta property="og:image" content="https://mtera.eu/static/images/og/generated/zh-hans/insight-data-foundations-production-ai.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="MTera · 洞察 · 人工智能进入生产环境前必须具备的数据基础">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="在生产 AI 之前必须存在的数据基础 | MTera 见解">
+    <meta name="twitter:description" content="生产人工智能需要决策特定的数据含义、出处、质量控制、访问权限、评估证据和操作反馈。">
+    <meta name="twitter:image" content="https://mtera.eu/static/images/og/generated/zh-hans/insight-data-foundations-production-ai.png">
+    <meta name="twitter:image:alt" content="MTera · 洞察 · 人工智能进入生产环境前必须具备的数据基础">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16">
+    <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="/favicon-48x48.png" type="image/png" sizes="48x48">
+    <link rel="icon" href="/favicon-96x96.png" type="image/png" sizes="96x96">
+    <link rel="icon" href="/favicon-256x256.png" type="image/png" sizes="256x256">
+    <link rel="shortcut icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="mask-icon" href="/static/brand/pinned-tab.svg" color="#B9824E">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+    <link rel="manifest" href="/zh/site.webmanifest">
+    <meta name="mtera-font-profile" content="/static/fonts/chinese-simplified.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@id": "https://mtera.eu/zh/dongjian/shengchanxing-rengongzhineng-zhiqian-de-shuju-jichu/#webpage", "@type": "WebPage", "about": {"@id": "https://mtera.eu/#organization"}, "breadcrumb": {"@id": "https://mtera.eu/zh/dongjian/shengchanxing-rengongzhineng-zhiqian-de-shuju-jichu/#breadcrumb"}, "dateModified": "2026-08-11", "description": "\u751f\u4ea7\u4eba\u5de5\u667a\u80fd\u9700\u8981\u51b3\u7b56\u7279\u5b9a\u7684\u6570\u636e\u542b\u4e49\u3001\u51fa\u5904\u3001\u8d28\u91cf\u63a7\u5236\u3001\u8bbf\u95ee\u6743\u9650\u3001\u8bc4\u4f30\u8bc1\u636e\u548c\u64cd\u4f5c\u53cd\u9988\u3002", "inLanguage": "zh-Hans-CN", "isPartOf": {"@id": "https://mtera.eu/#website"}, "name": "\u5728\u751f\u4ea7 AI \u4e4b\u524d\u5fc5\u987b\u5b58\u5728\u7684\u6570\u636e\u57fa\u7840 | MTera \u89c1\u89e3", "url": "https://mtera.eu/zh/dongjian/shengchanxing-rengongzhineng-zhiqian-de-shuju-jichu/"}, {"@id": "https://mtera.eu/#website", "@type": "WebSite", "inLanguage": ["en-GB", "en-US", "de-DE", "sl-SI", "sr-Latn-RS", "hu-HU", "ar-AE", "zh-Hans-CN", "ja-JP", "sv-SE", "es-ES", "ru-RU", "hi-IN", "pt-PT", "fi-FI", "nb-NO", "nl-NL", "da-DK"], "name": "MTera", "publisher": {"@id": "https://mtera.eu/#organization"}, "url": "https://mtera.eu/"}, {"@id": "https://mtera.eu/#organization", "@type": "Organization", "description": "MTera \u5e2e\u52a9\u7ec4\u7ec7\u7406\u89e3\u3001\u91cd\u5851\u3001\u8fde\u63a5\u5e76\u6784\u5efa\u91cd\u5927\u4e1a\u52a1\u53d8\u9769\u80cc\u540e\u7684\u7cfb\u7edf\uff0c\u8d2f\u901a\u6570\u636e\u3001\u6d41\u7a0b\u3001\u5e94\u7528\u3001\u96c6\u6210\u3001\u4eba\u5de5\u667a\u80fd\u4e0e\u8fd0\u8425\u51b3\u7b56\u3002", "email": "hello@mtera.eu", "founder": {"@id": "https://mtera.eu/about/milovan-tomasevic/#person"}, "logo": {"@type": "ImageObject", "height": 512, "url": "https://mtera.eu/static/brand/mtera-avatar-512.png", "width": 512}, "name": "MTera", "url": "https://mtera.eu/"}, {"@id": "https://mtera.eu/zh/dongjian/shengchanxing-rengongzhineng-zhiqian-de-shuju-jichu/#breadcrumb", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://mtera.eu/zh/", "name": "\u6784\u5efa\u672a\u6765\uff0c\u540c\u65f6\u5b88\u4f4f\u5fc5\u987b\u59cb\u7ec8\u6210\u7acb\u7684\u539f\u5219\u3002", "position": 1}, {"@type": "ListItem", "item": "https://mtera.eu/zh/dongjian/", "name": "\u6d1e\u5bdf", "position": 2}, {"@type": "ListItem", "item": "https://mtera.eu/zh/dongjian/shengchanxing-rengongzhineng-zhiqian-de-shuju-jichu/", "name": "\u4eba\u5de5\u667a\u80fd\u8fdb\u5165\u751f\u4ea7\u73af\u5883\u524d\u5fc5\u987b\u5177\u5907\u7684\u6570\u636e\u57fa\u7840", "position": 3}]}]}</script></head>
+<body class="page page--insight.data_foundations_production_ai page-kind--article">
+    <a class="skip-link" href="#main-content" lang="zh-Hans-CN" dir="ltr">跳到主要内容</a>
+    <div class="header-marker" data-header-marker aria-hidden="true"></div>
+<header class="site-header" data-site-header lang="zh-Hans-CN" dir="ltr">
+    <div class="site-header__inner shell">
+        <a class="brand" href="/zh/" aria-label="MTera — 首页">
+            <span class="theme-lockup" aria-hidden="true">
+                <img class="theme-lockup__light" src="/static/brand/mtera-wordmark.svg" width="1062" height="269" alt="">
+                <img class="theme-lockup__dark" src="/static/brand/mtera-wordmark-on-dark.svg" width="1062" height="269" alt="">
+            </span>
+        </a>
+
+        <nav class="desktop-nav" aria-label="主导航">
+            <ul class="desktop-nav__list">
+                    <li>
+                        <a href="/zh/fangfa/">方法</a>
+                    </li>
+                    <li>
+                        <details class="desktop-nav__group" data-nav-group>
+                            <summary>服务<span aria-hidden="true"></span></summary>
+                            <div class="desktop-nav__mega">
+                                <a class="desktop-nav__overview" href="/zh/fuwu/">
+                                    <small>服务</small>
+                                    <strong>服务</strong>
+                                    <svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg>
+                                </a>
+                                <ul class="desktop-nav__deep-list">
+                                    <li><a href="/zh/fuwu/qiyeyewu-xitong-jiagou-yu-zhuanxing/"><span>业务系统架构和转型</span></a></li>
+                                    <li><a href="/zh/fuwu/shuju-zhanlue-zhili-yu-gongcheng/"><span>数据战略、治理和工程</span></a></li>
+                                    <li><a href="/zh/fuwu/qiye-jicheng-yu-hulian-hutong/"><span>企业集成和互操作性</span></a></li>
+                                    <li><a href="/zh/fuwu/rengongzhineng-jiuxudu-jicheng-yu-fuzeren-jiaofu/"><span>人工智能就绪、集成与负责任交付</span></a></li>
+                                    <li><a href="/zh/fuwu/liucheng-zidonghua-yu-yunying-youhua/"><span>流程自动化和运营优化</span></a></li>
+                                    <li><a href="/zh/fuwu/dingzhi-ruanjian-yu-pingtai-gongcheng/"><span>定制软件和平台工程</span></a></li>
+                                </ul>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <details class="desktop-nav__group" data-nav-group>
+                            <summary>挑战<span aria-hidden="true"></span></summary>
+                            <div class="desktop-nav__mega">
+                                <a class="desktop-nav__overview" href="/zh/tiaozhan/">
+                                    <small>挑战</small>
+                                    <strong>挑战</strong>
+                                    <svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg>
+                                </a>
+                                <ul class="desktop-nav__deep-list">
+                                    <li><a href="/zh/tiaozhan/xitong-fenge-shuju-lingluan/"><svg class="icon" viewBox="0 0 24 24" data-icon="system" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#system"></use></svg><span>系统断开且支离破碎data</span></a></li>
+                                    <li><a href="/zh/tiaozhan/chuantong-xitong-xiandaihua-buzhongduan-yewu/"><svg class="icon" viewBox="0 0 24 24" data-icon="transformation" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#transformation"></use></svg><span>在不中断业务的情况下对遗留系统进行现代化改造</span></a></li>
+                                    <li><a href="/zh/tiaozhan/zhichi-juece-yu-rengongzhineng-de-kexin-shuju/"><svg class="icon" viewBox="0 0 24 24" data-icon="data" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#data"></use></svg><span>决策和恢复的可信数据基础人工智能</span></a></li>
+                                    <li><a href="/zh/tiaozhan/fuzade-hezuohuoban-jicheng/"><svg class="icon" viewBox="0 0 24 24" data-icon="integration" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#integration"></use></svg><span>复杂的合作伙伴和企业集成</span></a></li>
+                                    <li><a href="/zh/tiaozhan/rengongzhineng-shidian-zouxiang-shengchan/"><svg class="icon" viewBox="0 0 24 24" data-icon="ai" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#ai"></use></svg><span>将人工智能从试点转向生产</span></a></li>
+                                    <li><a href="/zh/tiaozhan/shougong-liucheng-yu-yunying-moca/"><svg class="icon" viewBox="0 0 24 24" data-icon="automation" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#automation"></use></svg><span>脆弱的手动工作流程和隐藏的操作工作</span></a></li>
+                                    <li><a href="/zh/tiaozhan/zhichi-chixu-biangeng-de-jiagou/"><svg class="icon" viewBox="0 0 24 24" data-icon="architecture" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#architecture"></use></svg><span>必须安全地不断变化的架构</span></a></li>
+                                    <li><a href="/zh/xitong-tiaozhan-jianbao/"><svg class="icon" viewBox="0 0 24 24" data-icon="decision" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#decision"></use></svg><span>系统挑战简介</span></a></li>
+                                </ul>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <a href="/zh/gongzuofangshi/">工作方式</a>
+                    </li>
+                    <li>
+                        <details class="desktop-nav__group" data-nav-group data-current="true">
+                            <summary>洞察<span aria-hidden="true"></span></summary>
+                            <div class="desktop-nav__mega">
+                                <a class="desktop-nav__overview" href="/zh/dongjian/">
+                                    <small>洞察</small>
+                                    <strong>洞察</strong>
+                                    <svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg>
+                                </a>
+                                <ul class="desktop-nav__deep-list">
+                                    <li><a href="/zh/dongjian/shenme-shi-qiyeyewu-xitong-gongcheng/"><span>业务系统工程的实际含义</span></a></li>
+                                    <li><a href="/zh/dongjian/zai-baochi-yewu-lianxuxing-de-tongshi-xiandaihua-chuantong-xitong/"><span>如何在不失去业务连续性的情况下对遗留系统进行现代化</span></a></li>
+                                    <li><a href="/zh/dongjian/qiye-jicheng-weihe-zai-zuzhi-bianjie-shibai/"><span>为什么企业集成在组织边界处失败</span></a></li>
+                                    <li><a href="/zh/dongjian/shengchanxing-rengongzhineng-zhiqian-de-shuju-jichu/" aria-current="page"><span>人工智能进入生产环境前必须具备的数据基础</span></a></li>
+                                    <li><a href="/zh/shuyubiao/"><span>业务系统工程术语表</span></a></li>
+                                </ul>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <details class="desktop-nav__group" data-nav-group>
+                            <summary>关于 MTera<span aria-hidden="true"></span></summary>
+                            <div class="desktop-nav__mega">
+                                <a class="desktop-nav__overview" href="/zh/guanyu-mtera/">
+                                    <small>关于 MTera</small>
+                                    <strong>关于 MTera</strong>
+                                    <svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg>
+                                </a>
+                                <ul class="desktop-nav__deep-list">
+                                    <li><a href="/zh/guanyu-mtera/milovan-tomasevic/"><span>Milovan Tomašević</span></a></li>
+                                    <li><a href="/zh/jingyan/"><span>经验与精选问题模式</span></a></li>
+                                    <li><a href="/zh/changjian-wenti/"><span>与 MTera 合作的常见问题</span></a></li>
+                                </ul>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <a href="/zh/lianxi/">联系</a>
+                    </li>
+            </ul>
+        </nav>
+
+        <div class="site-header__tools">
+            <a class="tool-button" href="/zh/sousuo/" data-search-open aria-label="打开搜索">
+                <svg class="icon" viewBox="0 0 20 20" data-icon="search" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#search-20"></use></svg><span class="tool-button__label">打开搜索</span>
+            </a>
+            <div class="header-language"><details class="language-picker" data-language-picker>
+    <summary class="tool-button" aria-label="更改语言: 简体中文"><span class="language-picker__flag" aria-hidden="true">🇨🇳</span></summary>
+    <div class="popover language-menu">
+        <label for="language-filter-header">更改语言</label>
+        <div class="language-filter"><svg class="icon" viewBox="0 0 20 20" data-icon="search" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#search-20"></use></svg><input id="language-filter-header" type="search" inputmode="search" autocomplete="off" data-language-filter placeholder="搜索语言"></div>
+        <ul data-language-list>
+            <li data-language-item data-language-search="english (uk)  en">
+                <a href="/insights/data-foundations-before-production-ai/" hreflang="en-GB" lang="en-GB" data-locale-code="en" data-locale-label="English (UK)" data-locale-flag="🇬🇧" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">en</span>
+                    <span><strong>English (UK)</strong><small>English (UK)</small><small class="translation-state">草稿</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="english (us)  en-us">
+                <a href="/us/insights/data-foundations-before-production-ai/" hreflang="en-US" lang="en-US" data-locale-code="en-US" data-locale-label="English (US)" data-locale-flag="🇺🇸" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">en-US</span>
+                    <span><strong>English (US)</strong><small>English (US)</small><small class="translation-state">待审译稿</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="deutsch  de">
+                <a href="/de/einblicke/datengrundlagen-fuer-ki-im-produktivbetrieb/" hreflang="de-DE" lang="de-DE" data-locale-code="de" data-locale-label="Deutsch" data-locale-flag="🇩🇪" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">de</span>
+                    <span><strong>Deutsch</strong><small>Deutsch</small><small class="translation-state">待审译稿</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="slovenščina  sl">
+                <a href="/sl/vpogledi/podatkovni-temelji-pred-produkcijsko-uporabo-umetne-inteligence/" hreflang="sl-SI" lang="sl-SI" data-locale-code="sl" data-locale-label="Slovenščina" data-locale-flag="🇸🇮" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">sl</span>
+                    <span><strong>Slovenščina</strong><small>Slovenščina</small><small class="translation-state">待审译稿</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="srpski  sr-latn">
+                <a href="/sr/uvidi/temelji-podataka-za-produkcioni-ai/" hreflang="sr-Latn-RS" lang="sr-Latn-RS" data-locale-code="sr-Latn" data-locale-label="Srpski" data-locale-flag="🇷🇸" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">sr-Latn</span>
+                    <span><strong>Srpski</strong><small>Srpski</small><small class="translation-state">待审译稿</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="magyar  hu">
+                <a href="/hu/elemzesek/adatalapok-a-mi-uzemi-bevezetese-elott/" hreflang="hu-HU" lang="hu-HU" data-locale-code="hu" data-locale-label="Magyar" data-locale-flag="🇭🇺" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">hu</span>
+                    <span><strong>Magyar</strong><small>Magyar</small><small class="translation-state">待审译稿</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="العربية  ar">
+                <a href="/ar/al-rua/asasat-albayanat-qabl-thaka-alistina-i-fil-intaj/" hreflang="ar-AE" lang="ar-AE" data-locale-code="ar" data-locale-label="العربية" data-locale-flag="🇦🇪" data-locale-direction="rtl">
+                    <span class="language-code" aria-hidden="true">ar</span>
+                    <span><strong>العربية</strong><small>العربية</small><small class="translation-state">待审译稿</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="简体中文  zh-hans">
+                <a href="/zh/dongjian/shengchanxing-rengongzhineng-zhiqian-de-shuju-jichu/" hreflang="zh-Hans-CN" lang="zh-Hans-CN" data-locale-code="zh-Hans" data-locale-label="简体中文" data-locale-flag="🇨🇳" data-locale-direction="ltr" aria-current="page">
+                    <span class="language-code" aria-hidden="true">zh-Hans</span>
+                    <span><strong>简体中文</strong><small>简体中文</small><small class="translation-state">待审译稿</small></span>
+<svg class="icon" viewBox="0 0 24 24" data-icon="check" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#check"></use></svg>                </a>
+            </li>
+            <li data-language-item data-language-search="日本語  ja">
+                <a href="/ja/insaito/honban-ai-mae-no-deta-kiban/" hreflang="ja-JP" lang="ja-JP" data-locale-code="ja" data-locale-label="日本語" data-locale-flag="🇯🇵" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">ja</span>
+                    <span><strong>日本語</strong><small>日本語</small><small class="translation-state">待审译稿</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="svenska  sv">
+                <a href="/sv/insikter/datagrunder-som-kravs-innan-ai-tas-i-produktion/" hreflang="sv-SE" lang="sv-SE" data-locale-code="sv" data-locale-label="Svenska" data-locale-flag="🇸🇪" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">sv</span>
+                    <span><strong>Svenska</strong><small>Svenska</small><small class="translation-state">待审译稿</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="español  es">
+                <a href="/es/perspectivas/fundamentos-de-datos-para-la-ia-en-produccion/" hreflang="es-ES" lang="es-ES" data-locale-code="es" data-locale-label="Español" data-locale-flag="🇪🇸" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">es</span>
+                    <span><strong>Español</strong><small>Español</small><small class="translation-state">待审译稿</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="русский  ru">
+                <a href="/ru/materialy/osnovy-dannykh-dlya-promyshlennogo-ii/" hreflang="ru-RU" lang="ru-RU" data-locale-code="ru" data-locale-label="Русский" data-locale-flag="🇷🇺" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">ru</span>
+                    <span><strong>Русский</strong><small>Русский</small><small class="translation-state">待审译稿</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="हिन्दी  hi">
+                <a href="/hi/antardrishti/utpadan-ai-se-pahle-data-aadhar/" hreflang="hi-IN" lang="hi-IN" data-locale-code="hi" data-locale-label="हिन्दी" data-locale-flag="🇮🇳" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">hi</span>
+                    <span><strong>हिन्दी</strong><small>हिन्दी</small><small class="translation-state">待审译稿</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="português  pt-pt">
+                <a href="/pt/perspetivas/fundamentos-de-dados-antes-da-ia-em-producao/" hreflang="pt-PT" lang="pt-PT" data-locale-code="pt-PT" data-locale-label="Português" data-locale-flag="🇵🇹" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">pt-PT</span>
+                    <span><strong>Português</strong><small>Português</small><small class="translation-state">待审译稿</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="suomi  fi-fi">
+                <a href="/fi/nakemykset/datan-edellytykset-ennen-tekoalyn-tuotantokayttoa/" hreflang="fi-FI" lang="fi-FI" data-locale-code="fi-FI" data-locale-label="Suomi" data-locale-flag="🇫🇮" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">fi-FI</span>
+                    <span><strong>Suomi</strong><small>Suomi</small><small class="translation-state">待审译稿</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="norsk  nb-no">
+                <a href="/no/innsikt/datagrunnlag-for-ki-i-produksjon/" hreflang="nb-NO" lang="nb-NO" data-locale-code="nb-NO" data-locale-label="Norsk" data-locale-flag="🇳🇴" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">nb-NO</span>
+                    <span><strong>Norsk</strong><small>Norsk</small><small class="translation-state">待审译稿</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="nederlands  nl-nl">
+                <a href="/nl/inzichten/datafundamenten-voor-ai-in-productie/" hreflang="nl-NL" lang="nl-NL" data-locale-code="nl-NL" data-locale-label="Nederlands" data-locale-flag="🇳🇱" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">nl-NL</span>
+                    <span><strong>Nederlands</strong><small>Nederlands</small><small class="translation-state">待审译稿</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="dansk  da-dk">
+                <a href="/da/indsigter/datagrundlag-for-ai-i-produktion/" hreflang="da-DK" lang="da-DK" data-locale-code="da-DK" data-locale-label="Dansk" data-locale-flag="🇩🇰" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">da-DK</span>
+                    <span><strong>Dansk</strong><small>Dansk</small><small class="translation-state">待审译稿</small></span>
+                </a>
+            </li>
+        </ul>
+        <p class="language-empty" data-language-empty hidden>没有匹配的语言</p>
+    </div>
+</details></div>
+            <button class="tool-button theme-toggle" type="button" data-theme-toggle data-change-label="更改主题" data-light-label="浅色主题" data-dark-label="深色主题" aria-label="更改主题: 深色主题" title="更改主题: 深色主题">
+                <span class="theme-toggle__icon theme-toggle__icon--to-dark"><svg class="icon" viewBox="0 0 20 20" data-icon="dark" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#dark-20"></use></svg></span>
+                <span class="theme-toggle__icon theme-toggle__icon--to-light"><svg class="icon" viewBox="0 0 20 20" data-icon="light" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#light-20"></use></svg></span>
+                <span class="visually-hidden" data-theme-current>浅色主题</span>
+            </button>
+            <a class="button button--primary header-cta desktop-tools" href="/zh/lianxi/">讨论系统挑战</a>
+
+            <details class="mobile-navigation" data-mobile-nav>
+                <summary class="tool-button menu-trigger" data-menu-toggle aria-label="打开菜单" data-open-label="打开菜单" data-close-label="关闭菜单"><span class="menu-open"><svg class="icon" viewBox="0 0 20 20" data-icon="menu" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#menu-20"></use></svg></span><span class="menu-close"><svg class="icon" viewBox="0 0 20 20" data-icon="close" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#close-20"></use></svg></span></summary>
+                <div class="mobile-navigation__panel" data-mobile-panel>
+                    <nav aria-label="主导航">
+                        <ul class="mobile-navigation__primary">
+                            <li>
+                                <a href="/zh/fangfa/"><span>01</span>方法</a>
+                            </li>
+                            <li>
+                                <details class="mobile-navigation__group">
+                                    <summary><span>02</span><strong>服务</strong><i aria-hidden="true"></i></summary>
+                                    <ul>
+                                        <li><a href="/zh/fuwu/">服务</a></li>
+                                        <li><a href="/zh/fuwu/qiyeyewu-xitong-jiagou-yu-zhuanxing/"><span>业务系统架构和转型</span></a></li>
+                                        <li><a href="/zh/fuwu/shuju-zhanlue-zhili-yu-gongcheng/"><span>数据战略、治理和工程</span></a></li>
+                                        <li><a href="/zh/fuwu/qiye-jicheng-yu-hulian-hutong/"><span>企业集成和互操作性</span></a></li>
+                                        <li><a href="/zh/fuwu/rengongzhineng-jiuxudu-jicheng-yu-fuzeren-jiaofu/"><span>人工智能就绪、集成与负责任交付</span></a></li>
+                                        <li><a href="/zh/fuwu/liucheng-zidonghua-yu-yunying-youhua/"><span>流程自动化和运营优化</span></a></li>
+                                        <li><a href="/zh/fuwu/dingzhi-ruanjian-yu-pingtai-gongcheng/"><span>定制软件和平台工程</span></a></li>
+                                    </ul>
+                                </details>
+                            </li>
+                            <li>
+                                <details class="mobile-navigation__group">
+                                    <summary><span>03</span><strong>挑战</strong><i aria-hidden="true"></i></summary>
+                                    <ul>
+                                        <li><a href="/zh/tiaozhan/">挑战</a></li>
+                                        <li><a href="/zh/tiaozhan/xitong-fenge-shuju-lingluan/"><svg class="icon" viewBox="0 0 24 24" data-icon="system" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#system"></use></svg><span>系统断开且支离破碎data</span></a></li>
+                                        <li><a href="/zh/tiaozhan/chuantong-xitong-xiandaihua-buzhongduan-yewu/"><svg class="icon" viewBox="0 0 24 24" data-icon="transformation" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#transformation"></use></svg><span>在不中断业务的情况下对遗留系统进行现代化改造</span></a></li>
+                                        <li><a href="/zh/tiaozhan/zhichi-juece-yu-rengongzhineng-de-kexin-shuju/"><svg class="icon" viewBox="0 0 24 24" data-icon="data" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#data"></use></svg><span>决策和恢复的可信数据基础人工智能</span></a></li>
+                                        <li><a href="/zh/tiaozhan/fuzade-hezuohuoban-jicheng/"><svg class="icon" viewBox="0 0 24 24" data-icon="integration" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#integration"></use></svg><span>复杂的合作伙伴和企业集成</span></a></li>
+                                        <li><a href="/zh/tiaozhan/rengongzhineng-shidian-zouxiang-shengchan/"><svg class="icon" viewBox="0 0 24 24" data-icon="ai" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#ai"></use></svg><span>将人工智能从试点转向生产</span></a></li>
+                                        <li><a href="/zh/tiaozhan/shougong-liucheng-yu-yunying-moca/"><svg class="icon" viewBox="0 0 24 24" data-icon="automation" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#automation"></use></svg><span>脆弱的手动工作流程和隐藏的操作工作</span></a></li>
+                                        <li><a href="/zh/tiaozhan/zhichi-chixu-biangeng-de-jiagou/"><svg class="icon" viewBox="0 0 24 24" data-icon="architecture" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#architecture"></use></svg><span>必须安全地不断变化的架构</span></a></li>
+                                        <li><a href="/zh/xitong-tiaozhan-jianbao/"><svg class="icon" viewBox="0 0 24 24" data-icon="decision" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#decision"></use></svg><span>系统挑战简介</span></a></li>
+                                    </ul>
+                                </details>
+                            </li>
+                            <li>
+                                <a href="/zh/gongzuofangshi/"><span>04</span>工作方式</a>
+                            </li>
+                            <li>
+                                <details class="mobile-navigation__group" data-current="true">
+                                    <summary><span>05</span><strong>洞察</strong><i aria-hidden="true"></i></summary>
+                                    <ul>
+                                        <li><a href="/zh/dongjian/">洞察</a></li>
+                                        <li><a href="/zh/dongjian/shenme-shi-qiyeyewu-xitong-gongcheng/"><span>业务系统工程的实际含义</span></a></li>
+                                        <li><a href="/zh/dongjian/zai-baochi-yewu-lianxuxing-de-tongshi-xiandaihua-chuantong-xitong/"><span>如何在不失去业务连续性的情况下对遗留系统进行现代化</span></a></li>
+                                        <li><a href="/zh/dongjian/qiye-jicheng-weihe-zai-zuzhi-bianjie-shibai/"><span>为什么企业集成在组织边界处失败</span></a></li>
+                                        <li><a href="/zh/dongjian/shengchanxing-rengongzhineng-zhiqian-de-shuju-jichu/" aria-current="page"><span>人工智能进入生产环境前必须具备的数据基础</span></a></li>
+                                        <li><a href="/zh/shuyubiao/"><span>业务系统工程术语表</span></a></li>
+                                    </ul>
+                                </details>
+                            </li>
+                            <li>
+                                <details class="mobile-navigation__group">
+                                    <summary><span>06</span><strong>关于 MTera</strong><i aria-hidden="true"></i></summary>
+                                    <ul>
+                                        <li><a href="/zh/guanyu-mtera/">关于 MTera</a></li>
+                                        <li><a href="/zh/guanyu-mtera/milovan-tomasevic/"><span>Milovan Tomašević</span></a></li>
+                                        <li><a href="/zh/jingyan/"><span>经验与精选问题模式</span></a></li>
+                                        <li><a href="/zh/changjian-wenti/"><span>与 MTera 合作的常见问题</span></a></li>
+                                    </ul>
+                                </details>
+                            </li>
+                            <li>
+                                <a href="/zh/lianxi/"><span>07</span>联系</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <a class="button button--primary" href="/zh/lianxi/">讨论系统挑战 <svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a>
+                </div>
+            </details>
+        </div>
+    </div>
+</header><div
+    class="language-suggestion"
+    role="region"
+    aria-labelledby="language-suggestion-title"
+    aria-live="polite"
+    lang="zh-Hans-CN"
+    dir="ltr"
+    data-language-suggestion
+    data-current-locale="zh-Hans"
+    data-message-template="您的浏览器首选 {language}。在您做出选择之前，当前页面会保持打开。"
+    data-action-template="使用 {language} 查看此页面"
+    hidden
+>
+    <div class="language-suggestion__copy">
+        <p class="language-suggestion__heading visually-hidden">
+            <strong id="language-suggestion-title">语言建议</strong>
+        </p>
+        <p data-language-suggestion-message></p>
+    </div>
+    <a class="text-link language-suggestion__action" data-language-suggestion-accept></a>
+    <button class="language-suggestion__dismiss" type="button" data-language-suggestion-dismiss aria-label="忽略语言建议">
+        <svg class="icon" viewBox="0 0 20 20" data-icon="close" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#close-20"></use></svg>
+        <span class="visually-hidden">忽略语言建议</span>
+    </button>
+</div>
+    <main id="main-content" tabindex="-1" lang="zh-Hans-CN" dir="ltr" data-pagefind-body>
+<nav class="breadcrumbs shell" aria-label="面包屑导航">
+    <ol>
+        <li><a href="https://mtera.eu/zh/">构建未来，同时守住必须始终成立的原则。</a><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></li>
+        <li><a href="https://mtera.eu/zh/dongjian/">洞察</a><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></li>
+        <li><span aria-current="page">人工智能进入生产环境前必须具备的数据基础</span></li>
+    </ol>
+</nav>
+<article class="article" data-pagefind-meta="category:人工智能">
+    <header class="article-hero shell"><span class="eyebrow">人工智能</span><h1 id="page-title">在生产人工智能之前必须存在的数据基础</h1><p class="lede">当数据适合定义的决策和操作环境时，数据就可以用于生产人工智能：其含义是共享的，来源是可追溯的，质量控制反映结果，访问和使用是授权的，评估代表真实情况，反馈可以揭示数据或决策何时背景已经改变。</p><div class="article-meta"><span data-publication-state="preview">编辑预览</span><span><svg class="icon" viewBox="0 0 24 24" data-icon="calendar" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#calendar"></use></svg><time datetime="2026-08-11" data-local-date>2026-08-11</time></span><span><svg class="icon" viewBox="0 0 24 24" data-icon="reading-time" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#reading-time"></use></svg><span data-local-number="10" data-use-grouping="false">10</span> 分钟读完</span></div></header>
+<section class="section shell"><div class="publication-note"><svg class="icon" viewBox="0 0 24 24" data-icon="warning" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#warning"></use></svg><div><strong>编辑预览——等待专家审核</strong><p>在指定专家完成审核并批准前，这份完整预览不会进入正式发布版本。</p></div></div></section><div class="article-layout shell"><aside class="article-toc"><strong>本页内容</strong><ol><li><a href="#decision_first">从决策出发，而不是从现有数据集出发</a></li><li><a href="#meaning">共享含义是生产级能力的依赖条件</a></li><li><a href="#lineage">数据血缘必须延伸到运营决策</a></li><li><a href="#quality">让质量控制反映业务后果</a></li><li><a href="#authority">可以访问不等于获准使用</a></li><li><a href="#evaluation">评估数据必须代表真实运营条件</a></li><li><a href="#feedback">生产环境需要反馈与受控变更机制</a></li></ol></aside><div class="article-body"><section id="decision_first"><h2>从决策出发，而不是从现有数据集出发</h2><p>数据集可能是干净的，但仍然不适合用例。准备情况取决于模型将影响什么、受影响的人、错误意味着什么、条件变化的速度以及当信心较低时人们可以做什么。这些问题确定哪些事实是重要的以及需要多少证据。</p><p>用简单的操作术语定义预期的建议或行动。确定所有者、用户、主体、决策时间、替代方案和后果。然后追踪支持它所需的数据。这可以防止有吸引力的数据集创建组织无法负责任地操作的用例。</p></section><section id="meaning"><h2>共享含义是生产级能力的依赖条件</h2><p>培训和操作系统可能对不同的概念使用相同的标签。客户可以指帐户、法人、家庭或有效合同。结案可能意味着已解决、行政结束或放弃。如果含义因时期、来源或团队而异，则模型行为可能会因评估从未测试过的原因而发生变化。</p><p>关键功能和结果需要业务定义、包含和排除规则、时间背景和负责任的所有者。历史的变化应该是看得见的。目标不是记录每个字段，而是使对决策产生重大影响的含义足够稳定，以便质疑和监控。</p></section><section id="lineage"><h2>数据血缘必须延伸到运营决策</h2><p>谱系在解释值从何而来、哪些转换改变了它以及它在哪个规则或版本下进入训练、评估和生产时非常有用。技术管道图可能会显示变化，同时忽略形成数据的业务选择和修正决策。</p><p>在与风险成比例的水平上记录来源。团队应该能够调查结果、评估源更改的影响并重现相关评估。如果数据由人员或供应商丰富或标记，则该上下文及其质量控制属于谱系视图。</p></section><section id="quality"><h2>让质量控制反映业务后果</h2><p>全局完整性和准确性分数是薄弱的准备测试。如果罕见的缺失值消除了安全或资格条件，则它可能是重大的，而频繁的缺陷可能与预期的决策无关。根据使用定义质量：影响结果的有效范围、及时性、代表性、一致性、重复性和标签可靠性。</p><p>对于每个关键缺陷，决定是否预防、检测、纠正、拒绝、升级或向相关人员明确呈现不确定性。指定所有者和操作阈值。这些控制措施应在部署后和准备期间发挥作用，因为生产源和行为会发生变化。</p></section><section id="authority"><h2>可以访问不等于获准使用</h2><p>团队在技术上可能能够检索数据，而无需为人工智能使用提供合理的目的、许可或适当的保留模型。相反，如果派生输出泄露信息或人工审核者收到他们不应该看到的上下文，严格的访问控制仍然可能会失败。</p><p>映射数据主体、所有者、允许的目的、访问路径、保留、派生工件以及删除或更正效果。法律、隐私、安全和部门专家必须验证实际义务。工程贡献是使使用和信息流足够具体，以便应用这些决策。</p></section><section id="evaluation"><h2>评估数据必须代表真实运营条件</h2><p>评估集应反映能力将遇到的案例、时间段、异常和人群，包括模型应推迟的条件。与培训问题分离，但通过相关实体、结果后信息和手动更正的泄漏也是如此，而这些在决策时不会存在。</p><p>围绕业务操作定义接受度，而不是一个总体模型分数。包括重要的错误类别、人工审核能力、延迟、失败行为和暂缓判断的成本。记录数据集和规则版本，以便以后的更改可以进行有意义的比较。</p></section><section id="feedback"><h2>生产环境需要反馈与受控变更机制</h2><p>数据准备工作在启动时尚未完成。源系统发生变化，定义发生变化，操作行为发生变化，目标人群也可能发生变化。监控应以决策风险合理的节奏涵盖输入条件、数据控制、模型行为、人为覆盖、结果证据和未解决的异常。</p><p>组织还需要有权做出回应：谁进行调查、谁可以暂停自动化、后备工作如何进行、何时考虑重新培训或重新设计以及哪些证据允许恢复服务。如果没有这种操作模型，模型在其决策背景已经发生变化的情况下仍可以在技术上保持可用。</p></section></div></div><section class="section takeaways"><div class="shell"><span class="eyebrow">核心要点</span><h2>应将什么带入下一项决策</h2><ol><li><span>01</span>定义一项决策、所有者和结果的准备情况，而不是一般数据。</li><li><span>02</span>使关键意义、时间背景和出处可追溯。</li><li><span>03</span>将质量控制和阈值与重大错误类别联系起来。</li><li><span>04</span>区分技术访问与授权和适当使用。</li><li><span>05</span>在实际操作条件和设计反馈、后备和干预权限下进行评估。</li></ol></div></section><section class="section shell article-note"><h2>应用</h2><p>用一句话写出预期的人工智能支持决策。列出决策时所需的事实、其来源和所有者、每个重要缺陷的后果以及有权停止或推翻使用的人员。任何空白都是准备差距。</p></section><section class="section shell article-note"><h2>边界和风险</h2><p>本文是一个工程框架，而不是法律、隐私、安全、监管或部门建议。生产人工智能决策需要合格的专家和负责任的客户治理来实现实际使用和管辖。</p></section><section class="section shell related-links"><div class="section-heading"><span class="eyebrow">相关系统内容</span><h2>继续深入了解相关功能和挑战</h2></div><div class="link-ledger"><a href="/zh/fuwu/shuju-zhanlue-zhili-yu-gongcheng/"><span>01</span><strong>通过 数据战略、治理和工程 应用本篇洞察</strong><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a><a href="/zh/tiaozhan/zhichi-juece-yu-rengongzhineng-de-kexin-shuju/"><span>02</span><strong>探索系统挑战：决策和恢复的可信数据基础人工智能</strong><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a></div></section><section class="section shell related-links"><div class="section-heading"><span class="eyebrow">术语表</span><h2>理解本主题所需的术语</h2></div><div class="link-ledger"><a href="/zh/shuyubiao/#data_lineage"><span>01</span><strong>了解 MTera 词汇表中的“数据血缘”</strong><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a><a href="/zh/shuyubiao/#ai_readiness"><span>02</span><strong>了解 MTera 词汇表中的“人工智能就绪度”</strong><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a><a href="/zh/shuyubiao/#human_oversight"><span>03</span><strong>了解 MTera 词汇表中的“人工监督”</strong><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a><a href="/zh/shuyubiao/#data_governance"><span>04</span><strong>了解 MTera 词汇表中的“数据治理”</strong><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a></div></section><section class="section shell related-links"><div class="section-heading"><span class="eyebrow">相关见解</span><h2>继续思考相互关联的系统决策</h2></div><div class="link-ledger"></div></section></article>
+<section class="section cta-band" data-pagefind-ignore>
+    <div class="shell cta-band__inner">
+        <div><span class="eyebrow">MTera · 联系 MTera</span><h2>讨论变更背后的系统问题。</h2><p>构建未来，同时守住必须始终成立的原则。</p></div>
+        <a class="button button--primary" href="/zh/lianxi/">讨论系统挑战 <svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a>
+    </div>
+</section>    </main>
+
+<aside class="print-metadata" aria-label="打印信息" lang="zh-Hans-CN" dir="ltr">
+        <img class="print-metadata__logo" src="/static/brand/mtera-lockup-horizontal-monochrome.svg" width="248" height="64" alt="MTera">
+        <p><strong>规范 URL:</strong> <span dir="ltr">https://mtera.eu/zh/dongjian/shengchanxing-rengongzhineng-zhiqian-de-shuju-jichu/</span></p>
+        <p><strong>打印版:</strong> <time datetime="2026-08-13" data-print-date>2026-08-13</time></p>
+    </aside>
+<footer class="site-footer" lang="zh-Hans-CN" dir="ltr">
+    <div class="shell site-footer__grid">
+        <div class="site-footer__brand">
+            <span class="theme-lockup"><img class="theme-lockup__light" src="/static/brand/mtera-wordmark.svg" width="1062" height="269" alt="MTera" loading="lazy"><img class="theme-lockup__dark" src="/static/brand/mtera-wordmark-on-dark.svg" width="1062" height="269" alt="" aria-hidden="true" loading="lazy"></span>
+            <p>构建未来，同时守住必须始终成立的原则。</p>
+<p class="meta-line"><svg class="icon" viewBox="0 0 24 24" data-icon="location" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#location"></use></svg> 卢布尔雅那</p>        </div>
+        <details class="site-footer__group site-footer__nav" data-footer-disclosure open>
+            <summary class="site-footer__summary">
+                <h2>探索</h2>
+                <svg class="site-footer__chevron" viewBox="0 0 20 20" data-icon="arrow-forward" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward-20"></use></svg>
+            </summary>
+            <nav class="site-footer__links" aria-label="页脚导航">
+<a href="/zh/fangfa/">方法</a><a href="/zh/fuwu/">服务</a><a href="/zh/tiaozhan/">挑战</a><a href="/zh/gongzuofangshi/">工作方式</a><a href="/zh/dongjian/">洞察</a><a href="/zh/guanyu-mtera/">关于 MTera</a><a href="/zh/lianxi/">联系</a>            </nav>
+        </details>
+        <details class="site-footer__group site-footer__nav" data-footer-disclosure open>
+            <summary class="site-footer__summary">
+                <h2>法律信息</h2>
+                <svg class="site-footer__chevron" viewBox="0 0 20 20" data-icon="arrow-forward" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward-20"></use></svg>
+            </summary>
+            <nav class="site-footer__links" aria-label="法律信息导航">
+<a href="/zh/jingyan/">经验</a><a href="/zh/shuyubiao/">术语表</a><a href="/zh/changjian-wenti/">常见问题</a><a href="/zh/falv-shengming/">法律声明</a><a href="/zh/yinsi/">隐私</a><a href="/zh/cookie-shuoming/">Cookie</a><a href="/zh/shiyong-tiaokuan/">使用条款</a><a href="/zh/wuzhangai/">无障碍</a><a href="/zh/anquan/">安全</a><a href="/zh/wangzhan-ditu/">网站地图</a><a href="/zh/sousuo/">搜索</a>            </nav>
+        </details>
+        <details class="site-footer__group site-footer__contact" data-footer-disclosure open>
+            <summary class="site-footer__summary">
+                <h2>联系 MTera</h2>
+                <svg class="site-footer__chevron" viewBox="0 0 20 20" data-icon="arrow-forward" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward-20"></use></svg>
+            </summary>
+            <div class="site-footer__links">
+<a class="email-link" href="mailto:hello@mtera.eu"><svg class="icon" viewBox="0 0 24 24" data-icon="email" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#email"></use></svg><span dir="ltr">hello@mtera.eu</span></a>            </div>
+        </details>
+    </div>
+    <div class="shell site-footer__base">
+        <p>© 2026 MTera</p>
+        <p>专为隐私、清晰度和可访问性而设计。</p>
+    </div>
+</footer><dialog class="search-dialog" data-search-dialog data-search-copy aria-labelledby="search-dialog-title" lang="zh-Hans-CN" dir="ltr"
+    data-no-results="未找到结果"
+    data-results-label="条结果"
+    data-search-unavailable="搜索暂时不可用。"
+    data-search-minimum-one="请至少输入 1 个字符。"
+    data-search-minimum-many="请至少输入 {count} 个字符。"
+    data-search-untitled="无标题"
+    data-group-service="服务"
+    data-group-challenge="挑战"
+    data-group-method="方法"
+    data-group-article="洞察"
+    data-group-glossary="术语表"
+    data-group-about="关于 MTera"
+    data-group-page="其他页面">
+    <div class="search-dialog__surface">
+        <header>
+            <div><span class="eyebrow">MTera · 搜索</span><h2 id="search-dialog-title">搜索 MTera 知识库</h2><p>查找服务、挑战、方法、洞察和定义。</p></div>
+            <button class="tool-button" type="button" data-search-close aria-label="关闭搜索"><svg class="icon" viewBox="0 0 20 20" data-icon="close" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#close-20"></use></svg></button>
+        </header>
+        <form class="search-form" action="/zh/sousuo/" method="get" role="search" data-search-form>
+            <label for="site-search-input">搜索</label>
+            <div class="search-input"><svg class="icon" viewBox="0 0 20 20" data-icon="search" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#search-20"></use></svg><input id="site-search-input" name="q" type="search" inputmode="search" autocomplete="off" spellcheck="false" enterkeyhint="search" minlength="1" role="combobox" aria-expanded="false" aria-haspopup="listbox" aria-controls="search-results" aria-autocomplete="list" data-search-input placeholder="搜索 MTera"><button class="button button--primary" type="submit">搜索</button></div>
+        </form>
+        <div class="search-status" role="status" aria-live="polite" data-search-status></div>
+        <ol class="search-results" id="search-results" role="listbox" aria-label="搜索结果" data-search-results></ol>
+        <nav class="search-quick-actions" aria-labelledby="search-dialog-actions-title">
+            <h3 id="search-dialog-actions-title">快捷操作</h3>
+            <a href="/zh/xitong-tiaozhan-jianbao/">系统挑战简介</a>
+            <a href="/zh/fangfa/">探索 MTera 方法</a>
+            <a href="/zh/fuwu/">查看服务</a>
+            <a href="/zh/lianxi/">联系 MTera</a>
+        </nav>
+        <footer><span><kbd>⌘</kbd>/<kbd>Ctrl</kbd> + <kbd>K</kbd></span><a href="/zh/sousuo/">打开完整搜索 <svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a></footer>
+    </div>
+</dialog><button class="back-to-top" type="button" data-back-to-top hidden lang="zh-Hans-CN" dir="ltr" aria-label="返回顶部">
+    <svg class="back-to-top__progress" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21" pathLength="1"></circle></svg>
+    <svg class="icon" viewBox="0 0 24 24" data-icon="top" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#top"></use></svg>
+</button>    <script id="mtera-site-script" type="module" src="/assets/mtera.KAAJH2LX.js" data-search-index="/zh/search-index.json" data-pagefind-base="/pagefind/" data-pagefind-enabled="true" data-locale="zh-Hans" data-html-lang="zh-Hans-CN"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+{
+  "name": "MTera — Verksamhetssystemteknik",
+  "short_name": "MTera",
+  "description": "MTera hjälper organisationer att förstå, omforma, koppla samman och utveckla systemen bakom avgörande verksamhetsförändringar — inom data, processer, applikationer, integrationer, AI och operativa beslut.",
+  "start_url": "/sv/",
+  "scope": "/sv/",
+  "display": "standalone",
+  "background_color": "#0A0B0D",
+  "theme_color": "#0A0B0D",
+  "lang": "sv-SE",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

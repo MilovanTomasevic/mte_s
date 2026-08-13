@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="nl-NL" dir="ltr" data-theme="light" data-theme-mode="light" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <link rel="preload" href="/assets/mtera-style.MYAWRNDW.css" as="style" fetchpriority="high">
+    <script>
+        (() => {
+            const root = document.documentElement;
+            root.classList.replace("no-js", "js");
+            let resolved = "";
+            try {
+                const saved = localStorage.getItem("mtera-theme");
+                if (saved === "light" || saved === "dark") resolved = saved;
+            } catch (_) {}
+            if (!resolved) {
+                let prefersDark = false;
+                try { prefersDark = matchMedia("(prefers-color-scheme: dark)").matches; } catch (_) {}
+                resolved = prefersDark ? "dark" : "light";
+            }
+            root.dataset.themeMode = resolved;
+            root.dataset.theme = resolved;
+            root.style.colorScheme = resolved;
+        })();
+    </script>
+    <link rel="stylesheet" href="/assets/mtera-style.MYAWRNDW.css">
+    <title>De databasis die nodig is voordat AI in productie gaat | MTera</title>
+    <meta name="description" content="Data is gereed voor AI in productie wanneer zij geschikt is voor een bepaald besluit en een bepaalde operationele situatie: de betekenis is gedeeld, de herkomst traceerbaar, kwaliteitscontroles weerspiegelen de gevolgen, toegang en gebruik zijn toegestaan, de evaluatie vertegenwoordigt werkelijke omstandigheden en terugkoppeling maakt zichtbaar wanneer de data of beslissingssituatie verandert.">
+<meta data-pagefind-meta="title" data-pagefind-ignore="all" content="De databasis die nodig is voordat AI in productie gaat"><meta data-pagefind-meta="description" data-pagefind-ignore="all" content="AI in productie vereist beslissingsspecifieke data, gedeelde betekenis, herkomst, kwaliteitscontroles, gebruiksbevoegdheid, evaluatiebewijs en operationele terugkoppeling."><meta data-pagefind-meta="locale" data-pagefind-ignore="all" content="nl-NL"><meta data-pagefind-meta="content_type" data-pagefind-ignore="all" content="article"><meta data-pagefind-meta="category" data-pagefind-ignore="all" content="AI"><meta data-pagefind-meta="date" data-pagefind-ignore="all" content="2026-08-11"><meta data-pagefind-meta="title[content]" content="De databasis die nodig is voordat AI in productie gaat"><meta data-pagefind-meta="description[content]" content="AI in productie vereist beslissingsspecifieke data, gedeelde betekenis, herkomst, kwaliteitscontroles, gebruiksbevoegdheid, evaluatiebewijs en operationele terugkoppeling."><meta data-pagefind-meta="locale[content]" content="nl-NL"><meta data-pagefind-meta="content_type[content]" content="article"><meta data-pagefind-meta="category[content]" content="AI"><meta data-pagefind-meta="date[content]" content="2026-08-11"><meta data-pagefind-filter="content_type[content]" content="article"><meta data-pagefind-filter="category[content]" content="AI">    <meta name="author" content="MTera · Milovan Tomašević">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F6F4F0" data-theme-color-light>
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0A0B0D" data-theme-color-dark>
+<link rel="canonical" href="https://mtera.eu/nl/inzichten/datafundamenten-voor-ai-in-productie/"><link rel="alternate" hreflang="en-GB" href="https://mtera.eu/insights/data-foundations-before-production-ai/"><link rel="alternate" hreflang="en-US" href="https://mtera.eu/us/insights/data-foundations-before-production-ai/"><link rel="alternate" hreflang="de-DE" href="https://mtera.eu/de/einblicke/datengrundlagen-fuer-ki-im-produktivbetrieb/"><link rel="alternate" hreflang="sl-SI" href="https://mtera.eu/sl/vpogledi/podatkovni-temelji-pred-produkcijsko-uporabo-umetne-inteligence/"><link rel="alternate" hreflang="sr-Latn-RS" href="https://mtera.eu/sr/uvidi/temelji-podataka-za-produkcioni-ai/"><link rel="alternate" hreflang="hu-HU" href="https://mtera.eu/hu/elemzesek/adatalapok-a-mi-uzemi-bevezetese-elott/"><link rel="alternate" hreflang="ar-AE" href="https://mtera.eu/ar/al-rua/asasat-albayanat-qabl-thaka-alistina-i-fil-intaj/"><link rel="alternate" hreflang="zh-Hans-CN" href="https://mtera.eu/zh/dongjian/shengchanxing-rengongzhineng-zhiqian-de-shuju-jichu/"><link rel="alternate" hreflang="ja-JP" href="https://mtera.eu/ja/insaito/honban-ai-mae-no-deta-kiban/"><link rel="alternate" hreflang="sv-SE" href="https://mtera.eu/sv/insikter/datagrunder-som-kravs-innan-ai-tas-i-produktion/"><link rel="alternate" hreflang="es-ES" href="https://mtera.eu/es/perspectivas/fundamentos-de-datos-para-la-ia-en-produccion/"><link rel="alternate" hreflang="ru-RU" href="https://mtera.eu/ru/materialy/osnovy-dannykh-dlya-promyshlennogo-ii/"><link rel="alternate" hreflang="hi-IN" href="https://mtera.eu/hi/antardrishti/utpadan-ai-se-pahle-data-aadhar/"><link rel="alternate" hreflang="pt-PT" href="https://mtera.eu/pt/perspetivas/fundamentos-de-dados-antes-da-ia-em-producao/"><link rel="alternate" hreflang="fi-FI" href="https://mtera.eu/fi/nakemykset/datan-edellytykset-ennen-tekoalyn-tuotantokayttoa/"><link rel="alternate" hreflang="nb-NO" href="https://mtera.eu/no/innsikt/datagrunnlag-for-ki-i-produksjon/"><link rel="alternate" hreflang="nl-NL" href="https://mtera.eu/nl/inzichten/datafundamenten-voor-ai-in-productie/"><link rel="alternate" hreflang="da-DK" href="https://mtera.eu/da/indsigter/datagrundlag-for-ai-i-produktion/"><link rel="alternate" hreflang="x-default" href="https://mtera.eu/insights/data-foundations-before-production-ai/">    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MTera">
+    <meta property="og:title" content="De databasis die nodig is voordat AI in productie gaat | MTera">
+    <meta property="og:description" content="Data is gereed voor AI in productie wanneer zij geschikt is voor een bepaald besluit en een bepaalde operationele situatie: de betekenis is gedeeld, de herkomst traceerbaar, kwaliteitscontroles weerspiegelen de gevolgen, toegang en gebruik zijn toegestaan, de evaluatie vertegenwoordigt werkelijke omstandigheden en terugkoppeling maakt zichtbaar wanneer de data of beslissingssituatie verandert.">
+<meta property="og:url" content="https://mtera.eu/nl/inzichten/datafundamenten-voor-ai-in-productie/">    <meta property="og:locale" content="nl_NL">
+<meta property="og:locale:alternate" content="en_GB"><meta property="og:locale:alternate" content="en_US"><meta property="og:locale:alternate" content="de_DE"><meta property="og:locale:alternate" content="sl_SI"><meta property="og:locale:alternate" content="sr_Latn_RS"><meta property="og:locale:alternate" content="hu_HU"><meta property="og:locale:alternate" content="ar_AE"><meta property="og:locale:alternate" content="zh_Hans_CN"><meta property="og:locale:alternate" content="ja_JP"><meta property="og:locale:alternate" content="sv_SE"><meta property="og:locale:alternate" content="es_ES"><meta property="og:locale:alternate" content="ru_RU"><meta property="og:locale:alternate" content="hi_IN"><meta property="og:locale:alternate" content="pt_PT"><meta property="og:locale:alternate" content="fi_FI"><meta property="og:locale:alternate" content="nb_NO"><meta property="og:locale:alternate" content="da_DK">    <meta property="og:image" content="https://mtera.eu/static/images/og/generated/nl-nl/insight-data-foundations-production-ai.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="MTera · Inzichten · De databasis die nodig is voordat AI in productie gaat">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="De databasis die nodig is voordat AI in productie gaat | MTera">
+    <meta name="twitter:description" content="Data is gereed voor AI in productie wanneer zij geschikt is voor een bepaald besluit en een bepaalde operationele situatie: de betekenis is gedeeld, de herkomst traceerbaar, kwaliteitscontroles weerspiegelen de gevolgen, toegang en gebruik zijn toegestaan, de evaluatie vertegenwoordigt werkelijke omstandigheden en terugkoppeling maakt zichtbaar wanneer de data of beslissingssituatie verandert.">
+    <meta name="twitter:image" content="https://mtera.eu/static/images/og/generated/nl-nl/insight-data-foundations-production-ai.png">
+    <meta name="twitter:image:alt" content="MTera · Inzichten · De databasis die nodig is voordat AI in productie gaat">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16">
+    <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="/favicon-48x48.png" type="image/png" sizes="48x48">
+    <link rel="icon" href="/favicon-96x96.png" type="image/png" sizes="96x96">
+    <link rel="icon" href="/favicon-256x256.png" type="image/png" sizes="256x256">
+    <link rel="shortcut icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="mask-icon" href="/static/brand/pinned-tab.svg" color="#B9824E">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+    <link rel="manifest" href="/nl/site.webmanifest">
+    <meta name="mtera-font-profile" content="/static/fonts/latin.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@id": "https://mtera.eu/nl/inzichten/datafundamenten-voor-ai-in-productie/#webpage", "@type": "WebPage", "about": {"@id": "https://mtera.eu/#organization"}, "breadcrumb": {"@id": "https://mtera.eu/nl/inzichten/datafundamenten-voor-ai-in-productie/#breadcrumb"}, "dateModified": "2026-08-11", "description": "Data is gereed voor AI in productie wanneer zij geschikt is voor een bepaald besluit en een bepaalde operationele situatie: de betekenis is gedeeld, de herkomst traceerbaar, kwaliteitscontroles weerspiegelen de gevolgen, toegang en gebruik zijn toegestaan, de evaluatie vertegenwoordigt werkelijke omstandigheden en terugkoppeling maakt zichtbaar wanneer de data of beslissingssituatie verandert.", "inLanguage": "nl-NL", "isPartOf": {"@id": "https://mtera.eu/#website"}, "name": "De databasis die nodig is voordat AI in productie gaat | MTera", "url": "https://mtera.eu/nl/inzichten/datafundamenten-voor-ai-in-productie/"}, {"@id": "https://mtera.eu/#website", "@type": "WebSite", "inLanguage": ["en-GB", "en-US", "de-DE", "sl-SI", "sr-Latn-RS", "hu-HU", "ar-AE", "zh-Hans-CN", "ja-JP", "sv-SE", "es-ES", "ru-RU", "hi-IN", "pt-PT", "fi-FI", "nb-NO", "nl-NL", "da-DK"], "name": "MTera", "publisher": {"@id": "https://mtera.eu/#organization"}, "url": "https://mtera.eu/"}, {"@id": "https://mtera.eu/#organization", "@type": "Organization", "description": "MTera helpt organisaties de systemen achter kritieke bedrijfsverandering te begrijpen, opnieuw vorm te geven, te verbinden en te ontwikkelen \u2014 van data, processen en applicaties tot integraties, AI en operationele besluiten.", "email": "hello@mtera.eu", "founder": {"@id": "https://mtera.eu/about/milovan-tomasevic/#person"}, "logo": {"@type": "ImageObject", "height": 512, "url": "https://mtera.eu/static/brand/mtera-avatar-512.png", "width": 512}, "name": "MTera", "url": "https://mtera.eu/"}, {"@id": "https://mtera.eu/nl/inzichten/datafundamenten-voor-ai-in-productie/#breadcrumb", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://mtera.eu/nl/", "name": "Bouw aan wat volgt zonder te verliezen wat behouden moet blijven.", "position": 1}, {"@type": "ListItem", "item": "https://mtera.eu/nl/inzichten/", "name": "Inzichten", "position": 2}, {"@type": "ListItem", "item": "https://mtera.eu/nl/inzichten/datafundamenten-voor-ai-in-productie/", "name": "De databasis die nodig is voordat AI in productie gaat", "position": 3}]}]}</script></head>
+<body class="page page--insight.data_foundations_production_ai page-kind--article">
+    <a class="skip-link" href="#main-content" lang="nl-NL" dir="ltr">Ga naar hoofdinhoud</a>
+    <div class="header-marker" data-header-marker aria-hidden="true"></div>
+<header class="site-header" data-site-header lang="nl-NL" dir="ltr">
+    <div class="site-header__inner shell">
+        <a class="brand" href="/nl/" aria-label="MTera — Home">
+            <span class="theme-lockup" aria-hidden="true">
+                <img class="theme-lockup__light" src="/static/brand/mtera-wordmark.svg" width="1062" height="269" alt="">
+                <img class="theme-lockup__dark" src="/static/brand/mtera-wordmark-on-dark.svg" width="1062" height="269" alt="">
+            </span>
+        </a>
+
+        <nav class="desktop-nav" aria-label="Hoofdnavigatie">
+            <ul class="desktop-nav__list">
+                    <li>
+                        <a href="/nl/methode/">Methode</a>
+                    </li>
+                    <li>
+                        <details class="desktop-nav__group" data-nav-group>
+                            <summary>Diensten<span aria-hidden="true"></span></summary>
+                            <div class="desktop-nav__mega">
+                                <a class="desktop-nav__overview" href="/nl/diensten/">
+                                    <small>Diensten</small>
+                                    <strong>Diensten</strong>
+                                    <svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg>
+                                </a>
+                                <ul class="desktop-nav__deep-list">
+                                    <li><a href="/nl/diensten/architectuur-en-transformatie-van-bedrijfssystemen/"><span>Architectuur en transformatie van bedrijfssystemen</span></a></li>
+                                    <li><a href="/nl/diensten/datastrategie-governance-en-engineering/"><span>Datastrategie, governance en engineering</span></a></li>
+                                    <li><a href="/nl/diensten/bedrijfsintegratie-en-interoperabiliteit/"><span>Bedrijfsintegratie en interoperabiliteit</span></a></li>
+                                    <li><a href="/nl/diensten/ai-gereedheid-integratie-en-verantwoorde-realisatie/"><span>AI-gereedheid, integratie en verantwoorde realisatie</span></a></li>
+                                    <li><a href="/nl/diensten/procesautomatisering-en-operationele-optimalisatie/"><span>Procesautomatisering en operationele optimalisatie</span></a></li>
+                                    <li><a href="/nl/diensten/maatwerksoftware-en-platform-engineering/"><span>Maatwerksoftware en platform-engineering</span></a></li>
+                                </ul>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <details class="desktop-nav__group" data-nav-group>
+                            <summary>Uitdagingen<span aria-hidden="true"></span></summary>
+                            <div class="desktop-nav__mega">
+                                <a class="desktop-nav__overview" href="/nl/uitdagingen/">
+                                    <small>Uitdagingen</small>
+                                    <strong>Uitdagingen</strong>
+                                    <svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg>
+                                </a>
+                                <ul class="desktop-nav__deep-list">
+                                    <li><a href="/nl/uitdagingen/losgekoppelde-systemen-en-versnipperde-data/"><svg class="icon" viewBox="0 0 24 24" data-icon="system" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#system"></use></svg><span>Ontkoppelde systemen en gefragmenteerde gegevens</span></a></li>
+                                    <li><a href="/nl/uitdagingen/modernisering-van-verouderde-systemen-zonder-verstoring/"><svg class="icon" viewBox="0 0 24 24" data-icon="transformation" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#transformation"></use></svg><span>Verouderde systemen moderniseren zonder bedrijfsverstoring</span></a></li>
+                                    <li><a href="/nl/uitdagingen/betrouwbare-data-voor-besluiten-en-ai/"><svg class="icon" viewBox="0 0 24 24" data-icon="data" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#data"></use></svg><span>Betrouwbare gegevensbasis voor beslissingen en AI</span></a></li>
+                                    <li><a href="/nl/uitdagingen/complexe-partnerintegraties/"><svg class="icon" viewBox="0 0 24 24" data-icon="integration" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#integration"></use></svg><span>Complexe partner- en bedrijfsintegraties</span></a></li>
+                                    <li><a href="/nl/uitdagingen/van-ai-pilot-naar-productie/"><svg class="icon" viewBox="0 0 24 24" data-icon="ai" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#ai"></use></svg><span>AI van pilot naar productie brengen</span></a></li>
+                                    <li><a href="/nl/uitdagingen/handmatige-werkstromen-en-operationele-wrijving/"><svg class="icon" viewBox="0 0 24 24" data-icon="automation" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#automation"></use></svg><span>Kwetsbare handmatige werkprocessen en verborgen operationeel werk</span></a></li>
+                                    <li><a href="/nl/uitdagingen/architectuur-voor-voortdurende-verandering/"><svg class="icon" viewBox="0 0 24 24" data-icon="architecture" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#architecture"></use></svg><span>Architectuur die veilig moet kunnen blijven veranderen</span></a></li>
+                                    <li><a href="/nl/beschrijving-van-de-systeemuitdaging/"><svg class="icon" viewBox="0 0 24 24" data-icon="decision" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#decision"></use></svg><span>Beknopte beschrijving van de systeemuitdaging</span></a></li>
+                                </ul>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <a href="/nl/aanpak/">Aanpak</a>
+                    </li>
+                    <li>
+                        <details class="desktop-nav__group" data-nav-group data-current="true">
+                            <summary>Inzichten<span aria-hidden="true"></span></summary>
+                            <div class="desktop-nav__mega">
+                                <a class="desktop-nav__overview" href="/nl/inzichten/">
+                                    <small>Inzichten</small>
+                                    <strong>Inzichten</strong>
+                                    <svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg>
+                                </a>
+                                <ul class="desktop-nav__deep-list">
+                                    <li><a href="/nl/inzichten/wat-engineering-van-bedrijfssystemen-echt-betekent/"><span>Wat engineering van bedrijfssystemen werkelijk betekent</span></a></li>
+                                    <li><a href="/nl/inzichten/verouderde-systemen-moderniseren-zonder-bedrijfscontinuiteit-te-verliezen/"><span>Verouderde systemen moderniseren zonder bedrijfscontinuïteit te verliezen</span></a></li>
+                                    <li><a href="/nl/inzichten/waarom-bedrijfsintegraties-mislukken-op-organisatiegrenzen/"><span>Waarom bedrijfsintegraties falen op organisatiegrenzen</span></a></li>
+                                    <li><a href="/nl/inzichten/datafundamenten-voor-ai-in-productie/" aria-current="page"><span>De databasis die nodig is voordat AI in productie gaat</span></a></li>
+                                    <li><a href="/nl/woordenlijst/"><span>Woordenlijst voor engineering van bedrijfssystemen</span></a></li>
+                                </ul>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <details class="desktop-nav__group" data-nav-group>
+                            <summary>Over MTera<span aria-hidden="true"></span></summary>
+                            <div class="desktop-nav__mega">
+                                <a class="desktop-nav__overview" href="/nl/over/">
+                                    <small>Over MTera</small>
+                                    <strong>Over MTera</strong>
+                                    <svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg>
+                                </a>
+                                <ul class="desktop-nav__deep-list">
+                                    <li><a href="/nl/over/milovan-tomasevic/"><span>Milovan Tomašević</span></a></li>
+                                    <li><a href="/nl/ervaring/"><span>Ervaring en geselecteerde probleempatronen</span></a></li>
+                                    <li><a href="/nl/veelgestelde-vragen/"><span>Vragen over werken met MTera</span></a></li>
+                                </ul>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <a href="/nl/contact/">Contact</a>
+                    </li>
+            </ul>
+        </nav>
+
+        <div class="site-header__tools">
+            <a class="tool-button" href="/nl/zoeken/" data-search-open aria-label="Zoeken openen">
+                <svg class="icon" viewBox="0 0 20 20" data-icon="search" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#search-20"></use></svg><span class="tool-button__label">Zoeken openen</span>
+            </a>
+            <div class="header-language"><details class="language-picker" data-language-picker>
+    <summary class="tool-button" aria-label="Taal wijzigen: Nederlands"><span class="language-picker__flag" aria-hidden="true">🇳🇱</span></summary>
+    <div class="popover language-menu">
+        <label for="language-filter-header">Taal wijzigen</label>
+        <div class="language-filter"><svg class="icon" viewBox="0 0 20 20" data-icon="search" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#search-20"></use></svg><input id="language-filter-header" type="search" inputmode="search" autocomplete="off" data-language-filter placeholder="Talen zoeken"></div>
+        <ul data-language-list>
+            <li data-language-item data-language-search="english (uk)  en">
+                <a href="/insights/data-foundations-before-production-ai/" hreflang="en-GB" lang="en-GB" data-locale-code="en" data-locale-label="English (UK)" data-locale-flag="🇬🇧" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">en</span>
+                    <span><strong>English (UK)</strong><small>English (UK)</small><small class="translation-state">Concept</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="english (us)  en-us">
+                <a href="/us/insights/data-foundations-before-production-ai/" hreflang="en-US" lang="en-US" data-locale-code="en-US" data-locale-label="English (US)" data-locale-flag="🇺🇸" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">en-US</span>
+                    <span><strong>English (US)</strong><small>English (US)</small><small class="translation-state">In afwachting van controle</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="deutsch  de">
+                <a href="/de/einblicke/datengrundlagen-fuer-ki-im-produktivbetrieb/" hreflang="de-DE" lang="de-DE" data-locale-code="de" data-locale-label="Deutsch" data-locale-flag="🇩🇪" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">de</span>
+                    <span><strong>Deutsch</strong><small>Deutsch</small><small class="translation-state">In afwachting van controle</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="slovenščina  sl">
+                <a href="/sl/vpogledi/podatkovni-temelji-pred-produkcijsko-uporabo-umetne-inteligence/" hreflang="sl-SI" lang="sl-SI" data-locale-code="sl" data-locale-label="Slovenščina" data-locale-flag="🇸🇮" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">sl</span>
+                    <span><strong>Slovenščina</strong><small>Slovenščina</small><small class="translation-state">In afwachting van controle</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="srpski  sr-latn">
+                <a href="/sr/uvidi/temelji-podataka-za-produkcioni-ai/" hreflang="sr-Latn-RS" lang="sr-Latn-RS" data-locale-code="sr-Latn" data-locale-label="Srpski" data-locale-flag="🇷🇸" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">sr-Latn</span>
+                    <span><strong>Srpski</strong><small>Srpski</small><small class="translation-state">In afwachting van controle</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="magyar  hu">
+                <a href="/hu/elemzesek/adatalapok-a-mi-uzemi-bevezetese-elott/" hreflang="hu-HU" lang="hu-HU" data-locale-code="hu" data-locale-label="Magyar" data-locale-flag="🇭🇺" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">hu</span>
+                    <span><strong>Magyar</strong><small>Magyar</small><small class="translation-state">In afwachting van controle</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="العربية  ar">
+                <a href="/ar/al-rua/asasat-albayanat-qabl-thaka-alistina-i-fil-intaj/" hreflang="ar-AE" lang="ar-AE" data-locale-code="ar" data-locale-label="العربية" data-locale-flag="🇦🇪" data-locale-direction="rtl">
+                    <span class="language-code" aria-hidden="true">ar</span>
+                    <span><strong>العربية</strong><small>العربية</small><small class="translation-state">In afwachting van controle</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="简体中文  zh-hans">
+                <a href="/zh/dongjian/shengchanxing-rengongzhineng-zhiqian-de-shuju-jichu/" hreflang="zh-Hans-CN" lang="zh-Hans-CN" data-locale-code="zh-Hans" data-locale-label="简体中文" data-locale-flag="🇨🇳" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">zh-Hans</span>
+                    <span><strong>简体中文</strong><small>简体中文</small><small class="translation-state">In afwachting van controle</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="日本語  ja">
+                <a href="/ja/insaito/honban-ai-mae-no-deta-kiban/" hreflang="ja-JP" lang="ja-JP" data-locale-code="ja" data-locale-label="日本語" data-locale-flag="🇯🇵" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">ja</span>
+                    <span><strong>日本語</strong><small>日本語</small><small class="translation-state">In afwachting van controle</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="svenska  sv">
+                <a href="/sv/insikter/datagrunder-som-kravs-innan-ai-tas-i-produktion/" hreflang="sv-SE" lang="sv-SE" data-locale-code="sv" data-locale-label="Svenska" data-locale-flag="🇸🇪" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">sv</span>
+                    <span><strong>Svenska</strong><small>Svenska</small><small class="translation-state">In afwachting van controle</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="español  es">
+                <a href="/es/perspectivas/fundamentos-de-datos-para-la-ia-en-produccion/" hreflang="es-ES" lang="es-ES" data-locale-code="es" data-locale-label="Español" data-locale-flag="🇪🇸" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">es</span>
+                    <span><strong>Español</strong><small>Español</small><small class="translation-state">In afwachting van controle</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="русский  ru">
+                <a href="/ru/materialy/osnovy-dannykh-dlya-promyshlennogo-ii/" hreflang="ru-RU" lang="ru-RU" data-locale-code="ru" data-locale-label="Русский" data-locale-flag="🇷🇺" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">ru</span>
+                    <span><strong>Русский</strong><small>Русский</small><small class="translation-state">In afwachting van controle</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="हिन्दी  hi">
+                <a href="/hi/antardrishti/utpadan-ai-se-pahle-data-aadhar/" hreflang="hi-IN" lang="hi-IN" data-locale-code="hi" data-locale-label="हिन्दी" data-locale-flag="🇮🇳" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">hi</span>
+                    <span><strong>हिन्दी</strong><small>हिन्दी</small><small class="translation-state">In afwachting van controle</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="português  pt-pt">
+                <a href="/pt/perspetivas/fundamentos-de-dados-antes-da-ia-em-producao/" hreflang="pt-PT" lang="pt-PT" data-locale-code="pt-PT" data-locale-label="Português" data-locale-flag="🇵🇹" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">pt-PT</span>
+                    <span><strong>Português</strong><small>Português</small><small class="translation-state">In afwachting van controle</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="suomi  fi-fi">
+                <a href="/fi/nakemykset/datan-edellytykset-ennen-tekoalyn-tuotantokayttoa/" hreflang="fi-FI" lang="fi-FI" data-locale-code="fi-FI" data-locale-label="Suomi" data-locale-flag="🇫🇮" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">fi-FI</span>
+                    <span><strong>Suomi</strong><small>Suomi</small><small class="translation-state">In afwachting van controle</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="norsk  nb-no">
+                <a href="/no/innsikt/datagrunnlag-for-ki-i-produksjon/" hreflang="nb-NO" lang="nb-NO" data-locale-code="nb-NO" data-locale-label="Norsk" data-locale-flag="🇳🇴" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">nb-NO</span>
+                    <span><strong>Norsk</strong><small>Norsk</small><small class="translation-state">In afwachting van controle</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="nederlands  nl-nl">
+                <a href="/nl/inzichten/datafundamenten-voor-ai-in-productie/" hreflang="nl-NL" lang="nl-NL" data-locale-code="nl-NL" data-locale-label="Nederlands" data-locale-flag="🇳🇱" data-locale-direction="ltr" aria-current="page">
+                    <span class="language-code" aria-hidden="true">nl-NL</span>
+                    <span><strong>Nederlands</strong><small>Nederlands</small><small class="translation-state">In afwachting van controle</small></span>
+<svg class="icon" viewBox="0 0 24 24" data-icon="check" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#check"></use></svg>                </a>
+            </li>
+            <li data-language-item data-language-search="dansk  da-dk">
+                <a href="/da/indsigter/datagrundlag-for-ai-i-produktion/" hreflang="da-DK" lang="da-DK" data-locale-code="da-DK" data-locale-label="Dansk" data-locale-flag="🇩🇰" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">da-DK</span>
+                    <span><strong>Dansk</strong><small>Dansk</small><small class="translation-state">In afwachting van controle</small></span>
+                </a>
+            </li>
+        </ul>
+        <p class="language-empty" data-language-empty hidden>Geen overeenkomende taal</p>
+    </div>
+</details></div>
+            <button class="tool-button theme-toggle" type="button" data-theme-toggle data-change-label="Thema wijzigen" data-light-label="Licht thema" data-dark-label="Donker thema" aria-label="Thema wijzigen: Donker thema" title="Thema wijzigen: Donker thema">
+                <span class="theme-toggle__icon theme-toggle__icon--to-dark"><svg class="icon" viewBox="0 0 20 20" data-icon="dark" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#dark-20"></use></svg></span>
+                <span class="theme-toggle__icon theme-toggle__icon--to-light"><svg class="icon" viewBox="0 0 20 20" data-icon="light" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#light-20"></use></svg></span>
+                <span class="visually-hidden" data-theme-current>Licht thema</span>
+            </button>
+            <a class="button button--primary header-cta desktop-tools" href="/nl/contact/">Bespreek een systeemuitdaging</a>
+
+            <details class="mobile-navigation" data-mobile-nav>
+                <summary class="tool-button menu-trigger" data-menu-toggle aria-label="Menu openen" data-open-label="Menu openen" data-close-label="Menu sluiten"><span class="menu-open"><svg class="icon" viewBox="0 0 20 20" data-icon="menu" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#menu-20"></use></svg></span><span class="menu-close"><svg class="icon" viewBox="0 0 20 20" data-icon="close" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#close-20"></use></svg></span></summary>
+                <div class="mobile-navigation__panel" data-mobile-panel>
+                    <nav aria-label="Hoofdnavigatie">
+                        <ul class="mobile-navigation__primary">
+                            <li>
+                                <a href="/nl/methode/"><span>01</span>Methode</a>
+                            </li>
+                            <li>
+                                <details class="mobile-navigation__group">
+                                    <summary><span>02</span><strong>Diensten</strong><i aria-hidden="true"></i></summary>
+                                    <ul>
+                                        <li><a href="/nl/diensten/">Diensten</a></li>
+                                        <li><a href="/nl/diensten/architectuur-en-transformatie-van-bedrijfssystemen/"><span>Architectuur en transformatie van bedrijfssystemen</span></a></li>
+                                        <li><a href="/nl/diensten/datastrategie-governance-en-engineering/"><span>Datastrategie, governance en engineering</span></a></li>
+                                        <li><a href="/nl/diensten/bedrijfsintegratie-en-interoperabiliteit/"><span>Bedrijfsintegratie en interoperabiliteit</span></a></li>
+                                        <li><a href="/nl/diensten/ai-gereedheid-integratie-en-verantwoorde-realisatie/"><span>AI-gereedheid, integratie en verantwoorde realisatie</span></a></li>
+                                        <li><a href="/nl/diensten/procesautomatisering-en-operationele-optimalisatie/"><span>Procesautomatisering en operationele optimalisatie</span></a></li>
+                                        <li><a href="/nl/diensten/maatwerksoftware-en-platform-engineering/"><span>Maatwerksoftware en platform-engineering</span></a></li>
+                                    </ul>
+                                </details>
+                            </li>
+                            <li>
+                                <details class="mobile-navigation__group">
+                                    <summary><span>03</span><strong>Uitdagingen</strong><i aria-hidden="true"></i></summary>
+                                    <ul>
+                                        <li><a href="/nl/uitdagingen/">Uitdagingen</a></li>
+                                        <li><a href="/nl/uitdagingen/losgekoppelde-systemen-en-versnipperde-data/"><svg class="icon" viewBox="0 0 24 24" data-icon="system" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#system"></use></svg><span>Ontkoppelde systemen en gefragmenteerde gegevens</span></a></li>
+                                        <li><a href="/nl/uitdagingen/modernisering-van-verouderde-systemen-zonder-verstoring/"><svg class="icon" viewBox="0 0 24 24" data-icon="transformation" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#transformation"></use></svg><span>Verouderde systemen moderniseren zonder bedrijfsverstoring</span></a></li>
+                                        <li><a href="/nl/uitdagingen/betrouwbare-data-voor-besluiten-en-ai/"><svg class="icon" viewBox="0 0 24 24" data-icon="data" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#data"></use></svg><span>Betrouwbare gegevensbasis voor beslissingen en AI</span></a></li>
+                                        <li><a href="/nl/uitdagingen/complexe-partnerintegraties/"><svg class="icon" viewBox="0 0 24 24" data-icon="integration" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#integration"></use></svg><span>Complexe partner- en bedrijfsintegraties</span></a></li>
+                                        <li><a href="/nl/uitdagingen/van-ai-pilot-naar-productie/"><svg class="icon" viewBox="0 0 24 24" data-icon="ai" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#ai"></use></svg><span>AI van pilot naar productie brengen</span></a></li>
+                                        <li><a href="/nl/uitdagingen/handmatige-werkstromen-en-operationele-wrijving/"><svg class="icon" viewBox="0 0 24 24" data-icon="automation" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#automation"></use></svg><span>Kwetsbare handmatige werkprocessen en verborgen operationeel werk</span></a></li>
+                                        <li><a href="/nl/uitdagingen/architectuur-voor-voortdurende-verandering/"><svg class="icon" viewBox="0 0 24 24" data-icon="architecture" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#architecture"></use></svg><span>Architectuur die veilig moet kunnen blijven veranderen</span></a></li>
+                                        <li><a href="/nl/beschrijving-van-de-systeemuitdaging/"><svg class="icon" viewBox="0 0 24 24" data-icon="decision" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#decision"></use></svg><span>Beknopte beschrijving van de systeemuitdaging</span></a></li>
+                                    </ul>
+                                </details>
+                            </li>
+                            <li>
+                                <a href="/nl/aanpak/"><span>04</span>Aanpak</a>
+                            </li>
+                            <li>
+                                <details class="mobile-navigation__group" data-current="true">
+                                    <summary><span>05</span><strong>Inzichten</strong><i aria-hidden="true"></i></summary>
+                                    <ul>
+                                        <li><a href="/nl/inzichten/">Inzichten</a></li>
+                                        <li><a href="/nl/inzichten/wat-engineering-van-bedrijfssystemen-echt-betekent/"><span>Wat engineering van bedrijfssystemen werkelijk betekent</span></a></li>
+                                        <li><a href="/nl/inzichten/verouderde-systemen-moderniseren-zonder-bedrijfscontinuiteit-te-verliezen/"><span>Verouderde systemen moderniseren zonder bedrijfscontinuïteit te verliezen</span></a></li>
+                                        <li><a href="/nl/inzichten/waarom-bedrijfsintegraties-mislukken-op-organisatiegrenzen/"><span>Waarom bedrijfsintegraties falen op organisatiegrenzen</span></a></li>
+                                        <li><a href="/nl/inzichten/datafundamenten-voor-ai-in-productie/" aria-current="page"><span>De databasis die nodig is voordat AI in productie gaat</span></a></li>
+                                        <li><a href="/nl/woordenlijst/"><span>Woordenlijst voor engineering van bedrijfssystemen</span></a></li>
+                                    </ul>
+                                </details>
+                            </li>
+                            <li>
+                                <details class="mobile-navigation__group">
+                                    <summary><span>06</span><strong>Over MTera</strong><i aria-hidden="true"></i></summary>
+                                    <ul>
+                                        <li><a href="/nl/over/">Over MTera</a></li>
+                                        <li><a href="/nl/over/milovan-tomasevic/"><span>Milovan Tomašević</span></a></li>
+                                        <li><a href="/nl/ervaring/"><span>Ervaring en geselecteerde probleempatronen</span></a></li>
+                                        <li><a href="/nl/veelgestelde-vragen/"><span>Vragen over werken met MTera</span></a></li>
+                                    </ul>
+                                </details>
+                            </li>
+                            <li>
+                                <a href="/nl/contact/"><span>07</span>Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <a class="button button--primary" href="/nl/contact/">Bespreek een systeemuitdaging <svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a>
+                </div>
+            </details>
+        </div>
+    </div>
+</header><div
+    class="language-suggestion"
+    role="region"
+    aria-labelledby="language-suggestion-title"
+    aria-live="polite"
+    lang="nl-NL"
+    dir="ltr"
+    data-language-suggestion
+    data-current-locale="nl-NL"
+    data-message-template="Uw browser geeft de voorkeur aan {language}. De huidige pagina blijft open totdat u kiest."
+    data-action-template="Bekijk deze pagina in {language}"
+    hidden
+>
+    <div class="language-suggestion__copy">
+        <p class="language-suggestion__heading visually-hidden">
+            <strong id="language-suggestion-title">Taalvoorkeur</strong>
+        </p>
+        <p data-language-suggestion-message></p>
+    </div>
+    <a class="text-link language-suggestion__action" data-language-suggestion-accept></a>
+    <button class="language-suggestion__dismiss" type="button" data-language-suggestion-dismiss aria-label="Taalvoorstel sluiten">
+        <svg class="icon" viewBox="0 0 20 20" data-icon="close" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#close-20"></use></svg>
+        <span class="visually-hidden">Taalvoorstel sluiten</span>
+    </button>
+</div>
+    <main id="main-content" tabindex="-1" lang="nl-NL" dir="ltr" data-pagefind-body>
+<nav class="breadcrumbs shell" aria-label="Broodkruimelpad">
+    <ol>
+        <li><a href="https://mtera.eu/nl/">Bouw aan wat volgt zonder te verliezen wat behouden moet blijven.</a><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></li>
+        <li><a href="https://mtera.eu/nl/inzichten/">Inzichten</a><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></li>
+        <li><span aria-current="page">De databasis die nodig is voordat AI in productie gaat</span></li>
+    </ol>
+</nav>
+<article class="article" data-pagefind-meta="category:AI">
+    <header class="article-hero shell"><span class="eyebrow">AI</span><h1 id="page-title">De databasis die nodig is voordat AI in productie gaat</h1><p class="lede">Data is gereed voor AI in productie wanneer zij geschikt is voor een bepaald besluit en een bepaalde operationele situatie: de betekenis is gedeeld, de herkomst traceerbaar, kwaliteitscontroles weerspiegelen de gevolgen, toegang en gebruik zijn toegestaan, de evaluatie vertegenwoordigt werkelijke omstandigheden en terugkoppeling maakt zichtbaar wanneer de data of beslissingssituatie verandert.</p><div class="article-meta"><span data-publication-state="preview">Redactionele voorvertoning</span><span><svg class="icon" viewBox="0 0 24 24" data-icon="calendar" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#calendar"></use></svg><time datetime="2026-08-11" data-local-date>2026-08-11</time></span><span><svg class="icon" viewBox="0 0 24 24" data-icon="reading-time" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#reading-time"></use></svg><span data-local-number="10" data-use-grouping="false">10</span> min leestijd</span></div></header>
+<section class="section shell"><div class="publication-note"><svg class="icon" viewBox="0 0 24 24" data-icon="warning" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#warning"></use></svg><div><strong>Redactionele voorvertoning</strong><p>Deze volledige voorvertoning blijft buiten de productiepublicatie totdat een aangewezen deskundige haar heeft beoordeeld en goedgekeurd.</p></div></div></section><div class="article-layout shell"><aside class="article-toc"><strong>Op deze pagina</strong><ol><li><a href="#decision_first">Begin met het besluit, niet met de beschikbare dataset</a></li><li><a href="#meaning">Gedeelde betekenis is een productieafhankelijkheid</a></li><li><a href="#lineage">Bewijs moet het operationele besluit bereiken</a></li><li><a href="#quality">Verbind kwaliteitscontroles met gevolgen</a></li><li><a href="#authority">Toegang is niet hetzelfde als gebruiksbevoegdheid</a></li><li><a href="#evaluation">Evaluatiegegevens moeten de bedrijfsomstandigheden weergeven</a></li><li><a href="#feedback">Productie vereist terugkoppeling en aanpassingsvermogen</a></li></ol></aside><div class="article-body"><section id="decision_first"><h2>Begin met het besluit, niet met de beschikbare dataset</h2><p>Een dataset kan schoon zijn en toch ongeschikt voor een toepassingsscenario. Gereedheid hangt af van wat het model beïnvloedt, wie de gevolgen ondervindt, wat een fout betekent, hoe snel omstandigheden veranderen en wat een mens kan doen wanneer het vertrouwen laag is. Deze vragen bepalen welke feiten wezenlijk zijn en hoeveel bewijs nodig is.</p><p>Definieer de beoogde aanbeveling of handeling in eenvoudige operationele termen. Benoem eigenaar, gebruiker, onderwerp, beslismoment, alternatieven en gevolgen. Traceer vervolgens de data die daarvoor nodig is. Zo voorkomt u dat een aantrekkelijke dataset een toepassingsscenario creëert dat de organisatie niet verantwoord kan beheren.</p></section><section id="meaning"><h2>Gedeelde betekenis is een productieafhankelijkheid</h2><p>Trainings- en operationele systemen kunnen hetzelfde label voor verschillende begrippen gebruiken. Een klant kan een rekening, rechtspersoon, huishouden of actief contract betekenen. Een afgesloten dossier kan opgelost, administratief gesloten of verlaten betekenen. Als de betekenis per periode, bron of team verschilt, kan modelgedrag veranderen om redenen die nooit in de evaluatie zijn getoetst.</p><p>Cruciale kenmerken en uitkomsten vereisen bedrijfsdefinities, in- en uitsluitingsregels, tijdscontext en verantwoordelijke eigenaren. Historische wijzigingen moeten zichtbaar zijn. Het doel is niet elk veld te documenteren, maar de betekenissen die het besluit wezenlijk beïnvloeden stabiel genoeg te maken om te kunnen toetsen en bewaken.</p></section><section id="lineage"><h2>Bewijs moet het operationele besluit bereiken</h2><p>Gegevensherkomst is bruikbaar wanneer zij uitlegt waar een waarde vandaan komt, welke transformaties haar hebben gewijzigd en onder welke regel of versie zij door training, evaluatie en productie is gegaan. Een technisch pijplijndiagram kan beweging tonen en tegelijk de bedrijfsbesluiten over selectie en correctie weglaten die de data hebben gevormd.</p><p>Het team moet een uitkomst kunnen onderzoeken, de impact van een bronwijziging kunnen beoordelen en de relevante evaluatie kunnen reproduceren. Als data door mensen of leveranciers wordt verrijkt of gelabeld, moeten die samenhang en de bijbehorende kwaliteitscontroles in de gegevensherkomst zichtbaar zijn.</p></section><section id="quality"><h2>Verbind kwaliteitscontroles met gevolgen</h2><p>Algemene scores voor volledigheid en nauwkeurigheid zijn zwakke gereedheidstoetsen. Een zelden ontbrekende waarde kan wezenlijk zijn als daardoor een veiligheids- of geschiktheidsvoorwaarde wegvalt, terwijl een veelvoorkomend gebrek voor het beoogde besluit irrelevant kan zijn. Definieer kwaliteit vanuit het gebruik: geldig bereik, tijdigheid, representativiteit, consistentie, duplicatie en betrouwbaarheid van labels voor zover die het resultaat beïnvloeden.</p><p>Bepaal voor elk cruciaal gebrek of het moet worden voorkomen, gedetecteerd, gecorrigeerd, afgewezen of geëscaleerd, dan wel als onzekerheid aan een mens moet worden getoond. Wijs een eigenaar en handelingsdrempel aan. Deze controles moeten zowel tijdens de voorbereiding als na ingebruikname werken, omdat productiebronnen en gedrag veranderen.</p></section><section id="authority"><h2>Toegang is niet hetzelfde als gebruiksbevoegdheid</h2><p>Een team kan technisch in staat zijn data op te halen zonder gerechtvaardigd doel, toestemming of passend bewaarmodel voor een AI-toepassing. Omgekeerd kunnen strikte toegangscontroles alsnog tekortschieten als afgeleide resultaten informatie onthullen of menselijke beoordelaars gegevens te zien krijgen die zij niet mogen ontvangen.</p><p>Breng betrokkenen, eigenaren, toegestane doelen, toegangswegen, bewaartermijnen, afgeleide artefacten en de gevolgen van verwijdering of correctie in kaart. Juridische, privacy-, beveiligings- en sectorspecialisten moeten de werkelijke verplichtingen valideren. De technische bijdrage bestaat erin het gebruik en de informatiestroom concreet genoeg te maken om die besluiten toe te passen.</p></section><section id="evaluation"><h2>Evaluatiegegevens moeten de bedrijfsomstandigheden weergeven</h2><p>Een evaluatieset moet de gevallen, tijdsperioden, uitzonderingen en populaties weerspiegelen die de capaciteit in de praktijk tegenkomt, inclusief de omstandigheden waarin het model zich moet onthouden. Niet alleen scheiding van trainingsdata is belangrijk, maar ook lekkage via verbonden entiteiten, informatie die pas na de uitkomst beschikbaar is en handmatige correcties die op het beslismoment niet bestaan.</p><p>Definieer acceptatie rond de bedrijfshandeling, niet rond één geaggregeerde modelscore. Neem belangrijke foutklassen, capaciteit voor menselijke beoordeling, latentietijd, gedrag bij storingen en de kosten van onthouding mee. Registreer versies van datasets en regels, zodat latere wijzigingen zinvol kunnen worden vergeleken.</p></section><section id="feedback"><h2>Productie vereist terugkoppeling en aanpassingsvermogen</h2><p>Datagereedheid is bij ingebruikname niet voltooid. Bronsystemen veranderen, definities verschuiven, operationeel gedrag past zich aan en de populatie kan veranderen. Bewaking moet invoervoorwaarden, datacontroles, modelgedrag, menselijke correcties, resultaatbewijs en onopgeloste uitzonderingen omvatten, met een frequentie die past bij het beslissingsrisico.</p><p>De organisatie heeft ook bevoegdheid nodig om te handelen: wie onderzoekt, wie de automatisering mag opschorten, hoe terugval werkt, wanneer hertraining of herontwerp wordt overwogen en welk bewijs hervatting van de dienst mogelijk maakt. Zonder dit operationele model kan een model technisch beschikbaar blijven terwijl de beslissingssituatie al is veranderd.</p></section></div></div><section class="section takeaways"><div class="shell"><span class="eyebrow">Belangrijkste inzichten</span><h2>Wat moet in het volgende besluit worden meegenomen?</h2><ol><li><span>01</span>Definieer gereedheid voor één besluit, eigenaar en gevolg, niet voor data in het algemeen.</li><li><span>02</span>Maak cruciale betekenis, tijdscontext en herkomst traceerbaar.</li><li><span>03</span>Koppel kwaliteitscontroles en drempels aan wezenlijke foutklassen.</li><li><span>04</span>Technische toegang onderscheiden van toegelaten en passend gebruik.</li><li><span>05</span>Evalueer onder werkelijke bedrijfsomstandigheden en ontwerp terugkoppeling, terugval en bevoegdheid om in te grijpen.</li></ol></div></section><section class="section shell article-note"><h2>Toepassing</h2><p>Beschrijf het beoogde AI-ondersteunde besluit in één zin. Noteer de feiten die op het beslismoment nodig zijn, hun bron en eigenaar, de gevolgen van elk belangrijk gebrek en wie bevoegd is het gebruik te stoppen of te corrigeren.</p></section><section class="section shell article-note"><h2>Grenzen en risico&#39;s</h2><p>Dit artikel biedt een technisch kader, geen juridisch, privacy-, beveiligings-, regelgevings- of sectoradvies. Besluiten over AI in productie vereisen gekwalificeerde specialisten en verantwoordelijke governance bij de klant voor het werkelijke gebruik en de toepasselijke jurisdictie.</p></section><section class="section shell related-links"><div class="section-heading"><span class="eyebrow">Primair systeempad</span><h2>Ga vanuit dit inzicht verder naar de relevante capaciteiten en uitdagingen</h2></div><div class="link-ledger"><a href="/nl/diensten/datastrategie-governance-en-engineering/"><span>01</span><strong>Pas dit inzicht toe via Datastrategie, governance en engineering</strong><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a><a href="/nl/uitdagingen/betrouwbare-data-voor-besluiten-en-ai/"><span>02</span><strong>Verken de systeemuitdaging: Betrouwbare gegevensbasis voor beslissingen en AI</strong><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a></div></section><section class="section shell related-links"><div class="section-heading"><span class="eyebrow">Woordenlijst</span><h2>Definities die bij de redenering over dit onderwerp worden gebruikt</h2></div><div class="link-ledger"><a href="/nl/woordenlijst/#data_lineage"><span>01</span><strong>Lees wat ‘Gegevensherkomst’ betekent in de MTera-woordenlijst</strong><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a><a href="/nl/woordenlijst/#ai_readiness"><span>02</span><strong>Lees wat ‘AI-gereedheid’ betekent in de MTera-woordenlijst</strong><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a><a href="/nl/woordenlijst/#human_oversight"><span>03</span><strong>Lees wat ‘Menselijk toezicht’ betekent in de MTera-woordenlijst</strong><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a><a href="/nl/woordenlijst/#data_governance"><span>04</span><strong>Lees wat ‘Datagovernance’ betekent in de MTera-woordenlijst</strong><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a></div></section><section class="section shell related-links"><div class="section-heading"><span class="eyebrow">Gerelateerde inzichten</span><h2>Ga verder met de redenering over samenhangende systeembesluiten</h2></div><div class="link-ledger"></div></section></article>
+<section class="section cta-band" data-pagefind-ignore>
+    <div class="shell cta-band__inner">
+        <div><span class="eyebrow">MTera · Neem contact op met MTera</span><h2>Bespreek de systeemvraag achter uw verandering.</h2><p>Bouw aan wat volgt zonder te verliezen wat behouden moet blijven.</p></div>
+        <a class="button button--primary" href="/nl/contact/">Bespreek een systeemuitdaging <svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a>
+    </div>
+</section>    </main>
+
+<aside class="print-metadata" aria-label="Informatie afdrukken" lang="nl-NL" dir="ltr">
+        <img class="print-metadata__logo" src="/static/brand/mtera-lockup-horizontal-monochrome.svg" width="248" height="64" alt="MTera">
+        <p><strong>Voorkeurs-URL:</strong> <span dir="ltr">https://mtera.eu/nl/inzichten/datafundamenten-voor-ai-in-productie/</span></p>
+        <p><strong>Gedrukt:</strong> <time datetime="2026-08-13" data-print-date>2026-08-13</time></p>
+    </aside>
+<footer class="site-footer" lang="nl-NL" dir="ltr">
+    <div class="shell site-footer__grid">
+        <div class="site-footer__brand">
+            <span class="theme-lockup"><img class="theme-lockup__light" src="/static/brand/mtera-wordmark.svg" width="1062" height="269" alt="MTera" loading="lazy"><img class="theme-lockup__dark" src="/static/brand/mtera-wordmark-on-dark.svg" width="1062" height="269" alt="" aria-hidden="true" loading="lazy"></span>
+            <p>Bouw aan wat volgt zonder te verliezen wat behouden moet blijven.</p>
+<p class="meta-line"><svg class="icon" viewBox="0 0 24 24" data-icon="location" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#location"></use></svg> Ljubljana</p>        </div>
+        <details class="site-footer__group site-footer__nav" data-footer-disclosure open>
+            <summary class="site-footer__summary">
+                <h2>Ontdekken</h2>
+                <svg class="site-footer__chevron" viewBox="0 0 20 20" data-icon="arrow-forward" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward-20"></use></svg>
+            </summary>
+            <nav class="site-footer__links" aria-label="Navigatie in de voettekst">
+<a href="/nl/methode/">Methode</a><a href="/nl/diensten/">Diensten</a><a href="/nl/uitdagingen/">Uitdagingen</a><a href="/nl/aanpak/">Aanpak</a><a href="/nl/inzichten/">Inzichten</a><a href="/nl/over/">Over MTera</a><a href="/nl/contact/">Contact</a>            </nav>
+        </details>
+        <details class="site-footer__group site-footer__nav" data-footer-disclosure open>
+            <summary class="site-footer__summary">
+                <h2>Juridisch</h2>
+                <svg class="site-footer__chevron" viewBox="0 0 20 20" data-icon="arrow-forward" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward-20"></use></svg>
+            </summary>
+            <nav class="site-footer__links" aria-label="Juridische navigatie">
+<a href="/nl/ervaring/">Ervaring</a><a href="/nl/woordenlijst/">Woordenlijst</a><a href="/nl/veelgestelde-vragen/">Veelgestelde vragen</a><a href="/nl/juridische-kennisgeving/">Juridische kennisgeving</a><a href="/nl/privacy/">Privacy</a><a href="/nl/cookies/">Cookies</a><a href="/nl/voorwaarden/">Gebruiksvoorwaarden</a><a href="/nl/toegankelijkheid/">Toegankelijkheid</a><a href="/nl/beveiliging/">Beveiliging</a><a href="/nl/sitemap/">Sitemap</a><a href="/nl/zoeken/">Zoeken</a>            </nav>
+        </details>
+        <details class="site-footer__group site-footer__contact" data-footer-disclosure open>
+            <summary class="site-footer__summary">
+                <h2>Neem contact op met MTera</h2>
+                <svg class="site-footer__chevron" viewBox="0 0 20 20" data-icon="arrow-forward" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward-20"></use></svg>
+            </summary>
+            <div class="site-footer__links">
+<a class="email-link" href="mailto:hello@mtera.eu"><svg class="icon" viewBox="0 0 24 24" data-icon="email" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#email"></use></svg><span dir="ltr">hello@mtera.eu</span></a>            </div>
+        </details>
+    </div>
+    <div class="shell site-footer__base">
+        <p>© 2026 MTera</p>
+        <p>Ontworpen voor privacy, duidelijkheid en toegankelijkheid.</p>
+    </div>
+</footer><dialog class="search-dialog" data-search-dialog data-search-copy aria-labelledby="search-dialog-title" lang="nl-NL" dir="ltr"
+    data-no-results="Geen resultaten"
+    data-results-label="Resultaten"
+    data-search-unavailable="Zoeken is tijdelijk niet beschikbaar."
+    data-search-minimum-one="Typ ten minste 1 teken."
+    data-search-minimum-many="Typ ten minste {count} tekens."
+    data-search-untitled="Naamloos"
+    data-group-service="Diensten"
+    data-group-challenge="Uitdagingen"
+    data-group-method="Methode"
+    data-group-article="Inzichten"
+    data-group-glossary="Woordenlijst"
+    data-group-about="Over MTera"
+    data-group-page="Andere pagina&#39;s">
+    <div class="search-dialog__surface">
+        <header>
+            <div><span class="eyebrow">MTera · Zoeken</span><h2 id="search-dialog-title">Zoeken in de kennisbank van MTera</h2><p>Vind diensten, uitdagingen, methoden, inzichten en definities.</p></div>
+            <button class="tool-button" type="button" data-search-close aria-label="Zoeken sluiten"><svg class="icon" viewBox="0 0 20 20" data-icon="close" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#close-20"></use></svg></button>
+        </header>
+        <form class="search-form" action="/nl/zoeken/" method="get" role="search" data-search-form>
+            <label for="site-search-input">Zoeken</label>
+            <div class="search-input"><svg class="icon" viewBox="0 0 20 20" data-icon="search" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#search-20"></use></svg><input id="site-search-input" name="q" type="search" inputmode="search" autocomplete="off" spellcheck="false" enterkeyhint="search" minlength="1" role="combobox" aria-expanded="false" aria-haspopup="listbox" aria-controls="search-results" aria-autocomplete="list" data-search-input placeholder="Zoeken binnen MTera"><button class="button button--primary" type="submit">Zoeken</button></div>
+        </form>
+        <div class="search-status" role="status" aria-live="polite" data-search-status></div>
+        <ol class="search-results" id="search-results" role="listbox" aria-label="Zoekresultaten" data-search-results></ol>
+        <nav class="search-quick-actions" aria-labelledby="search-dialog-actions-title">
+            <h3 id="search-dialog-actions-title">Snelle acties</h3>
+            <a href="/nl/beschrijving-van-de-systeemuitdaging/">Beknopte beschrijving van de systeemuitdaging</a>
+            <a href="/nl/methode/">Ontdek de MTera-methode</a>
+            <a href="/nl/diensten/">Bekijk dienst</a>
+            <a href="/nl/contact/">Neem contact op met MTera</a>
+        </nav>
+        <footer><span><kbd>⌘</kbd>/<kbd>Ctrl</kbd> + <kbd>K</kbd></span><a href="/nl/zoeken/">Volledige zoekfunctie openen <svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a></footer>
+    </div>
+</dialog><button class="back-to-top" type="button" data-back-to-top hidden lang="nl-NL" dir="ltr" aria-label="Naar boven">
+    <svg class="back-to-top__progress" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21" pathLength="1"></circle></svg>
+    <svg class="icon" viewBox="0 0 24 24" data-icon="top" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#top"></use></svg>
+</button>    <script id="mtera-site-script" type="module" src="/assets/mtera.KAAJH2LX.js" data-search-index="/nl/search-index.json" data-pagefind-base="/pagefind/" data-pagefind-enabled="true" data-locale="nl-NL" data-html-lang="nl-NL"></script>
+</body>
+</html>

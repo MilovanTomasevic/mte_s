@@ -1,0 +1,43 @@
+{
+  "name": "MTera — Инженерия бизнес-систем",
+  "short_name": "MTera",
+  "description": "MTera помогает организациям понять, переосмыслить, связать и спроектировать системы, от которых зависят критически важные изменения бизнеса, — данные, процессы, приложения, интеграции, ИИ и операционные решения.",
+  "start_url": "/ru/",
+  "scope": "/ru/",
+  "display": "standalone",
+  "background_color": "#0A0B0D",
+  "theme_color": "#0A0B0D",
+  "lang": "ru-RU",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="es-ES" dir="ltr" data-theme="light" data-theme-mode="light" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <link rel="preload" href="/assets/mtera-style.MYAWRNDW.css" as="style" fetchpriority="high">
+    <script>
+        (() => {
+            const root = document.documentElement;
+            root.classList.replace("no-js", "js");
+            let resolved = "";
+            try {
+                const saved = localStorage.getItem("mtera-theme");
+                if (saved === "light" || saved === "dark") resolved = saved;
+            } catch (_) {}
+            if (!resolved) {
+                let prefersDark = false;
+                try { prefersDark = matchMedia("(prefers-color-scheme: dark)").matches; } catch (_) {}
+                resolved = prefersDark ? "dark" : "light";
+            }
+            root.dataset.themeMode = resolved;
+            root.dataset.theme = resolved;
+            root.style.colorScheme = resolved;
+        })();
+    </script>
+    <link rel="stylesheet" href="/assets/mtera-style.MYAWRNDW.css">
+    <title>Fundamentos de datos necesarios antes de llevar la IA a producción | MTera</title>
+    <meta name="description" content="Los datos están preparados para la IA en producción cuando son adecuados para una decisión y un contexto operativo definidos: su significado es compartido, la procedencia es rastreable, los controles de calidad reflejan las consecuencias, el acceso y el uso están autorizados, la evaluación representa condiciones reales y la retroalimentación puede revelar cambios en los datos o en el contexto de decisión.">
+<meta data-pagefind-meta="title" data-pagefind-ignore="all" content="Fundamentos de datos necesarios antes de llevar la IA a producción"><meta data-pagefind-meta="description" data-pagefind-ignore="all" content="La IA en producción necesita un significado de los datos específico para la decisión, procedencia, controles de calidad, autorización de acceso, evidencias de evaluación y retroalimentación operativa."><meta data-pagefind-meta="locale" data-pagefind-ignore="all" content="es-ES"><meta data-pagefind-meta="content_type" data-pagefind-ignore="all" content="article"><meta data-pagefind-meta="category" data-pagefind-ignore="all" content="IA"><meta data-pagefind-meta="date" data-pagefind-ignore="all" content="2026-08-11"><meta data-pagefind-meta="title[content]" content="Fundamentos de datos necesarios antes de llevar la IA a producción"><meta data-pagefind-meta="description[content]" content="La IA en producción necesita un significado de los datos específico para la decisión, procedencia, controles de calidad, autorización de acceso, evidencias de evaluación y retroalimentación operativa."><meta data-pagefind-meta="locale[content]" content="es-ES"><meta data-pagefind-meta="content_type[content]" content="article"><meta data-pagefind-meta="category[content]" content="IA"><meta data-pagefind-meta="date[content]" content="2026-08-11"><meta data-pagefind-filter="content_type[content]" content="article"><meta data-pagefind-filter="category[content]" content="IA">    <meta name="author" content="MTera · Milovan Tomašević">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F6F4F0" data-theme-color-light>
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0A0B0D" data-theme-color-dark>
+<link rel="canonical" href="https://mtera.eu/es/perspectivas/fundamentos-de-datos-para-la-ia-en-produccion/"><link rel="alternate" hreflang="en-GB" href="https://mtera.eu/insights/data-foundations-before-production-ai/"><link rel="alternate" hreflang="en-US" href="https://mtera.eu/us/insights/data-foundations-before-production-ai/"><link rel="alternate" hreflang="de-DE" href="https://mtera.eu/de/einblicke/datengrundlagen-fuer-ki-im-produktivbetrieb/"><link rel="alternate" hreflang="sl-SI" href="https://mtera.eu/sl/vpogledi/podatkovni-temelji-pred-produkcijsko-uporabo-umetne-inteligence/"><link rel="alternate" hreflang="sr-Latn-RS" href="https://mtera.eu/sr/uvidi/temelji-podataka-za-produkcioni-ai/"><link rel="alternate" hreflang="hu-HU" href="https://mtera.eu/hu/elemzesek/adatalapok-a-mi-uzemi-bevezetese-elott/"><link rel="alternate" hreflang="ar-AE" href="https://mtera.eu/ar/al-rua/asasat-albayanat-qabl-thaka-alistina-i-fil-intaj/"><link rel="alternate" hreflang="zh-Hans-CN" href="https://mtera.eu/zh/dongjian/shengchanxing-rengongzhineng-zhiqian-de-shuju-jichu/"><link rel="alternate" hreflang="ja-JP" href="https://mtera.eu/ja/insaito/honban-ai-mae-no-deta-kiban/"><link rel="alternate" hreflang="sv-SE" href="https://mtera.eu/sv/insikter/datagrunder-som-kravs-innan-ai-tas-i-produktion/"><link rel="alternate" hreflang="es-ES" href="https://mtera.eu/es/perspectivas/fundamentos-de-datos-para-la-ia-en-produccion/"><link rel="alternate" hreflang="ru-RU" href="https://mtera.eu/ru/materialy/osnovy-dannykh-dlya-promyshlennogo-ii/"><link rel="alternate" hreflang="hi-IN" href="https://mtera.eu/hi/antardrishti/utpadan-ai-se-pahle-data-aadhar/"><link rel="alternate" hreflang="pt-PT" href="https://mtera.eu/pt/perspetivas/fundamentos-de-dados-antes-da-ia-em-producao/"><link rel="alternate" hreflang="fi-FI" href="https://mtera.eu/fi/nakemykset/datan-edellytykset-ennen-tekoalyn-tuotantokayttoa/"><link rel="alternate" hreflang="nb-NO" href="https://mtera.eu/no/innsikt/datagrunnlag-for-ki-i-produksjon/"><link rel="alternate" hreflang="nl-NL" href="https://mtera.eu/nl/inzichten/datafundamenten-voor-ai-in-productie/"><link rel="alternate" hreflang="da-DK" href="https://mtera.eu/da/indsigter/datagrundlag-for-ai-i-produktion/"><link rel="alternate" hreflang="x-default" href="https://mtera.eu/insights/data-foundations-before-production-ai/">    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MTera">
+    <meta property="og:title" content="Fundamentos de datos necesarios antes de llevar la IA a producción | MTera">
+    <meta property="og:description" content="Los datos están preparados para la IA en producción cuando son adecuados para una decisión y un contexto operativo definidos: su significado es compartido, la procedencia es rastreable, los controles de calidad reflejan las consecuencias, el acceso y el uso están autorizados, la evaluación representa condiciones reales y la retroalimentación puede revelar cambios en los datos o en el contexto de decisión.">
+<meta property="og:url" content="https://mtera.eu/es/perspectivas/fundamentos-de-datos-para-la-ia-en-produccion/">    <meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="en_GB"><meta property="og:locale:alternate" content="en_US"><meta property="og:locale:alternate" content="de_DE"><meta property="og:locale:alternate" content="sl_SI"><meta property="og:locale:alternate" content="sr_Latn_RS"><meta property="og:locale:alternate" content="hu_HU"><meta property="og:locale:alternate" content="ar_AE"><meta property="og:locale:alternate" content="zh_Hans_CN"><meta property="og:locale:alternate" content="ja_JP"><meta property="og:locale:alternate" content="sv_SE"><meta property="og:locale:alternate" content="ru_RU"><meta property="og:locale:alternate" content="hi_IN"><meta property="og:locale:alternate" content="pt_PT"><meta property="og:locale:alternate" content="fi_FI"><meta property="og:locale:alternate" content="nb_NO"><meta property="og:locale:alternate" content="nl_NL"><meta property="og:locale:alternate" content="da_DK">    <meta property="og:image" content="https://mtera.eu/static/images/og/generated/es/insight-data-foundations-production-ai.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="MTera · Ideas · Fundamentos de datos necesarios antes de llevar la IA a…">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Fundamentos de datos necesarios antes de llevar la IA a producción | MTera">
+    <meta name="twitter:description" content="Los datos están preparados para la IA en producción cuando son adecuados para una decisión y un contexto operativo definidos: su significado es compartido, la procedencia es rastreable, los controles de calidad reflejan las consecuencias, el acceso y el uso están autorizados, la evaluación representa condiciones reales y la retroalimentación puede revelar cambios en los datos o en el contexto de decisión.">
+    <meta name="twitter:image" content="https://mtera.eu/static/images/og/generated/es/insight-data-foundations-production-ai.png">
+    <meta name="twitter:image:alt" content="MTera · Ideas · Fundamentos de datos necesarios antes de llevar la IA a…">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16">
+    <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="/favicon-48x48.png" type="image/png" sizes="48x48">
+    <link rel="icon" href="/favicon-96x96.png" type="image/png" sizes="96x96">
+    <link rel="icon" href="/favicon-256x256.png" type="image/png" sizes="256x256">
+    <link rel="shortcut icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="mask-icon" href="/static/brand/pinned-tab.svg" color="#B9824E">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+    <link rel="manifest" href="/es/site.webmanifest">
+    <meta name="mtera-font-profile" content="/static/fonts/latin.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@id": "https://mtera.eu/es/perspectivas/fundamentos-de-datos-para-la-ia-en-produccion/#webpage", "@type": "WebPage", "about": {"@id": "https://mtera.eu/#organization"}, "breadcrumb": {"@id": "https://mtera.eu/es/perspectivas/fundamentos-de-datos-para-la-ia-en-produccion/#breadcrumb"}, "dateModified": "2026-08-11", "description": "Los datos est\u00e1n preparados para la IA en producci\u00f3n cuando son adecuados para una decisi\u00f3n y un contexto operativo definidos: su significado es compartido, la procedencia es rastreable, los controles de calidad reflejan las consecuencias, el acceso y el uso est\u00e1n autorizados, la evaluaci\u00f3n representa condiciones reales y la retroalimentaci\u00f3n puede revelar cambios en los datos o en el contexto de decisi\u00f3n.", "inLanguage": "es-ES", "isPartOf": {"@id": "https://mtera.eu/#website"}, "name": "Fundamentos de datos necesarios antes de llevar la IA a producci\u00f3n | MTera", "url": "https://mtera.eu/es/perspectivas/fundamentos-de-datos-para-la-ia-en-produccion/"}, {"@id": "https://mtera.eu/#website", "@type": "WebSite", "inLanguage": ["en-GB", "en-US", "de-DE", "sl-SI", "sr-Latn-RS", "hu-HU", "ar-AE", "zh-Hans-CN", "ja-JP", "sv-SE", "es-ES", "ru-RU", "hi-IN", "pt-PT", "fi-FI", "nb-NO", "nl-NL", "da-DK"], "name": "MTera", "publisher": {"@id": "https://mtera.eu/#organization"}, "url": "https://mtera.eu/"}, {"@id": "https://mtera.eu/#organization", "@type": "Organization", "description": "MTera ayuda a las organizaciones a comprender, redise\u00f1ar, conectar y desarrollar los sistemas que sostienen cambios empresariales decisivos en los datos, los procesos, las aplicaciones, las integraciones, la IA y las decisiones operativas.", "email": "hello@mtera.eu", "founder": {"@id": "https://mtera.eu/about/milovan-tomasevic/#person"}, "logo": {"@type": "ImageObject", "height": 512, "url": "https://mtera.eu/static/brand/mtera-avatar-512.png", "width": 512}, "name": "MTera", "url": "https://mtera.eu/"}, {"@id": "https://mtera.eu/es/perspectivas/fundamentos-de-datos-para-la-ia-en-produccion/#breadcrumb", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://mtera.eu/es/", "name": "Construya lo que viene sin perder lo que debe seguir siendo cierto.", "position": 1}, {"@type": "ListItem", "item": "https://mtera.eu/es/perspectivas/", "name": "Ideas", "position": 2}, {"@type": "ListItem", "item": "https://mtera.eu/es/perspectivas/fundamentos-de-datos-para-la-ia-en-produccion/", "name": "Fundamentos de datos necesarios antes de llevar la IA a producci\u00f3n", "position": 3}]}]}</script></head>
+<body class="page page--insight.data_foundations_production_ai page-kind--article">
+    <a class="skip-link" href="#main-content" lang="es-ES" dir="ltr">Saltar al contenido principal</a>
+    <div class="header-marker" data-header-marker aria-hidden="true"></div>
+<header class="site-header" data-site-header lang="es-ES" dir="ltr">
+    <div class="site-header__inner shell">
+        <a class="brand" href="/es/" aria-label="MTera — Inicio">
+            <span class="theme-lockup" aria-hidden="true">
+                <img class="theme-lockup__light" src="/static/brand/mtera-wordmark.svg" width="1062" height="269" alt="">
+                <img class="theme-lockup__dark" src="/static/brand/mtera-wordmark-on-dark.svg" width="1062" height="269" alt="">
+            </span>
+        </a>
+
+        <nav class="desktop-nav" aria-label="Navegación principal">
+            <ul class="desktop-nav__list">
+                    <li>
+                        <a href="/es/metodo/">Método</a>
+                    </li>
+                    <li>
+                        <details class="desktop-nav__group" data-nav-group>
+                            <summary>Servicios<span aria-hidden="true"></span></summary>
+                            <div class="desktop-nav__mega">
+                                <a class="desktop-nav__overview" href="/es/servicios/">
+                                    <small>Servicios</small>
+                                    <strong>Servicios</strong>
+                                    <svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg>
+                                </a>
+                                <ul class="desktop-nav__deep-list">
+                                    <li><a href="/es/servicios/arquitectura-y-transformacion-de-sistemas-empresariales/"><span>Arquitectura y transformación de sistemas empresariales</span></a></li>
+                                    <li><a href="/es/servicios/estrategia-gobernanza-e-ingenieria-de-datos/"><span>Estrategia de datos, gobernanza e ingeniería</span></a></li>
+                                    <li><a href="/es/servicios/integracion-empresarial-e-interoperabilidad/"><span>Integración e interoperabilidad empresarial</span></a></li>
+                                    <li><a href="/es/servicios/preparacion-integracion-y-ejecucion-responsable-de-ia/"><span>Preparación para la IA, integración y ejecución responsable</span></a></li>
+                                    <li><a href="/es/servicios/automatizacion-de-procesos-y-optimizacion-operativa/"><span>Automatización de procesos y optimización operativa</span></a></li>
+                                    <li><a href="/es/servicios/ingenieria-de-software-y-plataformas-a-medida/"><span>Ingeniería de software y plataformas a medida</span></a></li>
+                                </ul>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <details class="desktop-nav__group" data-nav-group>
+                            <summary>Retos<span aria-hidden="true"></span></summary>
+                            <div class="desktop-nav__mega">
+                                <a class="desktop-nav__overview" href="/es/retos/">
+                                    <small>Retos</small>
+                                    <strong>Retos</strong>
+                                    <svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg>
+                                </a>
+                                <ul class="desktop-nav__deep-list">
+                                    <li><a href="/es/retos/sistemas-desconectados-y-datos-fragmentados/"><svg class="icon" viewBox="0 0 24 24" data-icon="system" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#system"></use></svg><span>Sistemas desconectados y datos fragmentados</span></a></li>
+                                    <li><a href="/es/retos/modernizacion-de-sistemas-heredados-sin-interrupciones/"><svg class="icon" viewBox="0 0 24 24" data-icon="transformation" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#transformation"></use></svg><span>Modernización de sistemas heredados sin interrumpir el negocio</span></a></li>
+                                    <li><a href="/es/retos/datos-confiables-para-decisiones-e-ia/"><svg class="icon" viewBox="0 0 24 24" data-icon="data" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#data"></use></svg><span>Fundamentos de datos fiables para decisiones e IA</span></a></li>
+                                    <li><a href="/es/retos/integraciones-complejas-con-socios/"><svg class="icon" viewBox="0 0 24 24" data-icon="integration" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#integration"></use></svg><span>Integraciones complejas con socios y entre empresas</span></a></li>
+                                    <li><a href="/es/retos/del-piloto-de-ia-a-produccion/"><svg class="icon" viewBox="0 0 24 24" data-icon="ai" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#ai"></use></svg><span>Llevar la IA del piloto a producción</span></a></li>
+                                    <li><a href="/es/retos/flujos-de-trabajo-manuales-y-friccion-operativa/"><svg class="icon" viewBox="0 0 24 24" data-icon="automation" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#automation"></use></svg><span>Flujos de trabajo manuales y trabajo operativo oculto</span></a></li>
+                                    <li><a href="/es/retos/arquitectura-para-el-cambio-continuo/"><svg class="icon" viewBox="0 0 24 24" data-icon="architecture" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#architecture"></use></svg><span>Arquitectura preparada para seguir cambiando con seguridad</span></a></li>
+                                    <li><a href="/es/resumen-del-reto-de-sistemas/"><svg class="icon" viewBox="0 0 24 24" data-icon="decision" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#decision"></use></svg><span>Resumen del reto del sistema</span></a></li>
+                                </ul>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <a href="/es/enfoque/">Enfoque</a>
+                    </li>
+                    <li>
+                        <details class="desktop-nav__group" data-nav-group data-current="true">
+                            <summary>Ideas<span aria-hidden="true"></span></summary>
+                            <div class="desktop-nav__mega">
+                                <a class="desktop-nav__overview" href="/es/perspectivas/">
+                                    <small>Ideas</small>
+                                    <strong>Ideas</strong>
+                                    <svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg>
+                                </a>
+                                <ul class="desktop-nav__deep-list">
+                                    <li><a href="/es/perspectivas/que-significa-realmente-la-ingenieria-de-sistemas-empresariales/"><span>Lo que realmente significa ingeniería de sistemas empresariales</span></a></li>
+                                    <li><a href="/es/perspectivas/modernizar-sistemas-heredados-sin-perder-la-continuidad-empresarial/"><span>Cómo modernizar los sistemas heredados sin perder la continuidad de las operaciones</span></a></li>
+                                    <li><a href="/es/perspectivas/por-que-las-integraciones-empresariales-fracasan-en-los-limites-entre-organizaciones/"><span>Por qué las integraciones empresariales fracasan en los límites entre organizaciones</span></a></li>
+                                    <li><a href="/es/perspectivas/fundamentos-de-datos-para-la-ia-en-produccion/" aria-current="page"><span>Fundamentos de datos necesarios antes de llevar la IA a producción</span></a></li>
+                                    <li><a href="/es/glosario/"><span>Glosario de ingeniería de sistemas empresariales</span></a></li>
+                                </ul>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <details class="desktop-nav__group" data-nav-group>
+                            <summary>Acerca de MTera<span aria-hidden="true"></span></summary>
+                            <div class="desktop-nav__mega">
+                                <a class="desktop-nav__overview" href="/es/acerca-de-mtera/">
+                                    <small>Acerca de MTera</small>
+                                    <strong>Acerca de MTera</strong>
+                                    <svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg>
+                                </a>
+                                <ul class="desktop-nav__deep-list">
+                                    <li><a href="/es/acerca-de-mtera/milovan-tomasevic/"><span>Milovan Tomašević</span></a></li>
+                                    <li><a href="/es/experiencia/"><span>Selección de experiencia y patrones de problemas</span></a></li>
+                                    <li><a href="/es/preguntas-frecuentes/"><span>Preguntas sobre el trabajo con MTera</span></a></li>
+                                </ul>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <a href="/es/contacto/">Contacto</a>
+                    </li>
+            </ul>
+        </nav>
+
+        <div class="site-header__tools">
+            <a class="tool-button" href="/es/buscar/" data-search-open aria-label="Abrir búsqueda">
+                <svg class="icon" viewBox="0 0 20 20" data-icon="search" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#search-20"></use></svg><span class="tool-button__label">Abrir búsqueda</span>
+            </a>
+            <div class="header-language"><details class="language-picker" data-language-picker>
+    <summary class="tool-button" aria-label="Cambiar idioma: Español"><span class="language-picker__flag" aria-hidden="true">🇪🇸</span></summary>
+    <div class="popover language-menu">
+        <label for="language-filter-header">Cambiar idioma</label>
+        <div class="language-filter"><svg class="icon" viewBox="0 0 20 20" data-icon="search" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#search-20"></use></svg><input id="language-filter-header" type="search" inputmode="search" autocomplete="off" data-language-filter placeholder="Buscar idiomas"></div>
+        <ul data-language-list>
+            <li data-language-item data-language-search="english (uk)  en">
+                <a href="/insights/data-foundations-before-production-ai/" hreflang="en-GB" lang="en-GB" data-locale-code="en" data-locale-label="English (UK)" data-locale-flag="🇬🇧" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">en</span>
+                    <span><strong>English (UK)</strong><small>English (UK)</small><small class="translation-state">Borrador</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="english (us)  en-us">
+                <a href="/us/insights/data-foundations-before-production-ai/" hreflang="en-US" lang="en-US" data-locale-code="en-US" data-locale-label="English (US)" data-locale-flag="🇺🇸" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">en-US</span>
+                    <span><strong>English (US)</strong><small>English (US)</small><small class="translation-state">Pendiente de revisión</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="deutsch  de">
+                <a href="/de/einblicke/datengrundlagen-fuer-ki-im-produktivbetrieb/" hreflang="de-DE" lang="de-DE" data-locale-code="de" data-locale-label="Deutsch" data-locale-flag="🇩🇪" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">de</span>
+                    <span><strong>Deutsch</strong><small>Deutsch</small><small class="translation-state">Pendiente de revisión</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="slovenščina  sl">
+                <a href="/sl/vpogledi/podatkovni-temelji-pred-produkcijsko-uporabo-umetne-inteligence/" hreflang="sl-SI" lang="sl-SI" data-locale-code="sl" data-locale-label="Slovenščina" data-locale-flag="🇸🇮" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">sl</span>
+                    <span><strong>Slovenščina</strong><small>Slovenščina</small><small class="translation-state">Pendiente de revisión</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="srpski  sr-latn">
+                <a href="/sr/uvidi/temelji-podataka-za-produkcioni-ai/" hreflang="sr-Latn-RS" lang="sr-Latn-RS" data-locale-code="sr-Latn" data-locale-label="Srpski" data-locale-flag="🇷🇸" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">sr-Latn</span>
+                    <span><strong>Srpski</strong><small>Srpski</small><small class="translation-state">Pendiente de revisión</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="magyar  hu">
+                <a href="/hu/elemzesek/adatalapok-a-mi-uzemi-bevezetese-elott/" hreflang="hu-HU" lang="hu-HU" data-locale-code="hu" data-locale-label="Magyar" data-locale-flag="🇭🇺" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">hu</span>
+                    <span><strong>Magyar</strong><small>Magyar</small><small class="translation-state">Pendiente de revisión</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="العربية  ar">
+                <a href="/ar/al-rua/asasat-albayanat-qabl-thaka-alistina-i-fil-intaj/" hreflang="ar-AE" lang="ar-AE" data-locale-code="ar" data-locale-label="العربية" data-locale-flag="🇦🇪" data-locale-direction="rtl">
+                    <span class="language-code" aria-hidden="true">ar</span>
+                    <span><strong>العربية</strong><small>العربية</small><small class="translation-state">Pendiente de revisión</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="简体中文  zh-hans">
+                <a href="/zh/dongjian/shengchanxing-rengongzhineng-zhiqian-de-shuju-jichu/" hreflang="zh-Hans-CN" lang="zh-Hans-CN" data-locale-code="zh-Hans" data-locale-label="简体中文" data-locale-flag="🇨🇳" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">zh-Hans</span>
+                    <span><strong>简体中文</strong><small>简体中文</small><small class="translation-state">Pendiente de revisión</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="日本語  ja">
+                <a href="/ja/insaito/honban-ai-mae-no-deta-kiban/" hreflang="ja-JP" lang="ja-JP" data-locale-code="ja" data-locale-label="日本語" data-locale-flag="🇯🇵" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">ja</span>
+                    <span><strong>日本語</strong><small>日本語</small><small class="translation-state">Pendiente de revisión</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="svenska  sv">
+                <a href="/sv/insikter/datagrunder-som-kravs-innan-ai-tas-i-produktion/" hreflang="sv-SE" lang="sv-SE" data-locale-code="sv" data-locale-label="Svenska" data-locale-flag="🇸🇪" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">sv</span>
+                    <span><strong>Svenska</strong><small>Svenska</small><small class="translation-state">Pendiente de revisión</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="español  es">
+                <a href="/es/perspectivas/fundamentos-de-datos-para-la-ia-en-produccion/" hreflang="es-ES" lang="es-ES" data-locale-code="es" data-locale-label="Español" data-locale-flag="🇪🇸" data-locale-direction="ltr" aria-current="page">
+                    <span class="language-code" aria-hidden="true">es</span>
+                    <span><strong>Español</strong><small>Español</small><small class="translation-state">Pendiente de revisión</small></span>
+<svg class="icon" viewBox="0 0 24 24" data-icon="check" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#check"></use></svg>                </a>
+            </li>
+            <li data-language-item data-language-search="русский  ru">
+                <a href="/ru/materialy/osnovy-dannykh-dlya-promyshlennogo-ii/" hreflang="ru-RU" lang="ru-RU" data-locale-code="ru" data-locale-label="Русский" data-locale-flag="🇷🇺" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">ru</span>
+                    <span><strong>Русский</strong><small>Русский</small><small class="translation-state">Pendiente de revisión</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="हिन्दी  hi">
+                <a href="/hi/antardrishti/utpadan-ai-se-pahle-data-aadhar/" hreflang="hi-IN" lang="hi-IN" data-locale-code="hi" data-locale-label="हिन्दी" data-locale-flag="🇮🇳" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">hi</span>
+                    <span><strong>हिन्दी</strong><small>हिन्दी</small><small class="translation-state">Pendiente de revisión</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="português  pt-pt">
+                <a href="/pt/perspetivas/fundamentos-de-dados-antes-da-ia-em-producao/" hreflang="pt-PT" lang="pt-PT" data-locale-code="pt-PT" data-locale-label="Português" data-locale-flag="🇵🇹" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">pt-PT</span>
+                    <span><strong>Português</strong><small>Português</small><small class="translation-state">Pendiente de revisión</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="suomi  fi-fi">
+                <a href="/fi/nakemykset/datan-edellytykset-ennen-tekoalyn-tuotantokayttoa/" hreflang="fi-FI" lang="fi-FI" data-locale-code="fi-FI" data-locale-label="Suomi" data-locale-flag="🇫🇮" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">fi-FI</span>
+                    <span><strong>Suomi</strong><small>Suomi</small><small class="translation-state">Pendiente de revisión</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="norsk  nb-no">
+                <a href="/no/innsikt/datagrunnlag-for-ki-i-produksjon/" hreflang="nb-NO" lang="nb-NO" data-locale-code="nb-NO" data-locale-label="Norsk" data-locale-flag="🇳🇴" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">nb-NO</span>
+                    <span><strong>Norsk</strong><small>Norsk</small><small class="translation-state">Pendiente de revisión</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="nederlands  nl-nl">
+                <a href="/nl/inzichten/datafundamenten-voor-ai-in-productie/" hreflang="nl-NL" lang="nl-NL" data-locale-code="nl-NL" data-locale-label="Nederlands" data-locale-flag="🇳🇱" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">nl-NL</span>
+                    <span><strong>Nederlands</strong><small>Nederlands</small><small class="translation-state">Pendiente de revisión</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="dansk  da-dk">
+                <a href="/da/indsigter/datagrundlag-for-ai-i-produktion/" hreflang="da-DK" lang="da-DK" data-locale-code="da-DK" data-locale-label="Dansk" data-locale-flag="🇩🇰" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">da-DK</span>
+                    <span><strong>Dansk</strong><small>Dansk</small><small class="translation-state">Pendiente de revisión</small></span>
+                </a>
+            </li>
+        </ul>
+        <p class="language-empty" data-language-empty hidden>No hay idiomas que coincidan</p>
+    </div>
+</details></div>
+            <button class="tool-button theme-toggle" type="button" data-theme-toggle data-change-label="Cambiar tema" data-light-label="Tema claro" data-dark-label="Tema oscuro" aria-label="Cambiar tema: Tema oscuro" title="Cambiar tema: Tema oscuro">
+                <span class="theme-toggle__icon theme-toggle__icon--to-dark"><svg class="icon" viewBox="0 0 20 20" data-icon="dark" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#dark-20"></use></svg></span>
+                <span class="theme-toggle__icon theme-toggle__icon--to-light"><svg class="icon" viewBox="0 0 20 20" data-icon="light" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#light-20"></use></svg></span>
+                <span class="visually-hidden" data-theme-current>Tema claro</span>
+            </button>
+            <a class="button button--primary header-cta desktop-tools" href="/es/contacto/">Hablemos de un reto de sistemas</a>
+
+            <details class="mobile-navigation" data-mobile-nav>
+                <summary class="tool-button menu-trigger" data-menu-toggle aria-label="Abrir menú" data-open-label="Abrir menú" data-close-label="Cerrar menú"><span class="menu-open"><svg class="icon" viewBox="0 0 20 20" data-icon="menu" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#menu-20"></use></svg></span><span class="menu-close"><svg class="icon" viewBox="0 0 20 20" data-icon="close" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#close-20"></use></svg></span></summary>
+                <div class="mobile-navigation__panel" data-mobile-panel>
+                    <nav aria-label="Navegación principal">
+                        <ul class="mobile-navigation__primary">
+                            <li>
+                                <a href="/es/metodo/"><span>01</span>Método</a>
+                            </li>
+                            <li>
+                                <details class="mobile-navigation__group">
+                                    <summary><span>02</span><strong>Servicios</strong><i aria-hidden="true"></i></summary>
+                                    <ul>
+                                        <li><a href="/es/servicios/">Servicios</a></li>
+                                        <li><a href="/es/servicios/arquitectura-y-transformacion-de-sistemas-empresariales/"><span>Arquitectura y transformación de sistemas empresariales</span></a></li>
+                                        <li><a href="/es/servicios/estrategia-gobernanza-e-ingenieria-de-datos/"><span>Estrategia de datos, gobernanza e ingeniería</span></a></li>
+                                        <li><a href="/es/servicios/integracion-empresarial-e-interoperabilidad/"><span>Integración e interoperabilidad empresarial</span></a></li>
+                                        <li><a href="/es/servicios/preparacion-integracion-y-ejecucion-responsable-de-ia/"><span>Preparación para la IA, integración y ejecución responsable</span></a></li>
+                                        <li><a href="/es/servicios/automatizacion-de-procesos-y-optimizacion-operativa/"><span>Automatización de procesos y optimización operativa</span></a></li>
+                                        <li><a href="/es/servicios/ingenieria-de-software-y-plataformas-a-medida/"><span>Ingeniería de software y plataformas a medida</span></a></li>
+                                    </ul>
+                                </details>
+                            </li>
+                            <li>
+                                <details class="mobile-navigation__group">
+                                    <summary><span>03</span><strong>Retos</strong><i aria-hidden="true"></i></summary>
+                                    <ul>
+                                        <li><a href="/es/retos/">Retos</a></li>
+                                        <li><a href="/es/retos/sistemas-desconectados-y-datos-fragmentados/"><svg class="icon" viewBox="0 0 24 24" data-icon="system" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#system"></use></svg><span>Sistemas desconectados y datos fragmentados</span></a></li>
+                                        <li><a href="/es/retos/modernizacion-de-sistemas-heredados-sin-interrupciones/"><svg class="icon" viewBox="0 0 24 24" data-icon="transformation" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#transformation"></use></svg><span>Modernización de sistemas heredados sin interrumpir el negocio</span></a></li>
+                                        <li><a href="/es/retos/datos-confiables-para-decisiones-e-ia/"><svg class="icon" viewBox="0 0 24 24" data-icon="data" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#data"></use></svg><span>Fundamentos de datos fiables para decisiones e IA</span></a></li>
+                                        <li><a href="/es/retos/integraciones-complejas-con-socios/"><svg class="icon" viewBox="0 0 24 24" data-icon="integration" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#integration"></use></svg><span>Integraciones complejas con socios y entre empresas</span></a></li>
+                                        <li><a href="/es/retos/del-piloto-de-ia-a-produccion/"><svg class="icon" viewBox="0 0 24 24" data-icon="ai" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#ai"></use></svg><span>Llevar la IA del piloto a producción</span></a></li>
+                                        <li><a href="/es/retos/flujos-de-trabajo-manuales-y-friccion-operativa/"><svg class="icon" viewBox="0 0 24 24" data-icon="automation" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#automation"></use></svg><span>Flujos de trabajo manuales y trabajo operativo oculto</span></a></li>
+                                        <li><a href="/es/retos/arquitectura-para-el-cambio-continuo/"><svg class="icon" viewBox="0 0 24 24" data-icon="architecture" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#architecture"></use></svg><span>Arquitectura preparada para seguir cambiando con seguridad</span></a></li>
+                                        <li><a href="/es/resumen-del-reto-de-sistemas/"><svg class="icon" viewBox="0 0 24 24" data-icon="decision" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#decision"></use></svg><span>Resumen del reto del sistema</span></a></li>
+                                    </ul>
+                                </details>
+                            </li>
+                            <li>
+                                <a href="/es/enfoque/"><span>04</span>Enfoque</a>
+                            </li>
+                            <li>
+                                <details class="mobile-navigation__group" data-current="true">
+                                    <summary><span>05</span><strong>Ideas</strong><i aria-hidden="true"></i></summary>
+                                    <ul>
+                                        <li><a href="/es/perspectivas/">Ideas</a></li>
+                                        <li><a href="/es/perspectivas/que-significa-realmente-la-ingenieria-de-sistemas-empresariales/"><span>Lo que realmente significa ingeniería de sistemas empresariales</span></a></li>
+                                        <li><a href="/es/perspectivas/modernizar-sistemas-heredados-sin-perder-la-continuidad-empresarial/"><span>Cómo modernizar los sistemas heredados sin perder la continuidad de las operaciones</span></a></li>
+                                        <li><a href="/es/perspectivas/por-que-las-integraciones-empresariales-fracasan-en-los-limites-entre-organizaciones/"><span>Por qué las integraciones empresariales fracasan en los límites entre organizaciones</span></a></li>
+                                        <li><a href="/es/perspectivas/fundamentos-de-datos-para-la-ia-en-produccion/" aria-current="page"><span>Fundamentos de datos necesarios antes de llevar la IA a producción</span></a></li>
+                                        <li><a href="/es/glosario/"><span>Glosario de ingeniería de sistemas empresariales</span></a></li>
+                                    </ul>
+                                </details>
+                            </li>
+                            <li>
+                                <details class="mobile-navigation__group">
+                                    <summary><span>06</span><strong>Acerca de MTera</strong><i aria-hidden="true"></i></summary>
+                                    <ul>
+                                        <li><a href="/es/acerca-de-mtera/">Acerca de MTera</a></li>
+                                        <li><a href="/es/acerca-de-mtera/milovan-tomasevic/"><span>Milovan Tomašević</span></a></li>
+                                        <li><a href="/es/experiencia/"><span>Selección de experiencia y patrones de problemas</span></a></li>
+                                        <li><a href="/es/preguntas-frecuentes/"><span>Preguntas sobre el trabajo con MTera</span></a></li>
+                                    </ul>
+                                </details>
+                            </li>
+                            <li>
+                                <a href="/es/contacto/"><span>07</span>Contacto</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <a class="button button--primary" href="/es/contacto/">Hablemos de un reto de sistemas <svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a>
+                </div>
+            </details>
+        </div>
+    </div>
+</header><div
+    class="language-suggestion"
+    role="region"
+    aria-labelledby="language-suggestion-title"
+    aria-live="polite"
+    lang="es-ES"
+    dir="ltr"
+    data-language-suggestion
+    data-current-locale="es"
+    data-message-template="Su navegador prefiere {language}. La página actual permanecerá abierta hasta que elija."
+    data-action-template="Ver esta página en {language}"
+    hidden
+>
+    <div class="language-suggestion__copy">
+        <p class="language-suggestion__heading visually-hidden">
+            <strong id="language-suggestion-title">Sugerencia de idioma</strong>
+        </p>
+        <p data-language-suggestion-message></p>
+    </div>
+    <a class="text-link language-suggestion__action" data-language-suggestion-accept></a>
+    <button class="language-suggestion__dismiss" type="button" data-language-suggestion-dismiss aria-label="Descartar la sugerencia de idioma">
+        <svg class="icon" viewBox="0 0 20 20" data-icon="close" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#close-20"></use></svg>
+        <span class="visually-hidden">Descartar la sugerencia de idioma</span>
+    </button>
+</div>
+    <main id="main-content" tabindex="-1" lang="es-ES" dir="ltr" data-pagefind-body>
+<nav class="breadcrumbs shell" aria-label="Ruta de navegación">
+    <ol>
+        <li><a href="https://mtera.eu/es/">Construya lo que viene sin perder lo que debe seguir siendo cierto.</a><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></li>
+        <li><a href="https://mtera.eu/es/perspectivas/">Ideas</a><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></li>
+        <li><span aria-current="page">Fundamentos de datos necesarios antes de llevar la IA a producción</span></li>
+    </ol>
+</nav>
+<article class="article" data-pagefind-meta="category:IA">
+    <header class="article-hero shell"><span class="eyebrow">IA</span><h1 id="page-title">Fundamentos de datos necesarios antes de llevar la IA a producción</h1><p class="lede">Los datos están preparados para la IA en producción cuando son adecuados para una decisión y un contexto operativo definidos: su significado es compartido, la procedencia es rastreable, los controles de calidad reflejan las consecuencias, el acceso y el uso están autorizados, la evaluación representa condiciones reales y la retroalimentación puede revelar cambios en los datos o en el contexto de decisión.</p><div class="article-meta"><span data-publication-state="preview">Vista previa editorial</span><span><svg class="icon" viewBox="0 0 24 24" data-icon="calendar" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#calendar"></use></svg><time datetime="2026-08-11" data-local-date>2026-08-11</time></span><span><svg class="icon" viewBox="0 0 24 24" data-icon="reading-time" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#reading-time"></use></svg><span data-local-number="10" data-use-grouping="false">10</span> min de lectura</span></div></header>
+<section class="section shell"><div class="publication-note"><svg class="icon" viewBox="0 0 24 24" data-icon="warning" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#warning"></use></svg><div><strong>Vista previa editorial — revisión especializada pendiente</strong><p>Esta vista previa completa permanecerá fuera de la publicación en producción hasta que la revise y apruebe un especialista asignado.</p></div></div></section><div class="article-layout shell"><aside class="article-toc"><strong>En esta página</strong><ol><li><a href="#decision_first">Empezar por la decisión, no por el conjunto de datos disponible</a></li><li><a href="#meaning">El significado compartido es una dependencia de producción</a></li><li><a href="#lineage">El linaje debe llegar hasta la decisión operativa</a></li><li><a href="#quality">Vincular los controles de calidad con las consecuencias</a></li><li><a href="#authority">El acceso no es el mismo que la autoridad para utilizar</a></li><li><a href="#evaluation">Los datos de evaluación deben representar condiciones operativas</a></li><li><a href="#feedback">La producción necesita un sistema de retroalimentación y cambio</a></li></ol></aside><div class="article-body"><section id="decision_first"><h2>Empezar por la decisión, no por el conjunto de datos disponible</h2><p>Un conjunto de datos puede estar limpio y, aun así, no ser adecuado para un caso de uso. La preparación depende de aquello en lo que influirá el modelo, de quién se verá afectado, de qué significa un error, de la velocidad con la que cambian las condiciones y de lo que una persona puede hacer cuando la confianza es baja. Estas preguntas determinan qué hechos son importantes y cuántas evidencias se necesitan.</p><p>Defina la recomendación o acción prevista en términos operativos claros. Identifique al responsable, al usuario, al sujeto, el momento de la decisión, las alternativas y las consecuencias. Después, rastree los datos necesarios para sustentarla. Así se evita que un conjunto de datos atractivo genere un caso de uso que la organización no pueda operar de forma responsable.</p></section><section id="meaning"><h2>El significado compartido es una dependencia de producción</h2><p>Los sistemas operativos y de entrenamiento pueden utilizar la misma etiqueta para conceptos distintos. «Cliente» puede significar una cuenta, una persona jurídica, un hogar o un contrato activo. «Caso cerrado» puede significar resuelto, finalizado administrativamente o abandonado. Si el significado varía según el periodo, la fuente o el equipo, el comportamiento del modelo puede cambiar por motivos que la evaluación nunca puso a prueba.</p><p>Las variables y los resultados críticos necesitan definiciones empresariales, reglas de inclusión y exclusión, contexto temporal y responsables explícitos. Los cambios históricos deben ser visibles. El objetivo no es documentar todos los campos, sino estabilizar lo suficiente los significados que afectan de forma importante a la decisión para poder cuestionarlos y supervisarlos.</p></section><section id="lineage"><h2>El linaje debe llegar hasta la decisión operativa</h2><p>El linaje resulta útil cuando explica de dónde procede un valor, qué transformaciones lo modificaron y bajo qué regla o versión entró en el entrenamiento, la evaluación y la producción. Un gráfico técnico del flujo de datos puede mostrar el movimiento y omitir las decisiones empresariales de selección y corrección que dieron forma a los datos.</p><p>Registre la procedencia con un nivel de detalle proporcional al riesgo. El equipo debe poder investigar un resultado, evaluar el impacto de un cambio en la fuente y reproducir la evaluación pertinente. Si personas o proveedores enriquecen o etiquetan los datos, ese contexto y sus controles de calidad también forman parte de la trazabilidad.</p></section><section id="quality"><h2>Vincular los controles de calidad con las consecuencias</h2><p>Las puntuaciones globales de exhaustividad y precisión son evidencias débiles de preparación. La ausencia de un valor poco frecuente puede ser importante si elimina una condición de seguridad o elegibilidad, mientras que un defecto habitual puede resultar irrelevante para la decisión prevista. Defina la calidad según el uso: rangos válidos, oportunidad, representatividad, coherencia, duplicación y fiabilidad de las etiquetas allí donde influyan en el resultado.</p><p>Para cada defecto crítico, decida si debe prevenirse, detectarse, corregirse, rechazarse, escalarse o mostrarse la incertidumbre a una persona. Asigne un responsable y un umbral de actuación. Estos controles deben funcionar tanto después del despliegue como durante la preparación, porque las fuentes de producción y el comportamiento cambiarán.</p></section><section id="authority"><h2>El acceso no es el mismo que la autoridad para utilizar</h2><p>Un equipo puede ser técnicamente capaz de recuperar datos sin tener un propósito justificado, permiso o un modelo de conservación adecuado para un uso de IA. Por el contrario, los controles de acceso estrictos pueden fracasar si los resultados derivados revelan información o si los revisores humanos reciben contexto que no deben ver.</p><p>Mapee los sujetos de los datos, los responsables, los fines permitidos, las vías de acceso, la conservación, los artefactos derivados y los efectos de la eliminación o corrección. Especialistas jurídicos, de privacidad, seguridad y del sector deben validar las obligaciones reales. La contribución de la ingeniería consiste en concretar suficientemente el uso y el flujo de la información para que esas decisiones puedan aplicarse.</p></section><section id="evaluation"><h2>Los datos de evaluación deben representar condiciones operativas</h2><p>Un conjunto de evaluación debe reflejar los casos, periodos, excepciones y poblaciones que encontrará la capacidad, incluidas las condiciones en las que el modelo debe abstenerse. La separación respecto al entrenamiento es importante, pero también lo son las filtraciones a través de entidades relacionadas, la información posterior al resultado y las correcciones manuales que no existirán en el momento de decidir.</p><p>Defina la aceptación en torno a la acción empresarial, no a una puntuación global del modelo. Incluya las clases de error importantes, la capacidad de revisión humana, la latencia, el comportamiento ante fallos y el coste de abstenerse. Registre las versiones del conjunto de datos y de las reglas para poder comparar con sentido un cambio posterior.</p></section><section id="feedback"><h2>La producción necesita un sistema de retroalimentación y cambio</h2><p>La preparación de los datos no termina con el lanzamiento. Los sistemas de origen cambian, las definiciones evolucionan, el comportamiento operativo se adapta y la población puede variar. La supervisión debe abarcar las condiciones de entrada, los controles de datos, el comportamiento del modelo, las intervenciones humanas, las evidencias de los resultados y las excepciones sin resolver, con una frecuencia acorde al riesgo de la decisión.</p><p>La organización también necesita autoridad para responder: quién investiga, quién puede suspender la automatización, cómo funciona la alternativa segura, cuándo se considera reentrenar o rediseñar y qué evidencias permiten restablecer el servicio. Sin este modelo operativo, un modelo puede seguir disponible técnicamente cuando su contexto de decisión ya ha cambiado.</p></section></div></div><section class="section takeaways"><div class="shell"><span class="eyebrow">Ideas clave</span><h2>Qué conservar para la siguiente decisión</h2><ol><li><span>01</span>Definir la preparación para una decisión, un responsable y unas consecuencias, no para los datos en general.</li><li><span>02</span>Hacer rastreables el significado crítico, el contexto temporal y la procedencia.</li><li><span>03</span>Vincular los controles y umbrales de calidad con las clases de errores importantes.</li><li><span>04</span>Distinguir el acceso técnico del uso autorizado y adecuado.</li><li><span>05</span>Evaluar en condiciones operativas reales y diseñar la retroalimentación, la alternativa segura y la autoridad para intervenir.</li></ol></div></section><section class="section shell article-note"><h2>Aplicación</h2><p>Escriba en una frase la decisión sustentada por la IA. Enumere los hechos necesarios en el momento de decidir, su fuente y su responsable, las consecuencias de cada defecto importante y la persona autorizada para detener o anular el uso. Cada espacio en blanco señala una carencia de preparación.</p></section><section class="section shell article-note"><h2>Límites y riesgos</h2><p>Este artículo ofrece un marco de ingeniería, no asesoramiento jurídico, de privacidad, seguridad, regulación ni sectorial. Las decisiones sobre IA en producción requieren especialistas cualificados y una gobernanza responsable del cliente para el uso y la jurisdicción reales.</p></section><section class="section shell related-links"><div class="section-heading"><span class="eyebrow">Recorrido principal por el sistema</span><h2>Continuar desde esta perspectiva hasta la capacidad y el reto pertinentes</h2></div><div class="link-ledger"><a href="/es/servicios/estrategia-gobernanza-e-ingenieria-de-datos/"><span>01</span><strong>Aplicar esta perspectiva mediante Estrategia de datos, gobernanza e ingeniería</strong><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a><a href="/es/retos/datos-confiables-para-decisiones-e-ia/"><span>02</span><strong>Explorar el reto del sistema: Fundamentos de datos fiables para decisiones e IA</strong><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a></div></section><section class="section shell related-links"><div class="section-heading"><span class="eyebrow">Glosario</span><h2>Definiciones utilizadas para razonar sobre este tema</h2></div><div class="link-ledger"><a href="/es/glosario/#data_lineage"><span>01</span><strong>Comprender «Linaje de datos» en el glosario de MTera</strong><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a><a href="/es/glosario/#ai_readiness"><span>02</span><strong>Comprender «Preparación para la IA» en el glosario de MTera</strong><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a><a href="/es/glosario/#human_oversight"><span>03</span><strong>Comprender «Supervisión humana» en el glosario de MTera</strong><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a><a href="/es/glosario/#data_governance"><span>04</span><strong>Comprender «Gobernanza de datos» en el glosario de MTera</strong><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a></div></section><section class="section shell related-links"><div class="section-heading"><span class="eyebrow">Perspectivas relacionadas</span><h2>Continuar el razonamiento entre decisiones de sistema relacionadas</h2></div><div class="link-ledger"></div></section></article>
+<section class="section cta-band" data-pagefind-ignore>
+    <div class="shell cta-band__inner">
+        <div><span class="eyebrow">MTera · Contactar con MTera</span><h2>Analice la cuestión de sistema que subyace a su cambio.</h2><p>Construya lo que viene sin perder lo que debe seguir siendo cierto.</p></div>
+        <a class="button button--primary" href="/es/contacto/">Hablemos de un reto de sistemas <svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a>
+    </div>
+</section>    </main>
+
+<aside class="print-metadata" aria-label="Información para imprimir" lang="es-ES" dir="ltr">
+        <img class="print-metadata__logo" src="/static/brand/mtera-lockup-horizontal-monochrome.svg" width="248" height="64" alt="MTera">
+        <p><strong>URL canónica:</strong> <span dir="ltr">https://mtera.eu/es/perspectivas/fundamentos-de-datos-para-la-ia-en-produccion/</span></p>
+        <p><strong>Impreso:</strong> <time datetime="2026-08-13" data-print-date>2026-08-13</time></p>
+    </aside>
+<footer class="site-footer" lang="es-ES" dir="ltr">
+    <div class="shell site-footer__grid">
+        <div class="site-footer__brand">
+            <span class="theme-lockup"><img class="theme-lockup__light" src="/static/brand/mtera-wordmark.svg" width="1062" height="269" alt="MTera" loading="lazy"><img class="theme-lockup__dark" src="/static/brand/mtera-wordmark-on-dark.svg" width="1062" height="269" alt="" aria-hidden="true" loading="lazy"></span>
+            <p>Construya lo que viene sin perder lo que debe seguir siendo cierto.</p>
+<p class="meta-line"><svg class="icon" viewBox="0 0 24 24" data-icon="location" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#location"></use></svg> Liubliana</p>        </div>
+        <details class="site-footer__group site-footer__nav" data-footer-disclosure open>
+            <summary class="site-footer__summary">
+                <h2>Explorar</h2>
+                <svg class="site-footer__chevron" viewBox="0 0 20 20" data-icon="arrow-forward" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward-20"></use></svg>
+            </summary>
+            <nav class="site-footer__links" aria-label="Navegación del pie de página">
+<a href="/es/metodo/">Método</a><a href="/es/servicios/">Servicios</a><a href="/es/retos/">Retos</a><a href="/es/enfoque/">Enfoque</a><a href="/es/perspectivas/">Ideas</a><a href="/es/acerca-de-mtera/">Acerca de MTera</a><a href="/es/contacto/">Contacto</a>            </nav>
+        </details>
+        <details class="site-footer__group site-footer__nav" data-footer-disclosure open>
+            <summary class="site-footer__summary">
+                <h2>Información legal</h2>
+                <svg class="site-footer__chevron" viewBox="0 0 20 20" data-icon="arrow-forward" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward-20"></use></svg>
+            </summary>
+            <nav class="site-footer__links" aria-label="Navegación jurídica">
+<a href="/es/experiencia/">Experiencia</a><a href="/es/glosario/">Glosario</a><a href="/es/preguntas-frecuentes/">Preguntas frecuentes</a><a href="/es/aviso-legal/">Aviso legal</a><a href="/es/privacidad/">Privacidad</a><a href="/es/cookies/">Cookies</a><a href="/es/condiciones-de-uso/">Condiciones de uso</a><a href="/es/accesibilidad/">Accesibilidad</a><a href="/es/seguridad/">Seguridad</a><a href="/es/mapa-del-sitio/">Mapa del sitio</a><a href="/es/buscar/">Buscar</a>            </nav>
+        </details>
+        <details class="site-footer__group site-footer__contact" data-footer-disclosure open>
+            <summary class="site-footer__summary">
+                <h2>Contactar con MTera</h2>
+                <svg class="site-footer__chevron" viewBox="0 0 20 20" data-icon="arrow-forward" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward-20"></use></svg>
+            </summary>
+            <div class="site-footer__links">
+<a class="email-link" href="mailto:hello@mtera.eu"><svg class="icon" viewBox="0 0 24 24" data-icon="email" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#email"></use></svg><span dir="ltr">hello@mtera.eu</span></a>            </div>
+        </details>
+    </div>
+    <div class="shell site-footer__base">
+        <p>© 2026 MTera</p>
+        <p>Diseñado para privacidad, claridad y accesibilidad.</p>
+    </div>
+</footer><dialog class="search-dialog" data-search-dialog data-search-copy aria-labelledby="search-dialog-title" lang="es-ES" dir="ltr"
+    data-no-results="No se encontraron resultados"
+    data-results-label="resultados"
+    data-search-unavailable="La búsqueda no está disponible temporalmente."
+    data-search-minimum-one="Escriba al menos 1 carácter."
+    data-search-minimum-many="Escriba al menos {count} caracteres."
+    data-search-untitled="Sin título"
+    data-group-service="Servicios"
+    data-group-challenge="Retos"
+    data-group-method="Método"
+    data-group-article="Ideas"
+    data-group-glossary="Glosario"
+    data-group-about="Acerca de MTera"
+    data-group-page="Otras páginas">
+    <div class="search-dialog__surface">
+        <header>
+            <div><span class="eyebrow">MTera · Buscar</span><h2 id="search-dialog-title">Buscar en la base de conocimiento de MTera</h2><p>Encuentre servicios, retos, métodos, perspectivas y definiciones.</p></div>
+            <button class="tool-button" type="button" data-search-close aria-label="Cerrar búsqueda"><svg class="icon" viewBox="0 0 20 20" data-icon="close" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#close-20"></use></svg></button>
+        </header>
+        <form class="search-form" action="/es/buscar/" method="get" role="search" data-search-form>
+            <label for="site-search-input">Buscar</label>
+            <div class="search-input"><svg class="icon" viewBox="0 0 20 20" data-icon="search" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#search-20"></use></svg><input id="site-search-input" name="q" type="search" inputmode="search" autocomplete="off" spellcheck="false" enterkeyhint="search" minlength="1" role="combobox" aria-expanded="false" aria-haspopup="listbox" aria-controls="search-results" aria-autocomplete="list" data-search-input placeholder="Buscar en MTera"><button class="button button--primary" type="submit">Buscar</button></div>
+        </form>
+        <div class="search-status" role="status" aria-live="polite" data-search-status></div>
+        <ol class="search-results" id="search-results" role="listbox" aria-label="Resultados de búsqueda" data-search-results></ol>
+        <nav class="search-quick-actions" aria-labelledby="search-dialog-actions-title">
+            <h3 id="search-dialog-actions-title">Acciones rápidas</h3>
+            <a href="/es/resumen-del-reto-de-sistemas/">Resumen del reto del sistema</a>
+            <a href="/es/metodo/">Explorar el método MTera</a>
+            <a href="/es/servicios/">Ver servicio</a>
+            <a href="/es/contacto/">Contactar con MTera</a>
+        </nav>
+        <footer><span><kbd>⌘</kbd>/<kbd>Ctrl</kbd> + <kbd>K</kbd></span><a href="/es/buscar/">Abrir la búsqueda avanzada <svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a></footer>
+    </div>
+</dialog><button class="back-to-top" type="button" data-back-to-top hidden lang="es-ES" dir="ltr" aria-label="Volver arriba">
+    <svg class="back-to-top__progress" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21" pathLength="1"></circle></svg>
+    <svg class="icon" viewBox="0 0 24 24" data-icon="top" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#top"></use></svg>
+</button>    <script id="mtera-site-script" type="module" src="/assets/mtera.KAAJH2LX.js" data-search-index="/es/search-index.json" data-pagefind-base="/pagefind/" data-pagefind-enabled="true" data-locale="es" data-html-lang="es-ES"></script>
+</body>
+</html>

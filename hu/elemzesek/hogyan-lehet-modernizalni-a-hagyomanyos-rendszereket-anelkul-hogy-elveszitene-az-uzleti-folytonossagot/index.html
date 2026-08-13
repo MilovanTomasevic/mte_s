@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="hu-HU" dir="ltr" data-theme="light" data-theme-mode="light" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <link rel="preload" href="/assets/mtera-style.MYAWRNDW.css" as="style" fetchpriority="high">
+    <script>
+        (() => {
+            const root = document.documentElement;
+            root.classList.replace("no-js", "js");
+            let resolved = "";
+            try {
+                const saved = localStorage.getItem("mtera-theme");
+                if (saved === "light" || saved === "dark") resolved = saved;
+            } catch (_) {}
+            if (!resolved) {
+                let prefersDark = false;
+                try { prefersDark = matchMedia("(prefers-color-scheme: dark)").matches; } catch (_) {}
+                resolved = prefersDark ? "dark" : "light";
+            }
+            root.dataset.themeMode = resolved;
+            root.dataset.theme = resolved;
+            root.style.colorScheme = resolved;
+        })();
+    </script>
+    <link rel="stylesheet" href="/assets/mtera-style.MYAWRNDW.css">
+    <title>Örökölt rendszerek korszerűsítése az üzletmenet folytonosságának megőrzésével | MTera</title>
+    <meta name="description" content="Döntésvezérelt korszerűsítés rejtett üzleti szabályok feltárásával, átmeneti architektúrával, együttéléssel, bizonyítékokkal és helyreállítási feltételekkel.">
+<meta data-pagefind-meta="title" data-pagefind-ignore="all" content="Hogyan korszerűsíthetők az örökölt rendszerek az üzletmenet folytonosságának elvesztése nélkül?"><meta data-pagefind-meta="description" data-pagefind-ignore="all" content="Döntésvezérelt korszerűsítés rejtett üzleti szabályok feltárásával, átmeneti architektúrával, együttéléssel, bizonyítékokkal és helyreállítási feltételekkel."><meta data-pagefind-meta="locale" data-pagefind-ignore="all" content="hu-HU"><meta data-pagefind-meta="content_type" data-pagefind-ignore="all" content="article"><meta data-pagefind-meta="category" data-pagefind-ignore="all" content="Átalakítás"><meta data-pagefind-meta="date" data-pagefind-ignore="all" content="2026-08-11"><meta data-pagefind-meta="title[content]" content="Hogyan korszerűsíthetők az örökölt rendszerek az üzletmenet folytonosságának elvesztése nélkül?"><meta data-pagefind-meta="description[content]" content="Döntésvezérelt korszerűsítés rejtett üzleti szabályok feltárásával, átmeneti architektúrával, együttéléssel, bizonyítékokkal és helyreállítási feltételekkel."><meta data-pagefind-meta="locale[content]" content="hu-HU"><meta data-pagefind-meta="content_type[content]" content="article"><meta data-pagefind-meta="category[content]" content="Átalakítás"><meta data-pagefind-meta="date[content]" content="2026-08-11"><meta data-pagefind-filter="content_type[content]" content="article"><meta data-pagefind-filter="category[content]" content="Átalakítás">    <meta name="author" content="MTera · Milovan Tomašević">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F6F4F0" data-theme-color-light>
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0A0B0D" data-theme-color-dark>
+<link rel="canonical" href="https://mtera.eu/hu/elemzesek/hogyan-lehet-modernizalni-a-hagyomanyos-rendszereket-anelkul-hogy-elveszitene-az-uzleti-folytonossagot/"><link rel="alternate" hreflang="en-GB" href="https://mtera.eu/insights/modernize-legacy-systems-without-losing-business-continuity/"><link rel="alternate" hreflang="en-US" href="https://mtera.eu/us/insights/modernize-legacy-systems-without-losing-business-continuity/"><link rel="alternate" hreflang="de-DE" href="https://mtera.eu/de/einblicke/wie-man-altsysteme-modernisiert-ohne-die-geschaeftskontinuitaet-zu-verlieren/"><link rel="alternate" hreflang="sl-SI" href="https://mtera.eu/sl/vpogledi/kako-posodobiti-zapuscinske-sisteme-brez-izgube-neprekinjenega-poslovanja/"><link rel="alternate" hreflang="sr-Latn-RS" href="https://mtera.eu/sr/uvidi/modernizacija-nasledenih-sistema-i-kontinuitet-poslovanja/"><link rel="alternate" hreflang="hu-HU" href="https://mtera.eu/hu/elemzesek/hogyan-lehet-modernizalni-a-hagyomanyos-rendszereket-anelkul-hogy-elveszitene-az-uzleti-folytonossagot/"><link rel="alternate" hreflang="ar-AE" href="https://mtera.eu/ar/al-rua/tahdith-alanazima-alqadima-ma-hifz-istimrariyat-alamal/"><link rel="alternate" hreflang="zh-Hans-CN" href="https://mtera.eu/zh/dongjian/zai-baochi-yewu-lianxuxing-de-tongshi-xiandaihua-chuantong-xitong/"><link rel="alternate" hreflang="ja-JP" href="https://mtera.eu/ja/insaito/gyomu-keizokusei-wo-ushinawanai-regashi-gendaika/"><link rel="alternate" hreflang="sv-SE" href="https://mtera.eu/sv/insikter/hur-man-moderniserar-aldre-system-utan-att-forlora-affarskontinuitet/"><link rel="alternate" hreflang="es-ES" href="https://mtera.eu/es/perspectivas/modernizar-sistemas-heredados-sin-perder-la-continuidad-empresarial/"><link rel="alternate" hreflang="ru-RU" href="https://mtera.eu/ru/materialy/modernizatsiya-ustarevshikh-sistem-bez-poteri-nepreryvnosti-biznesa/"><link rel="alternate" hreflang="hi-IN" href="https://mtera.eu/hi/antardrishti/vyavsayik-nirantarta-ke-sath-virasat-adhunikikaran/"><link rel="alternate" hreflang="pt-PT" href="https://mtera.eu/pt/perspetivas/modernizar-sistemas-legados-sem-perder-a-continuidade-do-negocio/"><link rel="alternate" hreflang="fi-FI" href="https://mtera.eu/fi/nakemykset/vanhojen-jarjestelmien-uudistaminen-ilman-liiketoiminnan-jatkuvuuden-menettamista/"><link rel="alternate" hreflang="nb-NO" href="https://mtera.eu/no/innsikt/moderniser-eldre-systemer-uten-a-miste-forretningskontinuitet/"><link rel="alternate" hreflang="nl-NL" href="https://mtera.eu/nl/inzichten/verouderde-systemen-moderniseren-zonder-bedrijfscontinuiteit-te-verliezen/"><link rel="alternate" hreflang="da-DK" href="https://mtera.eu/da/indsigter/moderniser-aeldre-systemer-uden-at-miste-forretningskontinuitet/"><link rel="alternate" hreflang="x-default" href="https://mtera.eu/insights/modernize-legacy-systems-without-losing-business-continuity/">    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MTera">
+    <meta property="og:title" content="Örökölt rendszerek korszerűsítése az üzletmenet folytonosságának megőrzésével | MTera">
+    <meta property="og:description" content="Döntésvezérelt korszerűsítés rejtett üzleti szabályok feltárásával, átmeneti architektúrával, együttéléssel, bizonyítékokkal és helyreállítási feltételekkel.">
+<meta property="og:url" content="https://mtera.eu/hu/elemzesek/hogyan-lehet-modernizalni-a-hagyomanyos-rendszereket-anelkul-hogy-elveszitene-az-uzleti-folytonossagot/">    <meta property="og:locale" content="hu_HU">
+<meta property="og:locale:alternate" content="en_GB"><meta property="og:locale:alternate" content="en_US"><meta property="og:locale:alternate" content="de_DE"><meta property="og:locale:alternate" content="sl_SI"><meta property="og:locale:alternate" content="sr_Latn_RS"><meta property="og:locale:alternate" content="ar_AE"><meta property="og:locale:alternate" content="zh_Hans_CN"><meta property="og:locale:alternate" content="ja_JP"><meta property="og:locale:alternate" content="sv_SE"><meta property="og:locale:alternate" content="es_ES"><meta property="og:locale:alternate" content="ru_RU"><meta property="og:locale:alternate" content="hi_IN"><meta property="og:locale:alternate" content="pt_PT"><meta property="og:locale:alternate" content="fi_FI"><meta property="og:locale:alternate" content="nb_NO"><meta property="og:locale:alternate" content="nl_NL"><meta property="og:locale:alternate" content="da_DK">    <meta property="og:image" content="https://mtera.eu/static/images/og/generated/hu/insight-legacy-modernization-continuity.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="MTera · Elemzések · Hogyan korszerűsíthetők az örökölt rendszerek az…">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Örökölt rendszerek korszerűsítése az üzletmenet folytonosságának megőrzésével | MTera">
+    <meta name="twitter:description" content="Döntésvezérelt korszerűsítés rejtett üzleti szabályok feltárásával, átmeneti architektúrával, együttéléssel, bizonyítékokkal és helyreállítási feltételekkel.">
+    <meta name="twitter:image" content="https://mtera.eu/static/images/og/generated/hu/insight-legacy-modernization-continuity.png">
+    <meta name="twitter:image:alt" content="MTera · Elemzések · Hogyan korszerűsíthetők az örökölt rendszerek az…">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16">
+    <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="/favicon-48x48.png" type="image/png" sizes="48x48">
+    <link rel="icon" href="/favicon-96x96.png" type="image/png" sizes="96x96">
+    <link rel="icon" href="/favicon-256x256.png" type="image/png" sizes="256x256">
+    <link rel="shortcut icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="mask-icon" href="/static/brand/pinned-tab.svg" color="#B9824E">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+    <link rel="manifest" href="/hu/site.webmanifest">
+    <meta name="mtera-font-profile" content="/static/fonts/latin.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@id": "https://mtera.eu/hu/elemzesek/hogyan-lehet-modernizalni-a-hagyomanyos-rendszereket-anelkul-hogy-elveszitene-az-uzleti-folytonossagot/#webpage", "@type": "WebPage", "about": {"@id": "https://mtera.eu/#organization"}, "breadcrumb": {"@id": "https://mtera.eu/hu/elemzesek/hogyan-lehet-modernizalni-a-hagyomanyos-rendszereket-anelkul-hogy-elveszitene-az-uzleti-folytonossagot/#breadcrumb"}, "dateModified": "2026-08-11", "description": "D\u00f6nt\u00e9svez\u00e9relt korszer\u0171s\u00edt\u00e9s rejtett \u00fczleti szab\u00e1lyok felt\u00e1r\u00e1s\u00e1val, \u00e1tmeneti architekt\u00far\u00e1val, egy\u00fctt\u00e9l\u00e9ssel, bizony\u00edt\u00e9kokkal \u00e9s helyre\u00e1ll\u00edt\u00e1si felt\u00e9telekkel.", "inLanguage": "hu-HU", "isPartOf": {"@id": "https://mtera.eu/#website"}, "name": "\u00d6r\u00f6k\u00f6lt rendszerek korszer\u0171s\u00edt\u00e9se az \u00fczletmenet folytonoss\u00e1g\u00e1nak meg\u0151rz\u00e9s\u00e9vel | MTera", "url": "https://mtera.eu/hu/elemzesek/hogyan-lehet-modernizalni-a-hagyomanyos-rendszereket-anelkul-hogy-elveszitene-az-uzleti-folytonossagot/"}, {"@id": "https://mtera.eu/#website", "@type": "WebSite", "inLanguage": ["en-GB", "en-US", "de-DE", "sl-SI", "sr-Latn-RS", "hu-HU", "ar-AE", "zh-Hans-CN", "ja-JP", "sv-SE", "es-ES", "ru-RU", "hi-IN", "pt-PT", "fi-FI", "nb-NO", "nl-NL", "da-DK"], "name": "MTera", "publisher": {"@id": "https://mtera.eu/#organization"}, "url": "https://mtera.eu/"}, {"@id": "https://mtera.eu/#organization", "@type": "Organization", "description": "Az MTera seg\u00edt a szervezeteknek meg\u00e9rteni, \u00fajratervezni, \u00f6sszekapcsolni \u00e9s megval\u00f3s\u00edtani a meghat\u00e1roz\u00f3 \u00fczleti v\u00e1ltoz\u00e1sok m\u00f6g\u00f6tti rendszereket \u2014 az adatokt\u00f3l \u00e9s folyamatokt\u00f3l az alkalmaz\u00e1sokon, integr\u00e1ci\u00f3kon \u00e9s mesters\u00e9ges intelligenci\u00e1n \u00e1t az operat\u00edv d\u00f6nt\u00e9sekig.", "email": "hello@mtera.eu", "founder": {"@id": "https://mtera.eu/about/milovan-tomasevic/#person"}, "logo": {"@type": "ImageObject", "height": 512, "url": "https://mtera.eu/static/brand/mtera-avatar-512.png", "width": 512}, "name": "MTera", "url": "https://mtera.eu/"}, {"@id": "https://mtera.eu/hu/elemzesek/hogyan-lehet-modernizalni-a-hagyomanyos-rendszereket-anelkul-hogy-elveszitene-az-uzleti-folytonossagot/#breadcrumb", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://mtera.eu/hu/", "name": "\u00c9p\u00edtse meg a k\u00f6vetkez\u0151t \u00fagy, hogy k\u00f6zben meg\u0151rzi mindazt, aminek igaznak kell maradnia.", "position": 1}, {"@type": "ListItem", "item": "https://mtera.eu/hu/elemzesek/", "name": "Elemz\u00e9sek", "position": 2}, {"@type": "ListItem", "item": "https://mtera.eu/hu/elemzesek/hogyan-lehet-modernizalni-a-hagyomanyos-rendszereket-anelkul-hogy-elveszitene-az-uzleti-folytonossagot/", "name": "Hogyan korszer\u0171s\u00edthet\u0151k az \u00f6r\u00f6k\u00f6lt rendszerek az \u00fczletmenet folytonoss\u00e1g\u00e1nak elveszt\u00e9se n\u00e9lk\u00fcl?", "position": 3}]}]}</script></head>
+<body class="page page--insight.legacy_modernization_continuity page-kind--article">
+    <a class="skip-link" href="#main-content" lang="hu-HU" dir="ltr">Ugrás a fő tartalomra</a>
+    <div class="header-marker" data-header-marker aria-hidden="true"></div>
+<header class="site-header" data-site-header lang="hu-HU" dir="ltr">
+    <div class="site-header__inner shell">
+        <a class="brand" href="/hu/" aria-label="MTera — Kezdőlap">
+            <span class="theme-lockup" aria-hidden="true">
+                <img class="theme-lockup__light" src="/static/brand/mtera-wordmark.svg" width="1062" height="269" alt="">
+                <img class="theme-lockup__dark" src="/static/brand/mtera-wordmark-on-dark.svg" width="1062" height="269" alt="">
+            </span>
+        </a>
+
+        <nav class="desktop-nav" aria-label="Fő navigáció">
+            <ul class="desktop-nav__list">
+                    <li>
+                        <a href="/hu/modszer/">Módszer</a>
+                    </li>
+                    <li>
+                        <details class="desktop-nav__group" data-nav-group>
+                            <summary>Szolgáltatások<span aria-hidden="true"></span></summary>
+                            <div class="desktop-nav__mega">
+                                <a class="desktop-nav__overview" href="/hu/szolgaltatasok/">
+                                    <small>Szolgáltatások</small>
+                                    <strong>Szolgáltatások</strong>
+                                    <svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg>
+                                </a>
+                                <ul class="desktop-nav__deep-list">
+                                    <li><a href="/hu/szolgaltatasok/uzleti-rendszerarchitektura-es-atalakitas/"><span>Üzleti rendszerek architektúrája és átalakítása</span></a></li>
+                                    <li><a href="/hu/szolgaltatasok/adatstrategia-adatiranyitas-es-adatmernokseg/"><span>Adatstratégia, adatirányítás és mérnöki megvalósítás</span></a></li>
+                                    <li><a href="/hu/szolgaltatasok/vallalati-integracio-es-interoperabilitas/"><span>Vállalati integráció és interoperabilitás</span></a></li>
+                                    <li><a href="/hu/szolgaltatasok/mi-felkeszultseg-integracio-es-felelos-megvalositas/"><span>MI-felkészültség, integráció és felelős megvalósítás</span></a></li>
+                                    <li><a href="/hu/szolgaltatasok/folyamatautomatizalas-es-mukodesoptimalizalas/"><span>Folyamatautomatizálás és működésoptimalizálás</span></a></li>
+                                    <li><a href="/hu/szolgaltatasok/egyedi-szoftverek-es-platformfejlesztes/"><span>Egyedi szoftver- és platformfejlesztés</span></a></li>
+                                </ul>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <details class="desktop-nav__group" data-nav-group>
+                            <summary>Kihívások<span aria-hidden="true"></span></summary>
+                            <div class="desktop-nav__mega">
+                                <a class="desktop-nav__overview" href="/hu/kihivasok/">
+                                    <small>Kihívások</small>
+                                    <strong>Kihívások</strong>
+                                    <svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg>
+                                </a>
+                                <ul class="desktop-nav__deep-list">
+                                    <li><a href="/hu/kihivasok/szetszakadt-rendszerek-es-toredezett-adatok/"><svg class="icon" viewBox="0 0 24 24" data-icon="system" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#system"></use></svg><span>Szétkapcsolt rendszerek és töredezett adatok</span></a></li>
+                                    <li><a href="/hu/kihivasok/orokolt-rendszerek-korszerusitese-fennakadas-nelkul/"><svg class="icon" viewBox="0 0 24 24" data-icon="transformation" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#transformation"></use></svg><span>Örökölt rendszerek korszerűsítése fennakadás nélkül</span></a></li>
+                                    <li><a href="/hu/kihivasok/megbizhato-adatok-dontesekhez-es-mi-hez/"><svg class="icon" viewBox="0 0 24 24" data-icon="data" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#data"></use></svg><span>Megbízható adatok döntésekhez és mesterséges intelligenciához</span></a></li>
+                                    <li><a href="/hu/kihivasok/osszetett-partnerintegraciok/"><svg class="icon" viewBox="0 0 24 24" data-icon="integration" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#integration"></use></svg><span>Összetett partner- és vállalati integráció</span></a></li>
+                                    <li><a href="/hu/kihivasok/mi-pilotbol-uzemi-kepesseg/"><svg class="icon" viewBox="0 0 24 24" data-icon="ai" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#ai"></use></svg><span>MI-pilotból üzemi képesség</span></a></li>
+                                    <li><a href="/hu/kihivasok/kezi-munkafolyamatok-es-mukodesi-surlodas/"><svg class="icon" viewBox="0 0 24 24" data-icon="automation" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#automation"></use></svg><span>Törékeny kézi munkafolyamatok és rejtett operatív munka</span></a></li>
+                                    <li><a href="/hu/kihivasok/architektura-a-folyamatos-valtozashoz/"><svg class="icon" viewBox="0 0 24 24" data-icon="architecture" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#architecture"></use></svg><span>Biztonságosan továbbfejleszthető architektúra</span></a></li>
+                                    <li><a href="/hu/rendszerkihivas-osszefoglalo/"><svg class="icon" viewBox="0 0 24 24" data-icon="decision" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#decision"></use></svg><span>Rendszerkihívás – előkészítő kérdéssor</span></a></li>
+                                </ul>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <a href="/hu/munkamod/">Munkamód</a>
+                    </li>
+                    <li>
+                        <details class="desktop-nav__group" data-nav-group data-current="true">
+                            <summary>Elemzések<span aria-hidden="true"></span></summary>
+                            <div class="desktop-nav__mega">
+                                <a class="desktop-nav__overview" href="/hu/elemzesek/">
+                                    <small>Elemzések</small>
+                                    <strong>Elemzések</strong>
+                                    <svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg>
+                                </a>
+                                <ul class="desktop-nav__deep-list">
+                                    <li><a href="/hu/elemzesek/mit-is-jelent-valojaban-az-uzleti-rendszerek-tervezese/"><span>Mit jelent valójában az üzletirendszer-fejlesztés?</span></a></li>
+                                    <li><a href="/hu/elemzesek/hogyan-lehet-modernizalni-a-hagyomanyos-rendszereket-anelkul-hogy-elveszitene-az-uzleti-folytonossagot/" aria-current="page"><span>Hogyan korszerűsíthetők az örökölt rendszerek az üzletmenet folytonosságának elvesztése nélkül?</span></a></li>
+                                    <li><a href="/hu/elemzesek/miert-nem-sikerul-a-vallalati-integracio-a-szervezetek-kozotti-hatarokon/"><span>Miért vallanak kudarcot a vállalati integrációk a szervezetek határán?</span></a></li>
+                                    <li><a href="/hu/elemzesek/adatalapok-a-mi-uzemi-bevezetese-elott/"><span>Az éles MI-használat előtt szükséges adatalapok</span></a></li>
+                                    <li><a href="/hu/fogalomtar/"><span>Üzletirendszer-fejlesztési fogalomtár</span></a></li>
+                                </ul>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <details class="desktop-nav__group" data-nav-group>
+                            <summary>Az MTera-ról<span aria-hidden="true"></span></summary>
+                            <div class="desktop-nav__mega">
+                                <a class="desktop-nav__overview" href="/hu/az-mtera-rol/">
+                                    <small>Az MTera-ról</small>
+                                    <strong>Az MTera-ról</strong>
+                                    <svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg>
+                                </a>
+                                <ul class="desktop-nav__deep-list">
+                                    <li><a href="/hu/az-mtera-rol/milovan-tomasevic/"><span>Milovan Tomašević</span></a></li>
+                                    <li><a href="/hu/tapasztalat/"><span>Tapasztalat és kiválasztott problémaminták</span></a></li>
+                                    <li><a href="/hu/gyakori-kerdesek/"><span>Kérdések az MTerával való együttműködésről</span></a></li>
+                                </ul>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <a href="/hu/kapcsolat/">Kapcsolat</a>
+                    </li>
+            </ul>
+        </nav>
+
+        <div class="site-header__tools">
+            <a class="tool-button" href="/hu/kereses/" data-search-open aria-label="Keresés megnyitása">
+                <svg class="icon" viewBox="0 0 20 20" data-icon="search" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#search-20"></use></svg><span class="tool-button__label">Keresés megnyitása</span>
+            </a>
+            <div class="header-language"><details class="language-picker" data-language-picker>
+    <summary class="tool-button" aria-label="Nyelv módosítása: Magyar"><span class="language-picker__flag" aria-hidden="true">🇭🇺</span></summary>
+    <div class="popover language-menu">
+        <label for="language-filter-header">Nyelv módosítása</label>
+        <div class="language-filter"><svg class="icon" viewBox="0 0 20 20" data-icon="search" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#search-20"></use></svg><input id="language-filter-header" type="search" inputmode="search" autocomplete="off" data-language-filter placeholder="Nyelvek keresése"></div>
+        <ul data-language-list>
+            <li data-language-item data-language-search="english (uk)  en">
+                <a href="/insights/modernize-legacy-systems-without-losing-business-continuity/" hreflang="en-GB" lang="en-GB" data-locale-code="en" data-locale-label="English (UK)" data-locale-flag="🇬🇧" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">en</span>
+                    <span><strong>English (UK)</strong><small>English (UK)</small><small class="translation-state">Vázlat</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="english (us)  en-us">
+                <a href="/us/insights/modernize-legacy-systems-without-losing-business-continuity/" hreflang="en-US" lang="en-US" data-locale-code="en-US" data-locale-label="English (US)" data-locale-flag="🇺🇸" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">en-US</span>
+                    <span><strong>English (US)</strong><small>English (US)</small><small class="translation-state">Ellenőrzésre vár</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="deutsch  de">
+                <a href="/de/einblicke/wie-man-altsysteme-modernisiert-ohne-die-geschaeftskontinuitaet-zu-verlieren/" hreflang="de-DE" lang="de-DE" data-locale-code="de" data-locale-label="Deutsch" data-locale-flag="🇩🇪" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">de</span>
+                    <span><strong>Deutsch</strong><small>Deutsch</small><small class="translation-state">Ellenőrzésre vár</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="slovenščina  sl">
+                <a href="/sl/vpogledi/kako-posodobiti-zapuscinske-sisteme-brez-izgube-neprekinjenega-poslovanja/" hreflang="sl-SI" lang="sl-SI" data-locale-code="sl" data-locale-label="Slovenščina" data-locale-flag="🇸🇮" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">sl</span>
+                    <span><strong>Slovenščina</strong><small>Slovenščina</small><small class="translation-state">Ellenőrzésre vár</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="srpski  sr-latn">
+                <a href="/sr/uvidi/modernizacija-nasledenih-sistema-i-kontinuitet-poslovanja/" hreflang="sr-Latn-RS" lang="sr-Latn-RS" data-locale-code="sr-Latn" data-locale-label="Srpski" data-locale-flag="🇷🇸" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">sr-Latn</span>
+                    <span><strong>Srpski</strong><small>Srpski</small><small class="translation-state">Ellenőrzésre vár</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="magyar  hu">
+                <a href="/hu/elemzesek/hogyan-lehet-modernizalni-a-hagyomanyos-rendszereket-anelkul-hogy-elveszitene-az-uzleti-folytonossagot/" hreflang="hu-HU" lang="hu-HU" data-locale-code="hu" data-locale-label="Magyar" data-locale-flag="🇭🇺" data-locale-direction="ltr" aria-current="page">
+                    <span class="language-code" aria-hidden="true">hu</span>
+                    <span><strong>Magyar</strong><small>Magyar</small><small class="translation-state">Ellenőrzésre vár</small></span>
+<svg class="icon" viewBox="0 0 24 24" data-icon="check" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#check"></use></svg>                </a>
+            </li>
+            <li data-language-item data-language-search="العربية  ar">
+                <a href="/ar/al-rua/tahdith-alanazima-alqadima-ma-hifz-istimrariyat-alamal/" hreflang="ar-AE" lang="ar-AE" data-locale-code="ar" data-locale-label="العربية" data-locale-flag="🇦🇪" data-locale-direction="rtl">
+                    <span class="language-code" aria-hidden="true">ar</span>
+                    <span><strong>العربية</strong><small>العربية</small><small class="translation-state">Ellenőrzésre vár</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="简体中文  zh-hans">
+                <a href="/zh/dongjian/zai-baochi-yewu-lianxuxing-de-tongshi-xiandaihua-chuantong-xitong/" hreflang="zh-Hans-CN" lang="zh-Hans-CN" data-locale-code="zh-Hans" data-locale-label="简体中文" data-locale-flag="🇨🇳" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">zh-Hans</span>
+                    <span><strong>简体中文</strong><small>简体中文</small><small class="translation-state">Ellenőrzésre vár</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="日本語  ja">
+                <a href="/ja/insaito/gyomu-keizokusei-wo-ushinawanai-regashi-gendaika/" hreflang="ja-JP" lang="ja-JP" data-locale-code="ja" data-locale-label="日本語" data-locale-flag="🇯🇵" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">ja</span>
+                    <span><strong>日本語</strong><small>日本語</small><small class="translation-state">Ellenőrzésre vár</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="svenska  sv">
+                <a href="/sv/insikter/hur-man-moderniserar-aldre-system-utan-att-forlora-affarskontinuitet/" hreflang="sv-SE" lang="sv-SE" data-locale-code="sv" data-locale-label="Svenska" data-locale-flag="🇸🇪" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">sv</span>
+                    <span><strong>Svenska</strong><small>Svenska</small><small class="translation-state">Ellenőrzésre vár</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="español  es">
+                <a href="/es/perspectivas/modernizar-sistemas-heredados-sin-perder-la-continuidad-empresarial/" hreflang="es-ES" lang="es-ES" data-locale-code="es" data-locale-label="Español" data-locale-flag="🇪🇸" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">es</span>
+                    <span><strong>Español</strong><small>Español</small><small class="translation-state">Ellenőrzésre vár</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="русский  ru">
+                <a href="/ru/materialy/modernizatsiya-ustarevshikh-sistem-bez-poteri-nepreryvnosti-biznesa/" hreflang="ru-RU" lang="ru-RU" data-locale-code="ru" data-locale-label="Русский" data-locale-flag="🇷🇺" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">ru</span>
+                    <span><strong>Русский</strong><small>Русский</small><small class="translation-state">Ellenőrzésre vár</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="हिन्दी  hi">
+                <a href="/hi/antardrishti/vyavsayik-nirantarta-ke-sath-virasat-adhunikikaran/" hreflang="hi-IN" lang="hi-IN" data-locale-code="hi" data-locale-label="हिन्दी" data-locale-flag="🇮🇳" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">hi</span>
+                    <span><strong>हिन्दी</strong><small>हिन्दी</small><small class="translation-state">Ellenőrzésre vár</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="português  pt-pt">
+                <a href="/pt/perspetivas/modernizar-sistemas-legados-sem-perder-a-continuidade-do-negocio/" hreflang="pt-PT" lang="pt-PT" data-locale-code="pt-PT" data-locale-label="Português" data-locale-flag="🇵🇹" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">pt-PT</span>
+                    <span><strong>Português</strong><small>Português</small><small class="translation-state">Ellenőrzésre vár</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="suomi  fi-fi">
+                <a href="/fi/nakemykset/vanhojen-jarjestelmien-uudistaminen-ilman-liiketoiminnan-jatkuvuuden-menettamista/" hreflang="fi-FI" lang="fi-FI" data-locale-code="fi-FI" data-locale-label="Suomi" data-locale-flag="🇫🇮" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">fi-FI</span>
+                    <span><strong>Suomi</strong><small>Suomi</small><small class="translation-state">Ellenőrzésre vár</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="norsk  nb-no">
+                <a href="/no/innsikt/moderniser-eldre-systemer-uten-a-miste-forretningskontinuitet/" hreflang="nb-NO" lang="nb-NO" data-locale-code="nb-NO" data-locale-label="Norsk" data-locale-flag="🇳🇴" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">nb-NO</span>
+                    <span><strong>Norsk</strong><small>Norsk</small><small class="translation-state">Ellenőrzésre vár</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="nederlands  nl-nl">
+                <a href="/nl/inzichten/verouderde-systemen-moderniseren-zonder-bedrijfscontinuiteit-te-verliezen/" hreflang="nl-NL" lang="nl-NL" data-locale-code="nl-NL" data-locale-label="Nederlands" data-locale-flag="🇳🇱" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">nl-NL</span>
+                    <span><strong>Nederlands</strong><small>Nederlands</small><small class="translation-state">Ellenőrzésre vár</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="dansk  da-dk">
+                <a href="/da/indsigter/moderniser-aeldre-systemer-uden-at-miste-forretningskontinuitet/" hreflang="da-DK" lang="da-DK" data-locale-code="da-DK" data-locale-label="Dansk" data-locale-flag="🇩🇰" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">da-DK</span>
+                    <span><strong>Dansk</strong><small>Dansk</small><small class="translation-state">Ellenőrzésre vár</small></span>
+                </a>
+            </li>
+        </ul>
+        <p class="language-empty" data-language-empty hidden>Nincs egyező nyelv</p>
+    </div>
+</details></div>
+            <button class="tool-button theme-toggle" type="button" data-theme-toggle data-change-label="Téma módosítása" data-light-label="Világos téma" data-dark-label="Sötét téma" aria-label="Téma módosítása: Sötét téma" title="Téma módosítása: Sötét téma">
+                <span class="theme-toggle__icon theme-toggle__icon--to-dark"><svg class="icon" viewBox="0 0 20 20" data-icon="dark" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#dark-20"></use></svg></span>
+                <span class="theme-toggle__icon theme-toggle__icon--to-light"><svg class="icon" viewBox="0 0 20 20" data-icon="light" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#light-20"></use></svg></span>
+                <span class="visually-hidden" data-theme-current>Világos téma</span>
+            </button>
+            <a class="button button--primary header-cta desktop-tools" href="/hu/kapcsolat/">Rendszerkihívás megbeszélése</a>
+
+            <details class="mobile-navigation" data-mobile-nav>
+                <summary class="tool-button menu-trigger" data-menu-toggle aria-label="Menü megnyitása" data-open-label="Menü megnyitása" data-close-label="Menü bezárása"><span class="menu-open"><svg class="icon" viewBox="0 0 20 20" data-icon="menu" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#menu-20"></use></svg></span><span class="menu-close"><svg class="icon" viewBox="0 0 20 20" data-icon="close" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#close-20"></use></svg></span></summary>
+                <div class="mobile-navigation__panel" data-mobile-panel>
+                    <nav aria-label="Fő navigáció">
+                        <ul class="mobile-navigation__primary">
+                            <li>
+                                <a href="/hu/modszer/"><span>01</span>Módszer</a>
+                            </li>
+                            <li>
+                                <details class="mobile-navigation__group">
+                                    <summary><span>02</span><strong>Szolgáltatások</strong><i aria-hidden="true"></i></summary>
+                                    <ul>
+                                        <li><a href="/hu/szolgaltatasok/">Szolgáltatások</a></li>
+                                        <li><a href="/hu/szolgaltatasok/uzleti-rendszerarchitektura-es-atalakitas/"><span>Üzleti rendszerek architektúrája és átalakítása</span></a></li>
+                                        <li><a href="/hu/szolgaltatasok/adatstrategia-adatiranyitas-es-adatmernokseg/"><span>Adatstratégia, adatirányítás és mérnöki megvalósítás</span></a></li>
+                                        <li><a href="/hu/szolgaltatasok/vallalati-integracio-es-interoperabilitas/"><span>Vállalati integráció és interoperabilitás</span></a></li>
+                                        <li><a href="/hu/szolgaltatasok/mi-felkeszultseg-integracio-es-felelos-megvalositas/"><span>MI-felkészültség, integráció és felelős megvalósítás</span></a></li>
+                                        <li><a href="/hu/szolgaltatasok/folyamatautomatizalas-es-mukodesoptimalizalas/"><span>Folyamatautomatizálás és működésoptimalizálás</span></a></li>
+                                        <li><a href="/hu/szolgaltatasok/egyedi-szoftverek-es-platformfejlesztes/"><span>Egyedi szoftver- és platformfejlesztés</span></a></li>
+                                    </ul>
+                                </details>
+                            </li>
+                            <li>
+                                <details class="mobile-navigation__group">
+                                    <summary><span>03</span><strong>Kihívások</strong><i aria-hidden="true"></i></summary>
+                                    <ul>
+                                        <li><a href="/hu/kihivasok/">Kihívások</a></li>
+                                        <li><a href="/hu/kihivasok/szetszakadt-rendszerek-es-toredezett-adatok/"><svg class="icon" viewBox="0 0 24 24" data-icon="system" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#system"></use></svg><span>Szétkapcsolt rendszerek és töredezett adatok</span></a></li>
+                                        <li><a href="/hu/kihivasok/orokolt-rendszerek-korszerusitese-fennakadas-nelkul/"><svg class="icon" viewBox="0 0 24 24" data-icon="transformation" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#transformation"></use></svg><span>Örökölt rendszerek korszerűsítése fennakadás nélkül</span></a></li>
+                                        <li><a href="/hu/kihivasok/megbizhato-adatok-dontesekhez-es-mi-hez/"><svg class="icon" viewBox="0 0 24 24" data-icon="data" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#data"></use></svg><span>Megbízható adatok döntésekhez és mesterséges intelligenciához</span></a></li>
+                                        <li><a href="/hu/kihivasok/osszetett-partnerintegraciok/"><svg class="icon" viewBox="0 0 24 24" data-icon="integration" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#integration"></use></svg><span>Összetett partner- és vállalati integráció</span></a></li>
+                                        <li><a href="/hu/kihivasok/mi-pilotbol-uzemi-kepesseg/"><svg class="icon" viewBox="0 0 24 24" data-icon="ai" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#ai"></use></svg><span>MI-pilotból üzemi képesség</span></a></li>
+                                        <li><a href="/hu/kihivasok/kezi-munkafolyamatok-es-mukodesi-surlodas/"><svg class="icon" viewBox="0 0 24 24" data-icon="automation" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#automation"></use></svg><span>Törékeny kézi munkafolyamatok és rejtett operatív munka</span></a></li>
+                                        <li><a href="/hu/kihivasok/architektura-a-folyamatos-valtozashoz/"><svg class="icon" viewBox="0 0 24 24" data-icon="architecture" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#architecture"></use></svg><span>Biztonságosan továbbfejleszthető architektúra</span></a></li>
+                                        <li><a href="/hu/rendszerkihivas-osszefoglalo/"><svg class="icon" viewBox="0 0 24 24" data-icon="decision" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#decision"></use></svg><span>Rendszerkihívás – előkészítő kérdéssor</span></a></li>
+                                    </ul>
+                                </details>
+                            </li>
+                            <li>
+                                <a href="/hu/munkamod/"><span>04</span>Munkamód</a>
+                            </li>
+                            <li>
+                                <details class="mobile-navigation__group" data-current="true">
+                                    <summary><span>05</span><strong>Elemzések</strong><i aria-hidden="true"></i></summary>
+                                    <ul>
+                                        <li><a href="/hu/elemzesek/">Elemzések</a></li>
+                                        <li><a href="/hu/elemzesek/mit-is-jelent-valojaban-az-uzleti-rendszerek-tervezese/"><span>Mit jelent valójában az üzletirendszer-fejlesztés?</span></a></li>
+                                        <li><a href="/hu/elemzesek/hogyan-lehet-modernizalni-a-hagyomanyos-rendszereket-anelkul-hogy-elveszitene-az-uzleti-folytonossagot/" aria-current="page"><span>Hogyan korszerűsíthetők az örökölt rendszerek az üzletmenet folytonosságának elvesztése nélkül?</span></a></li>
+                                        <li><a href="/hu/elemzesek/miert-nem-sikerul-a-vallalati-integracio-a-szervezetek-kozotti-hatarokon/"><span>Miért vallanak kudarcot a vállalati integrációk a szervezetek határán?</span></a></li>
+                                        <li><a href="/hu/elemzesek/adatalapok-a-mi-uzemi-bevezetese-elott/"><span>Az éles MI-használat előtt szükséges adatalapok</span></a></li>
+                                        <li><a href="/hu/fogalomtar/"><span>Üzletirendszer-fejlesztési fogalomtár</span></a></li>
+                                    </ul>
+                                </details>
+                            </li>
+                            <li>
+                                <details class="mobile-navigation__group">
+                                    <summary><span>06</span><strong>Az MTera-ról</strong><i aria-hidden="true"></i></summary>
+                                    <ul>
+                                        <li><a href="/hu/az-mtera-rol/">Az MTera-ról</a></li>
+                                        <li><a href="/hu/az-mtera-rol/milovan-tomasevic/"><span>Milovan Tomašević</span></a></li>
+                                        <li><a href="/hu/tapasztalat/"><span>Tapasztalat és kiválasztott problémaminták</span></a></li>
+                                        <li><a href="/hu/gyakori-kerdesek/"><span>Kérdések az MTerával való együttműködésről</span></a></li>
+                                    </ul>
+                                </details>
+                            </li>
+                            <li>
+                                <a href="/hu/kapcsolat/"><span>07</span>Kapcsolat</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <a class="button button--primary" href="/hu/kapcsolat/">Rendszerkihívás megbeszélése <svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a>
+                </div>
+            </details>
+        </div>
+    </div>
+</header><div
+    class="language-suggestion"
+    role="region"
+    aria-labelledby="language-suggestion-title"
+    aria-live="polite"
+    lang="hu-HU"
+    dir="ltr"
+    data-language-suggestion
+    data-current-locale="hu"
+    data-message-template="A böngésző előnyben részesített nyelve: {language}. A jelenlegi oldal mindaddig nyitva marad, amíg nem választ."
+    data-action-template="Oldal megtekintése ezen a nyelven: {language}"
+    hidden
+>
+    <div class="language-suggestion__copy">
+        <p class="language-suggestion__heading visually-hidden">
+            <strong id="language-suggestion-title">Nyelvi javaslat</strong>
+        </p>
+        <p data-language-suggestion-message></p>
+    </div>
+    <a class="text-link language-suggestion__action" data-language-suggestion-accept></a>
+    <button class="language-suggestion__dismiss" type="button" data-language-suggestion-dismiss aria-label="A nyelvi javaslat elutasítása">
+        <svg class="icon" viewBox="0 0 20 20" data-icon="close" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#close-20"></use></svg>
+        <span class="visually-hidden">A nyelvi javaslat elutasítása</span>
+    </button>
+</div>
+    <main id="main-content" tabindex="-1" lang="hu-HU" dir="ltr" data-pagefind-body>
+<nav class="breadcrumbs shell" aria-label="Útvonalnavigáció">
+    <ol>
+        <li><a href="https://mtera.eu/hu/">Építse meg a következőt úgy, hogy közben megőrzi mindazt, aminek igaznak kell maradnia.</a><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></li>
+        <li><a href="https://mtera.eu/hu/elemzesek/">Elemzések</a><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></li>
+        <li><span aria-current="page">Hogyan korszerűsíthetők az örökölt rendszerek az üzletmenet folytonosságának elvesztése nélkül?</span></li>
+    </ol>
+</nav>
+<article class="article" data-pagefind-meta="category:Átalakítás">
+    <header class="article-hero shell"><span class="eyebrow">Átalakítás</span><h1 id="page-title">Hogyan korszerűsíthetők az örökölt rendszerek az üzletmenet folytonosságának elvesztése nélkül?</h1><p class="lede">A biztonságos korszerűsítés elválasztja a rendszerben hordozott üzleti igazságot a lecserélhető megvalósítástól. Feltárja a rejtett szabályokat és függőségeket, megtervezi a cél- és átmeneti architektúrát, az együttélést, az egyeztetést és a helyreállítást, így nem egyetlen nagy kockázatú átállásra épül.</p><div class="article-meta"><span data-publication-state="preview">Szerkesztői előnézet</span><span><svg class="icon" viewBox="0 0 24 24" data-icon="calendar" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#calendar"></use></svg><time datetime="2026-08-11" data-local-date>2026-08-11</time></span><span><svg class="icon" viewBox="0 0 24 24" data-icon="reading-time" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#reading-time"></use></svg><span data-local-number="10" data-use-grouping="false">10</span> perc olvasási idő</span></div></header>
+<section class="section shell"><div class="publication-note"><svg class="icon" viewBox="0 0 24 24" data-icon="warning" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#warning"></use></svg><div><strong>Szerkesztői előnézet — szakértői felülvizsgálatra vár</strong><p>Ez a teljes előnézet mindaddig nem kerül közzétételre, amíg egy kijelölt szakértő felül nem vizsgálja és jóvá nem hagyja azt.</p></div></div></section><div class="article-layout shell"><aside class="article-toc"><strong>Ezen az oldalon</strong><ol><li><a href="#legacy_value">Az örökölt rendszer többet hordoz régi kódnál</a></li><li><a href="#continuity_register">A fejlesztési teendőlista előtt készüljön folytonossági nyilvántartás</a></li><li><a href="#target_transition">A cél és az átmenet megtervezése együtt</a></li><li><a href="#migration_slices">A migrációt üzleti képességek és bizonyítékok szerint bontsa fel</a></li><li><a href="#coexistence">Az együttélést működési modellként kell kezelni</a></li><li><a href="#rollback">A helyreállításnak az üzleti állapotra is ki kell terjednie, nem csak a telepítésre</a></li><li><a href="#governance">A pusztán naptáralapú ütemterv helyett használjon döntési küszöböket</a></li></ol></aside><div class="article-body"><section id="legacy_value"><h2>Az örökölt rendszer többet hordoz régi kódnál</h2><p>Egy érett rendszer gyakran több év alatt kialakult üzleti működést tartalmaz. Egyes szabályok kifejezetten a kódban vannak. Mások a kötegelt feldolgozás időzítésében, adatbázis-konvenciókban, üzemeltetési ellenőrzőlistákban, beszállítói eljárásokban és a tapasztalt munkatársak mérlegelésében élnek. Technológiai szempontból esetlegesnek tűnhetnek, miközben nélkülözhetetlenek a folytonossághoz.</p><p>A korszerűsítés kudarcot vall, ha a jelenlegi rendszert csupán lecserélendő komponensek halmazaként dokumentálják. Hasznosabb feltérképezni az általa biztosított képességeket és támogatott döntéseket, a kezelésében lévő kritikus adatokat, a rá épülő függőségeket, a biztosított kontrollokat és az emberek által kezelt kivételeket. Ez mutatja meg, mi változhat, és minek kell összekapcsolva maradnia.</p></section><section id="continuity_register"><h2>A fejlesztési teendőlista előtt készüljön folytonossági nyilvántartás</h2><p>A folytonossági nyilvántartás rögzíti azokat a tényeket és működési jellemzőket, amelyeket minden átmenetnek meg kell őriznie: a stabil identitást, az üzleti definíciókat, a jóváhagyási jogkört, az időzítési kötelezettségeket, az egyeztetési szabályokat, az auditbizonyítékokat, a helyreállítási elvárásokat és a szolgáltatási határokat. Minden tételnek legyen felelőse és tesztelési módja. A nyilvántartás nem indok minden történelmi működés lemásolására; tudatos döntési alap ahhoz, hogy mit kell megtartani, megváltoztatni vagy kivezetni.</p><p>Ez a feltárás módját is megváltoztatja. A csapatok nemcsak azt kérdezik, milyen funkciókra van szükség, hanem azt is, miért létezik egy szabály, milyen következménnyel járna a módosítása, és ki jogosult elfogadni ezt a következményt. Az elavult működés magabiztosan eltávolítható, ha a célját és függőségeit megvizsgálták; a fontos működés pedig tudatosan újratervezhető ahelyett, hogy véletlenül elveszne.</p></section><section id="target_transition"><h2>A cél és az átmenet megtervezése együtt</h2><p>A célarchitektúra megmutatja a tervezett jövőbeli felelősségeket és határokat, önmagában azonban nem mondja meg, hogyan működhet a szervezet már holnap. Az átmeneti architektúrák azokat a köztes állapotokat írják le, amelyeknek valós munkát kell ellátniuk, miközben az adatok, interfészek és felhasználók átköltöznek. Ide tartozik az ideiglenes felelősség, az együttélés, az egyeztetés, a kiegészítő kontroll és a kivezetés egyértelmű feltétele.</p><p>A cél és az átmenetek együttes tervezése próbára teszi, hogy a cél valóban elérhető-e. Ha nincs hiteles mód egy kritikus identitás átvitelére, a régi és új szabályok párhuzamos futtatására vagy az eredmények mindkét környezetben történő ellenőrzésére, a célhoz más határokra lehet szükség. Az átmenet önálló architektúra, nem dokumentálatlanul hagyható projektállványzat.</p></section><section id="migration_slices"><h2>A migrációt üzleti képességek és bizonyítékok szerint bontsa fel</h2><p>A műszaki rétegek ritkán jelentik a migráció legbiztonságosabb egységét. Ha először minden adat, majd minden szolgáltatás, végül minden csatorna költözik, hosszú időszakokra gazda nélkül maradhat a teljes üzleti eredmény. Egy képességalapú részlet a szabályokon, adatokon, interfészeken és üzemeltetésen át követ egy értelmes útvonalat. Lehet szűk, de egészként elfogadható.</p><p>A részleteket a függőségek és következmények, ne pusztán a könnyű megvalósíthatóság alapján válassza ki. A korai munkának a legkockázatosabb feltételezéseket kell tesztelnie anélkül, hogy egy hiba elfogadhatatlanul nagy területre terjedne ki. Minden részlethez sikerkritérium, egyeztetési és helyreállítási feltétel szükséges. A befejezés azt jelenti, hogy a szervezet működtetni és megmagyarázni is képes az új útvonalat — nem csupán azt, hogy a kódot telepítették.</p></section><section id="coexistence"><h2>Az együttélést működési modellként kell kezelni</h2><p>A párhuzamos működés olyan kérdéseket vet fel, amelyeket a migrációs diagram gyakran kihagy. Melyik rendszer a hiteles forrás az egyes tényekhez? Mindkettő fogadhat módosításokat? Hogyan kapcsolódnak össze az identitások? Eltérő eredmény esetén ki dönt? Milyen gyorsan kell egyeztetni? Milyen bizonyíték igazolja, hogy az új működés ott egyenértékű, ahol ez számít?</p><p>Ezek üzemeltetési döntések. Felelősökre, eljárásleírásokra, felügyeletre és eszkalációra van szükségük. A kettős írás vagy az adatreplikáció a mechanizmus része lehet, de egyik sem teremt üzleti döntési jogkört. A hiteles adatforrás egyértelmű kijelölése és az ellenőrzött kivételkezelési út fontosabb a szinkronizációs technológia kifinomultságánál.</p></section><section id="rollback"><h2>A helyreállításnak az üzleti állapotra is ki kell terjednie, nem csak a telepítésre</h2><p>Egy alkalmazásverzió visszaállítása nem vonja vissza automatikusan az addig elfogadott megrendeléseket, kiküldött értesítéseket, rögzített döntéseket vagy átalakított adatokat. A helyreállítási tervnek azonosítania kell a visszafordíthatatlan hatásokat, a kompenzáló műveleteket és azt a pontot, amely után már nem felelős döntés visszatérni a korábbi állapothoz.</p><p>Minden átmenetnél határozza meg, mi próbálható újra, mi játszható vissza, mi egyeztethető, kompenzálható vagy állítható helyre. A mechanizmus mellett a döntési folyamatot is tesztelje. A vezetőknek tudniuk kell, ki állíthatja meg az előrehaladást, milyen bizonyíték váltja ki ezt a döntést, és hogyan folytatódik az üzemeltetés a probléma feltárása közben.</p></section><section id="governance"><h2>A pusztán naptáralapú ütemterv helyett használjon döntési küszöböket</h2><p>A korszerűsítési ütemtervnek meg kell mutatnia az állapotok közötti továbblépéshez szükséges bizonyítékot: a szabályok lefedettségének megértését, az adatok jóváhagyott tűréshatáron belüli egyezését, a helyreállítás tesztelését, a támogatási felelősség átvételét vagy egy kritikus függőség megszüntetését. A dátumok fontosak, de küszöbök nélkül előrehaladást jelezhetnek még azelőtt, hogy a kockázat ténylegesen csökkent volna.</p><p>A döntési feljegyzések megőrzik, miért választották az adott célt, sorrendet vagy ideiglenes kompromisszumot, és azt is rögzítik, mikor kell újravizsgálni a feltételezést. Ettől az irányítás könnyebb és hasznosabb lesz: a jelentős bizonytalanságra összpontosít ahelyett, hogy minden részletet ugyanazon a fórumon vezetne át.</p></section></div></div><section class="section takeaways"><div class="shell"><span class="eyebrow">Legfontosabb tanulságok</span><h2>Mit kell továbbvinni a következő döntésbe?</h2><ol><li><span>01</span>Tárja fel az örökölt rendszerben élő üzleti igazságot és informális kontrollokat.</li><li><span>02</span>Tesztelhető folytonossági nyilvántartásban rögzítse, minek kell változatlanul igaznak maradnia.</li><li><span>03</span>Minden átmeneti állapotot úgy tervezzen meg, hogy a szervezet működtetni és elhagyni is képes legyen.</li><li><span>04</span>A helyreállítást az üzleti hatások, ne csupán a műszaki visszaállítás köré tervezze.</li><li><span>05</span>Az előrehaladást bizonyítékokkal és döntési küszöbökkel, ne pusztán dátumokkal szabályozza.</li></ol></div></section><section class="section shell article-note"><h2>Alkalmazás</h2><p>Válasszon ki egy kritikus képességet, és sorolja fel annak identitásait, szabályait, későbbi adatfogyasztóit, kézi kontrolljait és helyreállítási kötelezettségeit. E lista alapján ellenőrizze, hogy a jelenlegi csereterv mindegyiket megőrzi vagy tudatosan módosítja-e.</p></section><section class="section shell article-note"><h2>Határok és kockázatok</h2><p>Egyetlen migráció sem szüntethet meg minden zavart vagy bizonytalanságot. A folytonossági követelmények, tűréshatárok és elfogadott kockázatok az ügyfél felelős döntéshozóihoz tartoznak, és jogi, szabályozási, biztonsági vagy üzemeltetési szakértők bevonását igényelhetik.</p></section><section class="section shell related-links"><div class="section-heading"><span class="eyebrow">Elsődleges rendszerútvonal</span><h2>Továbblépés ebből az elemzésből a kapcsolódó képességhez és kihíváshoz</h2></div><div class="link-ledger"><a href="/hu/szolgaltatasok/uzleti-rendszerarchitektura-es-atalakitas/"><span>01</span><strong>Az elemzés alkalmazása ezen keresztül: Üzleti rendszerek architektúrája és átalakítása</strong><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a><a href="/hu/kihivasok/orokolt-rendszerek-korszerusitese-fennakadas-nelkul/"><span>02</span><strong>A rendszerkihívás feltárása: Örökölt rendszer korszerűsítése a működést összetartó tudás elvesztése nélkül</strong><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a></div></section><section class="section shell related-links"><div class="section-heading"><span class="eyebrow">Fogalomtár</span><h2>A témáról való gondolkodást segítő meghatározások</h2></div><div class="link-ledger"><a href="/hu/fogalomtar/#transition_architecture"><span>01</span><strong>Az „Átmeneti architektúra” fogalom megtekintése az MTera fogalomtárában</strong><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a><a href="/hu/fogalomtar/#target_architecture"><span>02</span><strong>Az „Célarchitektúra” fogalom megtekintése az MTera fogalomtárában</strong><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a><a href="/hu/fogalomtar/#decision_record"><span>03</span><strong>Az „Döntési feljegyzés” fogalom megtekintése az MTera fogalomtárában</strong><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a><a href="/hu/fogalomtar/#technical_debt"><span>04</span><strong>Az „Műszaki adósság” fogalom megtekintése az MTera fogalomtárában</strong><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a></div></section><section class="section shell related-links"><div class="section-heading"><span class="eyebrow">Kapcsolódó elemzések</span><h2>A gondolatmenet folytatása az összekapcsolódó rendszerdöntéseken át</h2></div><div class="link-ledger"><a href="/hu/elemzesek/mit-is-jelent-valojaban-az-uzleti-rendszerek-tervezese/"><span>03</span><strong>Mit jelent valójában az üzletirendszer-fejlesztés? · Szerkesztői előnézet</strong><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a></div></section></article>
+<section class="section cta-band" data-pagefind-ignore>
+    <div class="shell cta-band__inner">
+        <div><span class="eyebrow">MTera · Kapcsolat az MTera-val</span><h2>Beszéljük meg a változtatás mögött álló rendszerkérdést.</h2><p>Építse meg a következőt úgy, hogy közben megőrzi mindazt, aminek igaznak kell maradnia.</p></div>
+        <a class="button button--primary" href="/hu/kapcsolat/">Rendszerkihívás megbeszélése <svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a>
+    </div>
+</section>    </main>
+
+<aside class="print-metadata" aria-label="Tájékoztatás nyomtatása" lang="hu-HU" dir="ltr">
+        <img class="print-metadata__logo" src="/static/brand/mtera-lockup-horizontal-monochrome.svg" width="248" height="64" alt="MTera">
+        <p><strong>Kanonikus URL:</strong> <span dir="ltr">https://mtera.eu/hu/elemzesek/hogyan-lehet-modernizalni-a-hagyomanyos-rendszereket-anelkul-hogy-elveszitene-az-uzleti-folytonossagot/</span></p>
+        <p><strong>Kinyomtatva:</strong> <time datetime="2026-08-13" data-print-date>2026-08-13</time></p>
+    </aside>
+<footer class="site-footer" lang="hu-HU" dir="ltr">
+    <div class="shell site-footer__grid">
+        <div class="site-footer__brand">
+            <span class="theme-lockup"><img class="theme-lockup__light" src="/static/brand/mtera-wordmark.svg" width="1062" height="269" alt="MTera" loading="lazy"><img class="theme-lockup__dark" src="/static/brand/mtera-wordmark-on-dark.svg" width="1062" height="269" alt="" aria-hidden="true" loading="lazy"></span>
+            <p>Építse meg a következőt úgy, hogy közben megőrzi mindazt, aminek igaznak kell maradnia.</p>
+<p class="meta-line"><svg class="icon" viewBox="0 0 24 24" data-icon="location" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#location"></use></svg> Ljubljana</p>        </div>
+        <details class="site-footer__group site-footer__nav" data-footer-disclosure open>
+            <summary class="site-footer__summary">
+                <h2>Felfedezés</h2>
+                <svg class="site-footer__chevron" viewBox="0 0 20 20" data-icon="arrow-forward" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward-20"></use></svg>
+            </summary>
+            <nav class="site-footer__links" aria-label="Lábléc-navigáció">
+<a href="/hu/modszer/">Módszer</a><a href="/hu/szolgaltatasok/">Szolgáltatások</a><a href="/hu/kihivasok/">Kihívások</a><a href="/hu/munkamod/">Munkamód</a><a href="/hu/elemzesek/">Elemzések</a><a href="/hu/az-mtera-rol/">Az MTera-ról</a><a href="/hu/kapcsolat/">Kapcsolat</a>            </nav>
+        </details>
+        <details class="site-footer__group site-footer__nav" data-footer-disclosure open>
+            <summary class="site-footer__summary">
+                <h2>Jogi információk</h2>
+                <svg class="site-footer__chevron" viewBox="0 0 20 20" data-icon="arrow-forward" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward-20"></use></svg>
+            </summary>
+            <nav class="site-footer__links" aria-label="Jogi navigáció">
+<a href="/hu/tapasztalat/">Tapasztalat</a><a href="/hu/fogalomtar/">Fogalomtár</a><a href="/hu/gyakori-kerdesek/">Gyakori kérdések</a><a href="/hu/jogi-kozlemeny/">Jogi közlemény</a><a href="/hu/adatvedelem/">Adatvédelem</a><a href="/hu/sutik/">Sütik</a><a href="/hu/felhasznalasi-feltetelek/">Felhasználási feltételek</a><a href="/hu/akadalymentesseg/">Akadálymentesség</a><a href="/hu/biztonsag/">Biztonság</a><a href="/hu/oldalterkep/">Oldaltérkép</a><a href="/hu/kereses/">Keresés</a>            </nav>
+        </details>
+        <details class="site-footer__group site-footer__contact" data-footer-disclosure open>
+            <summary class="site-footer__summary">
+                <h2>Kapcsolat az MTera-val</h2>
+                <svg class="site-footer__chevron" viewBox="0 0 20 20" data-icon="arrow-forward" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward-20"></use></svg>
+            </summary>
+            <div class="site-footer__links">
+<a class="email-link" href="mailto:hello@mtera.eu"><svg class="icon" viewBox="0 0 24 24" data-icon="email" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#email"></use></svg><span dir="ltr">hello@mtera.eu</span></a>            </div>
+        </details>
+    </div>
+    <div class="shell site-footer__base">
+        <p>© 2026 MTera</p>
+        <p>Az adatvédelem, az egyértelműség és a hozzáférhetőség szempontjai szerint tervezve.</p>
+    </div>
+</footer><dialog class="search-dialog" data-search-dialog data-search-copy aria-labelledby="search-dialog-title" lang="hu-HU" dir="ltr"
+    data-no-results="Nincs találat"
+    data-results-label="találatok"
+    data-search-unavailable="A keresés átmenetileg nem érhető el."
+    data-search-minimum-one="Írjon be legalább 1 karaktert."
+    data-search-minimum-many="Írjon be legalább {count} karaktert."
+    data-search-untitled="Cím nélküli"
+    data-group-service="Szolgáltatások"
+    data-group-challenge="Kihívások"
+    data-group-method="Módszer"
+    data-group-article="Elemzések"
+    data-group-glossary="Fogalomtár"
+    data-group-about="Az MTera-ról"
+    data-group-page="További oldalak">
+    <div class="search-dialog__surface">
+        <header>
+            <div><span class="eyebrow">MTera · Keresés</span><h2 id="search-dialog-title">Keresés az MTera tudásbázisában</h2><p>Keressen szolgáltatásokat, kihívásokat, módszereket, elemzéseket és fogalmakat.</p></div>
+            <button class="tool-button" type="button" data-search-close aria-label="Keresés bezárása"><svg class="icon" viewBox="0 0 20 20" data-icon="close" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#close-20"></use></svg></button>
+        </header>
+        <form class="search-form" action="/hu/kereses/" method="get" role="search" data-search-form>
+            <label for="site-search-input">Keresés</label>
+            <div class="search-input"><svg class="icon" viewBox="0 0 20 20" data-icon="search" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#search-20"></use></svg><input id="site-search-input" name="q" type="search" inputmode="search" autocomplete="off" spellcheck="false" enterkeyhint="search" minlength="1" role="combobox" aria-expanded="false" aria-haspopup="listbox" aria-controls="search-results" aria-autocomplete="list" data-search-input placeholder="Keresés az MTera oldalán"><button class="button button--primary" type="submit">Keresés</button></div>
+        </form>
+        <div class="search-status" role="status" aria-live="polite" data-search-status></div>
+        <ol class="search-results" id="search-results" role="listbox" aria-label="Keresési eredmények" data-search-results></ol>
+        <nav class="search-quick-actions" aria-labelledby="search-dialog-actions-title">
+            <h3 id="search-dialog-actions-title">Gyors műveletek</h3>
+            <a href="/hu/rendszerkihivas-osszefoglalo/">Rendszerkihívás – előkészítő kérdéssor</a>
+            <a href="/hu/modszer/">Az MTera módszer felfedezése</a>
+            <a href="/hu/szolgaltatasok/">Szolgáltatás megtekintése</a>
+            <a href="/hu/kapcsolat/">Kapcsolat az MTera-val</a>
+        </nav>
+        <footer><span><kbd>⌘</kbd>/<kbd>Ctrl</kbd> + <kbd>K</kbd></span><a href="/hu/kereses/">Részletes keresés megnyitása <svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a></footer>
+    </div>
+</dialog><button class="back-to-top" type="button" data-back-to-top hidden lang="hu-HU" dir="ltr" aria-label="Vissza a tetejére">
+    <svg class="back-to-top__progress" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21" pathLength="1"></circle></svg>
+    <svg class="icon" viewBox="0 0 24 24" data-icon="top" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#top"></use></svg>
+</button>    <script id="mtera-site-script" type="module" src="/assets/mtera.KAAJH2LX.js" data-search-index="/hu/search-index.json" data-pagefind-base="/pagefind/" data-pagefind-enabled="true" data-locale="hu" data-html-lang="hu-HU"></script>
+</body>
+</html>

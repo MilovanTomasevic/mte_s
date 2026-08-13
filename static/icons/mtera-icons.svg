@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <symbol id="search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></symbol>
+  <symbol id="menu" viewBox="0 0 24 24"><path d="M3 7h18M3 12h18M3 17h18"/></symbol>
+  <symbol id="close" viewBox="0 0 24 24"><path d="m5 5 14 14M19 5 5 19"/></symbol>
+  <symbol id="system" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></symbol>
+  <symbol id="light" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></symbol>
+  <symbol id="dark" viewBox="0 0 24 24"><path d="M20 15.4A8.5 8.5 0 0 1 8.6 4 8.6 8.6 0 1 0 20 15.4Z"/></symbol>
+  <symbol id="language" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 4.5 6 4.5 9S15 18 12 21M12 3c-3 3-4.5 6-4.5 9S9 18 12 21"/></symbol>
+  <symbol id="arrow-forward" viewBox="0 0 24 24"><path d="M4 12h15M14 6l6 6-6 6"/></symbol>
+  <symbol id="arrow-back" viewBox="0 0 24 24"><path d="M20 12H5M10 6l-6 6 6 6"/></symbol>
+  <symbol id="external" viewBox="0 0 24 24"><path d="M13 5h6v6M19 5 9 15"/><path d="M18 14v5H5V6h5"/></symbol>
+  <symbol id="email" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14"/><path d="m4 7 8 6 8-6"/></symbol>
+  <symbol id="location" viewBox="0 0 24 24"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="check" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></symbol>
+  <symbol id="warning" viewBox="0 0 24 24"><path d="m12 3 10 18H2L12 3Z"/><path d="M12 9v5M12 18h.01"/></symbol>
+  <symbol id="error" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 8 8 8M16 8l-8 8"/></symbol>
+  <symbol id="pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></symbol>
+  <symbol id="play" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7V5Z"/></symbol>
+  <symbol id="top" viewBox="0 0 24 24"><path d="M12 20V5M6 11l6-6 6 6"/></symbol>
+  <symbol id="copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12"/><path d="M16 8V4H4v12h4"/></symbol>
+  <symbol id="filter" viewBox="0 0 24 24"><path d="M3 5h18M6 12h12M9 19h6"/></symbol>
+  <symbol id="calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16"/><path d="M7 2v6M17 2v6M3 10h18"/></symbol>
+  <symbol id="reading-time" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v6l4 2"/></symbol>
+  <symbol id="architecture" viewBox="0 0 24 24"><path d="M4 20V9l8-5 8 5v11M8 20v-7h8v7"/></symbol>
+  <symbol id="data" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v7c0 2 3.5 3 8 3s8-1 8-3V5M4 12v7c0 2 3.5 3 8 3s8-1 8-3v-7"/></symbol>
+  <symbol id="integration" viewBox="0 0 24 24"><path d="M3 7h8v10H3zM13 7h8v10h-8zM11 12h2"/></symbol>
+  <symbol id="ai" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14"/><path d="M9 15V9h3a2 2 0 0 1 0 4H9M16 9v6M2 9h3M19 9h3M2 15h3M19 15h3"/></symbol>
+  <symbol id="automation" viewBox="0 0 24 24"><path d="M4 7h10M10 3l4 4-4 4M20 17H10M14 13l-4 4 4 4"/></symbol>
+  <symbol id="engineering" viewBox="0 0 24 24"><path d="M4 19 15 8M13 5l2-2 6 6-2 2M3 21l4-1-3-3-1 4Z"/></symbol>
+  <symbol id="identity" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-5 4-7 8-7s7 2 8 7"/></symbol>
+  <symbol id="context" viewBox="0 0 24 24"><path d="M4 5h16v14H4zM8 9h8M8 13h5"/></symbol>
+  <symbol id="decision" viewBox="0 0 24 24"><path d="M12 3v5M12 8 6 14M12 8l6 6M6 14v7M18 14v7"/></symbol>
+  <symbol id="authority" viewBox="0 0 24 24"><path d="M12 3 5 6v6c0 5 3 8 7 9 4-1 7-4 7-9V6l-7-3Z"/><path d="m9 12 2 2 4-5"/></symbol>
+  <symbol id="execution" viewBox="0 0 24 24"><path d="m7 4 12 8L7 20V4Z"/></symbol>
+  <symbol id="evidence" viewBox="0 0 24 24"><path d="M5 3h10l4 4v14H5zM15 3v5h4M8 13l2 2 5-5"/></symbol>
+  <symbol id="mastery" viewBox="0 0 24 24"><path d="M4 19V5l8 8 8-8v14"/></symbol>
+  <symbol id="transformation" viewBox="0 0 24 24"><path d="M4 7h12M12 3l4 4-4 4M20 17H8M12 13l-4 4 4 4"/></symbol>
+  <symbol id="reason" viewBox="0 0 24 24"><path d="M6 20V4h7a5 5 0 0 1 0 10H6M12 14l7 6"/></symbol>
+
+  <!--
+    Compact 20px optical masters. These are independently drawn on a 20-unit
+    grid: shorter runs, wider apertures and fewer sub-pixel intersections keep
+    controls legible at their rendered UI size. They are not CSS-scaled copies
+    of the 24px editorial masters above.
+  -->
+  <symbol id="search-20" viewBox="0 0 20 20"><circle cx="8.5" cy="8.5" r="5.25"/><path d="m12.4 12.4 4.35 4.35"/></symbol>
+  <symbol id="menu-20" viewBox="0 0 20 20"><path d="M2.5 5.5h15M2.5 10h15M2.5 14.5h15"/></symbol>
+  <symbol id="close-20" viewBox="0 0 20 20"><path d="m4 4 12 12M16 4 4 16"/></symbol>
+  <symbol id="system-20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="3.25"/><path d="M10 1.75v2.5M10 15.75v2.5M1.75 10h2.5M15.75 10h2.5M4.25 4.25 6 6M14 14l1.75 1.75M15.75 4.25 14 6M6 14l-1.75 1.75"/></symbol>
+  <symbol id="light-20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="3.25"/><path d="M10 1.75v2.5M10 15.75v2.5M1.75 10h2.5M15.75 10h2.5M4.25 4.25 6 6M14 14l1.75 1.75M15.75 4.25 14 6M6 14l-1.75 1.75"/></symbol>
+  <symbol id="dark-20" viewBox="0 0 20 20"><path d="M16.6 12.75A6.9 6.9 0 0 1 7.25 3.4a7 7 0 1 0 9.35 9.35Z"/></symbol>
+  <symbol id="language-20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="7.75"/><path d="M2.25 10h15.5M10 2.25c2.4 2.5 3.55 5.1 3.55 7.75S12.4 15.25 10 17.75M10 2.25C7.6 4.75 6.45 7.35 6.45 10S7.6 15.25 10 17.75"/></symbol>
+  <symbol id="check-20" viewBox="0 0 20 20"><path d="m3.25 10.25 4.1 4.1 9.4-9.45"/></symbol>
+  <symbol id="filter-20" viewBox="0 0 20 20"><path d="M2.5 4.5h15M5.25 10h9.5M7.75 15.5h4.5"/></symbol>
+</svg>

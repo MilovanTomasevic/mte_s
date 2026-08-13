@@ -1,0 +1,43 @@
+{
+  "name": "MTera — ビジネスシステムエンジニアリング",
+  "short_name": "MTera",
+  "description": "MTeraは、データ、プロセス、アプリケーション、統合、AI、運用上の意思決定を横断し、重要な事業変革を支えるシステムの理解・再設計・接続・構築を支援します。",
+  "start_url": "/ja/",
+  "scope": "/ja/",
+  "display": "standalone",
+  "background_color": "#0A0B0D",
+  "theme_color": "#0A0B0D",
+  "lang": "ja-JP",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

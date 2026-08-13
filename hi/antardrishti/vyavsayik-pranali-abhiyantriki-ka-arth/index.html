@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="hi-IN" dir="ltr" data-theme="light" data-theme-mode="light" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <link rel="preload" href="/assets/mtera-style.MYAWRNDW.css" as="style" fetchpriority="high">
+    <script>
+        (() => {
+            const root = document.documentElement;
+            root.classList.replace("no-js", "js");
+            let resolved = "";
+            try {
+                const saved = localStorage.getItem("mtera-theme");
+                if (saved === "light" || saved === "dark") resolved = saved;
+            } catch (_) {}
+            if (!resolved) {
+                let prefersDark = false;
+                try { prefersDark = matchMedia("(prefers-color-scheme: dark)").matches; } catch (_) {}
+                resolved = prefersDark ? "dark" : "light";
+            }
+            root.dataset.themeMode = resolved;
+            root.dataset.theme = resolved;
+            root.style.colorScheme = resolved;
+        })();
+    </script>
+    <link rel="stylesheet" href="/assets/mtera-style.MYAWRNDW.css">
+    <title>बिज़नेस सिस्टम इंजीनियरिंग का वास्तव में क्या मतलब है | MTera अंतर्दृष्टि</title>
+    <meta name="description" content="बिज़नेस सिस्टम इंजीनियरिंग की एक व्यावहारिक परिभाषा और यह व्यवसाय के इरादे, वास्तुकला, डेटा, एकीकरण और वितरण को कैसे जोड़ती है।">
+<meta data-pagefind-meta="title" data-pagefind-ignore="all" content="बिज़नेस सिस्टम इंजीनियरिंग का वास्तव में क्या मतलब है"><meta data-pagefind-meta="description" data-pagefind-ignore="all" content="बिज़नेस सिस्टम इंजीनियरिंग की एक व्यावहारिक परिभाषा और यह व्यवसाय के इरादे, वास्तुकला, डेटा, एकीकरण और वितरण को कैसे जोड़ती है।"><meta data-pagefind-meta="locale" data-pagefind-ignore="all" content="hi-IN"><meta data-pagefind-meta="content_type" data-pagefind-ignore="all" content="article"><meta data-pagefind-meta="category" data-pagefind-ignore="all" content="बिज़नेस सिस्टम इंजीनियरिंग"><meta data-pagefind-meta="date" data-pagefind-ignore="all" content="2026-08-11"><meta data-pagefind-meta="title[content]" content="बिज़नेस सिस्टम इंजीनियरिंग का वास्तव में क्या मतलब है"><meta data-pagefind-meta="description[content]" content="बिज़नेस सिस्टम इंजीनियरिंग की एक व्यावहारिक परिभाषा और यह व्यवसाय के इरादे, वास्तुकला, डेटा, एकीकरण और वितरण को कैसे जोड़ती है।"><meta data-pagefind-meta="locale[content]" content="hi-IN"><meta data-pagefind-meta="content_type[content]" content="article"><meta data-pagefind-meta="category[content]" content="बिज़नेस सिस्टम इंजीनियरिंग"><meta data-pagefind-meta="date[content]" content="2026-08-11"><meta data-pagefind-filter="content_type[content]" content="article"><meta data-pagefind-filter="category[content]" content="बिज़नेस सिस्टम इंजीनियरिंग">    <meta name="author" content="MTera · Milovan Tomašević">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F6F4F0" data-theme-color-light>
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0A0B0D" data-theme-color-dark>
+<link rel="canonical" href="https://mtera.eu/hi/antardrishti/vyavsayik-pranali-abhiyantriki-ka-arth/"><link rel="alternate" hreflang="en-GB" href="https://mtera.eu/insights/what-business-systems-engineering-actually-means/"><link rel="alternate" hreflang="en-US" href="https://mtera.eu/us/insights/what-business-systems-engineering-actually-means/"><link rel="alternate" hreflang="de-DE" href="https://mtera.eu/de/einblicke/was-engineering-von-geschaeftssystemen-bedeutet/"><link rel="alternate" hreflang="sl-SI" href="https://mtera.eu/sl/vpogledi/kaj-inzeniring-poslovnih-sistemov-dejansko-pomeni/"><link rel="alternate" hreflang="sr-Latn-RS" href="https://mtera.eu/sr/uvidi/sta-zapravo-znaci-inzenjering-poslovnih-sistema/"><link rel="alternate" hreflang="hu-HU" href="https://mtera.eu/hu/elemzesek/mit-is-jelent-valojaban-az-uzleti-rendszerek-tervezese/"><link rel="alternate" hreflang="ar-AE" href="https://mtera.eu/ar/al-rua/madha-taani-handasat-anazimat-alamal/"><link rel="alternate" hreflang="zh-Hans-CN" href="https://mtera.eu/zh/dongjian/shenme-shi-qiyeyewu-xitong-gongcheng/"><link rel="alternate" hreflang="ja-JP" href="https://mtera.eu/ja/insaito/bijinesu-shisutemu-enjiniaringu-toha/"><link rel="alternate" hreflang="sv-SE" href="https://mtera.eu/sv/insikter/vad-verksamhetssystemteknik-egentligen-innebar/"><link rel="alternate" hreflang="es-ES" href="https://mtera.eu/es/perspectivas/que-significa-realmente-la-ingenieria-de-sistemas-empresariales/"><link rel="alternate" hreflang="ru-RU" href="https://mtera.eu/ru/materialy/chto-na-samom-dele-oznachaet-inzheneriya-biznes-sistem/"><link rel="alternate" hreflang="hi-IN" href="https://mtera.eu/hi/antardrishti/vyavsayik-pranali-abhiyantriki-ka-arth/"><link rel="alternate" hreflang="pt-PT" href="https://mtera.eu/pt/perspetivas/o-que-significa-realmente-engenharia-de-sistemas-empresariais/"><link rel="alternate" hreflang="fi-FI" href="https://mtera.eu/fi/nakemykset/mita-liiketoimintajarjestelmien-kehittaminen-tarkoittaa/"><link rel="alternate" hreflang="nb-NO" href="https://mtera.eu/no/innsikt/hva-utvikling-av-forretningssystemer-egentlig-betyr/"><link rel="alternate" hreflang="nl-NL" href="https://mtera.eu/nl/inzichten/wat-engineering-van-bedrijfssystemen-echt-betekent/"><link rel="alternate" hreflang="da-DK" href="https://mtera.eu/da/indsigter/hvad-udvikling-af-forretningssystemer-egentlig-betyder/"><link rel="alternate" hreflang="x-default" href="https://mtera.eu/insights/what-business-systems-engineering-actually-means/">    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MTera">
+    <meta property="og:title" content="बिज़नेस सिस्टम इंजीनियरिंग का वास्तव में क्या मतलब है | MTera अंतर्दृष्टि">
+    <meta property="og:description" content="बिज़नेस सिस्टम इंजीनियरिंग की एक व्यावहारिक परिभाषा और यह व्यवसाय के इरादे, वास्तुकला, डेटा, एकीकरण और वितरण को कैसे जोड़ती है।">
+<meta property="og:url" content="https://mtera.eu/hi/antardrishti/vyavsayik-pranali-abhiyantriki-ka-arth/">    <meta property="og:locale" content="hi_IN">
+<meta property="og:locale:alternate" content="en_GB"><meta property="og:locale:alternate" content="en_US"><meta property="og:locale:alternate" content="de_DE"><meta property="og:locale:alternate" content="sl_SI"><meta property="og:locale:alternate" content="sr_Latn_RS"><meta property="og:locale:alternate" content="hu_HU"><meta property="og:locale:alternate" content="ar_AE"><meta property="og:locale:alternate" content="zh_Hans_CN"><meta property="og:locale:alternate" content="ja_JP"><meta property="og:locale:alternate" content="sv_SE"><meta property="og:locale:alternate" content="es_ES"><meta property="og:locale:alternate" content="ru_RU"><meta property="og:locale:alternate" content="pt_PT"><meta property="og:locale:alternate" content="fi_FI"><meta property="og:locale:alternate" content="nb_NO"><meta property="og:locale:alternate" content="nl_NL"><meta property="og:locale:alternate" content="da_DK">    <meta property="og:image" content="https://mtera.eu/static/images/og/generated/hi/insight-business-systems-engineering-meaning.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="MTera · अंतर्दृष्टि · बिज़नेस सिस्टम इंजीनियरिंग का वास्तव में क्या…">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="बिज़नेस सिस्टम इंजीनियरिंग का वास्तव में क्या मतलब है | MTera अंतर्दृष्टि">
+    <meta name="twitter:description" content="बिज़नेस सिस्टम इंजीनियरिंग की एक व्यावहारिक परिभाषा और यह व्यवसाय के इरादे, वास्तुकला, डेटा, एकीकरण और वितरण को कैसे जोड़ती है।">
+    <meta name="twitter:image" content="https://mtera.eu/static/images/og/generated/hi/insight-business-systems-engineering-meaning.png">
+    <meta name="twitter:image:alt" content="MTera · अंतर्दृष्टि · बिज़नेस सिस्टम इंजीनियरिंग का वास्तव में क्या…">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16">
+    <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="/favicon-48x48.png" type="image/png" sizes="48x48">
+    <link rel="icon" href="/favicon-96x96.png" type="image/png" sizes="96x96">
+    <link rel="icon" href="/favicon-256x256.png" type="image/png" sizes="256x256">
+    <link rel="shortcut icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="mask-icon" href="/static/brand/pinned-tab.svg" color="#B9824E">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+    <link rel="manifest" href="/hi/site.webmanifest">
+    <meta name="mtera-font-profile" content="/static/fonts/devanagari.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@id": "https://mtera.eu/hi/antardrishti/vyavsayik-pranali-abhiyantriki-ka-arth/#webpage", "@type": "WebPage", "about": {"@id": "https://mtera.eu/#organization"}, "breadcrumb": {"@id": "https://mtera.eu/hi/antardrishti/vyavsayik-pranali-abhiyantriki-ka-arth/#breadcrumb"}, "dateModified": "2026-08-11", "description": "\u092c\u093f\u091c\u093c\u0928\u0947\u0938 \u0938\u093f\u0938\u094d\u091f\u092e \u0907\u0902\u091c\u0940\u0928\u093f\u092f\u0930\u093f\u0902\u0917 \u0915\u0940 \u090f\u0915 \u0935\u094d\u092f\u093e\u0935\u0939\u093e\u0930\u093f\u0915 \u092a\u0930\u093f\u092d\u093e\u0937\u093e \u0914\u0930 \u092f\u0939 \u0935\u094d\u092f\u0935\u0938\u093e\u092f \u0915\u0947 \u0907\u0930\u093e\u0926\u0947, \u0935\u093e\u0938\u094d\u0924\u0941\u0915\u0932\u093e, \u0921\u0947\u091f\u093e, \u090f\u0915\u0940\u0915\u0930\u0923 \u0914\u0930 \u0935\u093f\u0924\u0930\u0923 \u0915\u094b \u0915\u0948\u0938\u0947 \u091c\u094b\u0921\u093c\u0924\u0940 \u0939\u0948\u0964", "inLanguage": "hi-IN", "isPartOf": {"@id": "https://mtera.eu/#website"}, "name": "\u092c\u093f\u091c\u093c\u0928\u0947\u0938 \u0938\u093f\u0938\u094d\u091f\u092e \u0907\u0902\u091c\u0940\u0928\u093f\u092f\u0930\u093f\u0902\u0917 \u0915\u093e \u0935\u093e\u0938\u094d\u0924\u0935 \u092e\u0947\u0902 \u0915\u094d\u092f\u093e \u092e\u0924\u0932\u092c \u0939\u0948 | MTera \u0905\u0902\u0924\u0930\u094d\u0926\u0943\u0937\u094d\u091f\u093f", "url": "https://mtera.eu/hi/antardrishti/vyavsayik-pranali-abhiyantriki-ka-arth/"}, {"@id": "https://mtera.eu/#website", "@type": "WebSite", "inLanguage": ["en-GB", "en-US", "de-DE", "sl-SI", "sr-Latn-RS", "hu-HU", "ar-AE", "zh-Hans-CN", "ja-JP", "sv-SE", "es-ES", "ru-RU", "hi-IN", "pt-PT", "fi-FI", "nb-NO", "nl-NL", "da-DK"], "name": "MTera", "publisher": {"@id": "https://mtera.eu/#organization"}, "url": "https://mtera.eu/"}, {"@id": "https://mtera.eu/#organization", "@type": "Organization", "description": "MTera \u0938\u0902\u0917\u0920\u0928\u094b\u0902 \u0915\u094b \u092e\u0939\u0924\u094d\u0935\u092a\u0942\u0930\u094d\u0923 \u0935\u094d\u092f\u093e\u0935\u0938\u093e\u092f\u093f\u0915 \u092c\u0926\u0932\u093e\u0935\u094b\u0902 \u0915\u0947 \u092a\u0940\u091b\u0947 \u0915\u0947 \u0938\u093f\u0938\u094d\u091f\u092e \u0938\u092e\u091d\u0928\u0947, \u0928\u092f\u093e \u0930\u0942\u092a \u0926\u0947\u0928\u0947, \u091c\u094b\u0921\u093c\u0928\u0947 \u0914\u0930 \u0907\u0902\u091c\u0940\u0928\u093f\u092f\u0930 \u0915\u0930\u0928\u0947 \u092e\u0947\u0902 \u092e\u0926\u0926 \u0915\u0930\u0924\u093e \u0939\u0948\u2014\u0921\u0947\u091f\u093e, \u092a\u094d\u0930\u0915\u094d\u0930\u093f\u092f\u093e\u0913\u0902, \u0905\u0928\u0941\u092a\u094d\u0930\u092f\u094b\u0917\u094b\u0902, \u090f\u0915\u0940\u0915\u0930\u0923, AI \u0914\u0930 \u092a\u0930\u093f\u091a\u093e\u0932\u0928 \u0928\u093f\u0930\u094d\u0923\u092f\u094b\u0902 \u0924\u0915\u0964", "email": "hello@mtera.eu", "founder": {"@id": "https://mtera.eu/about/milovan-tomasevic/#person"}, "logo": {"@type": "ImageObject", "height": 512, "url": "https://mtera.eu/static/brand/mtera-avatar-512.png", "width": 512}, "name": "MTera", "url": "https://mtera.eu/"}, {"@id": "https://mtera.eu/hi/antardrishti/vyavsayik-pranali-abhiyantriki-ka-arth/#breadcrumb", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://mtera.eu/hi/", "name": "\u091c\u094b \u0905\u092a\u0930\u093f\u0935\u0930\u094d\u0924\u093f\u0924 \u0930\u0939\u0928\u093e \u091a\u093e\u0939\u093f\u090f, \u0909\u0938\u0947 \u0916\u094b\u090f \u092c\u093f\u0928\u093e \u092d\u0935\u093f\u0937\u094d\u092f \u0915\u093e \u0928\u093f\u0930\u094d\u092e\u093e\u0923 \u0915\u0930\u0947\u0902\u0964", "position": 1}, {"@type": "ListItem", "item": "https://mtera.eu/hi/antardrishti/", "name": "\u0905\u0902\u0924\u0930\u094d\u0926\u0943\u0937\u094d\u091f\u093f", "position": 2}, {"@type": "ListItem", "item": "https://mtera.eu/hi/antardrishti/vyavsayik-pranali-abhiyantriki-ka-arth/", "name": "\u092c\u093f\u091c\u093c\u0928\u0947\u0938 \u0938\u093f\u0938\u094d\u091f\u092e \u0907\u0902\u091c\u0940\u0928\u093f\u092f\u0930\u093f\u0902\u0917 \u0915\u093e \u0935\u093e\u0938\u094d\u0924\u0935 \u092e\u0947\u0902 \u0915\u094d\u092f\u093e \u092e\u0924\u0932\u092c \u0939\u0948", "position": 3}]}]}</script></head>
+<body class="page page--insight.business_systems_engineering_meaning page-kind--article">
+    <a class="skip-link" href="#main-content" lang="hi-IN" dir="ltr">मुख्य सामग्री पर जाएँ</a>
+    <div class="header-marker" data-header-marker aria-hidden="true"></div>
+<header class="site-header" data-site-header lang="hi-IN" dir="ltr">
+    <div class="site-header__inner shell">
+        <a class="brand" href="/hi/" aria-label="MTera — मुखपृष्ठ">
+            <span class="theme-lockup" aria-hidden="true">
+                <img class="theme-lockup__light" src="/static/brand/mtera-wordmark.svg" width="1062" height="269" alt="">
+                <img class="theme-lockup__dark" src="/static/brand/mtera-wordmark-on-dark.svg" width="1062" height="269" alt="">
+            </span>
+        </a>
+
+        <nav class="desktop-nav" aria-label="मुख्य नेविगेशन">
+            <ul class="desktop-nav__list">
+                    <li>
+                        <a href="/hi/paddhati/">पद्धति</a>
+                    </li>
+                    <li>
+                        <details class="desktop-nav__group" data-nav-group>
+                            <summary>सेवाएँ<span aria-hidden="true"></span></summary>
+                            <div class="desktop-nav__mega">
+                                <a class="desktop-nav__overview" href="/hi/sevayen/">
+                                    <small>सेवाएँ</small>
+                                    <strong>सेवाएँ</strong>
+                                    <svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg>
+                                </a>
+                                <ul class="desktop-nav__deep-list">
+                                    <li><a href="/hi/sevayen/vyavsayik-pranali-vastukala-aur-parivartan/"><span>बिज़नेस सिस्टम आर्किटेक्चर और परिवर्तन</span></a></li>
+                                    <li><a href="/hi/sevayen/data-ranniti-shasan-aur-abhiyantriki/"><span>डेटा रणनीति, शासन और इंजीनियरिंग</span></a></li>
+                                    <li><a href="/hi/sevayen/udyam-ekikaran-aur-antar-sanchalaniyata/"><span>एंटरप्राइज इंटीग्रेशन और इंटरऑपरेबिलिटी</span></a></li>
+                                    <li><a href="/hi/sevayen/ai-taiyari-ekikaran-aur-zimmedar-vitran/"><span>AI तैयारी, एकीकरण और जिम्मेदार डिलीवरी</span></a></li>
+                                    <li><a href="/hi/sevayen/prakriya-swachalan-aur-sanchalan-anukulan/"><span>प्रक्रिया स्वचालन और परिचालन अनुकूलन</span></a></li>
+                                    <li><a href="/hi/sevayen/anukulit-software-aur-platform-abhiyantriki/"><span>कस्टम सॉफ्टवेयर और प्लेटफ़ॉर्म इंजीनियरिंग</span></a></li>
+                                </ul>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <details class="desktop-nav__group" data-nav-group>
+                            <summary>चुनौतियाँ<span aria-hidden="true"></span></summary>
+                            <div class="desktop-nav__mega">
+                                <a class="desktop-nav__overview" href="/hi/chunautiyan/">
+                                    <small>चुनौतियाँ</small>
+                                    <strong>चुनौतियाँ</strong>
+                                    <svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg>
+                                </a>
+                                <ul class="desktop-nav__deep-list">
+                                    <li><a href="/hi/chunautiyan/alag-pranaliyan-bikhra-data/"><svg class="icon" viewBox="0 0 24 24" data-icon="system" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#system"></use></svg><span>डिस्कनेक्टेड सिस्टम और खंडित डेटा</span></a></li>
+                                    <li><a href="/hi/chunautiyan/vyavsay-rokkar-bina-virasat-adhunikikaran/"><svg class="icon" viewBox="0 0 24 24" data-icon="transformation" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#transformation"></use></svg><span>बिना व्यवसाय में व्यवधान के विरासत का आधुनिकीकरण</span></a></li>
+                                    <li><a href="/hi/chunautiyan/nirnay-aur-ai-ke-liye-vishvasniya-data/"><svg class="icon" viewBox="0 0 24 24" data-icon="data" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#data"></use></svg><span>निर्णयों और AI के लिए विश्वसनीय डेटा फ़ाउंडेशन</span></a></li>
+                                    <li><a href="/hi/chunautiyan/jatil-bhagidar-ekikaran/"><svg class="icon" viewBox="0 0 24 24" data-icon="integration" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#integration"></use></svg><span>जटिल भागीदार और उद्यम एकीकरण</span></a></li>
+                                    <li><a href="/hi/chunautiyan/ai-pilot-se-utpadan/"><svg class="icon" viewBox="0 0 24 24" data-icon="ai" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#ai"></use></svg><span>AI को पायलट से उत्पादन की ओर ले जाना</span></a></li>
+                                    <li><a href="/hi/chunautiyan/manual-karya-pravah-aur-sanchalan-gharsan/"><svg class="icon" viewBox="0 0 24 24" data-icon="automation" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#automation"></use></svg><span>नाज़ुक मैन्युअल वर्कफ़्लो और छिपा हुआ परिचालन कार्य</span></a></li>
+                                    <li><a href="/hi/chunautiyan/nirantar-badalav-ke-liye-vastukala/"><svg class="icon" viewBox="0 0 24 24" data-icon="architecture" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#architecture"></use></svg><span>आर्किटेक्चर जो सुरक्षित रूप से बदलते रहना चाहिए</span></a></li>
+                                    <li><a href="/hi/pranali-chunauti-sankshep/"><svg class="icon" viewBox="0 0 24 24" data-icon="decision" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#decision"></use></svg><span>सिस्टम चुनौती संक्षिप्त</span></a></li>
+                                </ul>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <a href="/hi/karya-pranali/">कार्यप्रणाली</a>
+                    </li>
+                    <li>
+                        <details class="desktop-nav__group" data-nav-group data-current="true">
+                            <summary>अंतर्दृष्टि<span aria-hidden="true"></span></summary>
+                            <div class="desktop-nav__mega">
+                                <a class="desktop-nav__overview" href="/hi/antardrishti/">
+                                    <small>अंतर्दृष्टि</small>
+                                    <strong>अंतर्दृष्टि</strong>
+                                    <svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg>
+                                </a>
+                                <ul class="desktop-nav__deep-list">
+                                    <li><a href="/hi/antardrishti/vyavsayik-pranali-abhiyantriki-ka-arth/" aria-current="page"><span>बिज़नेस सिस्टम इंजीनियरिंग का वास्तव में क्या मतलब है</span></a></li>
+                                    <li><a href="/hi/antardrishti/vyavsayik-nirantarta-ke-sath-virasat-adhunikikaran/"><span>व्यापार की निरंतरता खोए बिना पुरानी प्रणालियों का आधुनिकीकरण कैसे करें</span></a></li>
+                                    <li><a href="/hi/antardrishti/sangathanik-simaon-par-udyam-ekikaran-kyon-vifal/"><span>संगठनों के बीच की सीमाओं पर उद्यम एकीकरण क्यों विफल हो जाते हैं</span></a></li>
+                                    <li><a href="/hi/antardrishti/utpadan-ai-se-pahle-data-aadhar/"><span>प्रोडक्शन AI से पहले आवश्यक डेटा आधार</span></a></li>
+                                    <li><a href="/hi/shabdavali/"><span>बिज़नेस सिस्टम इंजीनियरिंग शब्दावली</span></a></li>
+                                </ul>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <details class="desktop-nav__group" data-nav-group>
+                            <summary>MTera के बारे में<span aria-hidden="true"></span></summary>
+                            <div class="desktop-nav__mega">
+                                <a class="desktop-nav__overview" href="/hi/mtera-ke-bare-mein/">
+                                    <small>MTera के बारे में</small>
+                                    <strong>MTera के बारे में</strong>
+                                    <svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg>
+                                </a>
+                                <ul class="desktop-nav__deep-list">
+                                    <li><a href="/hi/mtera-ke-bare-mein/milovan-tomasevic/"><span>मिलोवन टोमासेविक</span></a></li>
+                                    <li><a href="/hi/anubhav/"><span>अनुभव और चयनित समस्या पैटर्न</span></a></li>
+                                    <li><a href="/hi/samanya-prashn/"><span>MTera के साथ काम करने के बारे में प्रश्न</span></a></li>
+                                </ul>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <a href="/hi/sampark/">संपर्क</a>
+                    </li>
+            </ul>
+        </nav>
+
+        <div class="site-header__tools">
+            <a class="tool-button" href="/hi/khoj/" data-search-open aria-label="खोज खोलें">
+                <svg class="icon" viewBox="0 0 20 20" data-icon="search" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#search-20"></use></svg><span class="tool-button__label">खोज खोलें</span>
+            </a>
+            <div class="header-language"><details class="language-picker" data-language-picker>
+    <summary class="tool-button" aria-label="भाषा बदलें: हिन्दी"><span class="language-picker__flag" aria-hidden="true">🇮🇳</span></summary>
+    <div class="popover language-menu">
+        <label for="language-filter-header">भाषा बदलें</label>
+        <div class="language-filter"><svg class="icon" viewBox="0 0 20 20" data-icon="search" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#search-20"></use></svg><input id="language-filter-header" type="search" inputmode="search" autocomplete="off" data-language-filter placeholder="भाषाएँ खोजें"></div>
+        <ul data-language-list>
+            <li data-language-item data-language-search="english (uk)  en">
+                <a href="/insights/what-business-systems-engineering-actually-means/" hreflang="en-GB" lang="en-GB" data-locale-code="en" data-locale-label="English (UK)" data-locale-flag="🇬🇧" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">en</span>
+                    <span><strong>English (UK)</strong><small>English (UK)</small><small class="translation-state">मसौदा</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="english (us)  en-us">
+                <a href="/us/insights/what-business-systems-engineering-actually-means/" hreflang="en-US" lang="en-US" data-locale-code="en-US" data-locale-label="English (US)" data-locale-flag="🇺🇸" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">en-US</span>
+                    <span><strong>English (US)</strong><small>English (US)</small><small class="translation-state">समीक्षा प्रत्याशी</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="deutsch  de">
+                <a href="/de/einblicke/was-engineering-von-geschaeftssystemen-bedeutet/" hreflang="de-DE" lang="de-DE" data-locale-code="de" data-locale-label="Deutsch" data-locale-flag="🇩🇪" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">de</span>
+                    <span><strong>Deutsch</strong><small>Deutsch</small><small class="translation-state">समीक्षा प्रत्याशी</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="slovenščina  sl">
+                <a href="/sl/vpogledi/kaj-inzeniring-poslovnih-sistemov-dejansko-pomeni/" hreflang="sl-SI" lang="sl-SI" data-locale-code="sl" data-locale-label="Slovenščina" data-locale-flag="🇸🇮" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">sl</span>
+                    <span><strong>Slovenščina</strong><small>Slovenščina</small><small class="translation-state">समीक्षा प्रत्याशी</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="srpski  sr-latn">
+                <a href="/sr/uvidi/sta-zapravo-znaci-inzenjering-poslovnih-sistema/" hreflang="sr-Latn-RS" lang="sr-Latn-RS" data-locale-code="sr-Latn" data-locale-label="Srpski" data-locale-flag="🇷🇸" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">sr-Latn</span>
+                    <span><strong>Srpski</strong><small>Srpski</small><small class="translation-state">समीक्षा प्रत्याशी</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="magyar  hu">
+                <a href="/hu/elemzesek/mit-is-jelent-valojaban-az-uzleti-rendszerek-tervezese/" hreflang="hu-HU" lang="hu-HU" data-locale-code="hu" data-locale-label="Magyar" data-locale-flag="🇭🇺" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">hu</span>
+                    <span><strong>Magyar</strong><small>Magyar</small><small class="translation-state">समीक्षा प्रत्याशी</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="العربية  ar">
+                <a href="/ar/al-rua/madha-taani-handasat-anazimat-alamal/" hreflang="ar-AE" lang="ar-AE" data-locale-code="ar" data-locale-label="العربية" data-locale-flag="🇦🇪" data-locale-direction="rtl">
+                    <span class="language-code" aria-hidden="true">ar</span>
+                    <span><strong>العربية</strong><small>العربية</small><small class="translation-state">समीक्षा प्रत्याशी</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="简体中文  zh-hans">
+                <a href="/zh/dongjian/shenme-shi-qiyeyewu-xitong-gongcheng/" hreflang="zh-Hans-CN" lang="zh-Hans-CN" data-locale-code="zh-Hans" data-locale-label="简体中文" data-locale-flag="🇨🇳" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">zh-Hans</span>
+                    <span><strong>简体中文</strong><small>简体中文</small><small class="translation-state">समीक्षा प्रत्याशी</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="日本語  ja">
+                <a href="/ja/insaito/bijinesu-shisutemu-enjiniaringu-toha/" hreflang="ja-JP" lang="ja-JP" data-locale-code="ja" data-locale-label="日本語" data-locale-flag="🇯🇵" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">ja</span>
+                    <span><strong>日本語</strong><small>日本語</small><small class="translation-state">समीक्षा प्रत्याशी</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="svenska  sv">
+                <a href="/sv/insikter/vad-verksamhetssystemteknik-egentligen-innebar/" hreflang="sv-SE" lang="sv-SE" data-locale-code="sv" data-locale-label="Svenska" data-locale-flag="🇸🇪" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">sv</span>
+                    <span><strong>Svenska</strong><small>Svenska</small><small class="translation-state">समीक्षा प्रत्याशी</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="español  es">
+                <a href="/es/perspectivas/que-significa-realmente-la-ingenieria-de-sistemas-empresariales/" hreflang="es-ES" lang="es-ES" data-locale-code="es" data-locale-label="Español" data-locale-flag="🇪🇸" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">es</span>
+                    <span><strong>Español</strong><small>Español</small><small class="translation-state">समीक्षा प्रत्याशी</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="русский  ru">
+                <a href="/ru/materialy/chto-na-samom-dele-oznachaet-inzheneriya-biznes-sistem/" hreflang="ru-RU" lang="ru-RU" data-locale-code="ru" data-locale-label="Русский" data-locale-flag="🇷🇺" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">ru</span>
+                    <span><strong>Русский</strong><small>Русский</small><small class="translation-state">समीक्षा प्रत्याशी</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="हिन्दी  hi">
+                <a href="/hi/antardrishti/vyavsayik-pranali-abhiyantriki-ka-arth/" hreflang="hi-IN" lang="hi-IN" data-locale-code="hi" data-locale-label="हिन्दी" data-locale-flag="🇮🇳" data-locale-direction="ltr" aria-current="page">
+                    <span class="language-code" aria-hidden="true">hi</span>
+                    <span><strong>हिन्दी</strong><small>हिन्दी</small><small class="translation-state">समीक्षा प्रत्याशी</small></span>
+<svg class="icon" viewBox="0 0 24 24" data-icon="check" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#check"></use></svg>                </a>
+            </li>
+            <li data-language-item data-language-search="português  pt-pt">
+                <a href="/pt/perspetivas/o-que-significa-realmente-engenharia-de-sistemas-empresariais/" hreflang="pt-PT" lang="pt-PT" data-locale-code="pt-PT" data-locale-label="Português" data-locale-flag="🇵🇹" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">pt-PT</span>
+                    <span><strong>Português</strong><small>Português</small><small class="translation-state">समीक्षा प्रत्याशी</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="suomi  fi-fi">
+                <a href="/fi/nakemykset/mita-liiketoimintajarjestelmien-kehittaminen-tarkoittaa/" hreflang="fi-FI" lang="fi-FI" data-locale-code="fi-FI" data-locale-label="Suomi" data-locale-flag="🇫🇮" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">fi-FI</span>
+                    <span><strong>Suomi</strong><small>Suomi</small><small class="translation-state">समीक्षा प्रत्याशी</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="norsk  nb-no">
+                <a href="/no/innsikt/hva-utvikling-av-forretningssystemer-egentlig-betyr/" hreflang="nb-NO" lang="nb-NO" data-locale-code="nb-NO" data-locale-label="Norsk" data-locale-flag="🇳🇴" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">nb-NO</span>
+                    <span><strong>Norsk</strong><small>Norsk</small><small class="translation-state">समीक्षा प्रत्याशी</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="nederlands  nl-nl">
+                <a href="/nl/inzichten/wat-engineering-van-bedrijfssystemen-echt-betekent/" hreflang="nl-NL" lang="nl-NL" data-locale-code="nl-NL" data-locale-label="Nederlands" data-locale-flag="🇳🇱" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">nl-NL</span>
+                    <span><strong>Nederlands</strong><small>Nederlands</small><small class="translation-state">समीक्षा प्रत्याशी</small></span>
+                </a>
+            </li>
+            <li data-language-item data-language-search="dansk  da-dk">
+                <a href="/da/indsigter/hvad-udvikling-af-forretningssystemer-egentlig-betyder/" hreflang="da-DK" lang="da-DK" data-locale-code="da-DK" data-locale-label="Dansk" data-locale-flag="🇩🇰" data-locale-direction="ltr">
+                    <span class="language-code" aria-hidden="true">da-DK</span>
+                    <span><strong>Dansk</strong><small>Dansk</small><small class="translation-state">समीक्षा प्रत्याशी</small></span>
+                </a>
+            </li>
+        </ul>
+        <p class="language-empty" data-language-empty hidden>कोई मेल खाने वाली भाषा नहीं है</p>
+    </div>
+</details></div>
+            <button class="tool-button theme-toggle" type="button" data-theme-toggle data-change-label="थीम बदलें" data-light-label="हल्की थीम" data-dark-label="गहरी थीम" aria-label="थीम बदलें: गहरी थीम" title="थीम बदलें: गहरी थीम">
+                <span class="theme-toggle__icon theme-toggle__icon--to-dark"><svg class="icon" viewBox="0 0 20 20" data-icon="dark" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#dark-20"></use></svg></span>
+                <span class="theme-toggle__icon theme-toggle__icon--to-light"><svg class="icon" viewBox="0 0 20 20" data-icon="light" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#light-20"></use></svg></span>
+                <span class="visually-hidden" data-theme-current>हल्की थीम</span>
+            </button>
+            <a class="button button--primary header-cta desktop-tools" href="/hi/sampark/">सिस्टम चुनौती पर चर्चा करें</a>
+
+            <details class="mobile-navigation" data-mobile-nav>
+                <summary class="tool-button menu-trigger" data-menu-toggle aria-label="मेन्यू खोलें" data-open-label="मेन्यू खोलें" data-close-label="मेन्यू बंद करें"><span class="menu-open"><svg class="icon" viewBox="0 0 20 20" data-icon="menu" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#menu-20"></use></svg></span><span class="menu-close"><svg class="icon" viewBox="0 0 20 20" data-icon="close" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#close-20"></use></svg></span></summary>
+                <div class="mobile-navigation__panel" data-mobile-panel>
+                    <nav aria-label="मुख्य नेविगेशन">
+                        <ul class="mobile-navigation__primary">
+                            <li>
+                                <a href="/hi/paddhati/"><span>01</span>पद्धति</a>
+                            </li>
+                            <li>
+                                <details class="mobile-navigation__group">
+                                    <summary><span>02</span><strong>सेवाएँ</strong><i aria-hidden="true"></i></summary>
+                                    <ul>
+                                        <li><a href="/hi/sevayen/">सेवाएँ</a></li>
+                                        <li><a href="/hi/sevayen/vyavsayik-pranali-vastukala-aur-parivartan/"><span>बिज़नेस सिस्टम आर्किटेक्चर और परिवर्तन</span></a></li>
+                                        <li><a href="/hi/sevayen/data-ranniti-shasan-aur-abhiyantriki/"><span>डेटा रणनीति, शासन और इंजीनियरिंग</span></a></li>
+                                        <li><a href="/hi/sevayen/udyam-ekikaran-aur-antar-sanchalaniyata/"><span>एंटरप्राइज इंटीग्रेशन और इंटरऑपरेबिलिटी</span></a></li>
+                                        <li><a href="/hi/sevayen/ai-taiyari-ekikaran-aur-zimmedar-vitran/"><span>AI तैयारी, एकीकरण और जिम्मेदार डिलीवरी</span></a></li>
+                                        <li><a href="/hi/sevayen/prakriya-swachalan-aur-sanchalan-anukulan/"><span>प्रक्रिया स्वचालन और परिचालन अनुकूलन</span></a></li>
+                                        <li><a href="/hi/sevayen/anukulit-software-aur-platform-abhiyantriki/"><span>कस्टम सॉफ्टवेयर और प्लेटफ़ॉर्म इंजीनियरिंग</span></a></li>
+                                    </ul>
+                                </details>
+                            </li>
+                            <li>
+                                <details class="mobile-navigation__group">
+                                    <summary><span>03</span><strong>चुनौतियाँ</strong><i aria-hidden="true"></i></summary>
+                                    <ul>
+                                        <li><a href="/hi/chunautiyan/">चुनौतियाँ</a></li>
+                                        <li><a href="/hi/chunautiyan/alag-pranaliyan-bikhra-data/"><svg class="icon" viewBox="0 0 24 24" data-icon="system" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#system"></use></svg><span>डिस्कनेक्टेड सिस्टम और खंडित डेटा</span></a></li>
+                                        <li><a href="/hi/chunautiyan/vyavsay-rokkar-bina-virasat-adhunikikaran/"><svg class="icon" viewBox="0 0 24 24" data-icon="transformation" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#transformation"></use></svg><span>बिना व्यवसाय में व्यवधान के विरासत का आधुनिकीकरण</span></a></li>
+                                        <li><a href="/hi/chunautiyan/nirnay-aur-ai-ke-liye-vishvasniya-data/"><svg class="icon" viewBox="0 0 24 24" data-icon="data" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#data"></use></svg><span>निर्णयों और AI के लिए विश्वसनीय डेटा फ़ाउंडेशन</span></a></li>
+                                        <li><a href="/hi/chunautiyan/jatil-bhagidar-ekikaran/"><svg class="icon" viewBox="0 0 24 24" data-icon="integration" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#integration"></use></svg><span>जटिल भागीदार और उद्यम एकीकरण</span></a></li>
+                                        <li><a href="/hi/chunautiyan/ai-pilot-se-utpadan/"><svg class="icon" viewBox="0 0 24 24" data-icon="ai" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#ai"></use></svg><span>AI को पायलट से उत्पादन की ओर ले जाना</span></a></li>
+                                        <li><a href="/hi/chunautiyan/manual-karya-pravah-aur-sanchalan-gharsan/"><svg class="icon" viewBox="0 0 24 24" data-icon="automation" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#automation"></use></svg><span>नाज़ुक मैन्युअल वर्कफ़्लो और छिपा हुआ परिचालन कार्य</span></a></li>
+                                        <li><a href="/hi/chunautiyan/nirantar-badalav-ke-liye-vastukala/"><svg class="icon" viewBox="0 0 24 24" data-icon="architecture" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#architecture"></use></svg><span>आर्किटेक्चर जो सुरक्षित रूप से बदलते रहना चाहिए</span></a></li>
+                                        <li><a href="/hi/pranali-chunauti-sankshep/"><svg class="icon" viewBox="0 0 24 24" data-icon="decision" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#decision"></use></svg><span>सिस्टम चुनौती संक्षिप्त</span></a></li>
+                                    </ul>
+                                </details>
+                            </li>
+                            <li>
+                                <a href="/hi/karya-pranali/"><span>04</span>कार्यप्रणाली</a>
+                            </li>
+                            <li>
+                                <details class="mobile-navigation__group" data-current="true">
+                                    <summary><span>05</span><strong>अंतर्दृष्टि</strong><i aria-hidden="true"></i></summary>
+                                    <ul>
+                                        <li><a href="/hi/antardrishti/">अंतर्दृष्टि</a></li>
+                                        <li><a href="/hi/antardrishti/vyavsayik-pranali-abhiyantriki-ka-arth/" aria-current="page"><span>बिज़नेस सिस्टम इंजीनियरिंग का वास्तव में क्या मतलब है</span></a></li>
+                                        <li><a href="/hi/antardrishti/vyavsayik-nirantarta-ke-sath-virasat-adhunikikaran/"><span>व्यापार की निरंतरता खोए बिना पुरानी प्रणालियों का आधुनिकीकरण कैसे करें</span></a></li>
+                                        <li><a href="/hi/antardrishti/sangathanik-simaon-par-udyam-ekikaran-kyon-vifal/"><span>संगठनों के बीच की सीमाओं पर उद्यम एकीकरण क्यों विफल हो जाते हैं</span></a></li>
+                                        <li><a href="/hi/antardrishti/utpadan-ai-se-pahle-data-aadhar/"><span>प्रोडक्शन AI से पहले आवश्यक डेटा आधार</span></a></li>
+                                        <li><a href="/hi/shabdavali/"><span>बिज़नेस सिस्टम इंजीनियरिंग शब्दावली</span></a></li>
+                                    </ul>
+                                </details>
+                            </li>
+                            <li>
+                                <details class="mobile-navigation__group">
+                                    <summary><span>06</span><strong>MTera के बारे में</strong><i aria-hidden="true"></i></summary>
+                                    <ul>
+                                        <li><a href="/hi/mtera-ke-bare-mein/">MTera के बारे में</a></li>
+                                        <li><a href="/hi/mtera-ke-bare-mein/milovan-tomasevic/"><span>मिलोवन टोमासेविक</span></a></li>
+                                        <li><a href="/hi/anubhav/"><span>अनुभव और चयनित समस्या पैटर्न</span></a></li>
+                                        <li><a href="/hi/samanya-prashn/"><span>MTera के साथ काम करने के बारे में प्रश्न</span></a></li>
+                                    </ul>
+                                </details>
+                            </li>
+                            <li>
+                                <a href="/hi/sampark/"><span>07</span>संपर्क</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <a class="button button--primary" href="/hi/sampark/">सिस्टम चुनौती पर चर्चा करें <svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a>
+                </div>
+            </details>
+        </div>
+    </div>
+</header><div
+    class="language-suggestion"
+    role="region"
+    aria-labelledby="language-suggestion-title"
+    aria-live="polite"
+    lang="hi-IN"
+    dir="ltr"
+    data-language-suggestion
+    data-current-locale="hi"
+    data-message-template="आपका ब्राउज़र {language} को प्राथमिकता देता है। आपके चुनने तक वर्तमान पृष्ठ खुला रहेगा।"
+    data-action-template="इस पृष्ठ को {language} में देखें"
+    hidden
+>
+    <div class="language-suggestion__copy">
+        <p class="language-suggestion__heading visually-hidden">
+            <strong id="language-suggestion-title">भाषा सुझाव</strong>
+        </p>
+        <p data-language-suggestion-message></p>
+    </div>
+    <a class="text-link language-suggestion__action" data-language-suggestion-accept></a>
+    <button class="language-suggestion__dismiss" type="button" data-language-suggestion-dismiss aria-label="भाषा सुझाव बंद करें">
+        <svg class="icon" viewBox="0 0 20 20" data-icon="close" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#close-20"></use></svg>
+        <span class="visually-hidden">भाषा सुझाव बंद करें</span>
+    </button>
+</div>
+    <main id="main-content" tabindex="-1" lang="hi-IN" dir="ltr" data-pagefind-body>
+<nav class="breadcrumbs shell" aria-label="ब्रेडक्रंब">
+    <ol>
+        <li><a href="https://mtera.eu/hi/">जो अपरिवर्तित रहना चाहिए, उसे खोए बिना भविष्य का निर्माण करें।</a><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></li>
+        <li><a href="https://mtera.eu/hi/antardrishti/">अंतर्दृष्टि</a><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></li>
+        <li><span aria-current="page">बिज़नेस सिस्टम इंजीनियरिंग का वास्तव में क्या मतलब है</span></li>
+    </ol>
+</nav>
+<article class="article" data-pagefind-meta="category:बिज़नेस सिस्टम इंजीनियरिंग">
+    <header class="article-hero shell"><span class="eyebrow">बिज़नेस सिस्टम इंजीनियरिंग</span><h1 id="page-title">बिज़नेस सिस्टम इंजीनियरिंग का वास्तव में क्या मतलब है</h1><p class="lede">बिज़नेस सिस्टम इंजीनियरिंग एक व्यावसायिक परिणाम के पीछे जुड़े हुए लोगों, निर्णयों, प्रक्रियाओं, डेटा, अनुप्रयोगों, एकीकरण और नियंत्रण को समझने और बदलने का अनुशासित कार्य है। इसकी चिंता का विषय अलगाव में कोई प्रौद्योगिकी घटक नहीं है। यह परिवर्तन के कारण और परिणाम के बीच की निरंतरता है जिसे संचालित किया जा सकता है, समझाया जा सकता है और भरोसा किया जा सकता है।</p><div class="article-meta"><span data-publication-state="preview">संपादकीय पूर्वावलोकन</span><span><svg class="icon" viewBox="0 0 24 24" data-icon="calendar" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#calendar"></use></svg><time datetime="2026-08-11" data-local-date>2026-08-11</time></span><span><svg class="icon" viewBox="0 0 24 24" data-icon="reading-time" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#reading-time"></use></svg><span data-local-number="9" data-use-grouping="false">9</span> मिनट में पढ़ें</span></div></header>
+<section class="section shell"><div class="publication-note"><svg class="icon" viewBox="0 0 24 24" data-icon="warning" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#warning"></use></svg><div><strong>संपादकीय पूर्वावलोकन - विशेषज्ञ समीक्षा लंबित</strong><p>नामित विशेषज्ञ की समीक्षा और स्वीकृति तक यह पूर्ण पूर्वावलोकन प्रोडक्शन में प्रकाशित नहीं होगा।</p></div></div></section><div class="article-layout shell"><aside class="article-toc"><strong>इस पृष्ठ पर</strong><ol><li><a href="#definition">कार्य की इकाई व्यावसायिक परिणाम और उसे बनाने वाला पूरा सिस्टम है</a></li><li><a href="#why_split_fails">व्यवसाय और तकनीक के बीच पारंपरिक विभाजन क्यों विफल होता है</a></li><li><a href="#continuity">बदलाव को आपस में जोड़े रखने वाले छह प्रश्न</a></li><li><a href="#engineering">इंजीनियरिंग तर्क को संचालन योग्य परिणाम में बदलती है</a></li><li><a href="#method">समझ, लक्ष्य, मार्ग और सीख के जरिए काम आगे बढ़ता है</a></li><li><a href="#outputs">ग्राहक को क्या मिलना चाहिए</a></li><li><a href="#when_useful">यह अनुशासन कब सबसे उपयोगी है</a></li></ol></aside><div class="article-body"><section id="definition"><h2>कार्य की इकाई व्यावसायिक परिणाम और उसे बनाने वाला पूरा सिस्टम है</h2><p>एक व्यवसाय प्रणाली पूरी व्यवस्था है जो परिणाम उत्पन्न करती है: लोग बनाते हैं निर्णय, कार्य करने वाली प्रक्रियाएँ, उस कार्य को अर्थ देने वाला डेटा, उसे क्रियान्वित करने वाले अनुप्रयोग और इंटरफ़ेस, उसे बाधित करने वाले नियम और जो हुआ उसे दर्शाने वाले साक्ष्य। प्रौद्योगिकी आवश्यक है, लेकिन प्रौद्योगिकी अकेले सिस्टम को परिभाषित नहीं करती है। एक ही एप्लिकेशन स्वामित्व, समय, अधिकार और आसपास के मैन्युअल काम के आधार पर बहुत अलग परिणामों का समर्थन कर सकता है।</p><p>इसलिए बिज़नेस सिस्टम इंजीनियरिंग एक ठोस परिणाम या निर्णय के साथ शुरू होती है। यह पूछता है कि क्या होना चाहिए, कौन जवाबदेह है, किस जानकारी की आवश्यकता है, वह जानकारी कहाँ बदलती है, कार्य की कौन सी सीमाएँ पार होती हैं और सफलता या विफलता कैसे दिखाई देती है। इसके बाद ही यह तय होता है कि कौन सा आर्किटेक्चर, एकीकरण या सॉफ्टवेयर हस्तक्षेप उचित है।</p></section><section id="why_split_fails"><h2>व्यवसाय और तकनीक के बीच पारंपरिक विभाजन क्यों विफल होता है</h2><p>बड़े बदलावों को अक्सर एक व्यावसायिक मामले, एक प्रक्रिया स्ट्रीम, एक डेटा स्ट्रीम, एक आर्किटेक्चर स्ट्रीम और एक डिलीवरी स्ट्रीम में विभाजित किया जाता है। अलग-अलग धाराओं का प्रबंधन आसान हो सकता है, लेकिन उनके बीच अर्थ खोने वाली सीमाएँ भी बनती हैं। कोई व्यावसायिक शब्द डेटा मॉडल में अलग अर्थ ले सकता है और आर्किटेक्चर का निर्णय उस नियंत्रण को हटा सकता है जिसे संचालन टीम अनौपचारिक रूप से संभालती थी। एक डिलीवरी स्वीकृति परीक्षण यह साबित कर सकता है कि एक इंटरफ़ेस प्रतिक्रिया देता है, जबकि प्राप्तकर्ता टीम लेनदेन को समझ सकती है या पुनर्प्राप्त कर सकती है या नहीं, इसके बारे में कुछ भी नहीं कहता है।</p><p>असफलता यह नहीं है कि विशेषज्ञता मौजूद है। विफलता यह है कि कोई भी उनमें निरंतरता नहीं रखता। बिज़नेस सिस्टम इंजीनियरिंग उस निरंतरता को एक स्पष्ट स्थान देती है। यह अर्थ, स्वामित्व, निर्णय अधिकार, तकनीकी व्यवहार और परिचालन साक्ष्य को जुड़े डिजाइन चिंताओं के रूप में मानता है, जबकि अभी भी विशेषज्ञों का उपयोग करता है जहां गहराई की आवश्यकता होती है।</p></section><section id="continuity"><h2>बदलाव को आपस में जोड़े रखने वाले छह प्रश्न</h2><p>एक उपयोगी जाँच-श्रृंखला है: पहचान → संदर्भ → निर्णय → अधिकार → निष्पादन → साक्ष्य। पहचान जाँचती है कि सिस्टम के सभी हिस्से उसी व्यावसायिक वस्तु या घटना की बात कर रहे हैं या नहीं। संदर्भ अर्थ, इतिहास और संबंधित बाधाओं के साथ बने रहने को जाँचता है। निर्णय बताता है कि क्या तय हुआ और क्यों; अधिकार स्पष्ट करता है कि वह निर्णय कौन ले सकता है; निष्पादन निर्देश को वास्तविक कार्य से जोड़ता है; और साक्ष्य परिणाम को पता लगाने व परखने योग्य बनाता है।</p><p>श्रृंखला कोई उत्पाद सुविधा या गारंटी नहीं है। यह असंततता खोजने का एक तरीका है। यदि कोई भागीदार सहसंबंध के बिना एक नया पहचानकर्ता प्रदान करता है, यदि कोई कार्यप्रवाह अनुमोदन के पीछे का नियम खो देता है, या यदि कोई मॉडल अनुशंसा स्पष्ट अधिकार के बिना एक स्वचालित कार्रवाई बन जाती है, तो सिस्टम तब भी चल सकता है जबकि इसके परिणाम पर भरोसा करना मुश्किल हो जाता है।</p></section><section id="engineering"><h2>इंजीनियरिंग तर्क को संचालन योग्य परिणाम में बदलती है</h2><p>एक अनुशंसा इंजीनियरिंग कार्य बन जाती है जब यह वास्तविक निर्णयों को बाधित करती है और संचालन में इसका परीक्षण किया जा सकता है। एक लक्ष्य वास्तुकला सीमाओं और स्वामित्व की पहचान करती है। एक डेटा अनुबंध अर्थ, संस्करण व्यवहार और विफलता अपेक्षाओं को बताता है। एक संक्रमण स्थिति में प्रवेश, निकास और पुनर्प्राप्ति मानदंड होते हैं। वर्कफ़्लो डिज़ाइन अपवादों और मानवीय निर्णय-अधिकार को स्पष्ट करता है। एक तैनाती में निगरानी और एक हैंडओवर पथ शामिल है।</p><p>इसका मतलब यह नहीं है कि एक व्यक्ति प्रत्येक घटक का निर्माण करता है। इसका मतलब यह है कि अधिकारियों, डोमेन मालिकों, आर्किटेक्ट्स, इंजीनियरों, आपूर्तिकर्ताओं और ऑपरेटरों के बीच जिम्मेदारी बढ़ने पर तर्क जुड़ा रहता है। क्षमता मानचित्र, निर्णय रिकॉर्ड, इंटरफ़ेस अनुबंध और स्वीकृति मानदंड जैसी कलाकृतियां उपयोगी हैं क्योंकि वे उन हैंड-ऑफ पर संदर्भ को संरक्षित करते हैं।</p></section><section id="method"><h2>समझ, लक्ष्य, मार्ग और सीख के जरिए काम आगे बढ़ता है</h2><p>एक व्यावहारिक अनुक्रम चुनौती को तैयार करना, सिस्टम को समझना, लक्ष्य स्थिति को परिभाषित करना, पथ को इंजीनियर करना, फिर वितरित करना और सीखना है। अनुक्रम कोई कठोर झरना नहीं है. डिलीवरी के दौरान मिले साक्ष्य लक्ष्य को बदल सकते हैं। एक संक्रमण डिज़ाइन से पता चल सकता है कि मूल समस्या सीमा गलत थी। महत्वपूर्ण अनुशासन तर्क को अद्यतन करना है, न कि परियोजना की स्थिति के पीछे के बदलाव को छिपाना।</p><p>MTera के पाँच सिद्धांत इस क्रम में एक-दूसरे के पूरक परीक्षण देते हैं: Mastery समझ की गहराई जाँचता है; Transformation निरंतरता बचाता है; Engineering विकल्पों को टिकाऊ परिणाम में बदलता है; Reason उद्देश्य और स्वीकार्य जोखिम सुरक्षित रखता है; Architecture अगले बदलाव के लिए संरचना बनाता है। पूरा हुआ हर चक्र अगले चक्र की गुणवत्ता बढ़ाना चाहिए।</p></section><section id="outputs"><h2>ग्राहक को क्या मिलना चाहिए</h2><p>आउटपुट निर्णय पर निर्भर करता है। एक मूल्यांकन एक सिस्टम मैप, साक्ष्य-आधारित निष्कर्ष, एक जोखिम दृश्य और एक अनुशंसित दिशा उत्पन्न कर सकता है। आर्किटेक्चर कार्य में लक्ष्य और संक्रमण स्थिति, स्वामित्व, निर्णय रिकॉर्ड, अनुबंध और एक अनुक्रमित रोडमैप जोड़ा जा सकता है। डिलीवरी कार्यान्वित घटकों, स्वचालित परीक्षणों, परिचालन निगरानी, ​​दस्तावेज़ीकरण और ज्ञान हस्तांतरण का उत्पादन कर सकती है।</p><p>सभी परिणामों में एक साझा गुण पता लगाने की क्षमता है: ग्राहक हर प्रस्तावित बदलाव को व्यावसायिक कारण से जोड़ सके, मान्यताएँ समझ सके, जिम्मेदार स्वामी पहचान सके, स्वीकृति का तरीका जान सके और बची अनिश्चितता देख सके। एक लंबी प्रौद्योगिकी सूची तर्क की इस पंक्ति का विकल्प नहीं है।</p></section><section id="when_useful"><h2>यह अनुशासन कब सबसे उपयोगी है</h2><p>बिज़नेस सिस्टम इंजीनियरिंग सबसे मूल्यवान है जहां परिणाम कई सीमाओं को पार करता है: समानांतर संचालन के साथ एक विरासत आधुनिकीकरण; विभिन्न डोमेन द्वारा उपयोग किया गया डेटा; विवादित स्थिति के साथ भागीदार एकीकरण; AI किसी मानवीय निर्णय को प्रभावित करता है; अनौपचारिक नियंत्रणों की जगह स्वचालन; या कस्टम सॉफ़्टवेयर जो एक स्थापित संपत्ति के साथ सह-अस्तित्व में होना चाहिए।</p><p>समझे गए स्वामित्व और कम परिणाम के साथ निहित परिवर्तन के लिए, यह विस्तार अनावश्यक हो सकता है। विधि को प्रश्न के अनुरूप बनाया जाना चाहिए। लक्ष्य दिखावटी आर्किटेक्चर दस्तावेज़ बनाना नहीं, बल्कि जिम्मेदार निर्णय और अगले उपयोगी परिणाम के लिए वास्तविक सिस्टम की पर्याप्त तस्वीर सामने लाना है।</p></section></div></div><section class="section takeaways"><div class="shell"><span class="eyebrow">मुख्य बातें</span><h2>अगले निर्णय तक क्या आगे ले जाना है</h2><ol><li><span>01</span>हस्तक्षेप का चयन करने से पहले व्यावसायिक परिणाम और सिस्टम सीमा को परिभाषित करें।</li><li><span>02</span>विशेषज्ञ वर्कस्ट्रीम में अर्थ, स्वामित्व, अधिकार और साक्ष्य ले जाएं।</li><li><span>03</span>आर्किटेक्चर को उसके संक्रमण पथ और अगले परिवर्तन का समर्थन करने की क्षमता के आधार पर परखें।</li><li><span>04</span>प्रत्येक सामग्री अनुशंसा को संचालन योग्य, परीक्षण योग्य परिणाम से जोड़ने की अपेक्षा करें।</li></ol></div></section><section class="section shell article-note"><h2>अनुप्रयोग</h2><p>एक परिणामी निर्णय चुनें। इसे प्रभावित करने वाले अभिनेताओं, प्रणालियों, डेटा और हैंड-ऑफ़ को चित्रित करें। चिह्नित करें कि पहचान, संदर्भ, अधिकार या साक्ष्य कहां बदलता है। वह मानचित्र सामान्य प्रौद्योगिकी मूल्यांकन से बेहतर शुरुआत है।</p></section><section class="section shell article-note"><h2>सीमाएँ और जोखिम</h2><p>बिज़नेस सिस्टम इंजीनियरिंग विशेषज्ञ कानूनी, सुरक्षा, नियामक, संगठनात्मक या डोमेन सलाह को प्रतिस्थापित नहीं करती है। यह एक सिस्टम संदर्भ बनाता है जिसमें उन जिम्मेदारियों को डिजाइन और वितरण से जोड़ा जा सकता है।</p></section><section class="section shell related-links"><div class="section-heading"><span class="eyebrow">संबंधित सिस्टम सामग्री</span><h2>इस अंतर्दृष्टि से संबंधित क्षमता और चुनौती तक जाएँ</h2></div><div class="link-ledger"><a href="/hi/sevayen/vyavsayik-pranali-vastukala-aur-parivartan/"><span>01</span><strong>बिज़नेस सिस्टम आर्किटेक्चर और परिवर्तन के माध्यम से इस अंतर्दृष्टि को लागू करें</strong><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a><a href="/hi/chunautiyan/alag-pranaliyan-bikhra-data/"><span>02</span><strong>सिस्टम चुनौती देखें: डिस्कनेक्टेड सिस्टम और खंडित डेटा</strong><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a></div></section><section class="section shell related-links"><div class="section-heading"><span class="eyebrow">शब्दावली</span><h2>इस विषय के बारे में तर्क करने के लिए उपयोग की जाने वाली परिभाषाएँ</h2></div><div class="link-ledger"><a href="/hi/shabdavali/#business_system"><span>01</span><strong>MTera शब्दावली में “व्यवसाय प्रणाली” समझें</strong><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a><a href="/hi/shabdavali/#system_context"><span>02</span><strong>MTera शब्दावली में “सिस्टम संदर्भ” समझें</strong><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a><a href="/hi/shabdavali/#enterprise_architecture"><span>03</span><strong>MTera शब्दावली में “एंटरप्राइज़ आर्किटेक्चर” समझें</strong><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a><a href="/hi/shabdavali/#decision_record"><span>04</span><strong>MTera शब्दावली में “निर्णय अभिलेख” समझें</strong><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a></div></section><section class="section shell related-links"><div class="section-heading"><span class="eyebrow">संबंधित अंतर्दृष्टि</span><h2>कनेक्टेड सिस्टम निर्णयों पर तर्क जारी रखें</h2></div><div class="link-ledger"><a href="/hi/antardrishti/sangathanik-simaon-par-udyam-ekikaran-kyon-vifal/"><span>03</span><strong>संगठनों के बीच की सीमाओं पर उद्यम एकीकरण क्यों विफल हो जाते हैं · संपादकीय पूर्वावलोकन</strong><svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a></div></section></article>
+<section class="section cta-band" data-pagefind-ignore>
+    <div class="shell cta-band__inner">
+        <div><span class="eyebrow">MTera · MTera से संपर्क करें</span><h2>अपने परिवर्तन के पीछे सिस्टम प्रश्न पर चर्चा करें।</h2><p>जो अपरिवर्तित रहना चाहिए, उसे खोए बिना भविष्य का निर्माण करें।</p></div>
+        <a class="button button--primary" href="/hi/sampark/">सिस्टम चुनौती पर चर्चा करें <svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a>
+    </div>
+</section>    </main>
+
+<aside class="print-metadata" aria-label="प्रिंट जानकारी" lang="hi-IN" dir="ltr">
+        <img class="print-metadata__logo" src="/static/brand/mtera-lockup-horizontal-monochrome.svg" width="248" height="64" alt="MTera">
+        <p><strong>कैनोनिकल URL:</strong> <span dir="ltr">https://mtera.eu/hi/antardrishti/vyavsayik-pranali-abhiyantriki-ka-arth/</span></p>
+        <p><strong>प्रिंट संस्करण:</strong> <time datetime="2026-08-13" data-print-date>2026-08-13</time></p>
+    </aside>
+<footer class="site-footer" lang="hi-IN" dir="ltr">
+    <div class="shell site-footer__grid">
+        <div class="site-footer__brand">
+            <span class="theme-lockup"><img class="theme-lockup__light" src="/static/brand/mtera-wordmark.svg" width="1062" height="269" alt="MTera" loading="lazy"><img class="theme-lockup__dark" src="/static/brand/mtera-wordmark-on-dark.svg" width="1062" height="269" alt="" aria-hidden="true" loading="lazy"></span>
+            <p>जो अपरिवर्तित रहना चाहिए, उसे खोए बिना भविष्य का निर्माण करें।</p>
+<p class="meta-line"><svg class="icon" viewBox="0 0 24 24" data-icon="location" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#location"></use></svg> लजुब्लजाना</p>        </div>
+        <details class="site-footer__group site-footer__nav" data-footer-disclosure open>
+            <summary class="site-footer__summary">
+                <h2>अन्वेषण करें</h2>
+                <svg class="site-footer__chevron" viewBox="0 0 20 20" data-icon="arrow-forward" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward-20"></use></svg>
+            </summary>
+            <nav class="site-footer__links" aria-label="फुटर नेविगेशन">
+<a href="/hi/paddhati/">पद्धति</a><a href="/hi/sevayen/">सेवाएँ</a><a href="/hi/chunautiyan/">चुनौतियाँ</a><a href="/hi/karya-pranali/">कार्यप्रणाली</a><a href="/hi/antardrishti/">अंतर्दृष्टि</a><a href="/hi/mtera-ke-bare-mein/">MTera के बारे में</a><a href="/hi/sampark/">संपर्क</a>            </nav>
+        </details>
+        <details class="site-footer__group site-footer__nav" data-footer-disclosure open>
+            <summary class="site-footer__summary">
+                <h2>कानूनी जानकारी</h2>
+                <svg class="site-footer__chevron" viewBox="0 0 20 20" data-icon="arrow-forward" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward-20"></use></svg>
+            </summary>
+            <nav class="site-footer__links" aria-label="कानूनी जानकारी का नेविगेशन">
+<a href="/hi/anubhav/">अनुभव</a><a href="/hi/shabdavali/">शब्दावली</a><a href="/hi/samanya-prashn/">सामान्य प्रश्न</a><a href="/hi/kanuni-suchana/">कानूनी सूचना</a><a href="/hi/gopniyata/">गोपनीयता</a><a href="/hi/kuki-niti/">कुकीज़</a><a href="/hi/upyog-ki-sharten/">उपयोग की शर्तें</a><a href="/hi/sulabhata/">सुलभता</a><a href="/hi/suraksha/">सुरक्षा</a><a href="/hi/site-manachitra/">साइट मानचित्र</a><a href="/hi/khoj/">खोज</a>            </nav>
+        </details>
+        <details class="site-footer__group site-footer__contact" data-footer-disclosure open>
+            <summary class="site-footer__summary">
+                <h2>MTera से संपर्क करें</h2>
+                <svg class="site-footer__chevron" viewBox="0 0 20 20" data-icon="arrow-forward" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward-20"></use></svg>
+            </summary>
+            <div class="site-footer__links">
+<a class="email-link" href="mailto:hello@mtera.eu"><svg class="icon" viewBox="0 0 24 24" data-icon="email" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#email"></use></svg><span dir="ltr">hello@mtera.eu</span></a>            </div>
+        </details>
+    </div>
+    <div class="shell site-footer__base">
+        <p>© 2026 MTera</p>
+        <p>गोपनीयता, स्पष्टता और पहुँच के लिए डिज़ाइन किया गया।</p>
+    </div>
+</footer><dialog class="search-dialog" data-search-dialog data-search-copy aria-labelledby="search-dialog-title" lang="hi-IN" dir="ltr"
+    data-no-results="कोई परिणाम नहीं"
+    data-results-label="परिणाम"
+    data-search-unavailable="खोज अस्थायी रूप से उपलब्ध नहीं है।"
+    data-search-minimum-one="कम से कम 1 अक्षर लिखें।"
+    data-search-minimum-many="कम से कम {count} अक्षर लिखें।"
+    data-search-untitled="शीर्षक रहित"
+    data-group-service="सेवाएँ"
+    data-group-challenge="चुनौतियाँ"
+    data-group-method="पद्धति"
+    data-group-article="अंतर्दृष्टि"
+    data-group-glossary="शब्दावली"
+    data-group-about="MTera के बारे में"
+    data-group-page="अन्य पृष्ठ">
+    <div class="search-dialog__surface">
+        <header>
+            <div><span class="eyebrow">MTera · खोज</span><h2 id="search-dialog-title">MTera ज्ञान आधार में खोजें</h2><p>सेवाएँ, चुनौतियाँ, पद्धतियाँ, अंतर्दृष्टियाँ और परिभाषाएँ खोजें।</p></div>
+            <button class="tool-button" type="button" data-search-close aria-label="खोज बंद करें"><svg class="icon" viewBox="0 0 20 20" data-icon="close" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#close-20"></use></svg></button>
+        </header>
+        <form class="search-form" action="/hi/khoj/" method="get" role="search" data-search-form>
+            <label for="site-search-input">खोज</label>
+            <div class="search-input"><svg class="icon" viewBox="0 0 20 20" data-icon="search" data-optical-size="20" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#search-20"></use></svg><input id="site-search-input" name="q" type="search" inputmode="search" autocomplete="off" spellcheck="false" enterkeyhint="search" minlength="1" role="combobox" aria-expanded="false" aria-haspopup="listbox" aria-controls="search-results" aria-autocomplete="list" data-search-input placeholder="MTera में खोजें"><button class="button button--primary" type="submit">खोज</button></div>
+        </form>
+        <div class="search-status" role="status" aria-live="polite" data-search-status></div>
+        <ol class="search-results" id="search-results" role="listbox" aria-label="खोज परिणाम" data-search-results></ol>
+        <nav class="search-quick-actions" aria-labelledby="search-dialog-actions-title">
+            <h3 id="search-dialog-actions-title">त्वरित कार्रवाइयाँ</h3>
+            <a href="/hi/pranali-chunauti-sankshep/">सिस्टम चुनौती संक्षिप्त</a>
+            <a href="/hi/paddhati/">MTera पद्धति जानें</a>
+            <a href="/hi/sevayen/">सेवा देखें</a>
+            <a href="/hi/sampark/">MTera से संपर्क करें</a>
+        </nav>
+        <footer><span><kbd>⌘</kbd>/<kbd>Ctrl</kbd> + <kbd>K</kbd></span><a href="/hi/khoj/">पूरी खोज खोलें <svg class="icon" viewBox="0 0 24 24" data-icon="arrow-forward" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#arrow-forward"></use></svg></a></footer>
+    </div>
+</dialog><button class="back-to-top" type="button" data-back-to-top hidden lang="hi-IN" dir="ltr" aria-label="ऊपर जाएँ">
+    <svg class="back-to-top__progress" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21" pathLength="1"></circle></svg>
+    <svg class="icon" viewBox="0 0 24 24" data-icon="top" data-optical-size="24" aria-hidden="true" focusable="false"><use href="/static/icons/mtera-icons.svg#top"></use></svg>
+</button>    <script id="mtera-site-script" type="module" src="/assets/mtera.KAAJH2LX.js" data-search-index="/hi/search-index.json" data-pagefind-base="/pagefind/" data-pagefind-enabled="true" data-locale="hi" data-html-lang="hi-IN"></script>
+</body>
+</html>
